@@ -1,5 +1,7 @@
 package com.zero.admin.controller.system;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,7 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/system/user")
 public class SysUserController {
 
+    @PostMapping
     public String add(Object user) {
+        return "success";
+    }
+
+    @GetMapping
+    public String search(Object user) {
         return "success";
     }
 }
