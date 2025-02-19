@@ -6,12 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  ALI_DOCKER_HOST: crpi-3i3pv7x8w1lizxgy.cn-shenzhen.personal.cr.aliyuncs.com
+
 jobs:
 
   build:
-    env:
-      ALI_DOCKER_HOST: crpi-3i3pv7x8w1lizxgy.cn-shenzhen.personal.cr.aliyuncs.com
-
     runs-on: ubuntu-latest
 
     steps:
