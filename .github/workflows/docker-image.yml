@@ -30,8 +30,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag akai6/zero-admin-api:$(date +%s)
-
-      - name: Push the Docker image
-        run: docker push akai6/zero-admin-api:$(date +%s)
+      - name: Build and push Docker image
+        env:
+          DOCKER_REPO: akai6/zero-admin-api
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build . --file Dockerfile --tag $DOCKER_REPO:$IMAGE_TAG
+          docker push $DOCKER_REPO:$IMAGE_TAG
