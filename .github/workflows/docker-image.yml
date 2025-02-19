@@ -39,7 +39,7 @@ jobs:
       - name: Build and push Docker image
         env:
           DOCKER_REPO: akai6/zero-admin-api
-          IMAGE_TAG: ${{ github.sha::7 }}
+          IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build . --file Dockerfile --tag $DOCKER_REPO:$IMAGE_TAG
           docker push $DOCKER_REPO:$IMAGE_TAG
