@@ -39,5 +39,5 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build . --file Dockerfile
-          docker tag $DOCKER_REPO $DOCKER_REPO:v1.48
-          docker push ${{ env.ALI_DOCKER_HOST }}/$DOCKER_REPO:1.48
+          docker tag $IMAGE_TAG zero-admin-api:v1.48
+          docker push ${{ env.ALI_DOCKER_HOST }}/$DOCKER_REPO
