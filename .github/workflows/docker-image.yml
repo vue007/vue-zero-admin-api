@@ -34,13 +34,13 @@ jobs:
       - name: Log in to Ali Docker Hub
         uses: aliyun/acr-login@v1
         with:
-          login-server: ${{ ALI_DOCKER_HOST }}
+          login-server: ${{ env.ALI_DOCKER_HOST }}
           username: ${{ secrets.ALI_DOCKER_USERNAME }}
           password: ${{ secrets.ALI_DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
         env:
-          DOCKER_REPO: ${{ ALI_DOCKER_HOST }}/akai6/zero-admin-api
+          DOCKER_REPO: ${{ env.ALI_DOCKER_HOST }}/akai6/zero-admin-api
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build . --file Dockerfile --tag $DOCKER_REPO:$IMAGE_TAG
