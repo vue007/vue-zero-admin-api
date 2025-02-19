@@ -43,5 +43,5 @@ jobs:
           DOCKER_REPO: ${{ env.ALI_DOCKER_HOST }}/akai6/zero-admin-api
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker tag ${{ github_ref }} $DOCKER_REPO:$IMAGE_TAG
+          docker tag 123123 $DOCKER_REPO:$IMAGE_TAG
           docker push $DOCKER_REPO:$IMAGE_TAG
