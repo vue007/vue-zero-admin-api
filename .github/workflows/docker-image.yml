@@ -38,5 +38,6 @@ jobs:
           DOCKER_REPO: akai6/zero-admin-api
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build . --file Dockerfile -t $DOCKER_REPO:$IMAGE_TAG
+          docker build . --file Dockerfile
+          docker tag $IMAGE_TAG $DOCKER_REPO:$IMAGE_TAG
           docker push ${{ env.ALI_DOCKER_HOST }}/$DOCKER_REPO
