@@ -39,5 +39,5 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build . --file Dockerfile
-          docker tag $DOCKER_REPO:$IMAGE_TAG $DOCKER_REPO:$IMAGE_TAG
+          docker tag $IMAGE_TAG $IMAGE_TAG $DOCKER_REPO:0.0.1
           docker push ${{ env.ALI_DOCKER_HOST }}/$DOCKER_REPO
