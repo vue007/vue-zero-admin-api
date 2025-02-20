@@ -3,4 +3,3 @@ spring:
     name: Admin
   profiles:
     active: dev
-
