@@ -4,9 +4,9 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.zero.admin</groupId>
-	<artifactId>zero-admin</artifactId>
-	<name>zero-admin</name>
+	<groupId>com.zero.admin.api</groupId>
+	<artifactId>zero-admin-api</artifactId>
+	<name>zero-admin-api</name>
 	<version>${revision}</version>
 	<packaging>pom</packaging>
 	<url>todo</url>
@@ -19,10 +19,11 @@
 
 		<!-- foundation -->
 		<java.version>21</java.version>
-		<spring-boot.version>3.4.2</spring-boot.version>
-		<spring-boot-admin.version>3.4.3</spring-boot-admin.version>
+		<spring-boot.version>3.4.3</spring-boot.version>
+		<spring-boot-admin.version>3.4.2</spring-boot-admin.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
+		<mariadb.version>1.20.5</mariadb.version>
 
 		<!-- tools -->
 		<hutool.version>5.8.36</hutool.version>
@@ -145,14 +146,6 @@
 				<version>${lock4j.version}</version>
 			</dependency>
 
-
-			<!-- 离线IP地址定位库 ip2region -->
-			<dependency>
-				<groupId>org.lionsoul</groupId>
-				<artifactId>ip2region</artifactId>
-				<version>${ip2region.version}</version>
-			</dependency>
-
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
@@ -169,7 +162,7 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>zero-admin-web</module>
+		<module>zero-admin</module>
 <!--		<module>zero-base</module>-->
 <!--		<module>zero-modules</module>-->
 	</modules>

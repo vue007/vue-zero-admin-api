@@ -1,5 +1,5 @@
-# 使用 OpenJDK 17 作为基础镜像
-FROM openjdk:17
+# 使用 OpenJDK 21 作为基础镜像
+FROM openjdk:21
 
 # 定义构建参数，用于接收 JAR 文件名
 ARG JAR_FILE=target/*.jar
