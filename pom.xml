@@ -4,9 +4,9 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.zero.admin.api</groupId>
-	<artifactId>zero-admin-api</artifactId>
-	<name>zero-admin-api</name>
+	<groupId>com.zero.admin</groupId>
+	<artifactId>zero-admin</artifactId>
+	<name>zero-admin</name>
 	<version>${revision}</version>
 	<packaging>pom</packaging>
 	<url>todo</url>
@@ -23,7 +23,7 @@
 		<spring-boot-admin.version>3.4.2</spring-boot-admin.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
-		<mariadb.version>1.20.5</mariadb.version>
+		<postgresql.version>42.7.5</postgresql.version>
 
 		<!-- tools -->
 		<hutool.version>5.8.36</hutool.version>
@@ -163,8 +163,8 @@
 
 	<modules>
 		<module>zero-admin</module>
-<!--		<module>zero-base</module>-->
-<!--		<module>zero-modules</module>-->
+		<module>zero-base</module>
+		<module>zero-modules</module>
 	</modules>
 
 	<build>

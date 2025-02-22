@@ -5,25 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.zero.admin.api</groupId>
-        <artifactId>zero-admin-api</artifactId>
+        <groupId>com.zero.admin</groupId>
+        <artifactId>zero-admin</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <groupId>zero.admin</groupId>
+    <artifactId>zero-admin-web</artifactId>
+    <name>zero-admin-web</name>
+    <description>web服务入口</description>
     <packaging>jar</packaging>
-    <artifactId>zero-admin</artifactId>
-    <name>zero-admin</name>
     <version>${revision}</version>
 
-    <description>web服务入口</description>
-
     <dependencies>
-
         <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>mariadb</artifactId>
-            <version>1.20.5</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
 
         <dependency>
