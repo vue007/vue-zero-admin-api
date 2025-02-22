@@ -6,8 +6,8 @@
         <artifactId>zero-base</artifactId>
         <version>${revision}</version>
     </parent>
+    <artifactId>zero-base-mybatis</artifactId>
+    <name>zero-base-mybatis</name>
 
-    <artifactId>zero-base-web</artifactId>
-    <name>zero-base-web</name>
-    <description>web 服务</description>
+    <description>数据库服务</description>
 </project>

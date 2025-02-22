@@ -6,8 +6,7 @@
         <artifactId>zero-base</artifactId>
         <version>${revision}</version>
     </parent>
-
-    <artifactId>zero-base-web</artifactId>
-    <name>zero-base-web</name>
-    <description>web 服务</description>
+    <artifactId>zero-base-security</artifactId>
+    <name>zero-base-security</name>
+    <description>安全模块</description>
 </project>

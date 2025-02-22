@@ -6,8 +6,8 @@
         <artifactId>zero-base</artifactId>
         <version>${revision}</version>
     </parent>
+    <artifactId>zero-base-redis</artifactId>
+    <name>zero-base-redis</name>
+    <description>缓存服务</description>
 
-    <artifactId>zero-base-web</artifactId>
-    <name>zero-base-web</name>
-    <description>web 服务</description>
 </project>

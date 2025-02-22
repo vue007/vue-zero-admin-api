@@ -16,5 +16,11 @@
     <modules>
         <module>zero-base-web</module>
         <module>zero-base-core</module>
+        <module>zero-base-json</module>
+        <module>zero-base-log</module>
+        <module>zero-base-redis</module>
+        <module>zero-base-satoken</module>
+        <module>zero-base-security</module>
+        <module>zero-base-mybatis</module>
     </modules>
 </project>
