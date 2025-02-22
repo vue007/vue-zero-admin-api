@@ -1,6 +1,14 @@
 package com.zero.admin.base.core.constant;
 
-public class RegexConstants extends RegexPool{
+import cn.hutool.core.lang.RegexPool;
+/**
+ * 常用正则表达式字符串
+ * <p>
+ * 常用正则表达式集合，更多正则见: https://any86.github.io/any-rule/
+ *
+ * @author Akai
+ */
+public interface RegexConstants extends RegexPool {
 
     /**
      * 字典类型必须以字母开头，且只能为（小写字母，数字，下滑线）

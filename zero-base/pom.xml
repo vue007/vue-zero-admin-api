@@ -7,13 +7,13 @@
         <version>${revision}</version>
     </parent>
 
-    <groupId>com.zero.admin</groupId>
     <artifactId>zero-base</artifactId>
     <name>zero-base</name>
     <description>base 基础模块</description>
     <packaging>pom</packaging>
 
     <modules>
+        <module>zero-base-bom</module>
         <module>zero-base-web</module>
         <module>zero-base-core</module>
         <module>zero-base-json</module>
@@ -23,4 +23,5 @@
         <module>zero-base-security</module>
         <module>zero-base-mybatis</module>
     </modules>
+
 </project>

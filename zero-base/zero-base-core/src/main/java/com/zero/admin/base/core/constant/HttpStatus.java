@@ -5,7 +5,7 @@ package com.zero.admin.base.core.constant;
  *
  * @author Akai
  */
-public class HttpStatus {
+public interface HttpStatus {
     /**
      * 操作成功
      */
@@ -91,3 +91,4 @@ public class HttpStatus {
      */
     int WARN = 601;
 }
+
