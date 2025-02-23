@@ -6,11 +6,9 @@
 
 	<groupId>com.zero.admin</groupId>
 	<artifactId>zero-admin</artifactId>
-	<name>zero-admin</name>
+	<name>Zero-Admin-Api</name>
 	<version>${revision}</version>
 	<packaging>pom</packaging>
-	<url>todo</url>
-	<description>todo</description>
 
 	<properties>
 		<revision>0.0.1</revision>
@@ -156,6 +154,12 @@
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
 				<version>${fastjson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
 			</dependency>
 
 		</dependencies>

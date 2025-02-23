@@ -1,12 +1,14 @@
 package com.zero.admin.web.domain.vo;
 
 
+import lombok.Data;
+
 /**
  * 验证码信息
  *
  * @author Akai
  */
-//@Data
+@Data
 public class CaptchaVo {
 
     /**
