@@ -15,5 +15,10 @@
             <artifactId>zero-base-core</artifactId>
             <version>${revision}</version>
         </dependency>
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-base-web</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 </project>
