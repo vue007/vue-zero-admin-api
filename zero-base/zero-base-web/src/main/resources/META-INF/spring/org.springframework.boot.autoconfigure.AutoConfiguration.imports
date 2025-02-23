@@ -1,0 +1,5 @@
+com.zero.admin.base.web.config.CaptchaConfig
+com.zero.admin.base.web.config.FilterConfig
+com.zero.admin.base.web.config.I18nConfig
+com.zero.admin.base.web.config.ResourcesConfig
+com.zero.admin.base.web.config.UndertowConfig

@@ -1,6 +1,5 @@
 package com.zero.admin.web.domain.vo;
 
-
 import lombok.Data;
 
 /**

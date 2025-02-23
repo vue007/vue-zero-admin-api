@@ -1,0 +1,7 @@
+{
+  "com.zero.admin.base.ratelimiter.annotation.RateLimiter@key": {
+    "method": {
+      "parameters": true
+    }
+  }
+}

@@ -17,20 +17,33 @@
 
 		<!-- foundation -->
 		<java.version>21</java.version>
-		<spring-boot.version>3.4.3</spring-boot.version>
+		<spring-boot.version>3.4.2</spring-boot.version>
 		<spring-boot-admin.version>3.4.2</spring-boot-admin.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
+		<dynamic-ds.version>4.3.1</dynamic-ds.version>
 		<postgresql.version>42.7.5</postgresql.version>
 
 		<!-- tools -->
 		<hutool.version>5.8.36</hutool.version>
 		<lombok.version>1.18.36</lombok.version>
+		<bouncycastle.version>1.76</bouncycastle.version>
 		<mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
 		<mapstruct-plus.version>1.4.6</mapstruct-plus.version>
+		<redisson.version>3.45.0</redisson.version>
+		<lock4j.version>2.2.7</lock4j.version>
+		<satoken.version>1.40.0</satoken.version>
+		<easyexcel.version>4.0.3</easyexcel.version>
+		<p6spy.version>3.9.1</p6spy.version>
+		<fastjson.version>1.2.83</fastjson.version>
+		<!-- OSS 配置 -->
+		<aws.sdk.version>2.28.22</aws.sdk.version>
+		<aws.crt.version>0.31.3</aws.crt.version>
 
 		<!-- helper -->
 		<therapi-javadoc.version>0.15.0</therapi-javadoc.version>
+		<justauth.version>1.16.7</justauth.version>
+		<ip2region.version>2.7.0</ip2region.version>
 
 		<!-- plugin -->
 		<maven-jar-plugin.version>3.4.0</maven-jar-plugin.version>
@@ -89,6 +102,13 @@
 				<scope>import</scope>
 			</dependency>
 
+			<!-- dynamic-datasource 多数据源-->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+				<version>${dynamic-ds.version}</version>
+			</dependency>
+
 			<!-- hutool 的依赖配置-->
 			<dependency>
 				<groupId>cn.hutool</groupId>
@@ -130,6 +150,12 @@
 				<artifactId>mybatis-plus-annotation</artifactId>
 				<version>${mybatis-plus.version}</version>
 			</dependency>
+			<!-- sql性能分析插件 -->
+			<dependency>
+				<groupId>p6spy</groupId>
+				<artifactId>p6spy</artifactId>
+				<version>${p6spy.version}</version>
+			</dependency>
 
 			<!--redisson-->
 			<dependency>
@@ -160,6 +186,82 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
+			</dependency>
+
+			<!-- 加密包引入 -->
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk15to18</artifactId>
+				<version>${bouncycastle.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.github.linpeilie</groupId>
+				<artifactId>mapstruct-plus-spring-boot-starter</artifactId>
+				<version>${mapstruct-plus.version}</version>
+			</dependency>
+
+			<!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-spring-boot3-starter</artifactId>
+				<version>${satoken.version}</version>
+			</dependency>
+			<!-- Sa-Token 整合 jwt -->
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-jwt</artifactId>
+				<version>${satoken.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>cn.hutool</groupId>
+						<artifactId>hutool-all</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-core</artifactId>
+				<version>${satoken.version}</version>
+			</dependency>
+
+			<!-- JustAuth 的依赖配置-->
+			<dependency>
+				<groupId>me.zhyd.oauth</groupId>
+				<artifactId>JustAuth</artifactId>
+				<version>${justauth.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>easyexcel</artifactId>
+				<version>${easyexcel.version}</version>
+			</dependency>
+
+			<!-- 离线IP地址定位库 ip2region -->
+			<dependency>
+				<groupId>org.lionsoul</groupId>
+				<artifactId>ip2region</artifactId>
+				<version>${ip2region.version}</version>
+			</dependency>
+
+			<!--  AWS SDK for Java 2.x  -->
+			<dependency>
+				<groupId>software.amazon.awssdk</groupId>
+				<artifactId>s3</artifactId>
+				<version>${aws.sdk.version}</version>
+			</dependency>
+			<!-- 使用AWS基于 CRT 的 S3 客户端 -->
+			<dependency>
+				<groupId>software.amazon.awssdk.crt</groupId>
+				<artifactId>aws-crt</artifactId>
+				<version>${aws.crt.version}</version>
+			</dependency>
+			<!-- 基于 AWS CRT 的 S3 客户端的性能增强的 S3 传输管理器 -->
+			<dependency>
+				<groupId>software.amazon.awssdk</groupId>
+				<artifactId>s3-transfer-manager</artifactId>
+				<version>${aws.sdk.version}</version>
 			</dependency>
 
 		</dependencies>

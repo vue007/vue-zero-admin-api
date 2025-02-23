@@ -8,4 +8,26 @@
     </parent>
     <artifactId>zero-base-log</artifactId>
     <name>zero-base-log</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-base-satoken</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-base-json</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-base-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+    </dependencies>
 </project>

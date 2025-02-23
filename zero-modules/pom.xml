@@ -11,7 +11,7 @@
     <name>zero-modules</name>
     <artifactId>zero-modules</artifactId>
     <packaging>pom</packaging>
-    <description> zero-modules 业务模块 </description>
+    <description> 业务模块 </description>
 
     <modules>
         <module>zero-system</module>

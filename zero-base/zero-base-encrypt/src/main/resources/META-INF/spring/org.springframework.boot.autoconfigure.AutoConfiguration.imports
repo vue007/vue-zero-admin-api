@@ -1,0 +1,3 @@
+com.zero.admin.base.encrypt.config.EncryptorAutoConfiguration
+com.zero.admin.base.encrypt.config.ApiDecryptAutoConfiguration
+

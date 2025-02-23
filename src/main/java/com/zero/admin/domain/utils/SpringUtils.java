@@ -12,7 +12,7 @@ import org.springframework.core.env.Environment;
 /**
  * spring工具类
  *
- * @author Lion Li
+ * @author Akai
  */
 @Component
 public final class SpringUtils extends SpringUtil {
