@@ -84,3 +84,31 @@
 2025-02-24 22:23:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
 2025-02-24 22:23:31 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
 2025-02-24 22:23:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-25 01:14:20 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-25 01:14:20 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 18978 (/Users/akai/Documents/GitHub/work/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/work/vue-zero-admin-api)
+2025-02-25 01:14:20 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-25 01:14:21 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-25 01:14:21 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-25 01:14:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-25 01:14:25 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5dc7391e
+2025-02-25 01:14:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-25 01:14:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-25 01:14:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-25 01:14:26 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-25 01:14:26 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-25 01:14:26 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-25 01:14:26 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-25 01:14:26 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-25 01:14:26 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-25 01:14:26 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-25 01:14:26 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 7.004 seconds (process running for 7.386)
+2025-02-25 01:14:26 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-25 01:14:27 [RMI TCP Connection(2)-192.168.5.114] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
