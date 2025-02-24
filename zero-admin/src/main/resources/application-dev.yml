@@ -5,20 +5,17 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     # 动态数据源文档 https://www.kancloud.cn/tracy5546/dynamic-datasource/content
     dynamic:
-      # 性能分析插件(有性能损耗 不建议生产环境使用)
-      p6spy: true
-      # 设置默认的数据源或者数据源组,默认值即为 master
-      primary: master
-      # 严格模式 匹配不到数据源则报错
-      strict: true
+      p6spy: true # 性能分析插件(有性能损耗 不建议生产环境使用)
+      primary: postgres # 设置默认的数据源或者数据源组,默认值即为 postgres
+      strict: true # 严格模式 匹配不到数据源则报错
       datasource:
         # 主库数据源
-        master:
+        postgres:
           type: ${spring.datasource.type}
           driverClassName: org.postgresql.Driver
-          url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
-          username: postgres
-          password: root
+          url: jdbc:postgresql://TODO:5432/zero_admin?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+          username: root
+          password: root123
           # jdbc 所有参数配置参考 https://lionli.blog.csdn.net/article/details/122018562
           # rewriteBatchedStatements=true 批处理优化 大幅提升批量插入更新删除性能(对数据库有性能损耗 使用批量操作应考虑性能问题)
       hikari:

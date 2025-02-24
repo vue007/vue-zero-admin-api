@@ -94,7 +94,7 @@ security:
 
 # 多租户配置
 tenant:
-  enable: true # 是否开启
+  enable: false # 是否开启
   excludes:  # 排除表
     - sys_menu
     - sys_tenant

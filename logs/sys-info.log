@@ -1,0 +1,86 @@
+2025-02-24 21:29:57 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 21:29:57 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 10461 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 21:29:57 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 21:29:59 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 21:30:00 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 21:30:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
+2025-02-24 22:07:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:07:44 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 28169 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:07:44 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:07:46 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:07:47 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:07:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
+2025-02-24 22:11:39 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:11:39 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 30026 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:11:39 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:11:41 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:11:41 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:11:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:11:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1842dc39
+2025-02-24 22:11:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-24 22:11:41 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-24 22:11:41 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-24 22:11:43 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-24 22:11:43 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-24 22:11:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-24 22:11:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-24 22:11:43 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-24 22:11:43 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-24 22:12:36 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:12:36 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 30437 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:12:36 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:12:38 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:12:39 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:12:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:12:39 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@49741274
+2025-02-24 22:12:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-24 22:12:39 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-24 22:12:39 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-24 22:12:41 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-24 22:12:46 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-24 22:12:46 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-24 22:12:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-24 22:12:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-24 22:12:46 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-24 22:12:46 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-24 22:14:31 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:14:31 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 31326 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:14:31 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:14:33 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:14:34 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:14:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:14:57 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:14:57 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 31492 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:14:57 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:14:59 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:14:59 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:14:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:19:19 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:19:19 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 33466 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:19:19 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:19:21 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:19:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:19:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:19:53 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:19:53 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 33711 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:19:53 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:19:55 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:19:55 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:19:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:23:21 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-24 22:23:21 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 35296 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-24 22:23:21 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-24 22:23:23 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-24 22:23:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-24 22:23:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-24 22:23:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@49741274
+2025-02-24 22:23:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-24 22:23:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-24 22:23:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-24 22:23:26 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-24 22:23:31 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-24 22:23:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-24 22:23:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-24 22:23:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-24 22:23:31 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-24 22:23:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
