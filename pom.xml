@@ -20,7 +20,7 @@
 		<spring-boot.version>3.4.2</spring-boot.version>
 		<spring-boot-admin.version>3.4.2</spring-boot-admin.version>
 		<mybatis.version>3.5.19</mybatis.version>
-		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
+		<mybatis-plus.version>3.5.9</mybatis-plus.version>
 		<dynamic-ds.version>4.3.1</dynamic-ds.version>
 		<postgresql.version>42.7.5</postgresql.version>
 

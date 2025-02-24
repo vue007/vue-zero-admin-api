@@ -31,7 +31,6 @@
         <module>zero-base-ratelimiter</module>
         <module>zero-base-translation</module>
         <module>zero-base-oss</module>
-        <module>zero-base-oss</module>
         <module>zero-base-sse</module>
     </modules>
 

@@ -6,7 +6,7 @@ import com.zero.admin.base.core.utils.StringUtils;
 /**
  * 路由显示信息
  *
- * @author ruoyi
+ * @author Akai
  */
 
 @Data

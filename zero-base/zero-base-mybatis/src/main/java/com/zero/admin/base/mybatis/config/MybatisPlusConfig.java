@@ -29,7 +29,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement(proxyTargetClass = true)
 @MapperScan("${mybatis-plus.mapperPackage}")
-@PropertySource(value = "classpath:common-mybatis.yml", factory = YmlPropertySourceFactory.class)
+@PropertySource(value = "classpath:base-mybatis.yml", factory = YmlPropertySourceFactory.class)
 public class MybatisPlusConfig {
 
     @Bean

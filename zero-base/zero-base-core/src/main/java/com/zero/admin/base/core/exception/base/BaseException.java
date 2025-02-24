@@ -12,7 +12,7 @@ import java.io.Serial;
 /**
  * 基础异常
  *
- * @author ruoyi
+ * @author Akai
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
