@@ -40,21 +40,21 @@
             <artifactId>zero-base-security</artifactId>
             <version>${revision}</version>
         </dependency>
-        <dependency>
-            <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-excel</artifactId>
-            <version>${revision}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.zero.admin</groupId>-->
+<!--            <artifactId>zero-base-excel</artifactId>-->
+<!--            <version>${revision}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-idempotent</artifactId>
             <version>${revision}</version>
         </dependency>
-        <dependency>
-            <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-encrypt</artifactId>
-            <version>${revision}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.zero.admin</groupId>-->
+<!--            <artifactId>zero-base-encrypt</artifactId>-->
+<!--            <version>${revision}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-tenant</artifactId>
