@@ -45,16 +45,16 @@
             <artifactId>zero-base-core</artifactId>
             <version>${revision}</version>
         </dependency>
-        <dependency>
-            <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-encrypt</artifactId>
-            <version>${revision}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-excel</artifactId>
-            <version>${revision}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.zero.admin</groupId>-->
+<!--            <artifactId>zero-base-encrypt</artifactId>-->
+<!--            <version>${revision}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.zero.admin</groupId>-->
+<!--            <artifactId>zero-base-excel</artifactId>-->
+<!--            <version>${revision}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-idempotent</artifactId>
