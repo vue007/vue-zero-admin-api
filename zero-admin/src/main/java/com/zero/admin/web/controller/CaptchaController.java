@@ -48,7 +48,7 @@ public class CaptchaController {
      * 生成验证码
      */
     @RateLimiter(time = 60, count = 10, limitType = LimitType.IP)
-    @GetMapping("/auth/code")
+    @GetMapping("/auth/captcha")
     public R<CaptchaVo> getCode() {
         CaptchaVo captchaVo = new CaptchaVo();
         boolean captchaEnabled = captchaProperties.getEnable();

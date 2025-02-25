@@ -1,6 +1,5 @@
 package com.zero.admin;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
@@ -12,6 +11,7 @@ public class AdminApplication {
 		SpringApplication application = new SpringApplication(AdminApplication.class);
 		application.setApplicationStartup(new BufferingApplicationStartup(2048));
 		application.run(args);
-		System.out.println("(♥◠‿◠)ﾉﾞ  Zero Admin 启动成功   ლ(´ڡ`ლ)ﾞ");
+
+		System.out.println("(*^_-*)  Zero Admin 启动成功   ლ(-_^ლ)ﾞ");
 	}
 }
