@@ -80,7 +80,7 @@ public class AuthController {
      * @param body 登录信息
      * @return 结果
      */
-    @ApiEncrypt
+//    @ApiEncrypt
     @PostMapping("/login")
     public R<LoginVo> login(@RequestBody String body) {
         LoginBody loginBody = JsonUtils.parseObject(body, LoginBody.class);
