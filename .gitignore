@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 
 **/*-local.yml
+*.log
 
 ### STS ###
 .apt_generated
