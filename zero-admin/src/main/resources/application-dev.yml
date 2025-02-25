@@ -1,4 +1,6 @@
-
+spring:
+  config:
+    import: classpath:secret-dev-local.yml
 --- # 数据源配置
 spring:
   datasource:
@@ -13,14 +15,14 @@ spring:
         postgres:
           type: ${spring.datasource.type}
           driverClassName: org.postgresql.Driver
-          url: jdbc:postgresql://TODO:5432/zero_admin?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
-          username: root
-          password: root123
+          url: jdbc:postgresql://${SECRET.DB.HOST}:${SECRET.DB.PORT}/zero_admin?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+          username: ${SECRET.DB.USERNAME}
+          password: ${SECRET.DB.PASSWORD}
           # jdbc 所有参数配置参考 https://lionli.blog.csdn.net/article/details/122018562
           # rewriteBatchedStatements=true 批处理优化 大幅提升批量插入更新删除性能(对数据库有性能损耗 使用批量操作应考虑性能问题)
       hikari:
-        maxPoolSize: 20                        # 最大连接池数量
-        minIdle: 10                            # 最小空闲线程数量
+        maxPoolSize: 5                        # 最大连接池数量
+        minIdle: 1                            # 最小空闲线程数量
         connectionTimeout: 30000               # 配置获取连接等待超时的时间
         validationTimeout: 5000                # 校验超时时间
         idleTimeout: 600000                    # 空闲连接存活最大时间，默认10分钟
