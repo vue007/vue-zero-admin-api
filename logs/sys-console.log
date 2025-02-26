@@ -1607,3 +1607,967 @@ java.lang.NullPointerException: null
 2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
 2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
 2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:09:49 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:09:49 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 6155 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:09:49 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:09:52 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:09:52 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:09:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:09:52 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5da1a97f
+2025-02-26 20:09:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:09:52 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:09:52 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:09:54 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:09:54 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:09:54 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:09:54 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:09:55 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:09:55 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:09:55 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:09:55 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:09:55 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.853 seconds (process running for 7.987)
+2025-02-26 20:09:55 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:09:56 [RMI TCP Connection(3)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:09:59 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:12:19 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:12:24 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:12:24 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 7395 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:12:24 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:12:26 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:12:27 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:12:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:12:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@7a569672
+2025-02-26 20:12:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:12:27 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:12:27 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:12:29 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:12:29 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:12:29 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:12:29 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:12:30 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:12:30 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:12:30 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:12:30 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:12:30 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.831 seconds (process running for 7.9)
+2025-02-26 20:12:30 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:12:31 [RMI TCP Connection(4)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:12:34 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:12:40 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:12:40 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:12:41 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[858]毫秒
+2025-02-26 20:12:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"2","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"6b176b3a6e6b4c7ab72d85c5fdb66dfc"}]
+2025-02-26 20:12:46 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 20:12:46 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:85d444fa-e293-43c9-93f4-2ebd30b9c01b
+2025-02-26 20:12:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[459]毫秒
+2025-02-26 20:12:47 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:12:47 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[33]毫秒
+2025-02-26 20:12:51 [schedule-pool-2] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 20:13:36 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:13:40 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[4446]毫秒
+2025-02-26 20:13:49 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:20:09 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=6m41s786ms).
+2025-02-26 20:20:09 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[379525]毫秒
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:20:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:26:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:26:44 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 15764 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:26:44 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:26:47 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:26:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:26:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:26:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@44a98a23
+2025-02-26 20:26:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:26:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:26:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:26:50 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:26:50 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:26:50 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:26:50 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:26:51 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:26:51 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:26:51 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:26:51 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:26:51 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 7.836 seconds (process running for 8.956)
+2025-02-26 20:26:52 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:26:52 [RMI TCP Connection(1)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:26:55 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:27:12 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:28:06 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m18s194ms).
+2025-02-26 20:28:06 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[54432]毫秒
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:28:06 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:28:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:28:28 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 18900 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:28:28 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:28:30 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:28:30 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:28:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:28:31 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@4d66cb
+2025-02-26 20:28:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:28:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:28:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:28:32 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:28:33 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:28:33 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:28:33 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:28:34 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:28:34 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:28:34 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:28:34 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:28:34 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.379 seconds (process running for 7.38)
+2025-02-26 20:28:34 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:28:34 [RMI TCP Connection(2)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:28:35 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:28:40 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:28:40 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[5141]毫秒
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:28:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:34:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:34:13 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 21682 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:34:13 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:34:15 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:34:15 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:34:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:34:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@7fad28ac
+2025-02-26 20:34:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:34:16 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:34:16 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:34:18 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:34:18 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:34:18 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:34:19 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:34:19 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:34:19 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:34:19 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:34:19 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:34:20 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 7.345 seconds (process running for 8.445)
+2025-02-26 20:34:20 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:34:20 [RMI TCP Connection(3)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:34:22 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:34:25 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:34:25 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[2679]毫秒
+2025-02-26 20:34:37 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:34:37 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:34:38 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[928]毫秒
+2025-02-26 20:34:42 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"8","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"318dd1b47dec48dc8a48740830912789"}]
+2025-02-26 20:34:46 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 20:34:46 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:5b19e755-ed79-44d6-a982-a7e892eb2250
+2025-02-26 20:34:48 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[6233]毫秒
+2025-02-26 20:34:53 [schedule-pool-2] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 20:34:54 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 20:34:56 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[2312]毫秒
+2025-02-26 20:35:06 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:35:06 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:35:06 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[9]毫秒
+2025-02-26 20:35:11 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"14","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"088f42726fc74df38f9adec811e9cfd4"}]
+2025-02-26 20:37:29 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 20:37:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m40s415ms).
+2025-02-26 20:37:29 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:b1536415-e151-4a44-9aca-d5b080cf53cb
+2025-02-26 20:37:43 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[152818]毫秒
+2025-02-26 20:37:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:37:46 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:37:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[12]毫秒
+2025-02-26 20:37:48 [schedule-pool-2] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 20:37:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:37:50 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:37:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[4]毫秒
+2025-02-26 20:37:52 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"2","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"2fb1f8e643d143fdbc28db8ae2e03974"}]
+2025-02-26 20:37:56 [schedule-pool-3] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 20:37:56 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:9cd0ac01-46fa-4d9d-8307-e7188e0035e1
+2025-02-26 20:47:37 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=10m8s123ms).
+2025-02-26 20:47:37 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[584750]毫秒
+2025-02-26 20:47:41 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"2","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"2fb1f8e643d143fdbc28db8ae2e03974"}]
+2025-02-26 20:47:41 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - ??????
+2025-02-26 20:47:41 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[50]毫秒
+2025-02-26 20:47:41 [schedule-pool-4] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Error][??????]
+2025-02-26 20:47:42 [schedule-pool-2] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 20:47:45 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"2","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"2fb1f8e643d143fdbc28db8ae2e03974"}]
+2025-02-26 20:47:45 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - ??????
+2025-02-26 20:47:45 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[23]毫秒
+2025-02-26 20:47:45 [schedule-pool-5] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Error][??????]
+2025-02-26 20:47:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:47:46 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:47:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[6]毫秒
+2025-02-26 20:47:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"35","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"73a98532d39c42d1b5c9521655c03276"}]
+2025-02-26 20:52:14 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=4m37s237ms).
+2025-02-26 20:52:14 [schedule-pool-3] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 20:52:15 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"35","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"73a98532d39c42d1b5c9521655c03276"}]
+2025-02-26 20:52:22 [XNIO-1 task-3] ERROR c.z.a.b.w.h.GlobalExceptionHandler - ??????
+2025-02-26 20:52:23 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[7788]毫秒
+2025-02-26 20:52:24 [schedule-pool-6] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Error][??????]
+2025-02-26 20:52:34 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:4213c118-5d8a-4610-9b4c-e971e8b970cd
+2025-02-26 20:52:36 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[286095]毫秒
+2025-02-26 20:52:41 [schedule-pool-7] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:55:36 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:55:42 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:55:42 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 31486 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:55:42 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:55:44 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:55:44 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:55:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:55:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@acb1c9c
+2025-02-26 20:55:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:55:44 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:55:44 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:55:46 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:55:47 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:55:47 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:55:47 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:55:48 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:55:48 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:55:48 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:55:48 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:55:48 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.759 seconds (process running for 7.721)
+2025-02-26 20:55:48 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:55:48 [RMI TCP Connection(6)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:55:52 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:55:52 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:55:52 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:55:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[964]毫秒
+2025-02-26 20:55:58 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"40","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"aa078334b4b04e20a5b8815ae52ab541"}]
+2025-02-26 20:55:58 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/auth/login',发生未知异常.
+jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoClassDefFoundError: cn/hutool/jwt/JWTException
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1103)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:547)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.web.filter.RepeatableFilter.doFilter(RepeatableFilter.java:32)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.web.filter.XssFilter.doFilter(XssFilter.java:42)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.encrypt.filter.CryptoFilter.doFilter(CryptoFilter.java:70)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:395)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:861)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.NoClassDefFoundError: cn/hutool/jwt/JWTException
+	at cn.dev33.satoken.jwt.SaJwtUtil.<clinit>(SaJwtUtil.java:34)
+	at cn.dev33.satoken.jwt.StpLogicJwtForSimple.createTokenValue(StpLogicJwtForSimple.java:65)
+	at cn.dev33.satoken.stp.StpLogic.lambda$distUsableToken$0(StpLogic.java:554)
+	at cn.dev33.satoken.strategy.SaStrategy.lambda$new$3(SaStrategy.java:140)
+	at cn.dev33.satoken.stp.StpLogic.distUsableToken(StpLogic.java:550)
+	at cn.dev33.satoken.stp.StpLogic.createLoginSession(StpLogic.java:473)
+	at cn.dev33.satoken.stp.StpLogic.login(StpLogic.java:440)
+	at cn.dev33.satoken.stp.StpUtil.login(StpUtil.java:204)
+	at com.zero.admin.base.satoken.utils.LoginHelper.login(LoginHelper.java:59)
+	at com.zero.admin.web.service.impl.PasswordAuthStrategy.login(PasswordAuthStrategy.java:81)
+	at com.zero.admin.web.service.IAuthStrategy.login(IAuthStrategy.java:33)
+	at com.zero.admin.web.controller.AuthController.login(AuthController.java:102)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	... 70 common frames omitted
+Caused by: java.lang.ClassNotFoundException: cn.hutool.jwt.JWTException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 91 common frames omitted
+2025-02-26 20:55:58 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[464]毫秒
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:56:53 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:56:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:56:59 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 32128 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:56:59 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:57:02 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:57:02 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:57:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:57:02 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@f0381f0
+2025-02-26 20:57:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:57:02 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:57:02 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:57:07 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:57:07 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:57:07 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:57:07 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:57:08 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:57:08 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:57:08 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:57:08 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:57:08 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 9.848 seconds (process running for 11.11)
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 20:57:08 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 20:57:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 20:57:13 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 32222 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 20:57:13 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 20:57:15 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 20:57:16 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 20:57:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 20:57:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1c14d24d
+2025-02-26 20:57:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 20:57:16 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 20:57:16 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 20:57:18 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 20:57:18 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 20:57:18 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:57:18 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 20:57:19 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 20:57:19 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 20:57:19 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 20:57:19 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 20:57:19 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.354 seconds (process running for 7.279)
+2025-02-26 20:57:19 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 20:57:20 [RMI TCP Connection(2)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 20:57:23 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 20:57:27 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 20:57:27 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 20:57:28 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[788]毫秒
+2025-02-26 20:57:33 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"10","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"9bf874a553de4abfa40fb512119cb306"}]
+2025-02-26 20:57:36 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 20:57:36 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:e8a4588d-0a35-4faa-9807-5ee6ea17daad
+2025-02-26 20:57:38 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[4799]毫秒
+2025-02-26 20:57:39 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 21:01:22 [schedule-pool-2] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 21:01:22 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=4m6s278ms).
+2025-02-26 21:01:22 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[223167]毫秒
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 21:01:22 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 21:01:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:01:26 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 34130 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:01:26 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:01:28 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:01:29 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:01:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:01:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1820f274
+2025-02-26 21:01:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:01:29 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:01:29 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:01:31 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:01:31 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:01:31 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:01:31 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:01:32 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:01:32 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:01:32 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:01:32 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:01:32 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.515 seconds (process running for 7.479)
+2025-02-26 21:01:32 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:01:32 [RMI TCP Connection(5)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:01:36 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 21:01:42 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 21:07:10 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:07:10 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 36901 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:07:10 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:07:13 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:07:13 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:07:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:07:13 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@acb1c9c
+2025-02-26 21:07:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:07:13 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:07:13 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:07:15 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:07:15 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:07:16 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:07:16 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:07:17 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:07:17 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:07:17 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:07:17 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:07:17 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.794 seconds (process running for 7.773)
+2025-02-26 21:07:17 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:07:17 [RMI TCP Connection(2)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:07:21 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:07:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:07:46 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:07:47 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[902]毫秒
+2025-02-26 21:07:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"4","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"fee3aaa07a644384b19f7b76c10872c2"}]
+2025-02-26 21:07:50 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/auth/login',发生未知异常.
+jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoClassDefFoundError: cn/hutool/jwt/JWTException
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1103)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:547)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.web.filter.RepeatableFilter.doFilter(RepeatableFilter.java:32)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.web.filter.XssFilter.doFilter(XssFilter.java:42)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.encrypt.filter.CryptoFilter.doFilter(CryptoFilter.java:70)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:395)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:861)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.NoClassDefFoundError: cn/hutool/jwt/JWTException
+	at cn.dev33.satoken.jwt.SaJwtUtil.<clinit>(SaJwtUtil.java:34)
+	at cn.dev33.satoken.jwt.StpLogicJwtForSimple.createTokenValue(StpLogicJwtForSimple.java:65)
+	at cn.dev33.satoken.stp.StpLogic.lambda$distUsableToken$0(StpLogic.java:554)
+	at cn.dev33.satoken.strategy.SaStrategy.lambda$new$3(SaStrategy.java:140)
+	at cn.dev33.satoken.stp.StpLogic.distUsableToken(StpLogic.java:550)
+	at cn.dev33.satoken.stp.StpLogic.createLoginSession(StpLogic.java:473)
+	at cn.dev33.satoken.stp.StpLogic.login(StpLogic.java:440)
+	at cn.dev33.satoken.stp.StpUtil.login(StpUtil.java:204)
+	at com.zero.admin.base.satoken.utils.LoginHelper.login(LoginHelper.java:59)
+	at com.zero.admin.web.service.impl.PasswordAuthStrategy.login(PasswordAuthStrategy.java:81)
+	at com.zero.admin.web.service.IAuthStrategy.login(IAuthStrategy.java:33)
+	at com.zero.admin.web.controller.AuthController.login(AuthController.java:102)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	... 70 common frames omitted
+Caused by: java.lang.ClassNotFoundException: cn.hutool.jwt.JWTException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 91 common frames omitted
+2025-02-26 21:07:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[373]毫秒
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 21:09:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 21:09:30 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:09:30 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 37967 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:09:30 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:09:32 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:09:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:09:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:09:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5c552f08
+2025-02-26 21:09:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:09:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:09:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:09:34 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:09:34 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:09:34 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:09:34 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:09:36 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:09:36 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:09:36 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:09:36 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:09:36 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 5.566 seconds (process running for 6.479)
+2025-02-26 21:09:36 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:09:36 [RMI TCP Connection(2)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:09:38 [XNIO-1 task-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /auth/captcha
+2025-02-26 21:09:38 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/auth/captcha'不存在.
+2025-02-26 21:09:39 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:09:42 [XNIO-1 task-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /auth/captcha
+2025-02-26 21:09:42 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/auth/captcha'不存在.
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 21:10:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 21:10:29 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:10:29 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 38456 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:10:29 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:10:32 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:10:32 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:10:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:10:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1820f274
+2025-02-26 21:10:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:10:32 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:10:32 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:10:34 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:10:34 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:10:34 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:10:34 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:10:35 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:10:35 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:10:35 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:10:35 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:10:35 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.7 seconds (process running for 7.786)
+2025-02-26 21:10:35 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:10:36 [RMI TCP Connection(5)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:10:39 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:10:45 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:10:45 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:10:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[828]毫秒
+2025-02-26 21:10:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"7","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"23228bb6310b4402911160f4c5b02cac"}]
+2025-02-26 21:10:53 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 21:10:53 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:4bc846ee-91e3-45f2-8e89-7623a3ce8cda
+2025-02-26 21:10:56 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[5557]毫秒
+2025-02-26 21:10:57 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 21:11:08 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:11:08 [schedule-pool-2] ERROR c.zero.admin.base.core.utils.Threads - null
+java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections$List12.<init>(ImmutableCollections.java:563)
+	at java.base/java.util.List.of(List.java:937)
+	at com.zero.admin.web.controller.AuthController.lambda$login$0(AuthController.java:108)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-02-26 21:11:08 [XNIO-1 task-3] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:11:08 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[10]毫秒
+2025-02-26 21:11:08 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:11:08 [XNIO-1 task-3] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 7, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:11:08 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[6]毫秒
+2025-02-26 21:11:08 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[11322]毫秒
+2025-02-26 21:11:14 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"3","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"2253eb09708b4053a01336546baaf11c"}]
+2025-02-26 21:20:28 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 21:20:28 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=9m19s634ms).
+2025-02-26 21:20:28 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:cab0417d-de42-4606-a332-a2d80b35d4da
+2025-02-26 21:20:28 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[553063]毫秒
+2025-02-26 21:20:28 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:20:28 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:24:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:24:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 44800 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:24:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:24:24 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:24:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:24:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:24:25 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@35f35c59
+2025-02-26 21:24:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:24:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:24:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:24:37 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:24:38 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:24:38 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:24:38 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:24:39 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:24:39 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:24:39 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:24:39 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:24:39 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 16.913 seconds (process running for 18.077)
+2025-02-26 21:24:39 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:24:39 [RMI TCP Connection(4)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:24:43 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:24:45 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:24:45 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:24:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[953]毫秒
+2025-02-26 21:24:52 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"12","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"8082e9114e1c48e3a69c99fb22172afb"}]
+2025-02-26 21:24:53 [XNIO-1 task-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/auth/login',发生未知异常.
+jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoClassDefFoundError: cn/hutool/jwt/JWTException
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1103)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:547)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.web.filter.RepeatableFilter.doFilter(RepeatableFilter.java:32)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.web.filter.XssFilter.doFilter(XssFilter.java:42)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.zero.admin.base.encrypt.filter.CryptoFilter.doFilter(CryptoFilter.java:70)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:395)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:861)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.NoClassDefFoundError: cn/hutool/jwt/JWTException
+	at cn.dev33.satoken.jwt.SaJwtUtil.<clinit>(SaJwtUtil.java:34)
+	at cn.dev33.satoken.jwt.StpLogicJwtForSimple.createTokenValue(StpLogicJwtForSimple.java:65)
+	at cn.dev33.satoken.stp.StpLogic.lambda$distUsableToken$0(StpLogic.java:554)
+	at cn.dev33.satoken.strategy.SaStrategy.lambda$new$3(SaStrategy.java:140)
+	at cn.dev33.satoken.stp.StpLogic.distUsableToken(StpLogic.java:550)
+	at cn.dev33.satoken.stp.StpLogic.createLoginSession(StpLogic.java:473)
+	at cn.dev33.satoken.stp.StpLogic.login(StpLogic.java:440)
+	at cn.dev33.satoken.stp.StpUtil.login(StpUtil.java:204)
+	at com.zero.admin.base.satoken.utils.LoginHelper.login(LoginHelper.java:59)
+	at com.zero.admin.web.service.impl.PasswordAuthStrategy.login(PasswordAuthStrategy.java:81)
+	at com.zero.admin.web.service.IAuthStrategy.login(IAuthStrategy.java:33)
+	at com.zero.admin.web.controller.AuthController.login(AuthController.java:102)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	... 70 common frames omitted
+Caused by: java.lang.ClassNotFoundException: cn.hutool.jwt.JWTException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 91 common frames omitted
+2025-02-26 21:24:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[384]毫秒
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 21:25:10 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 21:26:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:26:35 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 45923 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:26:35 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:26:37 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:26:37 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:26:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:26:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@66e218d8
+2025-02-26 21:26:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:26:37 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:26:37 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:26:39 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:26:39 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:26:40 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:26:40 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:26:40 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:26:40 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:26:40 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:26:40 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:26:41 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.335 seconds (process running for 7.33)
+2025-02-26 21:26:41 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:26:41 [RMI TCP Connection(1)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:26:45 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:26:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:26:50 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:26:51 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[941]毫秒
+2025-02-26 21:26:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"2","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"cd552d2afa65436d9bc2350f7c783367"}]
+2025-02-26 21:27:13 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 21:27:13 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJzeXNfdXNlcjoxIiwicm5TdHIiOiJ3eDRCaWNRNGJzN0owSnJDRmJrNWVnSjBxdXAxd3k2aCIsImNsaWVudGlkIjoiZTVjZDdlNDg5MWJmOTVkMWQxOTIwNmNlMjRhN2IzMmUiLCJ0ZW5hbnRJZCI6IjAwMDAwMCIsInVzZXJJZCI6MSwidXNlck5hbWUiOiJhZG1pbiIsImRlcHRJZCI6MTAzLCJkZXB0TmFtZSI6IueglOWPkemDqOmXqCIsImRlcHRDYXRlZ29yeSI6IiJ9._VlIDAJ3uN3jl6MuWZ8mQiddaye3jaAVidzTHOrg0_s
+2025-02-26 21:27:13 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[20320]毫秒
+2025-02-26 21:27:14 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:27:14 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:27:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 21:27:45 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 46564 (/Users/akai/Documents/GitHub/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/vue-zero-admin-api)
+2025-02-26 21:27:45 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 21:27:47 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 21:27:47 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 21:27:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 21:27:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@478fe415
+2025-02-26 21:27:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 21:27:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 21:27:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 21:27:49 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 21:27:50 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-02-26 21:27:50 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:27:50 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 21:27:51 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 21:27:51 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 21:27:51 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 21:27:51 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 21:27:51 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.503 seconds (process running for 7.604)
+2025-02-26 21:27:51 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 21:27:51 [RMI TCP Connection(2)-127.0.0.1] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 21:27:55 [redisson-netty-1-22] WARN  org.redisson.connection.DNSMonitor - Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-02-26 21:28:00 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 21:28:00 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:127.0.0.1:'
+2025-02-26 21:28:01 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[816]毫秒
+2025-02-26 21:28:04 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"15","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"aebd3439cccd43f09bd1291465ff8a32"}]
+2025-02-26 21:28:04 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [127.0.0.1]内网IP[admin][Success][????]
+2025-02-26 21:28:04 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJzeXNfdXNlcjoxIiwicm5TdHIiOiJYRldMQ2RFTm1DbkhWYXl4WnVoYmRmSlluejBkUjNROCIsImNsaWVudGlkIjoiZTVjZDdlNDg5MWJmOTVkMWQxOTIwNmNlMjRhN2IzMmUiLCJ0ZW5hbnRJZCI6IjAwMDAwMCIsInVzZXJJZCI6MSwidXNlck5hbWUiOiJhZG1pbiIsImRlcHRJZCI6MTAzLCJkZXB0TmFtZSI6IueglOWPkemDqOmXqCIsImRlcHRDYXRlZ29yeSI6IiJ9.l9WKmQ_m3vD1_E-8jq3VpJHG4C9xBU_Pgrro9TS8FoI
+2025-02-26 21:28:04 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[731]毫秒
+2025-02-26 21:28:05 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 21:28:05 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[41]毫秒
+2025-02-26 21:28:09 [schedule-pool-1] INFO  c.z.a.b.sse.core.SseEmitterManager - SSE发送主题订阅消息topic:global:sse session keys:[1] message:欢迎登录Zero-Admin后台管理系统
+2025-02-26 21:28:09 [redisson-3-10] INFO  c.z.a.b.s.listener.SseTopicListener - SSE主题订阅收到消息session keys=[1] message=欢迎登录Zero-Admin后台管理系统
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 21:31:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye

@@ -9,7 +9,6 @@
     <artifactId>zero-base-satoken</artifactId>
     <name>zero-base-satoken</name>
 
-
     <dependencies>
 
         <dependency>

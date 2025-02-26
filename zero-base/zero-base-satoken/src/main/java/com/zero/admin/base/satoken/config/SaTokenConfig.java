@@ -10,6 +10,7 @@ import com.zero.admin.base.satoken.core.service.SaPermissionImpl;
 import com.zero.admin.base.satoken.handler.SaTokenExceptionHandler;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
@@ -23,7 +24,6 @@ public class SaTokenConfig {
 
     @Bean
     public StpLogic getStpLogicJwt() {
-        System.out.println("Sa-Token整合JWT模式启用成功");
         // Sa-Token 整合 jwt (简单模式)
         return new StpLogicJwtForSimple();
     }
