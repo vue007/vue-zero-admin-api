@@ -77,7 +77,8 @@ sa-token:
   token-name: Authorization  # token名称 (同时也是cookie名称)
   is-concurrent: true # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
   is-share: false # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
-  jwt-secret-key: abcdefghijklmnopqrstuvwxyz  # jwt秘钥
+  jwt-secret-key: asdasdasifhueuiwyurfewbfjsdaakai  # jwt秘钥
+  timeout: 86400 # token有效期 (单位: 秒)
 
 # security配置
 security:

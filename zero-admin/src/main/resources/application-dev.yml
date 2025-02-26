@@ -41,12 +41,12 @@ spring.data:
 
 # redisson 配置
 redisson:
-  keyPrefix:                                     # redis key前缀
-  threads: 4                                     # 线程池数量
-  nettyThreads: 8                                # Netty线程池数量
+  keyPrefix: ${zeroAdmin.name}                   # redis key前缀
+  threads: 2                                     # 线程池数量
+  nettyThreads: 4                                # Netty线程池数量
   singleServerConfig:                            # 单节点配置
     clientName: ${zeroAdmin.name}                  # 客户端名称
-    connectionMinimumIdleSize: 8                   # 最小空闲连接数
+    connectionMinimumIdleSize: 2                   # 最小空闲连接数
     connectionPoolSize: 32                         # 连接池大小
     idleConnectionTimeout: 10000                   # 连接空闲超时，单位：毫秒
     timeout: 3000                                  # 命令等待超时，单位：毫秒

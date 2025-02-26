@@ -112,3 +112,914 @@
 2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
 2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
 2025-02-25 01:16:07 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 10:34:27 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 10:34:27 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 58982 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 10:34:27 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 10:34:33 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 10:34:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 10:34:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 10:34:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@79631db0
+2025-02-26 10:34:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 10:34:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 10:34:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 10:34:36 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 10:34:36 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 10:34:37 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 10:34:39 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 10:34:39 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 10:34:39 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 10:34:39 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 10:34:39 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 12.67 seconds (process running for 13.614)
+2025-02-26 10:34:39 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 10:34:40 [RMI TCP Connection(4)-10.101.195.199] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 11:23:55 [undertow-0] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:23:56 [undertow-0] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[626]毫秒
+2025-02-26 11:24:00 [undertow-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:24:00 [undertow-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[114]毫秒
+2025-02-26 11:24:11 [undertow-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:24:11 [undertow-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[70]毫秒
+2025-02-26 11:24:38 [undertow-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 11:24:38 [undertow-3] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 11:24:40 [undertow-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[2386]毫秒
+2025-02-26 11:24:50 [undertow-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"11","rememberMe":true,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"f625ee6415674f15a20803f91d8dedb3"}]
+2025-02-26 11:24:51 [async-0] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 11:24:51 [undertow-4] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:e4d60186-1f8c-4624-8d25-4051727abf20
+2025-02-26 11:24:51 [undertow-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[786]毫秒
+2025-02-26 11:24:59 [undertow-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:24:59 [undertow-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[90]毫秒
+2025-02-26 11:30:03 [undertow-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:30:03 [undertow-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[107]毫秒
+2025-02-26 11:30:29 [undertow-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:30:29 [undertow-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[147]毫秒
+2025-02-26 11:37:50 [undertow-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:37:50 [undertow-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[102]毫秒
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 11:38:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 11:38:25 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 11:38:25 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 71576 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 11:38:25 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 11:38:32 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 11:38:32 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 11:38:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 11:38:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1fcfcf37
+2025-02-26 11:38:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 11:38:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 11:38:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 11:38:35 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 11:38:35 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 11:38:35 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 11:38:36 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 11:38:36 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 11:38:36 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 11:38:36 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 11:38:36 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 12.262 seconds (process running for 15.651)
+2025-02-26 11:38:36 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 11:38:47 [undertow-0] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 11:38:47 [undertow-0] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:38:48 [undertow-0] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[697]毫秒
+2025-02-26 11:41:53 [undertow-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:41:53 [undertow-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[208]毫秒
+2025-02-26 11:43:00 [undertow-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:49:16 [undertow-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:49:16 [undertow-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[376484]毫秒
+2025-02-26 11:49:23 [undertow-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[6961]毫秒
+2025-02-26 11:49:26 [undertow-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:49:37 [undertow-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:50:09 [undertow-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[31738]毫秒
+2025-02-26 11:50:09 [undertow-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[42874]毫秒
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 11:50:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 11:50:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 11:50:44 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 73799 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 11:50:44 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 11:50:48 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 11:50:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 11:50:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 11:50:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1238a074
+2025-02-26 11:50:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 11:50:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 11:50:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 11:50:52 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 11:50:52 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 11:50:52 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 11:50:53 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 11:50:53 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 11:50:53 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 11:50:53 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 11:50:54 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 10.151 seconds (process running for 14.075)
+2025-02-26 11:50:54 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 11:51:01 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 11:51:01 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:51:23 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[21641]毫秒
+2025-02-26 11:51:26 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 11:51:26 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 11:51:28 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[2122]毫秒
+2025-02-26 11:51:36 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"3","rememberMe":true,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"ad10bdea8dd34194b3b4f6ae871c3b79"}]
+2025-02-26 11:51:47 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 11:51:47 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:27ace746-1752-4d05-b5c9-7a76580a1933
+2025-02-26 11:51:48 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[12107]毫秒
+2025-02-26 11:52:00 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:52:12 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[11163]毫秒
+2025-02-26 11:52:26 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:52:42 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[16216]毫秒
+2025-02-26 11:52:47 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:53:39 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[52084]毫秒
+2025-02-26 11:54:59 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 11:58:04 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 11:58:04 [XNIO-1 task-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 11:58:08 [XNIO-1 task-3] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 11:58:08 [XNIO-1 task-4] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 11:58:08 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[189074]毫秒
+2025-02-26 11:58:08 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[3915]毫秒
+2025-02-26 11:58:08 [XNIO-1 task-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[3912]毫秒
+2025-02-26 11:58:14 [XNIO-1 task-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"3","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"f27a11395ba64bc5be77305c8c3926ad"}]
+2025-02-26 12:37:43 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 12:37:44 [XNIO-1 task-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[2370518]毫秒
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 12:37:44 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 12:38:33 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 12:38:33 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 82488 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 12:38:33 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 12:38:43 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 12:38:43 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 12:38:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 12:38:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@48aaaed9
+2025-02-26 12:38:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 12:38:44 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 12:38:44 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 12:38:47 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 12:38:47 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 12:38:47 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 12:38:48 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 12:38:48 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 12:38:48 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 12:38:48 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 12:38:48 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 15.148 seconds (process running for 17.189)
+2025-02-26 12:38:48 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 12:38:53 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 12:38:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 12:38:53 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 12:38:56 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[2831]毫秒
+2025-02-26 12:39:07 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"42","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"2f615f4e0c8c49ebbb02b01b6d71318f"}]
+2025-02-26 12:39:08 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[370]毫秒
+2025-02-26 12:39:08 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Error][?????]
+2025-02-26 12:39:22 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 12:39:23 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 12:39:29 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 12:39:29 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 82680 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 12:39:29 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 12:39:32 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 12:39:32 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 12:39:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 12:39:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@4f98ac31
+2025-02-26 12:39:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 12:39:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 12:39:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 12:39:34 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 12:39:35 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 12:39:35 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 12:39:36 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 12:39:36 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 12:39:36 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 12:39:36 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 12:39:36 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 6.747 seconds (process running for 7.907)
+2025-02-26 12:39:36 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 12:39:36 [RMI TCP Connection(3)-10.101.195.199] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 12:39:41 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 12:39:41 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 12:39:42 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[845]毫秒
+2025-02-26 12:39:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"1","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"dec6f6cc95634a41a9cefac94f3b6f94"}]
+2025-02-26 12:39:46 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 12:39:46 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:e90754c8-9193-49da-b0f3-98bddfd15b2d
+2025-02-26 12:39:46 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[761]毫秒
+2025-02-26 12:39:48 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 12:39:48 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[53]毫秒
+2025-02-26 12:39:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 12:39:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[81]毫秒
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 12:41:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 14:30:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 14:30:04 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 3664 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 14:30:04 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 14:30:12 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 14:30:13 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 14:30:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 14:30:13 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@71469e01
+2025-02-26 14:30:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 14:30:13 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 14:30:13 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 14:30:17 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 14:30:18 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:30:18 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:30:19 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 14:30:19 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 14:30:19 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 14:30:19 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 14:30:19 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 15.014 seconds (process running for 17.838)
+2025-02-26 14:30:19 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 14:31:39 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 14:31:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 14:31:45 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 4035 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 14:31:45 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 14:31:51 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 14:31:52 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 14:31:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 14:31:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@182dcd2b
+2025-02-26 14:31:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 14:31:53 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 14:31:53 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 14:31:55 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 14:31:56 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:31:56 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:31:56 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 14:31:56 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 14:31:56 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 14:31:57 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 14:31:57 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 11.842 seconds (process running for 15.201)
+2025-02-26 14:31:57 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 14:32:39 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 14:32:39 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 14:32:56 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[16798]毫秒
+2025-02-26 14:33:21 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:33:21 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:33:24 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[3325]毫秒
+2025-02-26 14:33:31 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"18","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"ed5f23406d7a4ef9aa7cf712e34ef9b6"}]
+2025-02-26 14:34:11 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 14:34:11 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:e404e6e8-08d3-4ab8-8019-b936218f0a49
+2025-02-26 14:34:11 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[40280]毫秒
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 14:35:36 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 14:35:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 14:35:44 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 4820 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 14:35:44 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 14:35:47 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 14:35:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 14:35:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 14:35:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@37344d31
+2025-02-26 14:35:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 14:35:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 14:35:48 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 14:35:50 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 14:35:51 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:35:51 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:35:52 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 14:35:52 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 14:35:52 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 14:35:52 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 14:35:52 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 8.31 seconds (process running for 10.234)
+2025-02-26 14:35:52 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 14:36:20 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 14:36:20 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:36:20 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:36:22 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[1382]毫秒
+2025-02-26 14:36:34 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:36:34 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:36:34 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[81]毫秒
+2025-02-26 14:36:47 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"3","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"584233f37a83400ca627604daff5aeee"}]
+2025-02-26 14:37:03 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 14:37:03 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:976b38c9-2b64-4fe1-8fa9-e2be41f0a43b
+2025-02-26 14:37:45 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[57826]毫秒
+2025-02-26 14:37:45 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 14:37:45 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 14:37:50 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 14:37:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 14:37:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 14:37:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 14:37:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 14:37:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 14:38:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 14:38:02 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 5228 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 14:38:02 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 14:38:06 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 14:38:06 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 14:38:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 14:38:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@7d8d671b
+2025-02-26 14:38:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 14:38:07 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 14:38:07 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 14:38:09 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 14:38:10 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:38:10 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:38:12 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 14:38:12 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 14:38:12 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 14:38:12 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 14:38:12 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 10.059 seconds (process running for 11.379)
+2025-02-26 14:38:12 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 14:38:15 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 14:38:15 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:38:15 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:38:16 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[1193]毫秒
+2025-02-26 14:38:21 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:38:21 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 8, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:38:21 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[225]毫秒
+2025-02-26 14:38:24 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"6","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"2d43477da68645e786cc7af9e16657cf"}]
+2025-02-26 14:38:35 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 14:38:35 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:0fa0503e-db7e-4f1d-97de-a448932f4b17
+2025-02-26 14:40:01 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[96731]毫秒
+2025-02-26 14:40:08 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:40:08 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:40:08 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[69]毫秒
+2025-02-26 14:40:12 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"1","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"772107c9095449009d683dfa9f146bf3"}]
+2025-02-26 14:40:22 [schedule-pool-2] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 14:40:22 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:8ebe1113-8647-4376-9acc-c453aceec915
+2025-02-26 14:40:38 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[25909]毫秒
+2025-02-26 14:40:38 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 14:40:38 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 14:40:43 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 14:40:43 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 14:40:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 14:40:43 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 14:40:43 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 14:40:43 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 14:41:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 14:41:04 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 5962 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 14:41:04 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 14:41:07 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 14:41:08 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 14:41:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 14:41:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@50d4775b
+2025-02-26 14:41:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 14:41:08 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 14:41:08 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 14:41:12 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 14:41:12 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:41:12 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 14:41:13 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 14:41:13 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 14:41:13 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 14:41:13 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 14:41:13 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 9.732 seconds (process running for 11.504)
+2025-02-26 14:41:13 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 14:42:02 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 14:42:02 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:42:02 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:42:04 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[1902]毫秒
+2025-02-26 14:42:13 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"1","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"ccc6da9fac5d48b6ad981683d47acbf5"}]
+2025-02-26 14:42:22 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 14:42:22 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:669f3187-e167-4e09-b17d-9fde7c833c23
+2025-02-26 14:43:05 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[52139]毫秒
+2025-02-26 14:44:16 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 14:44:16 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 14:44:17 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[412]毫秒
+2025-02-26 14:44:22 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"6","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"3c9da70298964f63a3b03b4ec15e8b3b"}]
+2025-02-26 14:44:30 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:66aaff7d-1b2b-4767-a53f-69b6be25a633
+2025-02-26 14:44:30 [schedule-pool-2] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 14:44:30 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[8038]毫秒
+2025-02-26 14:44:32 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 14:44:32 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[153]毫秒
+2025-02-26 14:53:59 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 14:53:59 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[124]毫秒
+2025-02-26 14:55:16 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 14:56:02 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[45377]毫秒
+2025-02-26 14:56:08 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 14:59:39 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[211066]毫秒
+2025-02-26 14:59:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 15:06:49 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[419086]毫秒
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 15:06:49 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 15:08:17 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 15:08:17 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 11993 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 15:08:17 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 15:08:21 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 15:08:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 15:08:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 15:08:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@570127fa
+2025-02-26 15:08:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 15:08:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 15:08:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 15:08:24 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 15:08:25 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:08:25 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:08:26 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 15:08:26 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 15:08:26 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 15:08:26 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 15:08:26 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 9.435 seconds (process running for 14.154)
+2025-02-26 15:08:26 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 15:08:38 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 15:08:38 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 15:22:48 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[850465]毫秒
+2025-02-26 15:22:48 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 15:22:48 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 15:22:49 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 15:22:49 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 15:22:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 15:22:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 15:22:49 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 15:22:49 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 15:23:00 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 15:23:00 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 15216 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 15:23:00 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 15:23:06 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 15:23:06 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 15:23:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 15:23:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@b5d7233
+2025-02-26 15:23:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 15:23:07 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 15:23:07 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 15:23:09 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 15:23:10 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:23:10 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:23:12 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 15:23:12 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 15:23:12 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 15:23:12 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 15:23:12 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 12.765 seconds (process running for 15.689)
+2025-02-26 15:23:12 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 15:23:25 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 15:23:25 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 15:25:16 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[111219]毫秒
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 15:29:30 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 15:31:20 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 15:31:20 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 17411 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 15:31:20 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 15:31:29 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 15:31:30 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 15:31:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 15:31:31 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1c3b221f
+2025-02-26 15:31:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 15:31:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 15:31:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 15:31:33 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 15:31:33 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:31:34 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:31:34 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 15:31:34 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 15:31:34 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 15:31:34 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 15:31:35 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 14.739 seconds (process running for 24.77)
+2025-02-26 15:31:35 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 15:31:40 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 15:31:40 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 15:38:53 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[433000]毫秒
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 15:38:53 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 15:39:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 15:39:05 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 19245 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 15:39:05 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 15:39:08 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 15:39:09 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 15:39:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 15:39:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@767cc126
+2025-02-26 15:39:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 15:39:09 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 15:39:09 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 15:39:12 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 15:39:12 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:39:12 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:39:13 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 15:39:13 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 15:39:13 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 15:39:13 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 15:39:13 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 8.843 seconds (process running for 11.189)
+2025-02-26 15:39:14 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 15:39:27 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 15:39:27 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 15:43:09 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[221633]毫秒
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 15:43:09 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 15:51:39 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 15:51:39 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 22266 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 15:51:39 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 15:51:44 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 15:51:45 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 15:51:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 15:51:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@abf1816
+2025-02-26 15:51:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 15:51:45 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 15:51:45 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 15:51:48 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 15:51:48 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:51:48 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 15:51:49 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 15:51:49 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 15:51:49 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 15:51:49 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 15:51:49 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 10.902 seconds (process running for 14.363)
+2025-02-26 15:51:49 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 15:51:57 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 15:51:57 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 15:56:01 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[244072]毫秒
+2025-02-26 15:56:10 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 16:08:52 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[762349]毫秒
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 16:08:52 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 16:10:17 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 16:10:17 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 27064 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 16:10:17 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 16:10:21 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 16:10:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 16:10:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 16:10:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@acb1c9c
+2025-02-26 16:10:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 16:10:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 16:10:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 16:10:24 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 16:10:25 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:10:25 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:10:26 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 16:10:26 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 16:10:26 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 16:10:26 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 16:10:26 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 9.21 seconds (process running for 12.299)
+2025-02-26 16:10:26 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 16:11:03 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 16:11:03 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 16:39:40 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[1717287]毫秒
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 16:39:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 16:39:50 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 16:39:50 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 34488 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 16:39:50 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 16:39:57 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 16:39:58 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 16:39:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 16:40:00 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@76208b80
+2025-02-26 16:40:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 16:40:00 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 16:40:00 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 16:40:02 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 16:40:02 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:40:03 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:40:04 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 16:40:04 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 16:40:04 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 16:40:04 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 16:40:04 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 14.194 seconds (process running for 17.406)
+2025-02-26 16:40:04 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 16:40:10 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 16:40:10 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 16:47:30 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[439723]毫秒
+2025-02-26 16:50:07 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 16:50:07 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 16:50:07 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 16:50:08 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 16:50:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 16:50:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 16:50:08 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 16:50:08 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 16:51:37 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 16:51:37 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 36552 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 16:51:37 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 16:51:44 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 16:51:44 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 16:51:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 16:51:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@2c92f094
+2025-02-26 16:51:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 16:51:45 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 16:51:45 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 16:51:47 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 16:51:48 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:51:48 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:51:49 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 16:51:49 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 16:51:49 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 16:51:49 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 16:51:49 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 12.925 seconds (process running for 17.136)
+2025-02-26 16:51:49 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 16:52:18 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 16:52:19 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 16:52:24 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[5867]毫秒
+2025-02-26 16:52:25 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 16:52:25 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 16:52:26 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 16:52:26 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 16:52:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 16:52:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 16:52:26 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 16:52:26 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 16:54:00 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 16:54:00 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 37030 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 16:54:00 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 16:54:03 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 16:54:03 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 16:54:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 16:54:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@767cc126
+2025-02-26 16:54:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 16:54:04 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 16:54:04 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 16:54:06 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 16:54:06 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:54:06 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 16:54:07 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 16:54:07 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 16:54:07 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 16:54:07 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 16:54:07 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 7.617 seconds (process running for 9.711)
+2025-02-26 16:54:07 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 16:54:16 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 16:54:16 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:04:55 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[638678]毫秒
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:04:55 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:05:42 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:05:42 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 39352 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:05:42 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:05:48 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:05:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:05:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:05:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@abf1816
+2025-02-26 17:05:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:05:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:05:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:05:52 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:05:52 [redisson-netty-1-8] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:05:53 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:05:54 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:05:54 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:05:54 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:05:54 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:05:54 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 12.475 seconds (process running for 16.136)
+2025-02-26 17:05:54 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:06:04 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:06:04 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:06:13 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[9642]毫秒
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:12:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:12:33 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:12:33 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 40909 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:12:33 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:12:36 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:12:36 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:12:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:12:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5badeda0
+2025-02-26 17:12:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:12:37 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:12:37 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:12:40 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:12:40 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:12:40 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:12:42 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:12:42 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:12:42 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:12:42 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:12:42 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 10.117 seconds (process running for 11.057)
+2025-02-26 17:12:42 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:12:42 [RMI TCP Connection(4)-10.101.195.199] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:20:45 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:21:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:21:59 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 42630 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:21:59 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:22:02 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:22:03 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:22:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:22:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@2674ca88
+2025-02-26 17:22:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:22:03 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:22:03 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:22:06 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:22:06 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:22:06 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:22:07 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:22:07 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:22:07 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:22:07 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:22:07 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 8.968 seconds (process running for 13.681)
+2025-02-26 17:22:07 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:23:25 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:23:25 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:23:26 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[510]毫秒
+2025-02-26 17:23:39 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:23:39 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:23:40 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:23:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:23:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:23:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:23:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:23:40 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:23:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:23:47 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 43100 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:23:47 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:23:50 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:23:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:23:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:23:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@272c5abd
+2025-02-26 17:23:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:23:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:23:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:23:53 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:23:54 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:23:54 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:23:56 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:23:56 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:23:56 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:23:56 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:23:56 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 10.07 seconds (process running for 12.272)
+2025-02-26 17:23:56 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:24:39 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:24:39 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:25:01 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[22140]毫秒
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:26:46 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:26:51 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:26:51 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 43649 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:26:51 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:26:54 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:26:55 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:26:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:26:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@2674ca88
+2025-02-26 17:26:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:26:55 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:26:55 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:26:57 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:26:58 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:26:58 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:26:59 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:26:59 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:26:59 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:26:59 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:26:59 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 7.97 seconds (process running for 8.587)
+2025-02-26 17:26:59 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:26:59 [RMI TCP Connection(1)-10.101.195.199] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:27:17 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:27:17 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[215]毫秒
+2025-02-26 17:27:23 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 17:27:23 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 17:27:26 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[3139]毫秒
+2025-02-26 17:27:30 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"0","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"d9be80f903b64e8c9b0383f537ca3011"}]
+2025-02-26 17:27:31 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 17:27:31 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[717]毫秒
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:28:15 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:35:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:35:45 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 45525 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:35:45 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:35:50 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:35:51 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:35:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:35:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@67a3394c
+2025-02-26 17:35:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:35:51 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:35:51 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:35:53 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:35:53 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:35:53 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:35:54 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:35:54 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:35:54 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:35:54 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:35:55 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 9.756 seconds (process running for 11.991)
+2025-02-26 17:35:55 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:36:39 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:36:39 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2025-02-26 17:36:39 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2025-02-26 17:36:42 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[2409]毫秒
+2025-02-26 17:36:49 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"username":"admin","password":"admin123","code":"27","rememberMe":true,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","tenantId":"000000","uuid":"57806c52d709453089ea9873c80d6ff3"}]
+2025-02-26 17:36:50 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][????]
+2025-02-26 17:36:50 [XNIO-1 task-2] INFO  c.z.a.w.listener.UserActionListener - user doLogin, userId:sys_user:1, token:6ba086d8-be0c-4507-866f-b643d26e720b
+2025-02-26 17:36:50 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[883]毫秒
+2025-02-26 17:36:51 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:36:51 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[164]毫秒
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 17:37:16 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-02-26 17:37:21 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-26 17:37:21 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 45764 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-02-26 17:37:21 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-02-26 17:37:24 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-02-26 17:37:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-02-26 17:37:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-02-26 17:37:25 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@1c681761
+2025-02-26 17:37:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-02-26 17:37:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-02-26 17:37:25 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-02-26 17:37:27 [main] INFO  org.redisson.Version - Redisson 3.45.0
+2025-02-26 17:37:27 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:37:27 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2025-02-26 17:37:28 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-02-26 17:37:28 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-02-26 17:37:28 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-02-26 17:37:28 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-02-26 17:37:28 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 7.828 seconds (process running for 9.786)
+2025-02-26 17:37:28 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2025-02-26 17:38:29 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-26 17:38:29 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:38:29 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[567]毫秒
+2025-02-26 17:38:59 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 17:41:51 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[171486]毫秒
+2025-02-26 19:09:45 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2025-02-26 19:11:35 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[109572]毫秒
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-02-26 19:11:35 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye

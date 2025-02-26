@@ -18,11 +18,12 @@ import org.springframework.context.annotation.PropertySource;
  * @author Akai
  */
 @AutoConfiguration
-@PropertySource(value = "classpath:common-satoken.yml", factory = YmlPropertySourceFactory.class)
+@PropertySource(value = "classpath:base-satoken.yml", factory = YmlPropertySourceFactory.class)
 public class SaTokenConfig {
 
     @Bean
     public StpLogic getStpLogicJwt() {
+        System.out.println("Sa-Token整合JWT模式启用成功");
         // Sa-Token 整合 jwt (简单模式)
         return new StpLogicJwtForSimple();
     }

@@ -49,14 +49,14 @@ public class LoginHelper {
      */
     public static void login(LoginUser loginUser, SaLoginModel model) {
         model = ObjectUtil.defaultIfNull(model, new SaLoginModel());
-        StpUtil.login(loginUser.getLoginId(),
-            model.setExtra(TENANT_KEY, loginUser.getTenantId())
-                .setExtra(USER_KEY, loginUser.getUserId())
-                .setExtra(USER_NAME_KEY, loginUser.getUsername())
-                .setExtra(DEPT_KEY, loginUser.getDeptId())
-                .setExtra(DEPT_NAME_KEY, loginUser.getDeptName())
-                .setExtra(DEPT_CATEGORY_KEY, loginUser.getDeptCategory())
-        );
+        model.setExtra(TENANT_KEY, loginUser.getTenantId());
+        model.setExtra(USER_KEY, loginUser.getUserId());
+        model.setExtra(USER_NAME_KEY, loginUser.getUsername());
+        model.setExtra(DEPT_KEY, loginUser.getDeptId());
+        model.setExtra(DEPT_NAME_KEY, loginUser.getDeptName());
+        model.setExtra(DEPT_CATEGORY_KEY, loginUser.getDeptCategory());
+
+        StpUtil.login(loginUser.getLoginId(), model);
         StpUtil.getTokenSession().set(LOGIN_USER_KEY, loginUser);
     }
 
