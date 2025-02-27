@@ -34,7 +34,7 @@ public class PageQuery implements Serializable {
     /**
      * 当前页数
      */
-    private Integer pageNum;
+    private Integer pageNo;
 
     /**
      * 排序列
@@ -60,12 +60,12 @@ public class PageQuery implements Serializable {
      * 构建分页对象
      */
     public <T> Page<T> build() {
-        Integer pageNum = ObjectUtil.defaultIfNull(getPageNum(), DEFAULT_PAGE_NUM);
+        Integer pageNo = ObjectUtil.defaultIfNull(getPageNo(), DEFAULT_PAGE_NUM);
         Integer pageSize = ObjectUtil.defaultIfNull(getPageSize(), DEFAULT_PAGE_SIZE);
-        if (pageNum <= 0) {
-            pageNum = DEFAULT_PAGE_NUM;
+        if (pageNo <= 0) {
+            pageNo = DEFAULT_PAGE_NUM;
         }
-        Page<T> page = new Page<>(pageNum, pageSize);
+        Page<T> page = new Page<>(pageNo, pageSize);
         List<OrderItem> orderItems = buildOrderItem();
         if (CollUtil.isNotEmpty(orderItems)) {
             page.addOrder(orderItems);
@@ -116,12 +116,12 @@ public class PageQuery implements Serializable {
 
     @JsonIgnore
     public Integer getFirstNum() {
-        return (pageNum - 1) * pageSize;
+        return (pageNo - 1) * pageSize;
     }
 
-    public PageQuery(Integer pageSize, Integer pageNum) {
+    public PageQuery(Integer pageSize, Integer pageNo) {
         this.pageSize = pageSize;
-        this.pageNum = pageNum;
+        this.pageNo = pageNo;
     }
 
 }

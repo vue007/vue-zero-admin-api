@@ -46,7 +46,7 @@ public class TaskAssigneeBody implements Serializable {
     /**
      * 当前页
      */
-    private Integer pageNum = 1;
+    private Integer pageNo = 1;
 
     /**
      * 每页显示条数
