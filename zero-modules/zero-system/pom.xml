@@ -75,5 +75,10 @@
             <artifactId>zero-base-oss</artifactId>
             <version>${revision}</version>
         </dependency>
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-base</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
 </project>

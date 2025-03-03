@@ -18,6 +18,7 @@ import com.zero.admin.system.domain.bo.SysDictDataBo;
 import com.zero.admin.system.domain.vo.SysDictDataVo;
 import com.zero.admin.system.mapper.SysDictDataMapper;
 import com.zero.admin.system.service.ISysDictDataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,7 @@ import java.util.List;
 @Service
 public class SysDictDataServiceImpl implements ISysDictDataService {
 
-    private final SysDictDataMapper baseMapper;
+    @Autowired(required = false) private final SysDictDataMapper baseMapper;
 
     @Override
     public TableDataInfo<SysDictDataVo> selectPageDictDataList(SysDictDataBo dictData, PageQuery pageQuery) {

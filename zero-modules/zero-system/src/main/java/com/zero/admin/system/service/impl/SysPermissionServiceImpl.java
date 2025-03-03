@@ -6,6 +6,7 @@ import com.zero.admin.base.satoken.utils.LoginHelper;
 import com.zero.admin.system.service.ISysMenuService;
 import com.zero.admin.system.service.ISysPermissionService;
 import com.zero.admin.system.service.ISysRoleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -20,8 +21,8 @@ import java.util.Set;
 @Service
 public class SysPermissionServiceImpl implements ISysPermissionService {
 
-    private final ISysRoleService roleService;
-    private final ISysMenuService menuService;
+    @Autowired(required = false) private final ISysRoleService roleService;
+    @Autowired(required = false) private final ISysMenuService menuService;
 
     /**
      * 获取角色数据权限

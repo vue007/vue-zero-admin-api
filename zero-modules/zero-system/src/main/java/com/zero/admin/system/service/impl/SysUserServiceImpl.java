@@ -30,6 +30,7 @@ import com.zero.admin.system.domain.vo.SysUserExportVo;
 import com.zero.admin.system.domain.vo.SysUserVo;
 import com.zero.admin.system.mapper.*;
 import com.zero.admin.system.service.ISysUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -50,12 +51,12 @@ import java.util.Set;
 @Service
 public class SysUserServiceImpl implements ISysUserService, UserService {
 
-    private final SysUserMapper baseMapper;
-    private final SysDeptMapper deptMapper;
-    private final SysRoleMapper roleMapper;
-    private final SysPostMapper postMapper;
-    private final SysUserRoleMapper userRoleMapper;
-    private final SysUserPostMapper userPostMapper;
+    @Autowired(required = false) private final SysUserMapper baseMapper;
+    @Autowired(required = false) private final SysDeptMapper deptMapper;
+    @Autowired(required = false) private final SysRoleMapper roleMapper;
+    @Autowired(required = false) private final SysPostMapper postMapper;
+    @Autowired(required = false) private final SysUserRoleMapper userRoleMapper;
+    @Autowired(required = false) private final SysUserPostMapper userPostMapper;
 
     @Override
     public TableDataInfo<SysUserVo> selectPageUserList(SysUserBo user, PageQuery pageQuery) {

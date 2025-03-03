@@ -15,6 +15,7 @@ import com.zero.admin.system.domain.bo.SysOperLogBo;
 import com.zero.admin.system.domain.vo.SysOperLogVo;
 import com.zero.admin.system.mapper.SysOperLogMapper;
 import com.zero.admin.system.service.ISysOperLogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -33,7 +34,7 @@ import java.util.Map;
 @Service
 public class SysOperLogServiceImpl implements ISysOperLogService {
 
-    private final SysOperLogMapper baseMapper;
+    @Autowired(required = false) private final SysOperLogMapper baseMapper;
 
     /**
      * 操作日志记录

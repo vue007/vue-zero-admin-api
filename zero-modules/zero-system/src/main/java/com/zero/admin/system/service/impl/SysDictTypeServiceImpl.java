@@ -25,6 +25,7 @@ import com.zero.admin.system.domain.vo.SysDictTypeVo;
 import com.zero.admin.system.mapper.SysDictDataMapper;
 import com.zero.admin.system.mapper.SysDictTypeMapper;
 import com.zero.admin.system.service.ISysDictTypeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -45,8 +46,8 @@ import java.util.stream.Collectors;
 @Service
 public class SysDictTypeServiceImpl implements ISysDictTypeService, DictService {
 
-    private final SysDictTypeMapper baseMapper;
-    private final SysDictDataMapper dictDataMapper;
+    @Autowired(required = false) private final SysDictTypeMapper baseMapper;
+    @Autowired(required = false) private final SysDictDataMapper dictDataMapper;
 
     @Override
     public TableDataInfo<SysDictTypeVo> selectPageDictTypeList(SysDictTypeBo dictType, PageQuery pageQuery) {

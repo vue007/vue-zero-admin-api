@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.zero.admin</groupId>
+    <artifactId>zero-base</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>zero-base-social</artifactId>
+  <version>0.0.1</version>
+  <name>zero-base-social</name>
+  <description>授权认证</description>
+  <dependencies>
+    <dependency>
+      <groupId>me.zhyd.oauth</groupId>
+      <artifactId>JustAuth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.zero.admin</groupId>
+      <artifactId>zero-base-json</artifactId>
+      <version>${revision}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.zero.admin</groupId>
+      <artifactId>zero-base-redis</artifactId>
+      <version>${revision}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.zero.admin</groupId>
+      <artifactId>zero-base-core</artifactId>
+      <version>${revision}</version>
+    </dependency>
+  </dependencies>
+</project>

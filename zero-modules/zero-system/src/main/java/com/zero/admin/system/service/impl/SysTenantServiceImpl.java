@@ -30,6 +30,7 @@ import com.zero.admin.system.domain.bo.SysTenantBo;
 import com.zero.admin.system.domain.vo.SysTenantVo;
 import com.zero.admin.system.mapper.*;
 import com.zero.admin.system.service.ISysTenantService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -46,17 +47,17 @@ import java.util.*;
 @Service
 public class SysTenantServiceImpl implements ISysTenantService {
 
-    private final SysTenantMapper baseMapper;
-    private final SysTenantPackageMapper tenantPackageMapper;
-    private final SysUserMapper userMapper;
-    private final SysDeptMapper deptMapper;
-    private final SysRoleMapper roleMapper;
-    private final SysRoleMenuMapper roleMenuMapper;
-    private final SysRoleDeptMapper roleDeptMapper;
-    private final SysUserRoleMapper userRoleMapper;
-    private final SysDictTypeMapper dictTypeMapper;
-    private final SysDictDataMapper dictDataMapper;
-    private final SysConfigMapper configMapper;
+    @Autowired(required = false) private final SysTenantMapper baseMapper;
+    @Autowired(required = false) private final SysTenantPackageMapper tenantPackageMapper;
+    @Autowired(required = false) private final SysUserMapper userMapper;
+    @Autowired(required = false) private final SysDeptMapper deptMapper;
+    @Autowired(required = false) private final SysRoleMapper roleMapper;
+    @Autowired(required = false) private final SysRoleMenuMapper roleMenuMapper;
+    @Autowired(required = false) private final SysRoleDeptMapper roleDeptMapper;
+    @Autowired(required = false) private final SysUserRoleMapper userRoleMapper;
+    @Autowired(required = false) private final SysDictTypeMapper dictTypeMapper;
+    @Autowired(required = false) private final SysDictDataMapper dictDataMapper;
+    @Autowired(required = false) private final SysConfigMapper configMapper;
 
     /**
      * 查询租户

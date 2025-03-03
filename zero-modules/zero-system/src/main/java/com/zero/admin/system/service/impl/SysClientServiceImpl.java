@@ -17,6 +17,7 @@ import com.zero.admin.system.domain.bo.SysClientBo;
 import com.zero.admin.system.domain.vo.SysClientVo;
 import com.zero.admin.system.mapper.SysClientMapper;
 import com.zero.admin.system.service.ISysClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,7 @@ import java.util.List;
 @Service
 public class SysClientServiceImpl implements ISysClientService {
 
+    @Autowired(required = false)
     private final SysClientMapper baseMapper;
 
     /**

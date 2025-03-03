@@ -12,6 +12,7 @@ import com.zero.admin.system.domain.SysRoleDept;
 import com.zero.admin.system.mapper.SysDeptMapper;
 import com.zero.admin.system.mapper.SysRoleDeptMapper;
 import com.zero.admin.system.service.ISysDataScopeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +30,8 @@ import java.util.List;
 @Service("sdss")
 public class SysDataScopeServiceImpl implements ISysDataScopeService {
 
-    private final SysRoleDeptMapper roleDeptMapper;
-    private final SysDeptMapper deptMapper;
+    @Autowired(required = false) private final SysRoleDeptMapper roleDeptMapper;
+    @Autowired(required = false) private final SysDeptMapper deptMapper;
 
     /**
      * 获取角色自定义权限

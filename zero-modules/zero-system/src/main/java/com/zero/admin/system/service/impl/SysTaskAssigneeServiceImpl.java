@@ -24,6 +24,7 @@ import com.zero.admin.system.mapper.SysDeptMapper;
 import com.zero.admin.system.mapper.SysPostMapper;
 import com.zero.admin.system.mapper.SysRoleMapper;
 import com.zero.admin.system.mapper.SysUserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,10 +38,10 @@ import java.util.List;
 @Service
 public class SysTaskAssigneeServiceImpl implements TaskAssigneeService {
 
-    private final SysPostMapper postMapper;
-    private final SysDeptMapper deptMapper;
-    private final SysUserMapper userMapper;
-    private final SysRoleMapper roleMapper;
+    @Autowired(required = false) private final SysPostMapper postMapper;
+    @Autowired(required = false) private final SysDeptMapper deptMapper;
+    @Autowired(required = false) private final SysUserMapper userMapper;
+    @Autowired(required = false) private final SysRoleMapper roleMapper;
 
     /**
      * 查询角色并返回任务指派的列表，支持分页

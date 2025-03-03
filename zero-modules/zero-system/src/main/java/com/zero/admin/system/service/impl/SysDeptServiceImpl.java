@@ -27,6 +27,7 @@ import com.zero.admin.system.mapper.SysDeptMapper;
 import com.zero.admin.system.mapper.SysRoleMapper;
 import com.zero.admin.system.mapper.SysUserMapper;
 import com.zero.admin.system.service.ISysDeptService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
@@ -46,9 +47,10 @@ import java.util.List;
 @Service
 public class SysDeptServiceImpl implements ISysDeptService, DeptService {
 
-    private final SysDeptMapper baseMapper;
-    private final SysRoleMapper roleMapper;
-    private final SysUserMapper userMapper;
+
+    @Autowired(required = false) private final SysDeptMapper baseMapper;
+    @Autowired(required = false) private final SysRoleMapper roleMapper;
+    @Autowired(required = false) private final SysUserMapper userMapper;
 
     /**
      * 查询部门管理数据

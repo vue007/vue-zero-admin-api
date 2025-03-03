@@ -19,6 +19,7 @@ import com.zero.admin.system.domain.vo.SysTenantPackageVo;
 import com.zero.admin.system.mapper.SysTenantMapper;
 import com.zero.admin.system.mapper.SysTenantPackageMapper;
 import com.zero.admin.system.service.ISysTenantPackageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,8 +36,8 @@ import java.util.List;
 @Service
 public class SysTenantPackageServiceImpl implements ISysTenantPackageService {
 
-    private final SysTenantPackageMapper baseMapper;
-    private final SysTenantMapper tenantMapper;
+    @Autowired(required = false) private final SysTenantPackageMapper baseMapper;
+    @Autowired(required = false) private final SysTenantMapper tenantMapper;
 
     /**
      * 查询租户套餐

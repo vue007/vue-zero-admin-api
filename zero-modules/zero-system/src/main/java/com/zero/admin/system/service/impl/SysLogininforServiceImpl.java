@@ -24,6 +24,7 @@ import com.zero.admin.system.domain.vo.SysLogininforVo;
 import com.zero.admin.system.mapper.SysLogininforMapper;
 import com.zero.admin.system.service.ISysClientService;
 import com.zero.admin.system.service.ISysLogininforService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -43,7 +44,7 @@ import java.util.Map;
 @Service
 public class SysLogininforServiceImpl implements ISysLogininforService {
 
-    private final SysLogininforMapper baseMapper;
+    @Autowired(required = false) private final SysLogininforMapper baseMapper;
 
     private final ISysClientService clientService;
 
