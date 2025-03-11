@@ -10,7 +10,6 @@ env:
   ALI_DOCKER_HOST: crpi-3i3pv7x8w1lizxgy.cn-shenzhen.personal.cr.aliyuncs.com
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
@@ -24,7 +23,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Install zero-base dependency
-        run: mvn install:install-file -DgroupId=com.zero.admin -DartifactId=zero-base -Dversion=0.0.1 -Dpackaging=jar -Dfile=path/to/zero-base-0.0.1.jar
+        run: mvn install:install-file -DgroupId=com.zero.admin -DartifactId=zero-base -Dversion=0.0.1 -Dpackaging=jar -Dfile=zero-base/target/zero-base-0.0.1.jar
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
@@ -40,7 +39,6 @@ jobs:
         env:
           DOCKER_REPO: ${{ env.ALI_DOCKER_HOST }}/akai6/zero-admin-api
           IMAGE_TAG: ${{ github.sha }}
-
         run: |
           docker build . --file Dockerfile --tag $DOCKER_REPO:v0.0.1
           docker push $DOCKER_REPO:v0.0.1
