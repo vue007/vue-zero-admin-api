@@ -22,7 +22,10 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
- 
+
+      - name: Install zero-base dependency
+        run: mvn install:install-file -DgroupId=com.zero.admin -DartifactId=zero-base -Dversion=0.0.1 -Dpackaging=jar -Dfile=path/to/zero-base-0.0.1.jar
+
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
