@@ -1,43 +1,525 @@
-2025-03-06 14:25:18 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-06 14:25:18 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 52864 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-06 14:25:18 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-06 14:25:23 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-06 14:25:23 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-06 14:25:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-06 14:25:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@7de2bdc7
-2025-03-06 14:25:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
-2025-03-06 14:25:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
-2025-03-06 14:25:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
-2025-03-06 14:25:26 [main] INFO  c.z.a.base.redis.config.RedisConfig - 初始化 redis 配置
-2025-03-06 14:25:26 [main] INFO  org.redisson.Version - Redisson 3.45.0
-2025-03-06 14:25:26 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
-2025-03-06 14:25:26 [redisson-netty-1-2] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
-2025-03-06 14:25:26 [redisson-netty-1-1] INFO  o.r.connection.ConnectionsHolder - 2 connections initialized for localhost/127.0.0.1:6379
-2025-03-06 14:25:27 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
-2025-03-06 14:25:27 [main] INFO  org.xnio - XNIO version 3.8.16.Final
-2025-03-06 14:25:27 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
-2025-03-06 14:25:27 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
-2025-03-06 14:25:27 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 9.047 seconds (process running for 11.676)
-2025-03-06 14:25:27 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
-2025-03-06 14:25:29 [XNIO-1 task-3] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-06 14:25:29 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/tenant/list],无参数
-2025-03-06 14:25:29 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
-2025-03-06 14:25:29 [XNIO-1 task-2] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
-2025-03-06 14:25:30 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/tenant/list],耗时:[629]毫秒
-2025-03-06 14:25:32 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[2508]毫秒
-2025-03-06 14:43:52 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@7de2bdc7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2025-03-06 14:45:36 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@24e6eeb5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2025-03-06 14:46:10 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
-2025-03-06 14:46:10 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/tenant/list],无参数
-2025-03-06 14:46:10 [XNIO-1 task-3] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
-2025-03-06 14:46:10 [XNIO-1 task-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[185]毫秒
-2025-03-06 14:46:11 [XNIO-1 task-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/tenant/list],耗时:[347]毫秒
-2025-03-06 19:00:11 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@763d66f4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2025-03-06 19:07:02 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
-2025-03-06 19:07:02 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2025-03-06 19:07:03 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
-2025-03-06 19:07:03 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2025-03-06 19:07:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
-2025-03-06 19:07:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
-2025-03-06 19:07:03 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
-2025-03-06 19:07:03 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-03-12 11:20:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 11:20:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 29551 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 11:20:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 11:20:23 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
+2025-03-12 11:20:23 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1683)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:558)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.getBeanNameForType(MybatisPlusAutoConfiguration.java:357)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.registerBeanDefinitions(MybatisPlusAutoConfiguration.java:331)
+	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: java.lang.ClassFormatError: Duplicate method name "convert" with signature "(LOperLogEvent;)Lcom.zero.admin.system.domain.bo.SysOperLogBo;" in class file com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1545)
+	... 25 common frames omitted
+2025-03-12 11:26:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 11:26:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 31215 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 11:26:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 11:26:26 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
+2025-03-12 11:26:26 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1683)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:558)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.getBeanNameForType(MybatisPlusAutoConfiguration.java:357)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.registerBeanDefinitions(MybatisPlusAutoConfiguration.java:331)
+	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: java.lang.ClassFormatError: Duplicate method name "convert" with signature "(LOperLogEvent;)Lcom.zero.admin.system.domain.bo.SysOperLogBo;" in class file com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1545)
+	... 25 common frames omitted
+2025-03-12 14:51:51 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 14:51:51 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 66168 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 14:51:51 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 14:51:53 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
+2025-03-12 14:51:53 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1683)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:558)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.getBeanNameForType(MybatisPlusAutoConfiguration.java:357)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.registerBeanDefinitions(MybatisPlusAutoConfiguration.java:331)
+	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: java.lang.ClassFormatError: Duplicate method name "convert" with signature "(LOperLogEvent;)Lcom.zero.admin.system.domain.bo.SysOperLogBo;" in class file com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1545)
+	... 25 common frames omitted
+2025-03-12 15:36:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 15:36:35 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 79024 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 15:36:35 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 15:36:44 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Failed to instantiate [org.springframework.validation.beanvalidation.MethodValidationPostProcessor]: Factory method 'methodValidationPostProcessor' threw exception with message: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
+2025-03-12 15:36:44 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Failed to instantiate [org.springframework.validation.beanvalidation.MethodValidationPostProcessor]: Factory method 'methodValidationPostProcessor' threw exception with message: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:265)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:808)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:611)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.MethodValidationPostProcessor]: Factory method 'methodValidationPostProcessor' threw exception with message: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:766)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getSingletonFactoryBeanForTypeCheck(AbstractAutowireCapableBeanFactory.java:1020)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:910)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:662)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:605)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:260)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1831)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1664)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1580)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2479)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2473)
+	at org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration.methodValidationPostProcessor(ValidationAutoConfiguration.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 20 common frames omitted
+2025-03-12 15:41:46 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 15:41:46 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 80612 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 15:41:46 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 15:41:57 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-03-12 15:42:04 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-03-12 15:42:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-03-12 15:42:06 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+2025-03-12 15:42:06 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1436)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1527)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 72 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+	at com.baomidou.dynamic.datasource.creator.hikaricp.HikariDataSourceCreator.createDataSource(HikariDataSourceCreator.java:85)
+	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:97)
+	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:53)
+	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:53)
+	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 82 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: database "zero_admin" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2845)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:176)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:323)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	... 91 common frames omitted
+2025-03-12 15:48:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 15:48:13 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 82383 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 15:48:13 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 15:48:52 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-03-12 15:48:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-03-12 15:48:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-03-12 15:48:56 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+2025-03-12 15:48:56 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1436)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1527)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 72 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: database "zero_admin" does not exist
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+	at com.baomidou.dynamic.datasource.creator.hikaricp.HikariDataSourceCreator.createDataSource(HikariDataSourceCreator.java:85)
+	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:97)
+	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:53)
+	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:53)
+	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 82 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: database "zero_admin" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2845)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:176)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:323)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	... 91 common frames omitted
+2025-03-12 16:03:06 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-12 16:03:06 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 85377 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
+2025-03-12 16:03:06 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2025-03-12 16:03:48 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-03-12 16:03:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2025-03-12 16:03:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2025-03-12 16:03:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5cc669d
+2025-03-12 16:03:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2025-03-12 16:03:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2025-03-12 16:03:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2025-03-12 16:03:54 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Failed to instantiate [com.zero.admin.web.controller.AuthController]: Constructor threw exception
+2025-03-12 16:03:54 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-03-12 16:03:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-03-12 16:03:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-03-12 16:03:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-03-12 16:03:54 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-03-12 16:03:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-03-12 16:03:54 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Failed to instantiate [com.zero.admin.web.controller.AuthController]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:321)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zero.admin.web.controller.AuthController]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:145)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318)
+	... 19 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import com.zero.admin.base.sse cannot be resolved
+	The import com.zero.admin.base.sse cannot be resolved
+
+	at com.zero.admin.web.controller.AuthController.<init>(AuthController.java:9)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:209)
+	... 21 common frames omitted

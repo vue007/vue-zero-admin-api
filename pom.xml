@@ -101,6 +101,16 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-starter-server</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-starter-client</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
 
 			<!-- dynamic-datasource 多数据源-->
 			<dependency>
@@ -264,6 +274,19 @@
 				<version>${aws.sdk.version}</version>
 			</dependency>
 
+			<!-- test -->
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>5.10.0</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>5.10.0</version>
+				<scope>test</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -324,6 +347,9 @@
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 					<!-- 根据打包环境执行对应的@Tag测试方法 -->
 					<groups>${profiles.active}</groups>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
 					<!-- 排除标签 -->
 					<excludedGroups>exclude</excludedGroups>
 				</configuration>

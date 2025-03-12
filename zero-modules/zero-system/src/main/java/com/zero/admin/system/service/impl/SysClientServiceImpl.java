@@ -35,8 +35,7 @@ import java.util.List;
 @Service
 public class SysClientServiceImpl implements ISysClientService {
 
-    @Autowired(required = false)
-    private final SysClientMapper baseMapper;
+    @Autowired(required = false) private final SysClientMapper baseMapper;
 
     /**
      * 查询客户端管理

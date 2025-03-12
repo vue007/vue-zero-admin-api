@@ -42,8 +42,7 @@ import java.util.Map;
 @Service
 public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
 
-    @Autowired(required = false)
-    private final SysConfigMapper baseMapper;
+    @Autowired(required = false) private final SysConfigMapper baseMapper;
 
     @Override
     public TableDataInfo<SysConfigVo> selectPageConfigList(SysConfigBo config, PageQuery pageQuery) {

@@ -23,22 +23,12 @@
       </dependency>
       <dependency>
         <groupId>com.zero.admin</groupId>
-        <artifactId>zero-base-encrypt</artifactId>
-        <version>${revision}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.zero.admin</groupId>
         <artifactId>zero-base-excel</artifactId>
         <version>${revision}</version>
       </dependency>
       <dependency>
         <groupId>com.zero.admin</groupId>
         <artifactId>zero-base-idempotent</artifactId>
-        <version>${revision}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.zero.admin</groupId>
-        <artifactId>zero-base-json</artifactId>
         <version>${revision}</version>
       </dependency>
       <dependency>
@@ -78,17 +68,27 @@
       </dependency>
       <dependency>
         <groupId>com.zero.admin</groupId>
-        <artifactId>zero-base-sensitive</artifactId>
-        <version>${revision}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.zero.admin</groupId>
         <artifactId>zero-base-social</artifactId>
         <version>${revision}</version>
       </dependency>
       <dependency>
         <groupId>com.zero.admin</groupId>
-        <artifactId>zero-base-sse</artifactId>
+        <artifactId>zero-base-web</artifactId>
+        <version>${revision}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zero.admin</groupId>
+        <artifactId>zero-base-sensitive</artifactId>
+        <version>${revision}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zero.admin</groupId>
+        <artifactId>zero-base-json</artifactId>
+        <version>${revision}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zero.admin</groupId>
+        <artifactId>zero-base-encrypt</artifactId>
         <version>${revision}</version>
       </dependency>
       <dependency>
@@ -99,6 +99,11 @@
       <dependency>
         <groupId>com.zero.admin</groupId>
         <artifactId>zero-base-translation</artifactId>
+        <version>${revision}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zero.admin</groupId>
+        <artifactId>zero-base-sse</artifactId>
         <version>${revision}</version>
       </dependency>
     </dependencies>

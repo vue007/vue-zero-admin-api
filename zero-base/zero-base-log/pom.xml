@@ -23,11 +23,6 @@
             <version>${revision}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-core</artifactId>
-            <version>${revision}</version>
-        </dependency>
 
     </dependencies>
 </project>
