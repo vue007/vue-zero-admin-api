@@ -17,28 +17,28 @@
 
 		<!-- foundation -->
 		<java.version>21</java.version>
-		<spring-boot.version>3.4.2</spring-boot.version>
-		<spring-boot-admin.version>3.4.2</spring-boot-admin.version>
+		<spring-boot.version>3.4.3</spring-boot.version>
+		<spring-boot-admin.version>3.4.5</spring-boot-admin.version>
 		<mybatis.version>3.5.19</mybatis.version>
-		<mybatis-plus.version>3.5.9</mybatis-plus.version>
+		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
 		<dynamic-ds.version>4.3.1</dynamic-ds.version>
 		<postgresql.version>42.7.5</postgresql.version>
 
 		<!-- tools -->
 		<hutool.version>5.8.36</hutool.version>
 		<lombok.version>1.18.36</lombok.version>
-		<bouncycastle.version>1.76</bouncycastle.version>
+		<bouncycastle.version>1.80</bouncycastle.version>
 		<mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
 		<mapstruct-plus.version>1.4.6</mapstruct-plus.version>
-		<redisson.version>3.45.0</redisson.version>
+		<redisson.version>3.45.1</redisson.version>
 		<lock4j.version>2.2.7</lock4j.version>
 		<satoken.version>1.40.0</satoken.version>
 		<easyexcel.version>4.0.3</easyexcel.version>
 		<p6spy.version>3.9.1</p6spy.version>
-		<fastjson.version>1.2.83</fastjson.version>
+		<fastjson.version>2.0.56</fastjson.version>
 		<!-- OSS 配置 -->
-		<aws.sdk.version>2.28.22</aws.sdk.version>
-		<aws.crt.version>0.31.3</aws.crt.version>
+		<aws.sdk.version>2.31.3</aws.sdk.version>
+		<aws.crt.version>0.36.3</aws.crt.version>
 
 		<!-- helper -->
 		<therapi-javadoc.version>0.15.0</therapi-javadoc.version>
@@ -183,7 +183,7 @@
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
-				<version>2.15.0</version>
+				<version>2.18.0</version>
 			</dependency>
 
 			<dependency>
@@ -201,7 +201,7 @@
 			<!-- 加密包引入 -->
 			<dependency>
 				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcprov-jdk15to18</artifactId>
+				<artifactId>bcprov-jdk18on</artifactId>
 				<version>${bouncycastle.version}</version>
 			</dependency>
 
