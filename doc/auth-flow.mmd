@@ -1,0 +1,55 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#E3F2FD',
+    'primaryTextColor': '#1976D2',
+    'primaryBorderColor': '#90CAF9',
+    'lineColor': '#64B5F6',
+    'secondaryColor': '#F5F5F5',
+    'tertiaryColor': '#FFF'
+  }
+}}%%
+
+flowchart TD
+    A[客户端] --> B[登录请求]
+    B --> C{验证凭证}
+    C -->|验证成功| D[创建会话]
+    C -->|验证失败| E[返回错误]
+    
+    D --> F[生成Token]
+    F --> G[存储缓存]
+    G --> H[返回Token]
+    
+    A --> I[访问资源]
+    I --> J{Token验证}
+    J -->|验证成功| K{权限校验}
+    J -->|验证失败| L[返回401]
+    
+    K -->|权限验证| M{角色检查}
+    M -->|通过| N{权限检查}
+    M -->|失败| O[返回403]
+    
+    N -->|通过| P[访问资源]
+    N -->|失败| Q[返回403]
+    
+    A --> R[注销请求]
+    R --> S[清除会话]
+    S --> T[清除缓存]
+    T --> U[注销成功]
+
+    subgraph 多级缓存
+    V[Caffeine本地缓存]
+    W[Redis分布式缓存]
+    end
+
+    %% 节点样式
+    style A fill:#D0FCFF,stroke:#1976D2,stroke-width:2px
+    style B fill:#E8EAF6,stroke:#3F51B5,stroke-width:2px
+    style C fill:#E1F5FE,stroke:#03A9F4,stroke-width:2px
+    style D fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px
+    style E fill:#FFEBEE,stroke:#F44336,stroke-width:2px
+    style P fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px
+    style U fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px
+    
+    %% 子图样式
+    style 多级缓存 fill:#FAFAFA,stroke:#BDBDBD,stroke-width:1px

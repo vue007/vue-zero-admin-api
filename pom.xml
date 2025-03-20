@@ -134,7 +134,12 @@
 				<artifactId>zero-base-bom</artifactId>
 				<version>${revision}</version>
 				<type>pom</type>
-<!--				<scope>import</scope>-->
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-system</artifactId>
+				<version>${revision}</version>
 			</dependency>
 
 			<dependency>

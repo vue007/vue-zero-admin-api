@@ -10,8 +10,8 @@
 
     <name>zero-modules</name>
     <artifactId>zero-modules</artifactId>
-    <packaging>pom</packaging>
     <description> 业务模块 </description>
+    <packaging>pom</packaging>
 
     <modules>
         <module>zero-system</module>

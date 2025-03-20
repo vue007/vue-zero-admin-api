@@ -9,6 +9,7 @@
 
     <artifactId>zero-system</artifactId>
     <name>zero-system</name>
+    <version>${revision}</version>
 
     <dependencies>
 
@@ -74,6 +75,11 @@
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-oss</artifactId>
             <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

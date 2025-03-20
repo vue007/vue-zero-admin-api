@@ -19,24 +19,20 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-ratelimiter</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-social</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-system</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
@@ -52,7 +48,6 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-sse</artifactId>
-            <version>0.0.1</version>
             <scope>compile</scope>
         </dependency>
 
