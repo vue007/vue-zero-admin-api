@@ -20,6 +20,7 @@ import com.zero.admin.base.ratelimiter.enums.LimitType;
 import com.zero.admin.base.redis.utils.RedisUtils;
 import com.zero.admin.base.web.config.properties.CaptchaProperties;
 import com.zero.admin.base.web.enums.CaptchaType;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;

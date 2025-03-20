@@ -71,7 +71,7 @@
 				<profiles.active>dev</profiles.active>
 				<logging.level>info</logging.level>
 				<monitor.username>admin</monitor.username>
-				<monitor.password>123456</monitor.password>
+				<monitor.password>admin123</monitor.password>
 			</properties>
 			<activation>
 				<!-- 默认环境 -->
@@ -83,8 +83,8 @@
 			<properties>
 				<profiles.active>prod</profiles.active>
 				<logging.level>warn</logging.level>
-				<monitor.username>zero</monitor.username>
-				<monitor.password>123456</monitor.password>
+				<monitor.username>admin</monitor.username>
+				<monitor.password>admin123</monitor.password>
 			</properties>
 		</profile>
 	</profiles>
