@@ -1,8 +1,0 @@
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
-2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye

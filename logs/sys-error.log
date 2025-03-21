@@ -1,2 +1,0 @@
-2025-03-20 22:01:35 [XNIO-1 task-2] ERROR c.z.a.b.s.h.SaTokenExceptionHandler - 请求地址'/system/user/getInfo',认证失败'未能读取到有效 token',无法访问系统资源
-2025-03-20 22:06:30 [XNIO-1 task-3] ERROR c.z.a.b.s.h.SaTokenExceptionHandler - 请求地址'/system/user/getInfo',认证失败'未能读取到有效 token',无法访问系统资源
