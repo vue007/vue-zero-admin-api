@@ -6,6 +6,7 @@ target/
 
 **/*-local.yml
 *.log
+logs/
 
 ### STS ###
 .apt_generated

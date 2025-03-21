@@ -1,525 +1,202 @@
-2025-03-12 11:20:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 11:20:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 29551 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 11:20:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 11:20:23 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
-2025-03-12 11:20:23 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1683)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:558)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.getBeanNameForType(MybatisPlusAutoConfiguration.java:357)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.registerBeanDefinitions(MybatisPlusAutoConfiguration.java:331)
-	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: java.lang.ClassFormatError: Duplicate method name "convert" with signature "(LOperLogEvent;)Lcom.zero.admin.system.domain.bo.SysOperLogBo;" in class file com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:534)
-	at java.base/java.lang.Class.forName(Class.java:513)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1620)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1545)
-	... 25 common frames omitted
-2025-03-12 11:26:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 11:26:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 31215 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 11:26:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 11:26:26 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
-2025-03-12 11:26:26 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1683)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:558)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.getBeanNameForType(MybatisPlusAutoConfiguration.java:357)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.registerBeanDefinitions(MybatisPlusAutoConfiguration.java:331)
-	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: java.lang.ClassFormatError: Duplicate method name "convert" with signature "(LOperLogEvent;)Lcom.zero.admin.system.domain.bo.SysOperLogBo;" in class file com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:534)
-	at java.base/java.lang.Class.forName(Class.java:513)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1620)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1545)
-	... 25 common frames omitted
-2025-03-12 14:51:51 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 14:51:51 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 66168 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 14:51:51 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 14:51:53 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
-2025-03-12 14:51:53 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.zero.admin.base.log.event.OperLogEventToSysOperLogBoMapperImpl] for bean with name 'operLogEventToSysOperLogBoMapperImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1683)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:592)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:558)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.getBeanNameForType(MybatisPlusAutoConfiguration.java:357)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$AutoConfiguredMapperScannerRegistrar.registerBeanDefinitions(MybatisPlusAutoConfiguration.java:331)
-	at org.springframework.context.annotation.ImportBeanDefinitionRegistrar.registerBeanDefinitions(ImportBeanDefinitionRegistrar.java:86)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: java.lang.ClassFormatError: Duplicate method name "convert" with signature "(LOperLogEvent;)Lcom.zero.admin.system.domain.bo.SysOperLogBo;" in class file com/zero/admin/base/log/event/OperLogEventToSysOperLogBoMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:534)
-	at java.base/java.lang.Class.forName(Class.java:513)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1620)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1545)
-	... 25 common frames omitted
-2025-03-12 15:36:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 15:36:35 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 79024 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 15:36:35 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:36:44 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Failed to instantiate [org.springframework.validation.beanvalidation.MethodValidationPostProcessor]: Factory method 'methodValidationPostProcessor' threw exception with message: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
-2025-03-12 15:36:44 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Failed to instantiate [org.springframework.validation.beanvalidation.MethodValidationPostProcessor]: Factory method 'methodValidationPostProcessor' threw exception with message: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:265)
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:808)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:611)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.MethodValidationPostProcessor]: Factory method 'methodValidationPostProcessor' threw exception with message: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
-	... 17 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysClientMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysClientMapper.class]: Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [java.lang.String] to required type [java.lang.Class]: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Class'; Could not find class [com.zero.admin.system.mapper.SysClientMapper]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:766)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getSingletonFactoryBeanForTypeCheck(AbstractAutowireCapableBeanFactory.java:1020)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:910)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:662)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:605)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:564)
-	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:260)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1831)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1664)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1580)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2479)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2473)
-	at org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration.methodValidationPostProcessor(ValidationAutoConfiguration.java:73)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
-	... 20 common frames omitted
-2025-03-12 15:41:46 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 15:41:46 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 80612 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 15:41:46 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:41:57 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-12 15:42:04 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-12 15:42:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-12 15:42:06 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-2025-03-12 15:42:06 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 33 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1436)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 47 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1527)
-	... 59 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 72 common frames omitted
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
-	at com.baomidou.dynamic.datasource.creator.hikaricp.HikariDataSourceCreator.createDataSource(HikariDataSourceCreator.java:85)
-	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:97)
-	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:53)
-	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:53)
-	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:229)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
-	... 82 common frames omitted
-Caused by: org.postgresql.util.PSQLException: FATAL: database "zero_admin" does not exist
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
-	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2845)
-	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:176)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:323)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
-	at org.postgresql.Driver.makeConnection(Driver.java:446)
-	at org.postgresql.Driver.connect(Driver.java:298)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
-	... 91 common frames omitted
-2025-03-12 15:48:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 15:48:13 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 82383 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 15:48:13 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:48:52 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-12 15:48:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-12 15:48:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-12 15:48:56 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-2025-03-12 15:48:56 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysLoginService' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/service/SysLoginService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantServiceImpl' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/service/impl/SysTenantServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 33 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sysTenantMapper' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-modules/zero-system/target/classes/com/zero/admin/system/mapper/SysTenantMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1436)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 47 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1527)
-	... 59 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/baomidou/dynamic/datasource/spring/boot/autoconfigure/DynamicDataSourceAutoConfiguration.class]: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 72 common frames omitted
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: FATAL: database "zero_admin" does not exist
-	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:584)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
-	at com.baomidou.dynamic.datasource.creator.hikaricp.HikariDataSourceCreator.createDataSource(HikariDataSourceCreator.java:85)
-	at com.baomidou.dynamic.datasource.creator.DefaultDataSourceCreator.createDataSource(DefaultDataSourceCreator.java:97)
-	at com.baomidou.dynamic.datasource.provider.AbstractDataSourceProvider.createDataSourceMap(AbstractDataSourceProvider.java:53)
-	at com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider.loadDataSources(YmlDynamicDataSourceProvider.java:53)
-	at com.baomidou.dynamic.datasource.DynamicRoutingDataSource.afterPropertiesSet(DynamicRoutingDataSource.java:229)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
-	... 82 common frames omitted
-Caused by: org.postgresql.util.PSQLException: FATAL: database "zero_admin" does not exist
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
-	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2845)
-	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:176)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:323)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
-	at org.postgresql.Driver.makeConnection(Driver.java:446)
-	at org.postgresql.Driver.connect(Driver.java:298)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
-	... 91 common frames omitted
-2025-03-12 16:03:06 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 16:03:06 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 85377 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 16:03:06 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 16:03:48 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-12 16:03:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-12 16:03:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-12 16:03:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5cc669d
-2025-03-12 16:03:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
-2025-03-12 16:03:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
-2025-03-12 16:03:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
-2025-03-12 16:03:54 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Failed to instantiate [com.zero.admin.web.controller.AuthController]: Constructor threw exception
-2025-03-12 16:03:54 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
-2025-03-12 16:03:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2025-03-12 16:03:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
-2025-03-12 16:03:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
-2025-03-12 16:03:54 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
-2025-03-12 16:03:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2025-03-12 16:03:54 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController' defined in file [/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes/com/zero/admin/web/controller/AuthController.class]: Failed to instantiate [com.zero.admin.web.controller.AuthController]: Constructor threw exception
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:321)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zero.admin.web.controller.AuthController]: Constructor threw exception
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:145)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318)
-	... 19 common frames omitted
-Caused by: java.lang.Error: Unresolved compilation problems: 
-	The import com.zero.admin.base.sse cannot be resolved
-	The import com.zero.admin.base.sse cannot be resolved
-
-	at com.zero.admin.web.controller.AuthController.<init>(AuthController.java:9)
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:209)
-	... 21 common frames omitted
+2025-03-21 00:07:20 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s854ms).
+2025-03-21 00:07:31 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@3be9152e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 00:23:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@2c1d9e4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 00:23:43 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m52s725ms).
+2025-03-21 00:39:39 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s792ms).
+2025-03-21 00:39:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@47cf3c9a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 00:55:36 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m27s797ms).
+2025-03-21 00:55:58 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@8502d49 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 01:11:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@62979984 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 01:12:01 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s756ms).
+2025-03-21 01:13:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=54s770ms).
+2025-03-21 01:31:41 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@79b2fa8e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 01:31:42 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s967ms).
+2025-03-21 01:47:40 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@69d0fd48 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 01:47:40 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s739ms).
+2025-03-21 02:04:06 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@7a7979e1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 02:04:06 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s458ms).
+2025-03-21 02:20:34 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@bab151a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 02:20:34 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s968ms).
+2025-03-21 02:36:33 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@22fec4a4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 02:36:33 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m59s164ms).
+2025-03-21 02:52:59 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@68ba8217 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 02:52:59 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s748ms).
+2025-03-21 03:09:00 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@671d0ca0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 03:09:00 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=16m166ms).
+2025-03-21 03:25:27 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@32958d60 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 03:25:27 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s764ms).
+2025-03-21 03:41:54 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@1ffe7628 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 03:41:54 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s856ms).
+2025-03-21 03:57:53 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@17ef14f2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 03:57:53 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m59s96ms).
+2025-03-21 04:14:18 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@239943cb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 04:14:18 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s15ms).
+2025-03-21 04:30:47 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@3e72a94c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 04:30:47 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m58s698ms).
+2025-03-21 04:46:44 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@4921a6da (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 04:46:44 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s157ms).
+2025-03-21 04:48:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m41s486ms).
+2025-03-21 05:14:21 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s542ms).
+2025-03-21 05:14:30 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@18e50a6a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 05:30:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5d0f9df (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 05:30:46 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s894ms).
+2025-03-21 05:45:38 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=14m52s211ms).
+2025-03-21 05:45:51 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@3148ea08 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 06:02:03 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s60ms).
+2025-03-21 06:02:19 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@6e887736 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 06:18:18 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@69e9bbba (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 06:18:28 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s896ms).
+2025-03-21 06:34:22 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s507ms).
+2025-03-21 06:34:42 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@b05de7a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 06:49:42 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@8e21f77 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 06:49:47 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=14m54s389ms).
+2025-03-21 07:06:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@42256d45 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 07:06:13 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s460ms).
+2025-03-21 07:22:08 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s868ms).
+2025-03-21 07:22:36 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@64419a64 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 07:38:33 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5e0cd327 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 07:38:33 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s261ms).
+2025-03-21 07:50:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@4b922622 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 07:50:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=11m51s734ms).
+2025-03-21 08:03:02 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@71d57387 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 08:03:03 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=10m57s831ms).
+2025-03-21 08:19:30 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@3c3ab04d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 08:19:30 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s529ms).
+2025-03-21 08:39:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s57ms).
+2025-03-21 08:39:40 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@229d2da5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 08:42:31 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m2s54ms).
+2025-03-21 08:51:44 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@7e98dbd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 08:51:49 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=7m47s545ms).
+2025-03-21 09:10:14 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s516ms).
+2025-03-21 09:10:40 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@45561435 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 09:14:32 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m18s472ms).
+2025-03-21 09:18:42 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m25s124ms).
+2025-03-21 09:20:36 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m53s875ms).
+2025-03-21 09:37:01 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@278fc738 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 09:37:01 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s861ms).
+2025-03-21 09:53:00 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@3303cf68 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 09:53:00 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m28s438ms).
+2025-03-21 10:09:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@79a03fa (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 10:09:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m59s89ms).
+2025-03-21 10:25:59 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@606519fd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 10:25:59 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m59s632ms).
+2025-03-21 10:41:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@44f98d47 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 10:41:56 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s160ms).
+2025-03-21 10:53:57 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@465c4538 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 10:53:57 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=11m30s848ms).
+2025-03-21 11:10:23 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@3e908f5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 11:10:23 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s36ms).
+2025-03-21 11:11:20 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=56s747ms).
+2025-03-21 11:13:02 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m11s856ms).
+2025-03-21 11:29:30 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5987a17b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 11:29:30 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m58s225ms).
+2025-03-21 11:32:16 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m45s802ms).
+2025-03-21 11:48:45 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@8f1d2f2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 11:48:45 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m59s55ms).
+2025-03-21 11:50:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=54s693ms).
+2025-03-21 11:52:02 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m51s868ms).
+2025-03-21 11:54:55 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m22s879ms).
+2025-03-21 11:58:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m871ms).
+2025-03-21 12:14:22 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s863ms).
+2025-03-21 12:14:35 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@23f3a54f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 12:32:14 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m51s918ms).
+2025-03-21 12:32:28 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@4044d3ec (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 12:34:20 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m35s811ms).
+2025-03-21 12:50:35 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@636032d0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 12:50:46 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s861ms).
+2025-03-21 12:55:52 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m6s41ms).
+2025-03-21 12:57:17 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=54s858ms).
+2025-03-21 13:13:13 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s651ms).
+2025-03-21 13:13:40 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@6464b11f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 13:29:39 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@627cbcb3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 13:29:39 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s344ms).
+2025-03-21 13:46:03 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@28652b41 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 13:46:03 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s513ms).
+2025-03-21 13:57:08 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@8faa043 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 13:57:09 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=10m35s935ms).
+2025-03-21 13:58:40 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m30s418ms).
+2025-03-21 14:15:07 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@2c08205 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 14:15:07 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s306ms).
+2025-03-21 14:31:35 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@2cf3fa15 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 14:31:35 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m57s541ms).
+2025-03-21 14:34:45 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m9s111ms).
+2025-03-21 14:51:08 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5d5c4e13 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 14:51:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s866ms).
+2025-03-21 14:58:08 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@2af84382 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 14:58:09 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=6m27s606ms).
+2025-03-21 14:59:16 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m7s386ms).
+2025-03-21 15:15:45 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@1f159b12 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 15:15:45 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m58s381ms).
+2025-03-21 15:32:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@2f26b14d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 15:32:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s298ms).
+2025-03-21 15:48:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@fe30029 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 15:48:10 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m59s193ms).
+2025-03-21 15:59:03 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@21b687b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 15:59:03 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=10m23s255ms).
+2025-03-21 16:15:00 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s68ms).
+2025-03-21 16:15:29 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@472c91a8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 16:31:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@6e0763c2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 16:31:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s60ms).
+2025-03-21 16:47:52 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5721d0c4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 16:47:52 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s532ms).
+2025-03-21 17:00:12 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@322bbf89 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 17:00:12 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=10m18s683ms).
+2025-03-21 17:16:06 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s384ms).
+2025-03-21 17:16:11 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@453b22b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 17:32:31 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s810ms).
+2025-03-21 17:32:39 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@139e52b4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 17:48:38 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@4e23ee2f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 17:48:58 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s753ms).
+2025-03-21 18:00:49 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=11m50s679ms).
+2025-03-21 18:01:01 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@604adfda (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 18:17:14 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s693ms).
+2025-03-21 18:17:28 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@20c05507 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 18:33:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@16d79d1e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 18:33:38 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m53s687ms).
+2025-03-21 18:51:24 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@59cf0577 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 18:51:33 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s710ms).
+2025-03-21 19:02:04 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@7a902fd6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 19:02:11 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=8m37s879ms).
+2025-03-21 19:19:55 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@8f8e5e3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 19:20:07 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m56s108ms).
+2025-03-21 19:24:21 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m14s343ms).
+2025-03-21 19:26:31 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=2m9s901ms).
+2025-03-21 19:31:02 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m1s91ms).
+2025-03-21 19:36:51 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m48s745ms).
+2025-03-21 19:40:02 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m40s635ms).
+2025-03-21 19:45:36 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m3s695ms).
+2025-03-21 19:48:24 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m18s544ms).
+2025-03-21 20:02:53 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@8ae7c28 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 20:02:58 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=13m3s720ms).
+2025-03-21 20:20:53 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s888ms).
+2025-03-21 20:21:09 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@307f2e7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 20:27:20 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=4m26s445ms).
+2025-03-21 20:27:34 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@53bb84b7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 20:44:45 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s162ms).
+2025-03-21 20:45:01 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5db15da5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 21:03:53 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m6s533ms).
+2025-03-21 21:04:16 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5ed8d17 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 21:21:47 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m53s997ms).
+2025-03-21 21:22:14 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5b2f2696 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 21:25:43 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m53s758ms).
+2025-03-21 21:30:18 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=3m4s911ms).
+2025-03-21 21:33:00 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=1m11s405ms).
+2025-03-21 21:50:35 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@5922372d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 21:50:55 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m54s954ms).
+2025-03-21 22:05:19 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@57e573ee (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 22:05:19 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=12m24s660ms).
+2025-03-21 22:11:47 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@49f855c0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 22:11:47 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=6m27s748ms).
+2025-03-21 22:28:16 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@634b75dd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 22:28:16 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m58s780ms).
+2025-03-21 22:29:01 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=45s23ms).
+2025-03-21 22:47:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.PoolBase - postgres - Failed to validate connection org.postgresql.jdbc.PgConnection@ad81cdd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-03-21 22:47:26 [postgres housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - postgres - Thread starvation or clock leap detected (housekeeper delta=15m55s201ms).
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye

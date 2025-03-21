@@ -1,40 +1,8 @@
-2025-03-12 11:20:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 11:20:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 29551 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 11:20:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 11:26:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 11:26:22 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 31215 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 11:26:22 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 14:51:51 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 14:51:51 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 66168 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 14:51:51 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:36:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 15:36:35 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 79024 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 15:36:35 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:41:46 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 15:41:46 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 80612 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 15:41:46 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:41:57 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-12 15:42:04 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-12 15:42:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-12 15:48:13 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 15:48:13 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 82383 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 15:48:13 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 15:48:52 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-12 15:48:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-12 15:48:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-12 16:03:06 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-03-12 16:03:06 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 21.0.6 with PID 85377 (/Users/w9048055/Documents/gitee/vue-zero-admin-api/zero-admin/target/classes started by w9048055 in /Users/w9048055/Documents/gitee/vue-zero-admin-api)
-2025-03-12 16:03:06 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
-2025-03-12 16:03:48 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2025-03-12 16:03:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
-2025-03-12 16:03:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
-2025-03-12 16:03:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@5cc669d
-2025-03-12 16:03:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
-2025-03-12 16:03:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
-2025-03-12 16:03:50 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
-2025-03-12 16:03:54 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
-2025-03-12 16:03:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2025-03-12 16:03:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
-2025-03-12 16:03:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
-2025-03-12 16:03:54 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
-2025-03-12 16:03:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2025-03-21 23:20:11 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
