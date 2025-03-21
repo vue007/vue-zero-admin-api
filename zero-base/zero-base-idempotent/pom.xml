@@ -14,13 +14,11 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-json</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-redis</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
@@ -35,7 +33,6 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
-            <version>${revision}</version>
         </dependency>
 
     </dependencies>

@@ -14,13 +14,11 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-redis</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->

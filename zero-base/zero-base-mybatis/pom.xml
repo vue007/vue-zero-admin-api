@@ -16,13 +16,11 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-satoken</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <!-- dynamic-datasource 多数据源-->

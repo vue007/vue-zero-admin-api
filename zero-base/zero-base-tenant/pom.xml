@@ -15,19 +15,16 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-mybatis</artifactId>
-            <version>${revision}</version>
             <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-redis</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
-            <version>${revision}</version>
         </dependency>
 
     </dependencies>
