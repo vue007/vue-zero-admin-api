@@ -1,0 +1,63 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#3B82F6',
+    'primaryTextColor': '#222',
+    'primaryBorderColor': '#2563EB',
+    'lineColor': '#64748B',
+    'secondaryColor': '#F1F5F9',
+    'tertiaryColor': '#FF0000'
+  }
+}}%%
+sequenceDiagram
+    %% title Sa-Token RBAC认证鉴权流程
+
+    participant Client as 前端 color:#fff
+    participant Auth as 授权中心
+    participant Login as 登录服务
+    participant SaToken as Sa-Token
+    participant Permission as 权限中心
+    participant Redis as Redis缓存
+    participant DB as 数据库
+
+    %% 登录认证流程
+    Client->>Auth: 1. 登录请求 /auth/login
+    Auth->>Login: 2. 校验登录信息
+    Login->>DB: 3. 查询用户信息(SysUser)
+    DB-->>Login: 4. 返回用户数据
+    Login->>DB: 5. 查询用户角色(SysUserRole)
+    Login->>DB: 6. 查询角色权限(SysRoleMenu)
+    Login->>Login: 7. 构建LoginUser对象
+    Note over Login: 包含用户信息、角色列表、权限列表
+
+    Login->>SaToken: 8. 创建Token会话
+    SaToken->>Redis: 9. 存储会话信息
+    Redis-->>SaToken: 10. 存储成功
+    SaToken-->>Auth: 11. 返回Token
+    Auth-->>Client: 12. 返回登录结果
+
+    %% 请求鉴权流程
+    Client->>Auth: 13. 请求业务接口
+    Note over Auth: @SaCheckPermission注解校验
+    Auth->>SaToken: 14. 权限校验
+    SaToken->>Permission: 15. 获取权限信息
+    Permission->>Redis: 16. 获取用户会话
+    Redis-->>Permission: 17. 返回权限数据
+
+    alt 无权限
+        Permission-->>SaToken: 18b. 校验失败
+        SaToken-->>Auth: 19b. NotPermissionException
+        Auth-->>Client: 20b. 返回403错误
+    else 有权限
+        Permission-->>SaToken: 18a. 校验通过
+        SaToken-->>Auth: 19a. 允许访问
+        Auth-->>Client: 20a. 返回业务数据
+    end
+
+    %% RBAC核心实体关系
+    Note over DB: RBAC核心表关系
+    Note over DB: SysUser(用户表)
+    Note over DB: SysRole(角色表)
+    Note over DB: SysMenu(菜单权限表)
+    Note over DB: SysUserRole(用户-角色关联表)
+    Note over DB: SysRoleMenu(角色-权限关联表)
