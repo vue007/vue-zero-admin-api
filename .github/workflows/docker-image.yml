@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "release/*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "release/*" ]
 
 env:
   ALI_DOCKER_HOST: crpi-3i3pv7x8w1lizxgy.cn-shenzhen.personal.cr.aliyuncs.com
@@ -25,6 +25,10 @@ jobs:
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
+      - name: Extract version from branch name
+        id: extract_version
+        run: echo "VERSION=$(echo ${GITHUB_REF#refs/heads/release/})" >> $GITHUB_ENV
+
       - name: Log in to Ali Docker Hub
         uses: aliyun/acr-login@v1
         with:
@@ -35,7 +39,7 @@ jobs:
       - name: Build and push Docker image
         env:
           DOCKER_REPO: ${{ env.ALI_DOCKER_HOST }}/akai6/zero-admin-api
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: ${{ env.VERSION }}
         run: |
-          docker build . --file zero-admin/Dockerfile --tag $DOCKER_REPO:v0.0.1
-          docker push $DOCKER_REPO:v0.0.1
+          docker build . --file zero-admin/Dockerfile --tag $DOCKER_REPO:$IMAGE_TAG
+          docker push $DOCKER_REPO:$IMAGE_TAG
