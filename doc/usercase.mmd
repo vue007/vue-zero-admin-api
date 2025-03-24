@@ -1,0 +1,35 @@
+
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#E3F2FD',
+    'primaryTextColor': '#1976D2',
+    'primaryBorderColor': '#2563EB',
+    'lineColor': '#64748B',
+    'secondaryColor': '#F5F5F5',
+    'tertiaryColor': '#f4f4ff'
+  }
+}}%%
+
+flowchart LR
+
+subgraph ZeroAdmin System
+    Auth
+    Menu
+    Role
+    User
+    Tenant
+    TenantPackage
+end
+
+    U((用户)) --登录--> Auth([Auth])
+    U --退出--> Auth
+    U --注册--> Auth
+
+    A((管理员)) --管理菜单--> Menu([SysMenu])
+    A --管理角色--> Role([SysRole])
+    A --管理用户--> User([SysUser])
+
+    SA((超级管理员)) --管理用户--> User([SysUser])
+    SA --管理租户--> Tenant([SysTenant])
+    SA --管理租户套餐--> TenantPackage([SysTenantPackage])
