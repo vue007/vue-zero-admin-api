@@ -1,3 +1,61 @@
 # 生产环境配置
-server:
-  port: 8080
+--- # 数据源配置
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    # 动态数据源文档 https://www.kancloud.cn/tracy5546/dynamic-datasource/content
+    dynamic:
+      p6spy: true # 性能分析插件(有性能损耗 不建议生产环境使用)
+      primary: postgres # 设置默认的数据源或者数据源组,默认值即为 postgres
+      strict: true # 严格模式 匹配不到数据源则报错
+      datasource:
+        # 主库数据源
+        postgres:
+          type: ${spring.datasource.type}
+          driverClassName: org.postgresql.Driver
+          url: jdbc:postgresql://localhost:5432/zero_admin?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+          username: root
+          password: root123
+          # jdbc 所有参数配置参考 https://lionli.blog.csdn.net/article/details/122018562
+          # rewriteBatchedStatements=true 批处理优化 大幅提升批量插入更新删除性能(对数据库有性能损耗 使用批量操作应考虑性能问题)
+      hikari:
+        maxPoolSize: 5                        # 最大连接池数量
+        minIdle: 1                            # 最小空闲线程数量
+        connectionTimeout: 30000               # 配置获取连接等待超时的时间
+        validationTimeout: 5000                # 校验超时时间
+        idleTimeout: 600000                    # 空闲连接存活最大时间，默认10分钟
+        maxLifetime: 1800000                   # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认30分钟
+        keepaliveTime: 30000                   # 多久检查一次连接的活性
+
+--- # redis 单机配置(单机与集群只能开启一个另一个需要注释掉)
+spring.data:
+  redis:
+    host: localhost                           # 地址
+    port: 6379                                # 端口，默认为6379
+    database: 0                               # 数据库索引
+    password: redis123                        # redis 密码必须配置
+    timeout: 10s                              # 连接超时时间
+    ssl.enabled: false                        # 是否开启ssl
+
+# redisson 配置
+redisson:
+  keyPrefix: ${zeroAdmin.name}                   # redis key前缀
+  threads: 2                                     # 线程池数量
+  nettyThreads: 4                                # Netty线程池数量
+  singleServerConfig:                            # 单节点配置
+    clientName: ${zeroAdmin.name}                  # 客户端名称
+    connectionMinimumIdleSize: 2                   # 最小空闲连接数
+    connectionPoolSize: 32                         # 连接池大小
+    idleConnectionTimeout: 10000                   # 连接空闲超时，单位：毫秒
+    timeout: 3000                                  # 命令等待超时，单位：毫秒
+    subscriptionConnectionPoolSize: 50             # 发布和订阅连接池大小
+
+--- # 三方授权
+#justauth:
+#  # 前端外网访问地址
+#  address: http://localhost:80
+#  type:
+#    gitlab:
+#      client-id: 1***1
+#      client-secret: 1***1
+#      redirect-uri: 1***1
