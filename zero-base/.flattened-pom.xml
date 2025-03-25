@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.zero.admin</groupId>
+    <artifactId>zero-admin</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>zero-base</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  <name>zero-base</name>
+  <description>base 基础模块</description>
+  <modules>
+    <module>zero-base-bom</module>
+    <module>zero-base-social</module>
+    <module>zero-base-core</module>
+    <module>zero-base-excel</module>
+    <module>zero-base-idempotent</module>
+    <module>zero-base-log</module>
+    <module>zero-base-mybatis</module>
+    <module>zero-base-oss</module>
+    <module>zero-base-ratelimiter</module>
+    <module>zero-base-redis</module>
+    <module>zero-base-satoken</module>
+    <module>zero-base-security</module>
+    <module>zero-base-web</module>
+    <module>zero-base-translation</module>
+    <module>zero-base-sensitive</module>
+    <module>zero-base-json</module>
+    <module>zero-base-encrypt</module>
+    <module>zero-base-tenant</module>
+    <module>zero-base-sse</module>
+  </modules>
+</project>
