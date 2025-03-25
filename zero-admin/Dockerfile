@@ -4,4 +4,4 @@ LABEL maintainer="Akai"
 COPY *.jar /app.jar
 
 EXPOSE 8080
-CMD ["java, '-jar', 'target/zero-admin-web.jar'"]
+CMD ["java", "-jar", "/app.jar"]
