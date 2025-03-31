@@ -43,4 +43,3 @@ jobs:
         run: |
           docker build . --file zero-admin/Dockerfile --tag $DOCKER_REPO:$IMAGE_TAG
           docker push $DOCKER_REPO:$IMAGE_TAG
-        if: github.event_name == 'push'

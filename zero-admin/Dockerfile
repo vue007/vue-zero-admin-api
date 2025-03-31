@@ -1,4 +1,4 @@
-FROM openjdk:25-slim
+FROM openjdk:21-temurin
 LABEL maintainer="Akai"
 
 ENV SERVER_PORT=8080 LANG=C.UTF-8 LC_ALL=C.UTF-8 JAVA_OPTS=""
