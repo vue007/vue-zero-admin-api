@@ -1,4 +1,4 @@
-FROM openjdk:21
+FROM openjdk:25-slim
 LABEL maintainer="Akai"
 
 RUN mkdir -p /zero-admin/server/logs \
