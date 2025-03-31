@@ -1,0 +1,90 @@
+classDiagram
+
+    class TenantEntity["租户实体类 TenantEntity"] {
+        +String tenantId 租户ID
+    }
+
+    %% 核心业务实体类
+    class SysUser["用户信息表 SysUser"] {
+        +Long userId     用户ID
+        +Long deptId     部门ID
+        +String userName 用户账号
+        +String nickName 用户昵称
+        +String email    用户邮箱
+        +String phone    手机号码
+        +String status   用户状态
+        +String password 密码
+    }
+
+    class SysRole["角色信息表 SysRole"] {
+        +Long roleId       角色ID
+        +String roleName   角色名称
+        +String roleKey    权限字符
+        +Integer roleSort  显示顺序
+        +String status     角色状态
+    }
+
+    class SysDept["部门信息表 SysDept"] {
+        +Long deptId       部门ID
+        +Long parentId     父部门ID
+        +String deptName   部门名称
+        +Integer orderNum  显示顺序
+        +String status     部门状态
+    }
+
+    class SysPost["岗位信息表 SysPost"] {
+        +Long postId       岗位ID
+        +String postCode   岗位编码
+        +String postName   岗位名称
+        +Integer postSort  显示顺序
+        +String status     状态
+    }
+
+    class SysMenu["菜单权限表 SysMenu"] {
+        +Long menuId       菜单ID
+        +Long parentId     父菜单ID
+        +String menuName   菜单名称
+        +String path       路由地址
+        +String perms      权限标识
+        +String status     菜单状态
+    }
+
+    %% 关联关系表
+    class SysUserRole["用户角色关联表 SysUserRole"] {
+        +Long userId    用户ID
+        +Long roleId    角色ID
+    }
+
+    class SysUserPost["用户岗位关联表 SysUserPost"] {
+        +Long userId    用户ID
+        +Long postId    岗位ID
+    }
+
+    class SysRoleMenu["角色菜单关联表 SysRoleMenu"] {
+        +Long roleId    角色ID
+        +Long menuId    菜单ID
+    }
+
+    class SysRoleDept["角色部门关联表 SysRoleDept"] {
+        +Long roleId    角色ID
+        +Long deptId    部门ID
+    }
+
+    %% 继承关系
+    TenantEntity <|-- SysUser : 继承租户字段
+    TenantEntity <|-- SysRole : 继承租户字段
+    TenantEntity <|-- SysDept : 继承租户字段
+    TenantEntity <|-- SysPost : 继承租户字段
+
+    %% 多对多关联关系
+    SysUser "1" -- "n" SysUserRole : 单用户多个角色
+    SysRole "1" -- "n" SysUserRole : 单角色多个用户
+
+    SysUser "1" -- "n" SysUserPost : 单用户多个岗位
+    SysPost "1" -- "n" SysUserPost : 单岗位多个用户
+
+    SysRole "1" -- "n" SysRoleMenu : 单角色多个菜单权限
+    SysMenu "1" -- "n" SysRoleMenu : 单菜单多个角色使用
+
+    SysRole "1" -- "n" SysRoleDept : 单角色管理多个部门
+    SysDept "1" -- "n" SysRoleDept : 单部门被多个角色管理

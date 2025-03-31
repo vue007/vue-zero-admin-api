@@ -1,0 +1,44 @@
+
+flowchart TB
+    subgraph Users
+        User((User))
+    end
+
+    subgraph Services
+        SysUserService["SysUserService"]
+        SysTenantService["SysTenantService"]
+    end
+
+    subgraph Mappers
+        UserMapper[(UserMapper)]
+        RoleMapper[(RoleMapper)]
+        DeptMapper[(DeptMapper)]
+        TenantMapper[(TenantMapper)]
+        ConfigMapper[(ConfigMapper)]
+        DictMapper[(DictMapper)]
+    end
+
+    subgraph Cache
+        UserCache[("User Cache")]
+        TenantCache[("Tenant Cache")]
+    end
+
+    User --> SysUserService
+    User --> SysTenantService
+
+    SysUserService --> UserMapper
+    SysUserService --> RoleMapper
+    SysUserService --> DeptMapper
+    SysUserService --> UserCache
+
+    SysTenantService --> TenantMapper
+    SysTenantService --> ConfigMapper
+    SysTenantService --> DictMapper
+    SysTenantService --> TenantCache
+
+    UserMapper --> DB[(Database)]
+    RoleMapper --> DB
+    DeptMapper --> DB
+    TenantMapper --> DB
+    ConfigMapper --> DB
+    DictMapper --> DB
