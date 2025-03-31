@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.zero.admin</groupId>
+    <artifactId>zero-base</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>zero-base-idempotent</artifactId>
+  <version>0.0.1</version>
+  <name>zero-base-idempotent</name>
+  <description>幂等功能</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.zero.admin</groupId>
+      <artifactId>zero-base-json</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.zero.admin</groupId>
+      <artifactId>zero-base-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-crypto</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.dev33</groupId>
+      <artifactId>sa-token-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.zero.admin</groupId>
+      <artifactId>zero-base-core</artifactId>
+    </dependency>
+  </dependencies>
+</project>
