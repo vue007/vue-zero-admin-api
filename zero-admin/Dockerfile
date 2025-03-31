@@ -5,7 +5,7 @@ RUN mkdir -p /zero-admin/server/logs \
     /zero-admin/server/temp \
 
 ENV SERVER_PORT=8080 LANG=C.UTF-8 LC_ALL=C.UTF-8 JAVA_OPTS=""
-ENV SPRING_PROFILES_ACTIVE=dev
+ENV SPRING_PROFILES_ACTIVE=prod
 ADD ./target/zero-admin-web.jar ./app.jar
 
 EXPOSE 8080

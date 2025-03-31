@@ -1,0 +1,98 @@
+%%{init: {
+  'theme': 'default',
+  'themeVariables': {
+    "fontSize": "32px",
+    "pieLegendTextSize": "32px"
+  }
+}}%%
+
+erDiagram
+%% 基础实体类 - 包含审计字段
+    TENANT_ENTITY["租户实体"] {
+        String tenantId
+    }
+
+%% 核心业务实体类
+    SYS_USER["用户信息"] {
+        Long userId
+        Long deptId
+        String userName
+        String nickName
+        String email
+        String phone
+        String status
+        String password
+    }
+
+    SYS_ROLE["角色信息"] {
+        Long roleId
+        String roleName
+        String roleKey
+        Integer roleSort
+        String status
+    }
+
+    SYS_DEPT["部门信息"] {
+        Long deptId
+        Long parentId
+        String deptName
+        Integer orderNum
+        String status
+    }
+
+    SYS_POST["岗位信息"] {
+        Long postId
+        String postCode
+        String postName
+        Integer postSort
+        String status
+    }
+
+    SYS_MENU["菜单权限"] {
+        Long menuId
+        Long parentId
+        String menuName
+        String path
+        String perms
+        String status
+    }
+
+%% 关联关系表
+    SYS_USER_ROLE["用户角色关联"] {
+        Long userId
+        Long roleId
+    }
+
+    SYS_USER_POST["用户岗位关联"] {
+        Long userId
+        Long postId
+    }
+
+    SYS_ROLE_MENU["角色菜单关联"] {
+        Long roleId
+        Long menuId
+    }
+
+    SYS_ROLE_DEPT["角色部门关联"] {
+        Long roleId
+        Long deptId
+    }
+
+%% 继承关系
+    TENANT_ENTITY ||--|{ SYS_USER : "继承租户字段"
+    TENANT_ENTITY ||--|{ SYS_ROLE : "继承租户字段"
+    TENANT_ENTITY ||--|{ SYS_DEPT : "继承租户字段"
+    TENANT_ENTITY ||--|{ SYS_POST : "继承租户字段"
+
+%% 多对多关联关系
+    SYS_USER ||--o{ SYS_USER_ROLE : "单用户多个角色"
+    SYS_ROLE ||--o{ SYS_USER_ROLE : "单角色多个用户"
+
+    SYS_USER ||--o{ SYS_USER_POST : "单用户多个岗位"
+    SYS_POST ||--o{ SYS_USER_POST : "单岗位多个用户"
+
+    SYS_ROLE ||--o{ SYS_ROLE_MENU : "单角色多个菜单权限"
+    SYS_MENU ||--o{ SYS_ROLE_MENU : "单菜单多个角色使用"
+
+    SYS_ROLE ||--o{ SYS_ROLE_DEPT : "单角色管理多个部门"
+    SYS_DEPT ||--o{ SYS_ROLE_DEPT : "单部门被多个角色管理"
