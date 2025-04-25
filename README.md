@@ -5,7 +5,7 @@
 1. 安装postgresql数据库并添加数据库用户，创建zero_admin database
 2. 在[zero-admin/src/main/resources](zero-admin/src/main/resources) 目录下添加 secret-dev-local.yml
    ```yml
-   SECRET:
+   SECRET: 
     DB:
     HOST: localhost # 数据库地址
     PORT: 5432 # 数据库端口
