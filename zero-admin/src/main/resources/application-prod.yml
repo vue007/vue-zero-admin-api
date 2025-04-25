@@ -13,7 +13,7 @@ spring:
         postgres:
           type: ${spring.datasource.type}
           driverClassName: org.postgresql.Driver
-          url: jdbc:postgresql://localhost:5432/zero_admin?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+          url: jdbc:postgresql://127.0.0.1:5432/zero_admin?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
           username: root
           password: root123
           # jdbc 所有参数配置参考 https://lionli.blog.csdn.net/article/details/122018562
