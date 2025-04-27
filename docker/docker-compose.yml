@@ -1,0 +1,67 @@
+services:
+  postgres:
+    image: postgres:14.2
+    container_name: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - /docker/postgres/data:/var/lib/postgresql/data
+    network_mode: "host"
+
+  nginx-web:
+    image: nginx:stable-alpine3.21-perl
+    container_name: nginx-web
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # 证书映射
+      - /docker/nginx/cert:/etc/nginx/cert
+      # 配置文件映射
+      - /docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      # 页面目录
+      - /docker/nginx/html:/usr/share/nginx/html
+      # 日志目录
+      - /docker/nginx/log:/var/log/nginx
+    privileged: true
+    network_mode: "host"
+
+  redis:
+    image: redis:7.4.3-bookworm
+    container_name: redis
+    ports:
+      - "6379:6379"
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+    volumes:
+      # 配置文件
+      - /docker/redis/conf:/redis/config:rw
+      # 数据文件
+      - /docker/redis/data/:/redis/data/:rw
+    command: "redis-server /redis/config/redis.conf"
+    privileged: true
+    network_mode: "host"
+
+  zero-admin-api:
+    image: zero-admin/zero-admin-api:v1.0.0
+    container_name: zero-admin-api
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+      SERVER_PORT: 8080
+    volumes:
+      # 配置文件
+      - /docker/server1/logs/:/zero-admin/server/logs/
+      # skywalking 探针
+    #      - /docker/skywalking/agent/:/zero-admin/skywalking/agent
+    privileged: true
+    network_mode: "host"
+
