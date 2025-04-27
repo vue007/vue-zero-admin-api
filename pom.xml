@@ -408,6 +408,15 @@
 		</resources>
 	</build>
 
+	<mirrors>
+		<mirror>
+			<id>aliyun</id>
+			<name>Aliyun Maven</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<mirrorOf>central</mirrorOf>
+		</mirror>
+	</mirrors>
+
 </project>
 
 
