@@ -23,7 +23,7 @@
 		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
 		<dynamic-ds.version>4.3.1</dynamic-ds.version>
 		<postgresql.version>42.7.5</postgresql.version>
-
+		<!-- Test -->
 		<!-- tools -->
 		<hutool.version>5.8.36</hutool.version>
 		<lombok.version>1.18.36</lombok.version>
