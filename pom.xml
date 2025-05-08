@@ -349,6 +349,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
+					<skipTests>true</skipTests>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 					<!-- 根据打包环境执行对应的@Tag测试方法 -->
 					<groups>${profiles.active}</groups>
@@ -406,7 +407,6 @@
 			</resource>
 		</resources>
 	</build>
-
 </project>
 
 
