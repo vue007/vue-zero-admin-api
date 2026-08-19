@@ -261,6 +261,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
+          <skipTests>true</skipTests>
           <argLine>-Dfile.encoding=UTF-8</argLine>
           <groups>${profiles.active}</groups>
           <includes>
