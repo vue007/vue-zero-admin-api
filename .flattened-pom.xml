@@ -19,7 +19,7 @@
     <aws.sdk.version>2.31.3</aws.sdk.version>
     <aws.crt.version>0.36.3</aws.crt.version>
     <hutool.version>5.8.36</hutool.version>
-    <spring-boot.version>3.4.3</spring-boot.version>
+    <spring-boot.version>3.4.5</spring-boot.version>
     <p6spy.version>3.9.1</p6spy.version>
     <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
     <mapstruct-plus.version>1.4.6</mapstruct-plus.version>
@@ -29,19 +29,20 @@
     <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
     <mybatis.version>3.5.19</mybatis.version>
     <maven-jar-plugin.version>3.4.0</maven-jar-plugin.version>
-    <bouncycastle.version>1.80</bouncycastle.version>
-    <java.version>21</java.version>
+    <bouncycastle.version>1.84</bouncycastle.version>
+    <java.version>25</java.version>
     <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <mybatis-plus.version>3.5.10.1</mybatis-plus.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <revision>0.0.1</revision>
-    <lombok.version>1.18.36</lombok.version>
+    <lombok.version>1.18.46</lombok.version>
     <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
     <ip2region.version>2.7.0</ip2region.version>
-    <postgresql.version>42.7.5</postgresql.version>
+    <postgresql.version>42.7.12</postgresql.version>
     <satoken.version>1.40.0</satoken.version>
     <redisson.version>3.45.1</redisson.version>
+    <spring-boot-maven-plugin.version>3.5.0</spring-boot-maven-plugin.version>
     <justauth.version>1.16.7</justauth.version>
     <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
   </properties>
@@ -92,6 +93,11 @@
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis</artifactId>
         <version>${mybatis.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql.version}</version>
       </dependency>
       <dependency>
         <groupId>com.baomidou</groupId>
@@ -224,6 +230,8 @@
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
+          <proc>full</proc>
+          <useIncrementalCompilation>false</useIncrementalCompilation>
           <encoding>${project.build.sourceEncoding}</encoding>
           <annotationProcessorPaths>
             <path>
