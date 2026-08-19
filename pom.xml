@@ -16,18 +16,19 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- foundation -->
-		<java.version>21</java.version>
-		<spring-boot.version>3.4.3</spring-boot.version>
+		<java.version>25</java.version>
+		<spring-boot.version>3.4.5</spring-boot.version>
+		<spring-boot-maven-plugin.version>3.5.0</spring-boot-maven-plugin.version>
 		<spring-boot-admin.version>3.4.5</spring-boot-admin.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
 		<dynamic-ds.version>4.3.1</dynamic-ds.version>
-		<postgresql.version>42.7.5</postgresql.version>
+		<postgresql.version>42.7.12</postgresql.version>
 		<!-- Test -->
 		<!-- tools -->
 		<hutool.version>5.8.36</hutool.version>
-		<lombok.version>1.18.36</lombok.version>
-		<bouncycastle.version>1.80</bouncycastle.version>
+		<lombok.version>1.18.46</lombok.version>
+		<bouncycastle.version>1.84</bouncycastle.version>
 		<mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
 		<mapstruct-plus.version>1.4.6</mapstruct-plus.version>
 		<redisson.version>3.45.1</redisson.version>
@@ -146,6 +147,12 @@
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
 				<version>${mybatis.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
 			</dependency>
 
 			<dependency>
@@ -310,6 +317,8 @@
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+					<proc>full</proc>
+					<useIncrementalCompilation>false</useIncrementalCompilation>
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<annotationProcessorPaths>
 						<path>
