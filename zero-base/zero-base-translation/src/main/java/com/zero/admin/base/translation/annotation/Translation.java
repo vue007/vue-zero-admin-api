@@ -1,8 +1,8 @@
 package com.zero.admin.base.translation.annotation;
 
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.zero.admin.base.translation.core.handler.TranslationHandler;
+import tools.jackson.databind.annotation.JsonSerialize;
 
 import java.lang.annotation.*;
 

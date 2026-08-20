@@ -1,9 +1,9 @@
 package com.zero.admin.base.sensitive.annotation;
 
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.zero.admin.base.sensitive.core.SensitiveStrategy;
 import com.zero.admin.base.sensitive.handler.SensitiveHandler;
+import tools.jackson.databind.annotation.JsonSerialize;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

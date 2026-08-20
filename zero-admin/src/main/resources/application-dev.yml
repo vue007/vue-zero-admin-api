@@ -1,6 +1,6 @@
 spring:
   config:
-    import: classpath:secret-dev-local.yml
+    import: optional:classpath:secret-dev-local.yml
 --- # 数据源配置
 spring:
   datasource:

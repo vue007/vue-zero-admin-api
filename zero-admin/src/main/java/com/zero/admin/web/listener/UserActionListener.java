@@ -2,8 +2,8 @@ package com.zero.admin.web.listener;
 
 import cn.dev33.satoken.config.SaTokenConfig;
 import cn.dev33.satoken.listener.SaTokenListener;
-import cn.dev33.satoken.stp.SaLoginModel;
 import cn.dev33.satoken.stp.StpUtil;
+import cn.dev33.satoken.stp.parameter.SaLoginParameter;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.http.useragent.UserAgent;
 import cn.hutool.http.useragent.UserAgentUtil;
@@ -42,7 +42,7 @@ public class UserActionListener implements SaTokenListener {
      * 每次登录时触发
      */
     @Override
-    public void doLogin(String loginType, Object loginId, String tokenValue, SaLoginModel loginModel) {
+    public void doLogin(String loginType, Object loginId, String tokenValue, SaLoginParameter loginModel) {
         UserAgent userAgent = UserAgentUtil.parse(ServletUtils.getRequest().getHeader("User-Agent"));
         String ip = ServletUtils.getClientIP();
         UserOnlineDTO dto = new UserOnlineDTO();
@@ -160,6 +160,6 @@ public class UserActionListener implements SaTokenListener {
      * 每次Token续期时触发
      */
     @Override
-    public void doRenewTimeout(String tokenValue, Object loginId, long timeout) {
+    public void doRenewTimeout(String loginType, Object loginId, String tokenValue, long timeout) {
     }
 }

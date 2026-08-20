@@ -57,9 +57,21 @@
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!-- 根据构建参数执行对应的 @Tag 测试 -->
+                    <groups>${test.groups}</groups>
+                    <excludedGroups>exclude</excludedGroups>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot-maven-plugin.version}</version>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.zero.admin.AdminApplication</mainClass>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
