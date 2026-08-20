@@ -1,6 +1,5 @@
 package com.zero.admin.base.translation.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import com.zero.admin.base.translation.annotation.TranslationType;
@@ -9,6 +8,9 @@ import com.zero.admin.base.translation.core.handler.TranslationBeanSerializerMod
 import com.zero.admin.base.translation.core.handler.TranslationHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
+import org.springframework.context.annotation.Bean;
+import tools.jackson.databind.module.SimpleModule;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,9 +28,6 @@ public class TranslationConfig {
     @Autowired
     private List<TranslationInterface<?>> list;
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
     @PostConstruct
     public void init() {
         Map<String, TranslationInterface<?>> map = new HashMap<>(list.size());
@@ -41,10 +40,18 @@ public class TranslationConfig {
             }
         }
         TranslationHandler.TRANSLATION_MAPPER.putAll(map);
-        // 设置 Bean 序列化修改器
-        objectMapper.setSerializerFactory(
-            objectMapper.getSerializerFactory()
-                .withSerializerModifier(new TranslationBeanSerializerModifier()));
+    }
+
+    /**
+     * 在 Jackson 3 的不可变 ObjectMapper 构建阶段注册翻译序列化修改器。
+     */
+    @Bean
+    public JsonMapperBuilderCustomizer translationJsonCustomizer() {
+        return builder -> {
+            SimpleModule module = new SimpleModule("zero-admin-translation");
+            module.setSerializerModifier(new TranslationBeanSerializerModifier());
+            builder.addModule(module);
+        };
     }
 
 }

@@ -133,3 +133,116 @@ Caused by: org.postgresql.util.PSQLException: FATAL: database "zero_admin" does 
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
 	... 91 common frames omitted
+2026-08-20 16:56:15 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-20 16:56:15 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 26.0.2 with PID 48061 (/Users/akai/Documents/GitHub/work/vue-zero-admin-api/zero-admin/target/zero-admin-web.jar started by akai in /Users/akai/Documents/GitHub/work/vue-zero-admin-api)
+2026-08-20 16:56:15 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2026-08-20 16:56:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-20 16:56:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-20 16:56:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-20 16:56:17 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2026-08-20 16:56:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2026-08-20 16:56:17 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@59845a40
+2026-08-20 16:56:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2026-08-20 16:56:17 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2026-08-20 16:56:17 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2026-08-20 16:56:18 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Unsatisfied dependency expressed through method 'requestMappingHandlerMapping' parameter 0: Error creating bean with name 'mvcContentNegotiationManager' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.accept.ContentNegotiationManager]: Factory method 'mvcContentNegotiationManager' threw exception with message: Error creating bean with name 'jacksonJsonHttpMessageConvertersCustomizer' defined in class path resource [org/springframework/boot/http/converter/autoconfigure/JacksonHttpMessageConvertersConfiguration$JacksonJsonHttpMessageConverterConfiguration.class]: Unsatisfied dependency expressed through method 'jacksonJsonHttpMessageConvertersCustomizer' parameter 0: Error creating bean with name 'jacksonJsonMapper' defined in class path resource [org/springframework/boot/jackson/autoconfigure/JacksonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'jacksonJsonMapper' parameter 0: Error creating bean with name 'jsonMapperBuilder' defined in class path resource [org/springframework/boot/jackson/autoconfigure/JacksonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'jsonMapperBuilder' parameter 0: Error creating bean with name 'org.springframework.boot.jackson.autoconfigure.JacksonAutoConfiguration$JacksonJsonCustomizerConfiguration': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'spring.jackson-org.springframework.boot.jackson.autoconfigure.JacksonProperties': Could not bind properties to 'JacksonProperties' : prefix=spring.jackson, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-08-20 16:56:18 [main] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2026-08-20 16:56:18 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-08-20 16:56:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2026-08-20 16:56:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2026-08-20 16:56:18 [main] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2026-08-20 16:56:18 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-08-20 16:56:18 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-08-20 16:56:18 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.jackson.json.read' to java.util.Map<tools.jackson.core.json.JsonReadFeature, java.lang.Boolean>:
+
+    Reason: failed to convert java.lang.String to tools.jackson.core.json.JsonReadFeature (caused by java.lang.IllegalArgumentException: No enum constant tools.jackson.core.json.JsonReadFeature.fail-on-unknown-properties)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER
+    ALLOW_JAVA_COMMENTS
+    ALLOW_LEADING_DECIMAL_POINT_FOR_NUMBERS
+    ALLOW_LEADING_PLUS_SIGN_FOR_NUMBERS
+    ALLOW_LEADING_ZEROS_FOR_NUMBERS
+    ALLOW_MISSING_VALUES
+    ALLOW_NON_NUMERIC_NUMBERS
+    ALLOW_RS_CONTROL_CHAR
+    ALLOW_SINGLE_QUOTES
+    ALLOW_TRAILING_COMMA
+    ALLOW_TRAILING_DECIMAL_POINT_FOR_NUMBERS
+    ALLOW_UNESCAPED_CONTROL_CHARS
+    ALLOW_UNQUOTED_PROPERTY_NAMES
+    ALLOW_YAML_COMMENTS
+
+2026-08-20 16:56:58 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-20 16:56:58 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 26.0.2 with PID 48345 (/Users/akai/Documents/GitHub/work/vue-zero-admin-api/zero-admin/target/zero-admin-web.jar started by akai in /Users/akai/Documents/GitHub/work/vue-zero-admin-api)
+2026-08-20 16:56:58 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2026-08-20 16:57:00 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-08-20 16:57:00 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at com.zero.admin.AdminApplication.main(AdminApplication.java:14)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to create tempDir. java.io.tmpdir is set to /var/folders/vl/62x8m26s4g704x9zd98x_3k80000gn/T/
+	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory$TempDirs.createTempDir(AbstractConfigurableWebServerFactory.java:264)
+	at org.springframework.boot.tomcat.TomcatWebServerFactory.createTomcat(TomcatWebServerFactory.java:394)
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:165)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	... 11 common frames omitted
+Caused by: java.nio.file.FileSystemException: /var/folders/vl/62x8m26s4g704x9zd98x_3k80000gn/T/tomcat.8080.3053255957600272019: Operation not permitted
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:102)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:108)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:113)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.createDirectory(UnixFileSystemProvider.java:450)
+	at java.base/java.nio.file.Files.createDirectory(Files.java:649)
+	at java.base/java.nio.file.TempFileHelper.create(TempFileHelper.java:130)
+	at java.base/java.nio.file.TempFileHelper.createTempDirectory(TempFileHelper.java:162)
+	at java.base/java.nio.file.Files.createTempDirectory(Files.java:931)
+	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory$TempDirs.createTempDir(AbstractConfigurableWebServerFactory.java:258)
+	... 15 common frames omitted
+2026-08-20 16:57:20 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-20 16:57:20 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 26.0.2 with PID 48421 (/Users/akai/Documents/GitHub/work/vue-zero-admin-api/zero-admin/target/zero-admin-web.jar started by akai in /Users/akai/Documents/GitHub/work/vue-zero-admin-api)
+2026-08-20 16:57:20 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2026-08-20 16:57:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-20 16:57:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-20 16:57:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-20 16:57:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2026-08-20 16:57:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2026-08-20 16:57:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@53153d5e
+2026-08-20 16:57:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2026-08-20 16:57:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2026-08-20 16:57:22 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2026-08-20 16:57:24 [main] INFO  c.z.a.base.redis.config.RedisConfig - 初始化 redis 配置
+2026-08-20 16:57:24 [main] INFO  org.redisson.Version - Redisson 4.7.0
+2026-08-20 16:57:24 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-20 16:57:24 [redisson-netty-1-4] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2026-08-20 16:57:24 [redisson-netty-1-1] INFO  o.r.connection.ConnectionsHolder - 2 connections initialized for localhost/127.0.0.1:6379
+2026-08-20 16:57:24 [main] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@aa5455e
+2026-08-20 16:57:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-20 16:57:24 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 4.77 seconds (process running for 5.274)
+2026-08-20 16:57:24 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2026-08-20 16:57:48 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-20 16:57:48 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /],无参数
+2026-08-20 16:57:48 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /],耗时:[47]毫秒
+2026-08-20 16:57:48 [http-nio-8080-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /favicon.ico
+2026-08-20 16:57:48 [http-nio-8080-exec-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/favicon.ico'不存在.

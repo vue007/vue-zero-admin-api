@@ -16,7 +16,7 @@ public class AssertUnitTest {
     @Test
     void testAssertEquals() {
         Assertions.assertEquals("666", new String("666"));
-        Assertions.assertNotEquals("666", new String("666"));
+        Assertions.assertNotEquals("666", new String("777"));
     }
 
     @DisplayName("测试 assertSame 方法")
@@ -25,21 +25,21 @@ public class AssertUnitTest {
         Object obj = new Object();
         Object obj1 = obj;
         Assertions.assertSame(obj, obj1);
-        Assertions.assertNotSame(obj, obj1);
+        Assertions.assertNotSame(obj, new Object());
     }
 
     @DisplayName("测试 assertTrue 方法")
     @Test
     void testAssertTrue() {
         Assertions.assertTrue(true);
-        Assertions.assertFalse(true);
+        Assertions.assertFalse(false);
     }
 
     @DisplayName("测试 assertNull 方法")
     @Test
     void testAssertNull() {
         Assertions.assertNull(null);
-        Assertions.assertNotNull(null);
+        Assertions.assertNotNull(new Object());
     }
 
 }

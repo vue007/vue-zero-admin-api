@@ -1,7 +1,7 @@
 package com.zero.admin.base.redis.handler;
 
 import com.zero.admin.base.core.utils.StringUtils;
-import org.redisson.api.NameMapper;
+import org.redisson.config.NameMapper;
 
 /**
  * redis缓存key前缀处理

@@ -17,6 +17,7 @@
 ## 安装redis环境
 1. 安装redis
 2. ```$ redis-cli```
-3. ```> config set requirepass redis123```
+3. ```> AUTH redis123```
+4. ```> config set requirepass redis123```
 
 ## 

@@ -1,9 +1,7 @@
 package com.zero.admin.base.tenant.config;
 
 import cn.dev33.satoken.dao.SaTokenDao;
-import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
-import com.zero.admin.base.core.utils.reflect.ReflectUtils;
 import com.zero.admin.base.redis.config.RedisConfig;
 import com.zero.admin.base.redis.config.properties.RedissonProperties;
 import com.zero.admin.base.tenant.core.TenantSaTokenDao;
@@ -11,8 +9,6 @@ import com.zero.admin.base.tenant.handle.PlusTenantLineHandler;
 import com.zero.admin.base.tenant.handle.TenantKeyPrefixHandler;
 import com.zero.admin.base.tenant.manager.TenantSpringCacheManager;
 import com.zero.admin.base.tenant.properties.TenantProperties;
-import org.redisson.config.ClusterServersConfig;
-import org.redisson.config.SingleServerConfig;
 import org.redisson.spring.starter.RedissonAutoConfigurationCustomizer;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -21,6 +17,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cache.CacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 
 /**
  * 租户配置类
@@ -47,22 +45,10 @@ public class TenantConfig {
     }
 
     @Bean
+    @Order(Ordered.LOWEST_PRECEDENCE)
     public RedissonAutoConfigurationCustomizer tenantRedissonCustomizer(RedissonProperties redissonProperties) {
-        return config -> {
-            TenantKeyPrefixHandler nameMapper = new TenantKeyPrefixHandler(redissonProperties.getKeyPrefix());
-            SingleServerConfig singleServerConfig = ReflectUtils.invokeGetter(config, "singleServerConfig");
-            if (ObjectUtil.isNotNull(singleServerConfig)) {
-                // 使用单机模式
-                // 设置多租户 redis key前缀
-                singleServerConfig.setNameMapper(nameMapper);
-            }
-            ClusterServersConfig clusterServersConfig = ReflectUtils.invokeGetter(config, "clusterServersConfig");
-            // 集群配置方式 参考下方注释
-            if (ObjectUtil.isNotNull(clusterServersConfig)) {
-                // 设置多租户 redis key前缀
-                clusterServersConfig.setNameMapper(nameMapper);
-            }
-        };
+        // Redisson 4 将名称映射提升为全局配置；租户映射最后执行并覆盖基础前缀映射。
+        return config -> config.setNameMapper(new TenantKeyPrefixHandler(redissonProperties.getKeyPrefix()));
     }
 
     /**

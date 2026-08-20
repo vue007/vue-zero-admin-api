@@ -6,7 +6,9 @@ import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
 import com.zero.admin.base.core.exception.ServiceException;
 import com.zero.admin.base.core.utils.file.FileUtils;
+import org.lionsoul.ip2region.xdb.LongByteArray;
 import org.lionsoul.ip2region.xdb.Searcher;
+import org.lionsoul.ip2region.xdb.Version;
 
 import java.io.File;
 
@@ -35,7 +37,7 @@ public class RegionUtils {
         String dbPath = existFile.getPath();
 
         // 1、从 dbPath 加载整个 xdb 到内存。
-        byte[] cBuff;
+        LongByteArray cBuff;
         try {
             cBuff = Searcher.loadContentFromFile(dbPath);
         } catch (Exception e) {
@@ -43,7 +45,7 @@ public class RegionUtils {
         }
         // 2、使用上述的 cBuff 创建一个完全基于内存的查询对象。
         try {
-            SEARCHER = Searcher.newWithBuffer(cBuff);
+            SEARCHER = Searcher.newWithBuffer(Version.IPv4, cBuff);
         } catch (Exception e) {
             throw new ServiceException("RegionUtils初始化失败，原因：" + e.getMessage());
         }
