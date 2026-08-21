@@ -23,6 +23,11 @@
 
         <dependency>
             <groupId>com.zero.admin</groupId>
+            <artifactId>zero-base-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-ratelimiter</artifactId>
         </dependency>
         <dependency>
