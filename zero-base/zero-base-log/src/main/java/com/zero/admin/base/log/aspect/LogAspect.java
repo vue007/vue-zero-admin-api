@@ -21,7 +21,7 @@ import com.zero.admin.base.json.utils.JsonUtils;
 import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.base.log.enums.BusinessStatus;
 import com.zero.admin.base.log.event.OperLogEvent;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.http.HttpMethod;
 import org.springframework.validation.BindingResult;

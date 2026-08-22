@@ -1,7 +1,5 @@
 package com.zero.admin.base.mybatis.helper;
 
-import cn.dev33.satoken.context.SaHolder;
-import cn.dev33.satoken.context.model.SaStorage;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.plugins.IgnoreStrategy;
@@ -31,6 +29,8 @@ public class DataPermissionHelper {
 
     private static final ThreadLocal<DataPermission> PERMISSION_CACHE = new ThreadLocal<>();
 
+    private static final ThreadLocal<Map<String, Object>> CONTEXT_CACHE = new ThreadLocal<>();
+
     /**
      * 获取当前执行mapper权限注解
      *
@@ -54,6 +54,7 @@ public class DataPermissionHelper {
      */
     public static void removePermission() {
         PERMISSION_CACHE.remove();
+        CONTEXT_CACHE.remove();
     }
 
     /**
@@ -82,20 +83,16 @@ public class DataPermissionHelper {
     /**
      * 获取数据权限上下文
      *
-     * @return 存储在SaStorage中的Map对象，用于存储数据权限相关的上下文信息
+     * @return 存储数据权限相关上下文信息的 Map 对象
      * @throws NullPointerException 如果数据权限上下文类型异常，则抛出NullPointerException
      */
     public static Map<String, Object> getContext() {
-        SaStorage saStorage = SaHolder.getStorage();
-        Object attribute = saStorage.get(DATA_PERMISSION_KEY);
-        if (ObjectUtil.isNull(attribute)) {
-            saStorage.set(DATA_PERMISSION_KEY, new HashMap<>());
-            attribute = saStorage.get(DATA_PERMISSION_KEY);
+        Map<String, Object> context = CONTEXT_CACHE.get();
+        if (context == null) {
+            context = new HashMap<>();
+            CONTEXT_CACHE.set(context);
         }
-        if (attribute instanceof Map map) {
-            return map;
-        }
-        throw new NullPointerException("data permission context type exception");
+        return context;
     }
 
     private static IgnoreStrategy getIgnoreStrategy() {

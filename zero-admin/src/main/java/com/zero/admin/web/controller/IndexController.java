@@ -1,6 +1,5 @@
 package com.zero.admin.web.controller;
 
-import cn.dev33.satoken.annotation.SaIgnore;
 import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.config.ZeroAdminConfig;
 import com.zero.admin.base.core.utils.StringUtils;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Akai
  */
-@SaIgnore
 @RequiredArgsConstructor
 @RestController
 public class IndexController {

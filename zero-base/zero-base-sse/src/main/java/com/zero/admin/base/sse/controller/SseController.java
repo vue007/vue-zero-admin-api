@@ -1,10 +1,8 @@
 package com.zero.admin.base.sse.controller;
 
-import cn.dev33.satoken.annotation.SaIgnore;
-import cn.dev33.satoken.stp.StpUtil;
 import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.domain.R;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.sse.core.SseEmitterManager;
 import com.zero.admin.base.sse.dto.SseMessageDto;
 import org.springframework.beans.factory.DisposableBean;
@@ -33,7 +31,7 @@ public class SseController implements DisposableBean {
      */
     @GetMapping(value = "${sse.path}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public SseEmitter connect() {
-        String tokenValue = StpUtil.getTokenValue();
+        String tokenValue = LoginHelper.getToken();
         Long userId = LoginHelper.getUserId();
         return sseEmitterManager.connect(userId, tokenValue);
     }
@@ -41,10 +39,9 @@ public class SseController implements DisposableBean {
     /**
      * 关闭 SSE 连接
      */
-    @SaIgnore
     @GetMapping(value = "${sse.path}/close")
     public R<Void> close() {
-        String tokenValue = StpUtil.getTokenValue();
+        String tokenValue = LoginHelper.getToken();
         Long userId = LoginHelper.getUserId();
         sseEmitterManager.disconnect(userId, tokenValue);
         return R.ok();

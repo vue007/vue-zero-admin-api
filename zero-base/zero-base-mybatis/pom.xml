@@ -20,7 +20,7 @@
 
         <dependency>
             <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-satoken</artifactId>
+            <artifactId>zero-base-shiro</artifactId>
         </dependency>
 
         <!-- dynamic-datasource 多数据源-->

@@ -1,7 +1,7 @@
 package com.zero.admin.system.controller;
 
-import cn.dev33.satoken.annotation.SaCheckPermission;
-import cn.dev33.satoken.secure.BCrypt;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.mindrot.jbcrypt.BCrypt;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
@@ -20,7 +20,7 @@ import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.base.log.enums.BusinessType;
 import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.tenant.helper.TenantHelper;
 import com.zero.admin.base.web.core.BaseController;
 import com.zero.admin.system.domain.bo.SysDeptBo;
@@ -58,7 +58,7 @@ public class SysUserController extends BaseController {
     /**
      * 获取用户列表
      */
-    @SaCheckPermission("system:user:list")
+    @RequiresPermissions("system:user:list")
     @GetMapping("/list")
     public TableDataInfo<SysUserVo> list(SysUserBo user, PageQuery pageQuery) {
         return userService.selectPageUserList(user, pageQuery);
@@ -68,7 +68,7 @@ public class SysUserController extends BaseController {
      * 导出用户列表
      */
     @Log(title = "用户管理", businessType = BusinessType.EXPORT)
-    @SaCheckPermission("system:user:export")
+    @RequiresPermissions("system:user:export")
     @PostMapping("/export")
     public void export(SysUserBo user, HttpServletResponse response) {
         List<SysUserExportVo> list = userService.selectUserExportList(user);
@@ -82,7 +82,7 @@ public class SysUserController extends BaseController {
      * @param updateSupport 是否更新已存在数据
      */
     @Log(title = "用户管理", businessType = BusinessType.IMPORT)
-    @SaCheckPermission("system:user:import")
+    @RequiresPermissions("system:user:import")
     @PostMapping(value = "/importData", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public R<Void> importData(@RequestPart("file") MultipartFile file, boolean updateSupport) throws Exception {
         ExcelResult<SysUserImportVo> result = ExcelUtil.importExcel(file.getInputStream(), SysUserImportVo.class, new SysUserImportListener(updateSupport));
@@ -125,7 +125,7 @@ public class SysUserController extends BaseController {
      *
      * @param userId 用户ID
      */
-    @SaCheckPermission("system:user:query")
+    @RequiresPermissions("system:user:query")
     @GetMapping(value = {"/", "/{userId}"})
     public R<SysUserInfoVo> getInfo(@PathVariable(value = "userId", required = false) Long userId) {
         SysUserInfoVo userInfoVo = new SysUserInfoVo();
@@ -152,7 +152,7 @@ public class SysUserController extends BaseController {
     /**
      * 新增用户
      */
-    @SaCheckPermission("system:user:add")
+    @RequiresPermissions("system:user:add")
     @Log(title = "用户管理", businessType = BusinessType.INSERT)
     @PostMapping
     public R<Void> add(@Validated @RequestBody SysUserBo user) {
@@ -169,14 +169,14 @@ public class SysUserController extends BaseController {
                 return R.fail("当前租户下用户名额不足，请联系管理员");
             }
         }
-        user.setPassword(BCrypt.hashpw(user.getPassword()));
+        user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         return toAjax(userService.insertUser(user));
     }
 
     /**
      * 修改用户
      */
-    @SaCheckPermission("system:user:edit")
+    @RequiresPermissions("system:user:edit")
     @Log(title = "用户管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public R<Void> edit(@Validated @RequestBody SysUserBo user) {
@@ -198,7 +198,7 @@ public class SysUserController extends BaseController {
      *
      * @param userIds 角色ID串
      */
-    @SaCheckPermission("system:user:remove")
+    @RequiresPermissions("system:user:remove")
     @Log(title = "用户管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{userIds}")
     public R<Void> remove(@PathVariable Long[] userIds) {
@@ -214,7 +214,7 @@ public class SysUserController extends BaseController {
      * @param userIds 用户ID串
      * @param deptId  部门ID
      */
-    @SaCheckPermission("system:user:query")
+    @RequiresPermissions("system:user:query")
     @GetMapping("/optionselect")
     public R<List<SysUserVo>> optionselect(@RequestParam(required = false) Long[] userIds,
                                            @RequestParam(required = false) Long deptId) {
@@ -225,20 +225,20 @@ public class SysUserController extends BaseController {
      * 重置密码
      */
     @ApiEncrypt
-    @SaCheckPermission("system:user:resetPwd")
+    @RequiresPermissions("system:user:resetPwd")
     @Log(title = "用户管理", businessType = BusinessType.UPDATE)
     @PutMapping("/resetPwd")
     public R<Void> resetPwd(@RequestBody SysUserBo user) {
         userService.checkUserAllowed(user.getUserId());
         userService.checkUserDataScope(user.getUserId());
-        user.setPassword(BCrypt.hashpw(user.getPassword()));
+        user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         return toAjax(userService.resetUserPwd(user.getUserId(), user.getPassword()));
     }
 
     /**
      * 状态修改
      */
-    @SaCheckPermission("system:user:edit")
+    @RequiresPermissions("system:user:edit")
     @Log(title = "用户管理", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public R<Void> changeStatus(@RequestBody SysUserBo user) {
@@ -252,7 +252,7 @@ public class SysUserController extends BaseController {
      *
      * @param userId 用户ID
      */
-    @SaCheckPermission("system:user:query")
+    @RequiresPermissions("system:user:query")
     @GetMapping("/authRole/{userId}")
     public R<SysUserInfoVo> authRole(@PathVariable Long userId) {
         userService.checkUserDataScope(userId);
@@ -270,7 +270,7 @@ public class SysUserController extends BaseController {
      * @param userId  用户Id
      * @param roleIds 角色ID串
      */
-    @SaCheckPermission("system:user:edit")
+    @RequiresPermissions("system:user:edit")
     @Log(title = "用户管理", businessType = BusinessType.GRANT)
     @PutMapping("/authRole")
     public R<Void> insertAuthRole(Long userId, Long[] roleIds) {
@@ -282,7 +282,7 @@ public class SysUserController extends BaseController {
     /**
      * 获取部门树列表
      */
-    @SaCheckPermission("system:user:list")
+    @RequiresPermissions("system:user:list")
     @GetMapping("/deptTree")
     public R<List<Tree<Long>>> deptTree(SysDeptBo dept) {
         return R.ok(deptService.selectDeptTreeList(dept));
@@ -291,7 +291,7 @@ public class SysUserController extends BaseController {
     /**
      * 获取部门下的所有用户信息
      */
-    @SaCheckPermission("system:user:list")
+    @RequiresPermissions("system:user:list")
     @GetMapping("/list/dept/{deptId}")
     public R<List<SysUserVo>> listByDept(@PathVariable @NotNull Long deptId) {
         return R.ok(userService.selectUserListByDept(deptId));

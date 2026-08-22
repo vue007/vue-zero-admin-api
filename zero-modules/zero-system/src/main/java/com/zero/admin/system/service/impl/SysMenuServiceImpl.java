@@ -13,7 +13,7 @@ import com.zero.admin.base.core.utils.MapstructUtils;
 import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.core.utils.TreeBuildUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.SysMenu;
 import com.zero.admin.system.domain.SysRole;
 import com.zero.admin.system.domain.SysRoleMenu;

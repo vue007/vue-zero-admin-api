@@ -5,6 +5,8 @@ import com.zero.admin.base.core.exception.ServiceException;
 import com.zero.admin.base.core.utils.SpringUtils;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration;
 import org.springframework.core.task.VirtualThreadTaskExecutor;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 
@@ -19,6 +21,7 @@ import java.util.concurrent.Executor;
  * @author Akai
  */
 @AutoConfiguration
+@AutoConfigureBefore(TaskExecutionAutoConfiguration.class)
 public class AsyncConfig implements AsyncConfigurer {
 
     /**

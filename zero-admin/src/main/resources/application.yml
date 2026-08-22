@@ -68,13 +68,6 @@ spring:
     deserialization:
       fail-on-unknown-properties: false # 允许对象忽略json中不存在的属性
 
-# Sa-Token配置
-sa-token:
-  token-name: Authorization  # token名称 (同时也是cookie名称)
-  is-concurrent: true # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
-  is-share: false # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
-  jwt-secret-key: asdasdasifhueuiwyurfewbfjsdafjk  # jwt秘钥
-
 # security配置
 security:
   # 排除路径
@@ -156,7 +149,7 @@ springdoc:
       apiKey:
         type: APIKEY
         in: HEADER
-        name: ${sa-token.token-name}
+        name: Authorization
   #这里定义了两个分组，可定义多个，也可以不定义
   group-configs:
     - group: 1.通用模块

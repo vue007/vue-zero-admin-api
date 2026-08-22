@@ -21,7 +21,7 @@ import com.zero.admin.base.mybatis.annotation.DataColumn;
 import com.zero.admin.base.mybatis.annotation.DataPermission;
 import com.zero.admin.base.mybatis.enums.DataScopeType;
 import com.zero.admin.base.mybatis.helper.DataPermissionHelper;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.expression.BeanFactoryResolver;
 import org.springframework.core.io.Resource;

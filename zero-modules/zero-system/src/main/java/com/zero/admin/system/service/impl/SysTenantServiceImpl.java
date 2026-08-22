@@ -1,6 +1,6 @@
 package com.zero.admin.system.service.impl;
 
-import cn.dev33.satoken.secure.BCrypt;
+import org.mindrot.jbcrypt.BCrypt;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
@@ -157,7 +157,7 @@ public class SysTenantServiceImpl implements ISysTenantService {
         user.setTenantId(tenantId);
         user.setUserName(bo.getUsername());
         user.setNickName(bo.getUsername());
-        user.setPassword(BCrypt.hashpw(bo.getPassword()));
+        user.setPassword(BCrypt.hashpw(bo.getPassword(), BCrypt.gensalt()));
         user.setDeptId(deptId);
         userMapper.insert(user);
         //新增系统用户后，默认当前用户为部门的负责人

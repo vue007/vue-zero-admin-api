@@ -1,6 +1,6 @@
 package com.zero.admin.system.controller;
 
-import cn.dev33.satoken.annotation.SaCheckPermission;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import cn.hutool.core.convert.Convert;
 import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.constant.SystemConstants;
@@ -35,7 +35,7 @@ public class SysDeptController extends BaseController {
     /**
      * 获取部门列表
      */
-    @SaCheckPermission("system:dept:list")
+    @RequiresPermissions("system:dept:list")
     @GetMapping("/list")
     public R<List<SysDeptVo>> list(SysDeptBo dept) {
         List<SysDeptVo> depts = deptService.selectDeptList(dept);
@@ -47,7 +47,7 @@ public class SysDeptController extends BaseController {
      *
      * @param deptId 部门ID
      */
-    @SaCheckPermission("system:dept:list")
+    @RequiresPermissions("system:dept:list")
     @GetMapping("/list/exclude/{deptId}")
     public R<List<SysDeptVo>> excludeChild(@PathVariable(value = "deptId", required = false) Long deptId) {
         List<SysDeptVo> depts = deptService.selectDeptList(new SysDeptBo());
@@ -61,7 +61,7 @@ public class SysDeptController extends BaseController {
      *
      * @param deptId 部门ID
      */
-    @SaCheckPermission("system:dept:query")
+    @RequiresPermissions("system:dept:query")
     @GetMapping(value = "/{deptId}")
     public R<SysDeptVo> getInfo(@PathVariable Long deptId) {
         deptService.checkDeptDataScope(deptId);
@@ -71,7 +71,7 @@ public class SysDeptController extends BaseController {
     /**
      * 新增部门
      */
-    @SaCheckPermission("system:dept:add")
+    @RequiresPermissions("system:dept:add")
     @Log(title = "部门管理", businessType = BusinessType.INSERT)
     @PostMapping
     public R<Void> add(@Validated @RequestBody SysDeptBo dept) {
@@ -84,7 +84,7 @@ public class SysDeptController extends BaseController {
     /**
      * 修改部门
      */
-    @SaCheckPermission("system:dept:edit")
+    @RequiresPermissions("system:dept:edit")
     @Log(title = "部门管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public R<Void> edit(@Validated @RequestBody SysDeptBo dept) {
@@ -109,7 +109,7 @@ public class SysDeptController extends BaseController {
      *
      * @param deptId 部门ID
      */
-    @SaCheckPermission("system:dept:remove")
+    @RequiresPermissions("system:dept:remove")
     @Log(title = "部门管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{deptId}")
     public R<Void> remove(@PathVariable Long deptId) {
@@ -131,7 +131,7 @@ public class SysDeptController extends BaseController {
      *
      * @param deptIds 部门ID串
      */
-    @SaCheckPermission("system:dept:query")
+    @RequiresPermissions("system:dept:query")
     @GetMapping("/optionselect")
     public R<List<SysDeptVo>> optionselect(@RequestParam(required = false) Long[] deptIds) {
         return R.ok(deptService.selectDeptByIds(deptIds == null ? null : List.of(deptIds)));

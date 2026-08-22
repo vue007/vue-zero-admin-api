@@ -1,10 +1,8 @@
 package com.zero.admin.base.tenant.config;
 
-import cn.dev33.satoken.dao.SaTokenDao;
 import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
 import com.zero.admin.base.redis.config.RedisConfig;
 import com.zero.admin.base.redis.config.properties.RedissonProperties;
-import com.zero.admin.base.tenant.core.TenantSaTokenDao;
 import com.zero.admin.base.tenant.handle.PlusTenantLineHandler;
 import com.zero.admin.base.tenant.handle.TenantKeyPrefixHandler;
 import com.zero.admin.base.tenant.manager.TenantSpringCacheManager;
@@ -58,15 +56,6 @@ public class TenantConfig {
     @Bean
     public CacheManager tenantCacheManager() {
         return new TenantSpringCacheManager();
-    }
-
-    /**
-     * 多租户鉴权dao实现
-     */
-    @Primary
-    @Bean
-    public SaTokenDao tenantSaTokenDao() {
-        return new TenantSaTokenDao();
     }
 
 }

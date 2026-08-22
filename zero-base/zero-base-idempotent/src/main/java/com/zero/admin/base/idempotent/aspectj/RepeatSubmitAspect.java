@@ -1,6 +1,5 @@
 package com.zero.admin.base.idempotent.aspectj;
 
-import cn.dev33.satoken.SaManager;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.crypto.SecureUtil;
@@ -53,7 +52,7 @@ public class RepeatSubmitAspect {
         String url = request.getRequestURI();
 
         // 唯一值（没有消息头则使用请求地址）
-        String submitKey = StringUtils.trimToEmpty(request.getHeader(SaManager.getConfig().getTokenName()));
+        String submitKey = StringUtils.trimToEmpty(request.getHeader("Authorization"));
 
         submitKey = SecureUtil.md5(submitKey + ":" + nowParams);
         // 唯一标识（指定key + url + 消息头）

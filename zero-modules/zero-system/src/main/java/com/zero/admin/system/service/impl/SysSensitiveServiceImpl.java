@@ -1,8 +1,9 @@
 package com.zero.admin.system.service.impl;
 
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ArrayUtil;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.sensitive.core.SensitiveService;
 import com.zero.admin.base.tenant.helper.TenantHelper;
 import org.springframework.stereotype.Service;
@@ -25,15 +26,16 @@ public class SysSensitiveServiceImpl implements SensitiveService {
         if (!LoginHelper.isLogin()) {
             return true;
         }
+        Subject subject = SecurityUtils.getSubject();
         boolean roleExist = ArrayUtil.isNotEmpty(roleKey);
         boolean permsExist = ArrayUtil.isNotEmpty(perms);
         if (roleExist && permsExist) {
-            if (StpUtil.hasRoleOr(roleKey) && StpUtil.hasPermissionOr(perms)) {
+            if (hasAnyRole(subject, roleKey) && hasAnyPermission(subject, perms)) {
                 return false;
             }
-        } else if (roleExist && StpUtil.hasRoleOr(roleKey)) {
+        } else if (roleExist && hasAnyRole(subject, roleKey)) {
             return false;
-        } else if (permsExist && StpUtil.hasPermissionOr(perms)) {
+        } else if (permsExist && hasAnyPermission(subject, perms)) {
             return false;
         }
 
@@ -41,6 +43,24 @@ public class SysSensitiveServiceImpl implements SensitiveService {
             return !LoginHelper.isSuperAdmin() && !LoginHelper.isTenantAdmin();
         }
         return !LoginHelper.isSuperAdmin();
+    }
+
+    private static boolean hasAnyRole(Subject subject, String[] roleKeys) {
+        for (String roleKey : roleKeys) {
+            if (subject.hasRole(roleKey)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean hasAnyPermission(Subject subject, String[] perms) {
+        for (String perm : perms) {
+            if (subject.isPermitted(perm)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

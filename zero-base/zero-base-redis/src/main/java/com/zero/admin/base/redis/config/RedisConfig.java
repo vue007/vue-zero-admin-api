@@ -19,10 +19,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.task.VirtualThreadTaskExecutor;
+import tools.jackson.databind.DefaultTyping;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer;
 import tools.jackson.databind.ext.javatime.ser.LocalDateTimeSerializer;
 import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
+import tools.jackson.databind.jsontype.PolymorphicTypeValidator;
 import tools.jackson.databind.module.SimpleModule;
 
 import java.time.LocalDateTime;
@@ -50,8 +53,15 @@ public class RedisConfig {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(formatter));
             javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(formatter));
+            // 与 Redisson JsonJackson3Codec 默认行为保持一致：写入 @class 类型信息，
+            // 否则 Jackson 3 反序列化时无法恢复具体类型，会得到 LinkedHashMap 导致 ClassCastException。
+            PolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder()
+                .allowIfBaseType(Object.class)
+                .allowIfSubType(Object.class)
+                .build();
             ObjectMapper om = JsonMapper.builder()
                 .addModule(javaTimeModule)
+                .activateDefaultTypingAsProperty(ptv, DefaultTyping.NON_FINAL, "@class")
                 .defaultTimeZone(TimeZone.getDefault())
                 .changeDefaultVisibility(visibility ->
                     visibility.withVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY))
@@ -59,7 +69,6 @@ public class RedisConfig {
 //            LoggerFactory.useSlf4jLogging(true);
 //            FuryCodec furyCodec = new FuryCodec();
 //            CompositeCodec codec = new CompositeCodec(StringCodec.INSTANCE, furyCodec, furyCodec);
-            // JsonJackson3Codec 负责写入类型信息，避免启用 Jackson 3 已收紧的全局宽松多态反序列化。
             JsonJackson3Codec jsonCodec = new JsonJackson3Codec(om);
             // 组合序列化 key 使用 String 内容使用通用 json 格式
             CompositeCodec codec = new CompositeCodec(StringCodec.INSTANCE, jsonCodec, jsonCodec);

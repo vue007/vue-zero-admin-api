@@ -2,7 +2,7 @@ package com.zero.admin.system.controller;
 
 import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.domain.R;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.web.core.BaseController;
 import com.zero.admin.system.domain.vo.SysSocialVo;
 import com.zero.admin.system.service.ISysSocialService;

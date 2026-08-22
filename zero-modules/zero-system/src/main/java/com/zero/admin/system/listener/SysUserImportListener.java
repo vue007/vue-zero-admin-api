@@ -15,7 +15,7 @@ import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.ValidatorUtils;
 import com.zero.admin.base.excel.core.ExcelListener;
 import com.zero.admin.base.excel.core.ExcelResult;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.bo.SysUserBo;
 import com.zero.admin.system.domain.vo.SysUserImportVo;
 import com.zero.admin.system.domain.vo.SysUserVo;
@@ -48,7 +48,7 @@ public class SysUserImportListener extends AnalysisEventListener<SysUserImportVo
     public SysUserImportListener(Boolean isUpdateSupport) {
         String initPassword = SpringUtils.getBean(ISysConfigService.class).selectConfigByKey("sys.user.initPassword");
         this.userService = SpringUtils.getBean(ISysUserService.class);
-        this.password = BCrypt.hashpw(initPassword);
+        this.password = BCrypt.hashpw(initPassword, BCrypt.gensalt());
         this.isUpdateSupport = isUpdateSupport;
         this.operUserId = LoginHelper.getUserId();
     }

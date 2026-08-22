@@ -1,8 +1,8 @@
 package com.zero.admin.web.service;
 
-import cn.dev33.satoken.secure.BCrypt;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.RequiredArgsConstructor;
+import org.mindrot.jbcrypt.BCrypt;
 import com.zero.admin.base.core.constant.Constants;
 import com.zero.admin.base.core.constant.GlobalConstants;
 import com.zero.admin.base.core.domain.model.RegisterBody;
@@ -55,7 +55,7 @@ public class SysRegisterService {
         SysUserBo sysUser = new SysUserBo();
         sysUser.setUserName(username);
         sysUser.setNickName(username);
-        sysUser.setPassword(BCrypt.hashpw(password));
+        sysUser.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
         sysUser.setUserType(userType);
 
         boolean exist = TenantHelper.dynamic(tenantId, () -> {

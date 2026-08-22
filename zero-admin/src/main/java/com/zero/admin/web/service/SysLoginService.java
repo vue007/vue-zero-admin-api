@@ -1,11 +1,11 @@
 package com.zero.admin.web.service;
 
-import cn.dev33.satoken.exception.NotLoginException;
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.lang.Opt;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.http.useragent.UserAgent;
+import cn.hutool.http.useragent.UserAgentUtil;
 import com.baomidou.lock.annotation.Lock4j;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,15 +16,17 @@ import com.zero.admin.base.core.constant.SystemConstants;
 import com.zero.admin.base.core.constant.TenantConstants;
 import com.zero.admin.base.core.domain.dto.PostDTO;
 import com.zero.admin.base.core.domain.dto.RoleDTO;
+import com.zero.admin.base.core.domain.dto.UserOnlineDTO;
 import com.zero.admin.base.core.domain.model.LoginUser;
 import com.zero.admin.base.core.enums.LoginType;
 import com.zero.admin.base.core.exception.ServiceException;
 import com.zero.admin.base.core.exception.user.UserException;
 import com.zero.admin.base.core.utils.*;
+import com.zero.admin.base.core.utils.ip.AddressUtils;
 import com.zero.admin.base.log.event.LogininforEvent;
 import com.zero.admin.base.mybatis.helper.DataPermissionHelper;
 import com.zero.admin.base.redis.utils.RedisUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.tenant.exception.TenantException;
 import com.zero.admin.base.tenant.helper.TenantHelper;
 import com.zero.admin.system.domain.SysUser;
@@ -119,13 +121,41 @@ public class SysLoginService {
                 TenantHelper.clearDynamic();
             }
             recordLogininfor(loginUser.getTenantId(), loginUser.getUsername(), Constants.LOGOUT, MessageUtils.message("user.logout.success"));
-        } catch (NotLoginException ignored) {
+        } catch (Exception ignored) {
         } finally {
-            try {
-                StpUtil.logout();
-            } catch (NotLoginException ignored) {
-            }
+            LoginHelper.logout();
         }
+    }
+
+    /**
+     * 记录登录成功信息（在线用户、登录日志、登录信息）。
+     */
+    public void recordLoginSuccess(LoginUser loginUser, String token) {
+        UserAgent userAgent = UserAgentUtil.parse(ServletUtils.getRequest().getHeader("User-Agent"));
+        String ip = ServletUtils.getClientIP();
+        UserOnlineDTO dto = new UserOnlineDTO();
+        dto.setIpaddr(ip);
+        dto.setLoginLocation(AddressUtils.getRealAddressByIP(ip));
+        dto.setBrowser(userAgent.getBrowser().getName());
+        dto.setOs(userAgent.getOs().getName());
+        dto.setLoginTime(System.currentTimeMillis());
+        dto.setTokenId(token);
+        dto.setUserName(loginUser.getUsername());
+        dto.setClientKey(loginUser.getClientKey());
+        dto.setDeviceType(loginUser.getDeviceType());
+        dto.setDeptName(loginUser.getDeptName());
+        long timeout = LoginHelper.getTokenTimeout();
+        TenantHelper.dynamic(loginUser.getTenantId(), () -> {
+            if (timeout <= 0) {
+                RedisUtils.setCacheObject(CacheConstants.ONLINE_TOKEN_KEY + token, dto);
+            } else {
+                RedisUtils.setCacheObject(CacheConstants.ONLINE_TOKEN_KEY + token, dto, Duration.ofSeconds(timeout));
+            }
+        });
+        // 记录登录日志
+        recordLogininfor(loginUser.getTenantId(), loginUser.getUsername(), Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success"));
+        // 更新登录信息
+        recordLoginInfo(loginUser.getUserId(), ip);
     }
 
     /**

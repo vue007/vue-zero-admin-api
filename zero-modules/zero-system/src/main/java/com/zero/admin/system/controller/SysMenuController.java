@@ -1,8 +1,8 @@
 package com.zero.admin.system.controller;
 
-import cn.dev33.satoken.annotation.SaCheckPermission;
-import cn.dev33.satoken.annotation.SaCheckRole;
-import cn.dev33.satoken.annotation.SaMode;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import cn.hutool.core.lang.tree.Tree;
 import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.constant.SystemConstants;
@@ -11,7 +11,7 @@ import com.zero.admin.base.core.domain.R;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.base.log.enums.BusinessType;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.web.core.BaseController;
 import com.zero.admin.system.domain.SysMenu;
 import com.zero.admin.system.domain.bo.SysMenuBo;
@@ -51,11 +51,11 @@ public class SysMenuController extends BaseController {
     /**
      * 获取菜单列表
      */
-    @SaCheckRole(value = {
+    @RequiresRoles(value = {
             TenantConstants.SUPER_ADMIN_ROLE_KEY,
             TenantConstants.TENANT_ADMIN_ROLE_KEY
-    }, mode = SaMode.OR)
-    @SaCheckPermission("system:menu:list")
+    }, logical = Logical.OR)
+    @RequiresPermissions("system:menu:list")
     @GetMapping("/list")
     public R<List<SysMenuVo>> list(SysMenuBo menu) {
         List<SysMenuVo> menus = menuService.selectMenuList(menu, LoginHelper.getUserId());
@@ -67,11 +67,11 @@ public class SysMenuController extends BaseController {
      *
      * @param menuId 菜单ID
      */
-    @SaCheckRole(value = {
+    @RequiresRoles(value = {
             TenantConstants.SUPER_ADMIN_ROLE_KEY,
             TenantConstants.TENANT_ADMIN_ROLE_KEY
-    }, mode = SaMode.OR)
-    @SaCheckPermission("system:menu:query")
+    }, logical = Logical.OR)
+    @RequiresPermissions("system:menu:query")
     @GetMapping(value = "/{menuId}")
     public R<SysMenuVo> getInfo(@PathVariable Long menuId) {
         return R.ok(menuService.selectMenuById(menuId));
@@ -80,7 +80,7 @@ public class SysMenuController extends BaseController {
     /**
      * 获取菜单下拉树列表
      */
-    @SaCheckPermission("system:menu:query")
+    @RequiresPermissions("system:menu:query")
     @GetMapping("/treeselect")
     public R<List<Tree<Long>>> treeselect(SysMenuBo menu) {
         List<SysMenuVo> menus = menuService.selectMenuList(menu, LoginHelper.getUserId());
@@ -92,7 +92,7 @@ public class SysMenuController extends BaseController {
      *
      * @param roleId 角色ID
      */
-    @SaCheckPermission("system:menu:query")
+    @RequiresPermissions("system:menu:query")
     @GetMapping(value = "/roleMenuTreeselect/{roleId}")
     public R<MenuTreeSelectVo> roleMenuTreeselect(@PathVariable("roleId") Long roleId) {
         List<SysMenuVo> menus = menuService.selectMenuList(LoginHelper.getUserId());
@@ -107,8 +107,8 @@ public class SysMenuController extends BaseController {
      *
      * @param packageId 租户套餐ID
      */
-    @SaCheckRole(TenantConstants.SUPER_ADMIN_ROLE_KEY)
-    @SaCheckPermission("system:menu:query")
+    @RequiresRoles(TenantConstants.SUPER_ADMIN_ROLE_KEY)
+    @RequiresPermissions("system:menu:query")
     @GetMapping(value = "/tenantPackageMenuTreeselect/{packageId}")
     public R<MenuTreeSelectVo> tenantPackageMenuTreeselect(@PathVariable("packageId") Long packageId) {
         List<SysMenuVo> menus = menuService.selectMenuList(LoginHelper.getUserId());
@@ -121,8 +121,8 @@ public class SysMenuController extends BaseController {
     /**
      * 新增菜单
      */
-    @SaCheckRole(TenantConstants.SUPER_ADMIN_ROLE_KEY)
-    @SaCheckPermission("system:menu:add")
+    @RequiresRoles(TenantConstants.SUPER_ADMIN_ROLE_KEY)
+    @RequiresPermissions("system:menu:add")
     @Log(title = "菜单管理", businessType = BusinessType.INSERT)
     @PostMapping
     public R<Void> add(@Validated @RequestBody SysMenuBo menu) {
@@ -137,8 +137,8 @@ public class SysMenuController extends BaseController {
     /**
      * 修改菜单
      */
-    @SaCheckRole(TenantConstants.SUPER_ADMIN_ROLE_KEY)
-    @SaCheckPermission("system:menu:edit")
+    @RequiresRoles(TenantConstants.SUPER_ADMIN_ROLE_KEY)
+    @RequiresPermissions("system:menu:edit")
     @Log(title = "菜单管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public R<Void> edit(@Validated @RequestBody SysMenuBo menu) {
@@ -157,8 +157,8 @@ public class SysMenuController extends BaseController {
      *
      * @param menuId 菜单ID
      */
-    @SaCheckRole(TenantConstants.SUPER_ADMIN_ROLE_KEY)
-    @SaCheckPermission("system:menu:remove")
+    @RequiresRoles(TenantConstants.SUPER_ADMIN_ROLE_KEY)
+    @RequiresPermissions("system:menu:remove")
     @Log(title = "菜单管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{menuId}")
     public R<Void> remove(@PathVariable("menuId") Long menuId) {

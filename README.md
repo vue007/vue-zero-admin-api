@@ -6,11 +6,11 @@
 2. 在[zero-admin/src/main/resources](zero-admin/src/main/resources) 目录下添加 secret-dev-local.yml
    ```yml
    SECRET:
-    DB:
-    HOST: localhost # 数据库地址
-    PORT: 5432 # 数据库端口
-    USERNAME: root # 数据库账户
-    PASSWORD: root123 # 数据库账户密码
+     DB:
+       HOST: localhost # 数据库地址
+       PORT: 5432 # 数据库端口
+       USERNAME: root # 数据库账户
+       PASSWORD: root123 # 数据库账户密码
    ```
 3. 执行初始化sql config/init.sql
 

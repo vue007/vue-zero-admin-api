@@ -27,10 +27,6 @@
         </dependency>
 
         <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
         </dependency>

@@ -1,7 +1,5 @@
 package com.zero.admin.web.service.impl;
 
-import cn.dev33.satoken.stp.SaLoginModel;
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
@@ -19,7 +17,7 @@ import com.zero.admin.base.core.exception.user.UserException;
 import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.ValidatorUtils;
 import com.zero.admin.base.json.utils.JsonUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.social.config.properties.SocialProperties;
 import com.zero.admin.base.social.utils.SocialUtils;
 import com.zero.admin.base.tenant.helper.TenantHelper;
@@ -92,19 +90,14 @@ public class SocialAuthStrategy implements IAuthStrategy {
         });
         loginUser.setClientKey(client.getClientKey());
         loginUser.setDeviceType(client.getDeviceType());
-        SaLoginModel model = new SaLoginModel();
-        model.setDevice(client.getDeviceType());
-        // 自定义分配 不同用户体系 不同 token 授权时间 不设置默认走全局 yml 配置
-        // 例如: 后台用户30分钟过期 app用户1天过期
-        model.setTimeout(client.getTimeout());
-        model.setActiveTimeout(client.getActiveTimeout());
-        model.setExtra(LoginHelper.CLIENT_KEY, client.getClientId());
         // 生成token
-        LoginHelper.login(loginUser, model);
+        LoginHelper.login(loginUser, client.getTimeout());
+        String token = LoginHelper.getToken();
+        loginService.recordLoginSuccess(loginUser, token);
 
         LoginVo loginVo = new LoginVo();
-        loginVo.setAccessToken(StpUtil.getTokenValue());
-        loginVo.setExpireIn(StpUtil.getTokenTimeout());
+        loginVo.setAccessToken(token);
+        loginVo.setExpireIn(LoginHelper.getTokenTimeout());
         loginVo.setClientId(client.getClientId());
         return loginVo;
     }
