@@ -1288,3 +1288,285 @@ Caused by: com.baomidou.dynamic.datasource.exception.CannotFindDataSourceExcepti
 2026-08-25 10:36:31 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[3]毫秒
 2026-08-25 10:36:31 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[3]毫秒
 2026-08-25 10:36:31 [http-nio-8080-exec-8] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:52:55 [http-nio-8080-exec-9] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 10:52:55 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 10:52:55 [http-nio-8080-exec-9] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:52:56 [http-nio-8080-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 10:52:56 [http-nio-8080-exec-1] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:52:56 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[195]毫秒
+2026-08-25 10:52:56 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 10:52:56 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 10:52:56 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[15]毫秒
+2026-08-25 10:52:56 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[28]毫秒
+2026-08-25 10:52:56 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 10:52:56 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[18]毫秒
+2026-08-25 10:54:41 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 10:54:41 [http-nio-8080-exec-8] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 10:54:41 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 10:54:41 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 10:54:41 [http-nio-8080-exec-8] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:54:41 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[19]毫秒
+2026-08-25 10:54:41 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[20]毫秒
+2026-08-25 10:54:41 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[33]毫秒
+2026-08-25 10:54:41 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 10:54:41 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[6]毫秒
+2026-08-25 10:55:58 [http-nio-8080-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 10:55:58 [http-nio-8080-exec-1] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:57:13 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 10:57:13 [http-nio-8080-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 10:57:13 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 10:57:13 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 10:57:13 [http-nio-8080-exec-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:57:13 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[16]毫秒
+2026-08-25 10:57:13 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[16]毫秒
+2026-08-25 10:57:13 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[74]毫秒
+2026-08-25 10:57:13 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 10:57:13 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[7]毫秒
+2026-08-25 10:57:14 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 10:57:14 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[25]毫秒
+2026-08-25 10:57:14 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 10:57:14 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[12]毫秒
+2026-08-25 10:57:24 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_yes_no],无参数
+2026-08-25 10:57:24 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/config/list],参数类型[param],参数:[{"configName":[""],"configKey":[""],"configType":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 10:57:24 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_yes_no],耗时:[5]毫秒
+2026-08-25 10:57:24 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/config/list],耗时:[16]毫秒
+2026-08-25 10:57:26 [http-nio-8080-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 10:57:26 [http-nio-8080-exec-1] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 10:57:29 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_common_status],无参数
+2026-08-25 10:57:29 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_oper_type],无参数
+2026-08-25 10:57:29 [http-nio-8080-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 10:57:29 [http-nio-8080-exec-3] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 10:57:29 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_common_status],耗时:[23]毫秒
+2026-08-25 10:57:29 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_oper_type],耗时:[23]毫秒
+2026-08-25 10:57:32 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_device_type],无参数
+2026-08-25 10:57:32 [http-nio-8080-exec-8] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/logininfor/list
+2026-08-25 10:57:32 [http-nio-8080-exec-8] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/logininfor/list'不存在.
+2026-08-25 10:57:32 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_device_type],耗时:[6]毫秒
+2026-08-25 10:57:39 [http-nio-8080-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 10:57:39 [http-nio-8080-exec-4] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 10:58:24 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2026-08-25 10:58:24 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/tenant/list],无参数
+2026-08-25 10:58:24 [http-nio-8080-exec-7] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2026-08-25 10:58:24 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/tenant/list],耗时:[41]毫秒
+2026-08-25 10:58:25 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[809]毫秒
+2026-08-25 10:58:52 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_common_status],无参数
+2026-08-25 10:58:52 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 10:58:52 [http-nio-8080-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 10:58:52 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_oper_type],无参数
+2026-08-25 10:58:52 [http-nio-8080-exec-4] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 10:58:52 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_oper_type],耗时:[10]毫秒
+2026-08-25 10:58:52 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_common_status],耗时:[11]毫秒
+2026-08-25 10:58:52 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[28]毫秒
+2026-08-25 10:58:52 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 10:58:52 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[5]毫秒
+2026-08-25 10:58:54 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_device_type],无参数
+2026-08-25 10:58:54 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_device_type],耗时:[3]毫秒
+2026-08-25 10:58:54 [http-nio-8080-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/logininfor/list
+2026-08-25 10:58:54 [http-nio-8080-exec-1] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/logininfor/list'不存在.
+2026-08-25 11:00:08 [http-nio-8080-exec-9] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:00:08 [http-nio-8080-exec-9] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:00:48 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/tenant/list],无参数
+2026-08-25 11:00:48 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /auth/captcha],无参数
+2026-08-25 11:00:48 [http-nio-8080-exec-10] INFO  c.z.a.b.r.aspectj.RateLimiterAspect - 限制令牌 => 10, 剩余令牌 => 9, 缓存key => 'global:rate_limit:/auth/captcha:0:0:0:0:0:0:0:1:'
+2026-08-25 11:00:48 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/tenant/list],耗时:[16]毫秒
+2026-08-25 11:00:48 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /auth/captcha],耗时:[21]毫秒
+2026-08-25 11:00:52 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /auth/login],参数类型[json],参数:[{"tenantId":"000000","username":"admin","password":"admin123","code":"6","rememberMe":false,"clientId":"e5cd7e4891bf95d1d19206ce24a7b32e","grantType":"password","uuid":"c81e9135b15746608a1b2ddb77c0d714"}]
+2026-08-25 11:00:53 [schedule-pool-1] INFO  c.z.a.s.s.i.SysLogininforServiceImpl - [0:0:0:0:0:0:0:1]内网IP[admin][Success][登录成功]
+2026-08-25 11:00:53 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /auth/login],耗时:[164]毫秒
+2026-08-25 11:00:54 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 11:00:54 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[23]毫秒
+2026-08-25 11:00:54 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 11:00:54 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[5]毫秒
+2026-08-25 11:00:58 [schedule-pool-1] INFO  c.z.a.b.sse.core.SseEmitterManager - SSE发送主题订阅消息topic:global:sse session keys:[1] message:欢迎登录Zero-Admin后台管理系统
+2026-08-25 11:00:58 [redisson-3-2] INFO  c.z.a.b.s.listener.SseTopicListener - SSE主题订阅收到消息session keys=[1] message=欢迎登录Zero-Admin后台管理系统
+2026-08-25 11:01:02 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_oper_type],无参数
+2026-08-25 11:01:02 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_common_status],无参数
+2026-08-25 11:01:02 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_common_status],耗时:[7]毫秒
+2026-08-25 11:01:02 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_oper_type],耗时:[8]毫秒
+2026-08-25 11:01:02 [http-nio-8080-exec-7] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:01:02 [http-nio-8080-exec-7] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:01:54 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 11:01:54 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_common_status],无参数
+2026-08-25 11:01:54 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_oper_type],无参数
+2026-08-25 11:01:54 [http-nio-8080-exec-10] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:01:54 [http-nio-8080-exec-10] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:01:54 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_common_status],耗时:[6]毫秒
+2026-08-25 11:01:54 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_oper_type],耗时:[6]毫秒
+2026-08-25 11:01:54 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[20]毫秒
+2026-08-25 11:01:54 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 11:01:54 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[7]毫秒
+2026-08-25 11:01:55 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_device_type],无参数
+2026-08-25 11:01:55 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_device_type],耗时:[3]毫秒
+2026-08-25 11:01:55 [http-nio-8080-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/logininfor/list
+2026-08-25 11:01:55 [http-nio-8080-exec-1] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/logininfor/list'不存在.
+2026-08-25 11:01:57 [http-nio-8080-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/oss/list
+2026-08-25 11:01:57 [http-nio-8080-exec-4] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/oss/list'不存在.
+2026-08-25 11:01:59 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_normal_disable],无参数
+2026-08-25 11:01:59 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_grant_type],无参数
+2026-08-25 11:01:59 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/client/list],参数类型[param],参数:[{"clientKey":[""],"clientSecret":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:01:59 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_grant_type],耗时:[4]毫秒
+2026-08-25 11:01:59 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_normal_disable],耗时:[4]毫秒
+2026-08-25 11:01:59 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/client/list],耗时:[38]毫秒
+2026-08-25 11:02:01 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/tenant/list],参数类型[param],参数:[{"tenantId":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:02:01 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/tenant/list],耗时:[23]毫秒
+2026-08-25 11:02:04 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/client/list],参数类型[param],参数:[{"clientKey":[""],"clientSecret":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:02:04 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/client/list],耗时:[11]毫秒
+2026-08-25 11:02:05 [http-nio-8080-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/oss/list
+2026-08-25 11:02:05 [http-nio-8080-exec-2] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/oss/list'不存在.
+2026-08-25 11:03:11 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 11:03:11 [http-nio-8080-exec-6] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/oss/list
+2026-08-25 11:03:11 [http-nio-8080-exec-6] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/oss/list'不存在.
+2026-08-25 11:03:11 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[18]毫秒
+2026-08-25 11:03:11 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 11:03:11 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[5]毫秒
+2026-08-25 11:03:17 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/client/list],参数类型[param],参数:[{"clientKey":[""],"clientSecret":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:03:17 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/client/list],耗时:[11]毫秒
+2026-08-25 11:03:22 [http-nio-8080-exec-7] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:03:22 [http-nio-8080-exec-7] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:03:25 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 11:03:25 [http-nio-8080-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 11:03:25 [http-nio-8080-exec-3] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 11:03:25 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 11:03:25 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[6]毫秒
+2026-08-25 11:03:25 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[3]毫秒
+2026-08-25 11:05:16 [http-nio-8080-exec-8] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:05:16 [http-nio-8080-exec-8] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:12:12 [http-nio-8080-exec-6] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/logininfor/list
+2026-08-25 11:12:12 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_device_type],无参数
+2026-08-25 11:12:12 [http-nio-8080-exec-6] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/logininfor/list'不存在.
+2026-08-25 11:12:12 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_device_type],耗时:[12]毫秒
+2026-08-25 11:12:14 [http-nio-8080-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:12:14 [http-nio-8080-exec-5] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:12:16 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 11:12:16 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 11:12:16 [http-nio-8080-exec-7] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 11:12:16 [http-nio-8080-exec-7] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 11:12:16 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[7]毫秒
+2026-08-25 11:12:16 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[6]毫秒
+2026-08-25 11:12:17 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_yes_no],无参数
+2026-08-25 11:12:17 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/config/list],参数类型[param],参数:[{"configName":[""],"configKey":[""],"configType":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:12:17 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_yes_no],耗时:[4]毫秒
+2026-08-25 11:12:17 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/config/list],耗时:[20]毫秒
+2026-08-25 11:12:21 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/config/1],无参数
+2026-08-25 11:12:21 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/config/1],耗时:[8]毫秒
+2026-08-25 11:15:41 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 11:15:41 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 11:15:41 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 11:15:41 [http-nio-8080-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 11:15:41 [http-nio-8080-exec-5] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 11:15:41 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[6]毫秒
+2026-08-25 11:15:41 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[6]毫秒
+2026-08-25 11:15:41 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[28]毫秒
+2026-08-25 11:15:41 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 11:15:41 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[4]毫秒
+2026-08-25 11:15:43 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_yes_no],无参数
+2026-08-25 11:15:43 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/config/list],参数类型[param],参数:[{"configName":[""],"configKey":[""],"configType":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:15:43 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_yes_no],耗时:[2]毫秒
+2026-08-25 11:15:43 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/config/list],耗时:[15]毫秒
+2026-08-25 11:15:50 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_common_status],无参数
+2026-08-25 11:15:50 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_oper_type],无参数
+2026-08-25 11:15:50 [http-nio-8080-exec-10] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/operlog/list
+2026-08-25 11:15:50 [http-nio-8080-exec-10] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/operlog/list'不存在.
+2026-08-25 11:15:50 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_common_status],耗时:[6]毫秒
+2026-08-25 11:15:50 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_oper_type],耗时:[6]毫秒
+2026-08-25 11:15:51 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_device_type],无参数
+2026-08-25 11:15:51 [http-nio-8080-exec-8] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /monitor/logininfor/list
+2026-08-25 11:15:51 [http-nio-8080-exec-8] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/monitor/logininfor/list'不存在.
+2026-08-25 11:15:51 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_device_type],耗时:[5]毫秒
+2026-08-25 11:15:52 [http-nio-8080-exec-6] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 11:15:52 [http-nio-8080-exec-6] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 11:17:14 [http-nio-8080-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /system/notice/list
+2026-08-25 11:17:14 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 11:17:14 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 11:17:14 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 11:17:14 [http-nio-8080-exec-4] ERROR c.z.a.b.w.h.GlobalExceptionHandler - 请求地址'/system/notice/list'不存在.
+2026-08-25 11:17:14 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[8]毫秒
+2026-08-25 11:17:14 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[8]毫秒
+2026-08-25 11:17:14 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[25]毫秒
+2026-08-25 11:17:14 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 11:17:14 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[4]毫秒
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  c.z.a.b.core.config.ThreadPoolConfig - ====关闭后台任务任务线程池====
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown initiated...
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Shutdown completed.
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [postgres] success,
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-08-25 11:17:59 [SpringApplicationShutdownHook] INFO  o.a.s.s.m.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2026-08-25 11:18:17 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-08-25 11:18:17 [main] INFO  com.zero.admin.AdminApplication - Starting AdminApplication using Java 26.0.2 with PID 74721 (/Users/akai/Documents/GitHub/work/vue-zero-admin-api/zero-admin/target/classes started by akai in /Users/akai/Documents/GitHub/work/vue-zero-admin-api)
+2026-08-25 11:18:17 [main] INFO  com.zero.admin.AdminApplication - The following 1 profile is active: "dev"
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroAnnotationProcessorAutoConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.zero.admin.base.shiro.config.ShiroConfig' of type [com.zero.admin.base.shiro.config.ShiroConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRealm' of type [com.zero.admin.base.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroSessionDAO' of type [com.zero.admin.base.shiro.session.ShiroRedisSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionManager' of type [com.zero.admin.base.shiro.session.TokenWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [applicationTaskExecutorAsyncConfigurerBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-08-25 11:18:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-25 11:18:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-25 11:18:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-08-25 11:18:18 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2026-08-25 11:18:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Starting...
+2026-08-25 11:18:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool - postgres - Added connection org.postgresql.jdbc.PgConnection@38197e82
+2026-08-25 11:18:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - postgres - Start completed.
+2026-08-25 11:18:19 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [postgres] success
+2026-08-25 11:18:19 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [postgres]
+2026-08-25 11:18:20 [main] INFO  c.z.a.base.redis.config.RedisConfig - 初始化 redis 配置
+2026-08-25 11:18:20 [main] INFO  org.redisson.Version - Redisson 4.7.0
+2026-08-25 11:18:20 [main] WARN  i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-08-25 11:18:20 [redisson-netty-1-4] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2026-08-25 11:18:20 [redisson-netty-1-1] INFO  o.r.connection.ConnectionsHolder - 2 connections initialized for localhost/127.0.0.1:6379
+2026-08-25 11:18:20 [main] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@537b32ef
+2026-08-25 11:18:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-25 11:18:20 [main] INFO  com.zero.admin.AdminApplication - Started AdminApplication in 4.107 seconds (process running for 4.509)
+2026-08-25 11:18:20 [main] INFO  c.z.a.b.s.listener.SseTopicListener - 初始化SSE主题订阅监听器成功
+2026-08-25 11:18:21 [RMI TCP Connection(1)-192.168.1.237] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-25 11:18:26 [http-nio-8080-exec-2] INFO  o.a.s.s.m.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2026-08-25 11:18:26 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_status],无参数
+2026-08-25 11:18:26 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/getInfo],无参数
+2026-08-25 11:18:26 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_notice_type],无参数
+2026-08-25 11:18:26 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/notice/list],参数类型[param],参数:[{"noticeTitle":[""],"createByName":[""],"noticeType":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:18:26 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_status],耗时:[49]毫秒
+2026-08-25 11:18:26 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_notice_type],耗时:[49]毫秒
+2026-08-25 11:18:26 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/notice/list],耗时:[102]毫秒
+2026-08-25 11:18:26 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/getInfo],耗时:[114]毫秒
+2026-08-25 11:18:26 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/getRouters],无参数
+2026-08-25 11:18:26 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/getRouters],耗时:[16]毫秒
+2026-08-25 11:18:30 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_common_status],无参数
+2026-08-25 11:18:30 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_oper_type],无参数
+2026-08-25 11:18:30 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /monitor/operlog/list],参数类型[param],参数:[{"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:18:30 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_common_status],耗时:[5]毫秒
+2026-08-25 11:18:30 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_oper_type],耗时:[5]毫秒
+2026-08-25 11:18:30 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /monitor/operlog/list],耗时:[15]毫秒
+2026-08-25 11:18:33 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_device_type],无参数
+2026-08-25 11:18:33 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /monitor/logininfor/list],参数类型[param],参数:[{"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:18:33 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_device_type],耗时:[7]毫秒
+2026-08-25 11:18:33 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /monitor/logininfor/list],耗时:[16]毫秒
+2026-08-25 11:18:41 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /monitor/operlog/list],参数类型[param],参数:[{"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:18:41 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /monitor/operlog/list],耗时:[7]毫秒
+2026-08-25 11:18:43 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /monitor/logininfor/list],参数类型[param],参数:[{"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:18:43 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /monitor/logininfor/list],耗时:[13]毫秒
+2026-08-25 11:18:46 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[POST /monitor/logininfor/export],无参数
+2026-08-25 11:18:47 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[POST /monitor/logininfor/export],耗时:[1189]毫秒
+2026-08-25 11:19:00 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/notice/list],参数类型[param],参数:[{"noticeTitle":[""],"createByName":[""],"noticeType":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:19:00 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/notice/list],耗时:[11]毫秒
+2026-08-25 11:19:01 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_yes_no],无参数
+2026-08-25 11:19:01 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/config/list],参数类型[param],参数:[{"configName":[""],"configKey":[""],"configType":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:19:01 [http-nio-8080-exec-5] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_yes_no],耗时:[4]毫秒
+2026-08-25 11:19:01 [http-nio-8080-exec-7] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/config/list],耗时:[20]毫秒
+2026-08-25 11:19:03 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/type/list],参数类型[param],参数:[{"dictName":[""],"dictType":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:19:03 [http-nio-8080-exec-6] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/type/list],耗时:[22]毫秒
+2026-08-25 11:19:03 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_normal_disable],无参数
+2026-08-25 11:19:03 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/user/deptTree],无参数
+2026-08-25 11:19:03 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/post/list],参数类型[param],参数:[{"postCode":[""],"postCategory":[""],"postName":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:19:03 [http-nio-8080-exec-8] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_normal_disable],耗时:[7]毫秒
+2026-08-25 11:19:04 [http-nio-8080-exec-10] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/post/list],耗时:[35]毫秒
+2026-08-25 11:19:04 [http-nio-8080-exec-9] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/user/deptTree],耗时:[40]毫秒
+2026-08-25 11:19:04 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dept/list],参数类型[param],参数:[{"deptName":[""]}]
+2026-08-25 11:19:04 [http-nio-8080-exec-3] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dept/list],耗时:[20]毫秒
+2026-08-25 11:19:05 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/dict/data/type/sys_show_hide],无参数
+2026-08-25 11:19:05 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/menu/list],参数类型[param],参数:[{"menuName":[""]}]
+2026-08-25 11:19:05 [http-nio-8080-exec-1] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/dict/data/type/sys_show_hide],耗时:[9]毫秒
+2026-08-25 11:19:05 [http-nio-8080-exec-2] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/menu/list],耗时:[24]毫秒
+2026-08-25 11:19:11 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]开始请求 => URL[GET /system/notice/list],参数类型[param],参数:[{"noticeTitle":[""],"createByName":[""],"noticeType":[""],"status":[""],"pageNo":["1"],"pageSize":["10"]}]
+2026-08-25 11:19:11 [http-nio-8080-exec-4] INFO  c.z.a.b.w.i.PlusWebInvokeTimeInterceptor - [PLUS]结束请求 => URL[GET /system/notice/list],耗时:[14]毫秒
