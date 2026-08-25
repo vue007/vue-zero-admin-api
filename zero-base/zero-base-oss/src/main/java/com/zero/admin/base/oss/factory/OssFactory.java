@@ -39,6 +39,14 @@ public class OssFactory {
     }
 
     /**
+     * 判断默认存储配置缓存是否存在。
+     */
+    public static boolean hasDefaultConfig() {
+        String configKey = RedisUtils.getCacheObject(OssConstant.DEFAULT_CONFIG_KEY);
+        return StringUtils.isNotEmpty(configKey);
+    }
+
+    /**
      * 根据类型获取实例
      */
     public static OssClient instance(String configKey) {

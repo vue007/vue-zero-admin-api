@@ -62,7 +62,8 @@ public class PasswordAuthStrategy implements IAuthStrategy {
         }
         LoginUser loginUser = TenantHelper.dynamic(tenantId, () -> {
             SysUserVo user = loadUserByUsername(username);
-            loginService.checkLogin(LoginType.PASSWORD, tenantId, username, () -> !BCrypt.checkpw(password, user.getPassword()));
+            loginService.checkLogin(LoginType.PASSWORD, tenantId, username,
+                () -> !matchesPassword(password, user.getPassword(), username));
             // 此处可根据登录用户的数据不同 自行创建 loginUser
             return loginService.buildLoginUser(user);
         });
@@ -111,6 +112,25 @@ public class PasswordAuthStrategy implements IAuthStrategy {
             throw new UserException("user.blocked", username);
         }
         return user;
+    }
+
+    /**
+     * 校验 BCrypt 密码。历史脏数据或被误写入的明文密码按密码错误处理，
+     * 避免 jBCrypt 抛出 IllegalArgumentException 导致登录接口返回 500。
+     */
+    private boolean matchesPassword(String rawPassword, String encodedPassword, String username) {
+        if (StringUtils.isBlank(encodedPassword)
+            || encodedPassword.length() != 60
+            || !encodedPassword.startsWith("$2a$")) {
+            log.warn("登录用户：{} 的密码摘要格式无效，请管理员重置密码.", username);
+            return false;
+        }
+        try {
+            return BCrypt.checkpw(rawPassword, encodedPassword);
+        } catch (IllegalArgumentException exception) {
+            log.warn("登录用户：{} 的密码摘要无法校验，请管理员重置密码.", username);
+            return false;
+        }
     }
 
 }

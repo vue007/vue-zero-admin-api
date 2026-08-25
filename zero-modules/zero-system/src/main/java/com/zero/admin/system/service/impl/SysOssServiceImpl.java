@@ -28,6 +28,7 @@ import com.zero.admin.system.domain.SysOss;
 import com.zero.admin.system.domain.bo.SysOssBo;
 import com.zero.admin.system.domain.vo.SysOssVo;
 import com.zero.admin.system.mapper.SysOssMapper;
+import com.zero.admin.system.service.ISysOssConfigService;
 import com.zero.admin.system.service.ISysOssService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -53,6 +54,7 @@ import java.util.Map;
 public class SysOssServiceImpl implements ISysOssService, OssService {
 
     @Autowired(required = false) private final SysOssMapper baseMapper;
+    private final ISysOssConfigService ossConfigService;
 
     /**
      * 查询OSS对象存储列表
@@ -193,7 +195,7 @@ public class SysOssServiceImpl implements ISysOssService, OssService {
     public SysOssVo upload(MultipartFile file) {
         String originalfileName = file.getOriginalFilename();
         String suffix = StringUtils.substring(originalfileName, originalfileName.lastIndexOf("."), originalfileName.length());
-        OssClient storage = OssFactory.instance();
+        OssClient storage = getDefaultStorage();
         UploadResult uploadResult;
         try {
             uploadResult = storage.uploadSuffix(file.getBytes(), suffix, file.getContentType());
@@ -214,10 +216,20 @@ public class SysOssServiceImpl implements ISysOssService, OssService {
     public SysOssVo upload(File file) {
         String originalfileName = file.getName();
         String suffix = StringUtils.substring(originalfileName, originalfileName.lastIndexOf("."), originalfileName.length());
-        OssClient storage = OssFactory.instance();
+        OssClient storage = getDefaultStorage();
         UploadResult uploadResult = storage.uploadSuffix(file, suffix);
         // 保存文件信息
         return buildResultEntity(originalfileName, suffix, storage.getConfigKey(), uploadResult);
+    }
+
+    /**
+     * 默认配置缓存被清理或配置刚创建时，先从数据库重建缓存再重试。
+     */
+    private OssClient getDefaultStorage() {
+        if (!OssFactory.hasDefaultConfig()) {
+            ossConfigService.init();
+        }
+        return OssFactory.instance();
     }
 
     @NotNull

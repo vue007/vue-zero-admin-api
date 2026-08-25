@@ -169,6 +169,9 @@ public class SysUserController extends BaseController {
                 return R.fail("当前租户下用户名额不足，请联系管理员");
             }
         }
+        if (StringUtils.isBlank(user.getPassword())) {
+            return R.fail("用户密码不能为空");
+        }
         user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         return toAjax(userService.insertUser(user));
     }
@@ -180,6 +183,8 @@ public class SysUserController extends BaseController {
     @Log(title = "用户管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public R<Void> edit(@Validated @RequestBody SysUserBo user) {
+        // 用户资料编辑不允许修改密码，密码只能通过 resetPwd 专用接口更新。
+        user.setPassword(null);
         userService.checkUserAllowed(user.getUserId());
         userService.checkUserDataScope(user.getUserId());
         deptService.checkDeptDataScope(user.getDeptId());

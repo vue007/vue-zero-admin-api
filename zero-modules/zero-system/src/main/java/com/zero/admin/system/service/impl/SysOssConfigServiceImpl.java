@@ -49,14 +49,27 @@ public class SysOssConfigServiceImpl implements ISysOssConfigService {
     @Override
     public void init() {
         List<SysOssConfig> list = baseMapper.selectList();
+        if (CollUtil.isEmpty(list)) {
+            RedisUtils.deleteObject(OssConstant.DEFAULT_CONFIG_KEY);
+            return;
+        }
+        SysOssConfig defaultConfig = list.stream()
+            .filter(config -> "0".equals(config.getStatus()))
+            .findFirst()
+            .orElse(null);
+        if (ObjectUtil.isNull(defaultConfig)) {
+            defaultConfig = list.get(0);
+            defaultConfig.setStatus("0");
+            baseMapper.update(null, new LambdaUpdateWrapper<SysOssConfig>()
+                .set(SysOssConfig::getStatus, "0")
+                .eq(SysOssConfig::getOssConfigId, defaultConfig.getOssConfigId()));
+            log.warn("未找到默认OSS配置，已自动启用配置: {}", defaultConfig.getConfigKey());
+        }
         // 加载OSS初始化配置
         for (SysOssConfig config : list) {
-            String configKey = config.getConfigKey();
-            if ("0".equals(config.getStatus())) {
-                RedisUtils.setCacheObject(OssConstant.DEFAULT_CONFIG_KEY, configKey);
-            }
             CacheUtils.put(CacheNames.SYS_OSS_CONFIG, config.getConfigKey(), JsonUtils.toJsonString(config));
         }
+        RedisUtils.setCacheObject(OssConstant.DEFAULT_CONFIG_KEY, defaultConfig.getConfigKey());
     }
 
     @Override
@@ -84,12 +97,21 @@ public class SysOssConfigServiceImpl implements ISysOssConfigService {
     @Override
     public Boolean insertByBo(SysOssConfigBo bo) {
         SysOssConfig config = MapstructUtils.convert(bo, SysOssConfig.class);
+        prepareConfig(config);
         validEntityBeforeSave(config);
+        boolean hasDefault = baseMapper.exists(new LambdaQueryWrapper<SysOssConfig>()
+            .eq(SysOssConfig::getStatus, "0"));
+        if (!hasDefault) {
+            config.setStatus("0");
+        }
         boolean flag = baseMapper.insert(config) > 0;
         if (flag) {
             // 从数据库查询完整的数据做缓存
             config = baseMapper.selectById(config.getOssConfigId());
             CacheUtils.put(CacheNames.SYS_OSS_CONFIG, config.getConfigKey(), JsonUtils.toJsonString(config));
+            if ("0".equals(config.getStatus())) {
+                RedisUtils.setCacheObject(OssConstant.DEFAULT_CONFIG_KEY, config.getConfigKey());
+            }
         }
         return flag;
     }
@@ -97,6 +119,17 @@ public class SysOssConfigServiceImpl implements ISysOssConfigService {
     @Override
     public Boolean updateByBo(SysOssConfigBo bo) {
         SysOssConfig config = MapstructUtils.convert(bo, SysOssConfig.class);
+        SysOssConfig existing = baseMapper.selectById(config.getOssConfigId());
+        if (ObjectUtil.isNull(existing)) {
+            throw new ServiceException("对象存储配置不存在!");
+        }
+        if (StringUtils.isBlank(config.getAccessKey())) {
+            config.setAccessKey(existing.getAccessKey());
+        }
+        if (StringUtils.isBlank(config.getSecretKey())) {
+            config.setSecretKey(existing.getSecretKey());
+        }
+        prepareConfig(config);
         validEntityBeforeSave(config);
         LambdaUpdateWrapper<SysOssConfig> luw = new LambdaUpdateWrapper<>();
         luw.set(ObjectUtil.isNull(config.getPrefix()), SysOssConfig::getPrefix, "");
@@ -121,6 +154,57 @@ public class SysOssConfigServiceImpl implements ISysOssConfigService {
             && !checkConfigKeyUnique(entity)) {
             throw new ServiceException("操作配置'" + entity.getConfigKey() + "'失败, 配置key已存在!");
         }
+        if (isTencentCos(entity)) {
+            if (StringUtils.isBlank(entity.getAccessKey()) || !entity.getAccessKey().startsWith("AKID")) {
+                throw new ServiceException("腾讯云 COS Access Key 必须填写 API 密钥 SecretId（通常以 AKID 开头），不能填写 APPID");
+            }
+            if (StringUtils.isBlank(entity.getRegion())) {
+                throw new ServiceException("腾讯云 COS 地域不能为空，例如 ap-guangzhou");
+            }
+            if (!entity.getBucketName().matches(".+-\\d+$")) {
+                throw new ServiceException("腾讯云 COS 存储桶名称必须包含 APPID，例如 example-1250000000");
+            }
+        }
+    }
+
+    /**
+     * OSS 客户端统一负责拼接协议，数据库只保存主机名，避免出现重复协议或尾部斜杠。
+     */
+    private void prepareConfig(SysOssConfig entity) {
+        entity.setConfigKey(trim(entity.getConfigKey()));
+        entity.setAccessKey(trim(entity.getAccessKey()));
+        entity.setSecretKey(trim(entity.getSecretKey()));
+        entity.setBucketName(trim(entity.getBucketName()));
+        entity.setEndpoint(normalizeHost(entity.getEndpoint()));
+        entity.setDomain(normalizeHost(entity.getDomain()));
+        entity.setRegion(trim(entity.getRegion()));
+        entity.setPrefix(trimSlashes(entity.getPrefix()));
+        if (isTencentCos(entity) && StringUtils.isBlank(entity.getIsHttps())) {
+            entity.setIsHttps("Y");
+        }
+    }
+
+    private boolean isTencentCos(SysOssConfig entity) {
+        return "qcloud".equalsIgnoreCase(entity.getConfigKey())
+            || StringUtils.contains(entity.getEndpoint(), ".myqcloud.com");
+    }
+
+    private String normalizeHost(String value) {
+        String result = trim(value);
+        if (StringUtils.isBlank(result)) {
+            return result;
+        }
+        result = result.replaceFirst("(?i)^https?://", "");
+        return result.replaceFirst("/+$", "");
+    }
+
+    private String trimSlashes(String value) {
+        String result = trim(value);
+        return StringUtils.isBlank(result) ? result : result.replaceAll("^/+|/+$", "");
+    }
+
+    private String trim(String value) {
+        return value == null ? null : value.trim();
     }
 
     @Override
@@ -163,12 +247,17 @@ public class SysOssConfigServiceImpl implements ISysOssConfigService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public int updateOssConfigStatus(SysOssConfigBo bo) {
-        SysOssConfig sysOssConfig = MapstructUtils.convert(bo, SysOssConfig.class);
+        SysOssConfig sysOssConfig = baseMapper.selectById(bo.getOssConfigId());
+        if (ObjectUtil.isNull(sysOssConfig)) {
+            throw new ServiceException("对象存储配置不存在!");
+        }
+        sysOssConfig.setStatus("0");
         int row = baseMapper.update(null, new LambdaUpdateWrapper<SysOssConfig>()
             .set(SysOssConfig::getStatus, "1"));
         row += baseMapper.updateById(sysOssConfig);
         if (row > 0) {
             RedisUtils.setCacheObject(OssConstant.DEFAULT_CONFIG_KEY, sysOssConfig.getConfigKey());
+            CacheUtils.put(CacheNames.SYS_OSS_CONFIG, sysOssConfig.getConfigKey(), JsonUtils.toJsonString(sysOssConfig));
         }
         return row;
     }

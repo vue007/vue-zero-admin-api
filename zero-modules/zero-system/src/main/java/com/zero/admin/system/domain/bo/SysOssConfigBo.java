@@ -38,14 +38,14 @@ public class SysOssConfigBo extends BaseEntity {
     /**
      * accessKey
      */
-    @NotBlank(message = "accessKey不能为空", groups = {AddGroup.class, EditGroup.class})
+    @NotBlank(message = "accessKey不能为空", groups = {AddGroup.class})
     @Size(min = 2, max = 100, message = "accessKey长度必须介于{min}和{max} 之间")
     private String accessKey;
 
     /**
      * 秘钥
      */
-    @NotBlank(message = "secretKey不能为空", groups = {AddGroup.class, EditGroup.class})
+    @NotBlank(message = "secretKey不能为空", groups = {AddGroup.class})
     @Size(min = 2, max = 100, message = "secretKey长度必须介于{min}和{max} 之间")
     private String secretKey;
 

@@ -111,11 +111,13 @@ public class SysLoginService {
      * 退出登录
      */
     public void logout() {
+        String token = null;
         try {
             LoginUser loginUser = LoginHelper.getLoginUser();
             if (ObjectUtil.isNull(loginUser)) {
                 return;
             }
+            token = LoginHelper.getToken();
             if (TenantHelper.isEnable() && LoginHelper.isSuperAdmin()) {
                 // 超级管理员 登出清除动态租户
                 TenantHelper.clearDynamic();
@@ -123,6 +125,9 @@ public class SysLoginService {
             recordLogininfor(loginUser.getTenantId(), loginUser.getUsername(), Constants.LOGOUT, MessageUtils.message("user.logout.success"));
         } catch (Exception ignored) {
         } finally {
+            if (StringUtils.isNotBlank(token)) {
+                RedisUtils.deleteObject(CacheConstants.ONLINE_TOKEN_KEY + token);
+            }
             LoginHelper.logout();
         }
     }
@@ -140,6 +145,7 @@ public class SysLoginService {
         dto.setOs(userAgent.getOs().getName());
         dto.setLoginTime(System.currentTimeMillis());
         dto.setTokenId(token);
+        dto.setTenantId(loginUser.getTenantId());
         dto.setUserName(loginUser.getUsername());
         dto.setClientKey(loginUser.getClientKey());
         dto.setDeviceType(loginUser.getDeviceType());
