@@ -2,7 +2,6 @@ package com.zero.admin.system.service.impl;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -58,7 +57,6 @@ public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
      * @return 参数配置信息
      */
     @Override
-    @DS("master")
     public SysConfigVo selectConfigById(Long configId) {
         return baseMapper.selectVoById(configId);
     }
