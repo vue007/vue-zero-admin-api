@@ -41,6 +41,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-job</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>

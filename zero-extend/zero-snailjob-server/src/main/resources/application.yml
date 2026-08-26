@@ -1,0 +1,36 @@
+server:
+  port: ${SNAIL_JOB_WEB_PORT:8800}
+  servlet:
+    context-path: /snail-job
+
+spring:
+  application:
+    name: Zero-Admin-SnailJob
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  web:
+    resources:
+      static-locations: classpath:admin/
+
+mybatis-plus:
+  typeAliasesPackage: com.aizuda.snailjob.template.datasource.persistence.po
+  global-config:
+    db-config:
+      where-strategy: NOT_EMPTY
+      capital-mode: false
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      external-file: ./logs/zero-snailjob-server.log

@@ -1,0 +1,44 @@
+server:
+  port: ${MONITOR_PORT:9090}
+
+monitor:
+  credentials:
+    username: ${MONITOR_USERNAME:admin}
+    password: ${MONITOR_PASSWORD:admin123}
+
+spring:
+  application:
+    name: Zero-Admin-Monitor
+  security:
+    user:
+      name: ${MONITOR_USERNAME:${monitor.credentials.username}}
+      password: ${MONITOR_PASSWORD:${monitor.credentials.password}}
+  boot:
+    admin:
+      ui:
+        title: Zero Admin 服务监控中心
+      context-path: /admin
+  thymeleaf:
+    check-template-location: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      external-file: ./logs/zero-monitor-admin.log
+
+spring.boot.admin.client:
+  enabled: true
+  url: ${MONITOR_SELF_URL:http://192.168.1.237:${server.port}${spring.boot.admin.context-path}}
+  instance:
+    service-host-type: ip
+    metadata:
+      username: ${MONITOR_USERNAME:${monitor.credentials.username}}
+      userpassword: ${MONITOR_PASSWORD:${monitor.credentials.password}}
+  username: ${MONITOR_USERNAME:${monitor.credentials.username}}
+  password: ${MONITOR_PASSWORD:${monitor.credentials.password}}

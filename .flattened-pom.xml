@@ -21,6 +21,7 @@
 		<java.version>26</java.version>
 		<spring-boot.version>4.1.1</spring-boot.version>
 		<spring-boot-admin.version>4.1.2</spring-boot-admin.version>
+		<snailjob.version>2.0.2</snailjob.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-plus.version>3.5.17</mybatis-plus.version>
 		<dynamic-ds.version>4.5.0</dynamic-ds.version>
@@ -115,6 +116,21 @@
 				<artifactId>spring-boot-admin-starter-client</artifactId>
 				<version>${spring-boot-admin.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.aizuda</groupId>
+				<artifactId>snail-job-server-starter</artifactId>
+				<version>${snailjob.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aizuda</groupId>
+				<artifactId>snail-job-client-starter</artifactId>
+				<version>${snailjob.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aizuda</groupId>
+				<artifactId>snail-job-client-job-core</artifactId>
+				<version>${snailjob.version}</version>
+			</dependency>
 
 			<!-- dynamic-datasource 多数据源-->
 			<dependency>
@@ -143,6 +159,11 @@
 			<dependency>
 				<groupId>com.zero.admin</groupId>
 				<artifactId>zero-system</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-job</artifactId>
 				<version>0.0.1</version>
 			</dependency>
 
@@ -302,6 +323,7 @@
 	<modules>
 		<module>zero-admin</module>
 		<module>zero-base</module>
+		<module>zero-extend</module>
 		<module>zero-modules</module>
 	</modules>
 

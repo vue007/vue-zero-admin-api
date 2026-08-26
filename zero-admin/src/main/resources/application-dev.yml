@@ -61,3 +61,8 @@ redisson:
 #      client-id: 1***1
 #      client-secret: 1***1
 #      redirect-uri: 1***1
+
+--- # 开发环境 Spring Boot Admin 客户端
+spring.boot.admin.client:
+  enabled: ${MONITOR_CLIENT_ENABLED:true}
+  url: ${MONITOR_SERVER_URL:http://192.168.1.237:9090/admin}
