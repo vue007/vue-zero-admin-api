@@ -162,12 +162,15 @@ public class SysMenuServiceImpl implements ISysMenuService {
     @Override
     public List<Long> selectMenuListByPackageId(Long packageId) {
         SysTenantPackage tenantPackage = tenantPackageMapper.selectById(packageId);
+        if (ObjectUtil.isNull(tenantPackage)) {
+            return List.of();
+        }
         List<Long> menuIds = StringUtils.splitTo(tenantPackage.getMenuIds(), Convert::toLong);
         if (CollUtil.isEmpty(menuIds)) {
             return List.of();
         }
         List<Long> parentIds = null;
-        if (tenantPackage.getMenuCheckStrictly()) {
+        if (Boolean.TRUE.equals(tenantPackage.getMenuCheckStrictly())) {
             parentIds = baseMapper.selectObjs(new LambdaQueryWrapper<SysMenu>()
                 .select(SysMenu::getParentId)
                 .in(SysMenu::getMenuId, menuIds), x -> {return Convert.toLong(x);});

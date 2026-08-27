@@ -378,7 +378,7 @@ insert into sys_menu values('109',  '在线用户',     '2',   '1', 'online',   
 insert into sys_menu values('113',  '缓存管理',     '2',   '2', 'cache',            'monitor/cache/index',          '', '1', '0', 'C', '0', '0', 'monitor:cache:list',          'redis',         103, 1, now(), null, null, '缓存管理菜单');
 insert into sys_menu values('115',  '代码生成',     '3',   '2', 'gen',              'tool/gen/index',               '', '1', '0', 'C', '0', '0', 'tool:gen:list',               'code',          103, 1, now(), null, null, '代码生成菜单');
 insert into sys_menu values('121',  '租户管理',     '6',   '1', 'tenant',           'system/tenant/index',          '', '1', '0', 'C', '0', '0', 'system:tenant:list',          'list',          103, 1, now(), null, null, '租户管理菜单');
-insert into sys_menu values('122',  '租户套餐管理', '6',   '2', 'tenantPackage',    'system/tenantPackage/index',   '', '1', '0', 'C', '0', '0', 'system:tenantPackage:list',   'form',          103, 1, now(), null, null, '租户套餐管理菜单');
+insert into sys_menu values('122',  '租户套餐管理', '6',   '2', 'tenantPackage',    'tenant/tenantPackage/index',   '', '1', '0', 'C', '0', '0', 'system:tenantPackage:list',   'form',          103, 1, now(), null, null, '租户套餐管理菜单');
 insert into sys_menu values('123',  '客户端管理',   '1',   '11', 'client',           'system/client/index',          '', '1', '0', 'C', '0', '0', 'system:client:list',          'international', 103, 1, now(), null, null, '客户端管理菜单');
 
 -- springboot-admin监控
