@@ -361,6 +361,9 @@ public class SysTenantServiceImpl implements ISysTenantService {
     @Transactional(rollbackFor = Exception.class)
     public Boolean syncTenantPackage(String tenantId, Long packageId) {
         SysTenantPackage tenantPackage = tenantPackageMapper.selectById(packageId);
+        if (ObjectUtil.isNull(tenantPackage)) {
+            throw new ServiceException("套餐不存在");
+        }
         List<SysRole> roles = roleMapper.selectList(
             new LambdaQueryWrapper<SysRole>().eq(SysRole::getTenantId, tenantId));
         List<Long> roleIds = new ArrayList<>(roles.size() - 1);

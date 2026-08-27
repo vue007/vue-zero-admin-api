@@ -173,6 +173,7 @@ public class SysTenantController extends BaseController {
     @GetMapping("/syncTenantPackage")
     public R<Void> syncTenantPackage(@NotBlank(message = "租户ID不能为空") String tenantId,
                                      @NotNull(message = "套餐ID不能为空") Long packageId) {
+        tenantService.checkTenantAllowed(tenantId);
         return toAjax(TenantHelper.ignore(() -> tenantService.syncTenantPackage(tenantId, packageId)));
     }
 
