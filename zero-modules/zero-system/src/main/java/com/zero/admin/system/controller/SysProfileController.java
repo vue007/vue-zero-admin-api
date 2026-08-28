@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.domain.R;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.core.utils.file.MimeTypeUtils;
-import com.zero.admin.base.encrypt.annotation.ApiEncrypt;
 import com.zero.admin.base.idempotent.annotation.RepeatSubmit;
 import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.base.log.enums.BusinessType;
@@ -86,7 +85,6 @@ public class SysProfileController extends BaseController {
      * @param bo 新旧密码
      */
     @RepeatSubmit
-    @ApiEncrypt
     @Log(title = "个人信息", businessType = BusinessType.UPDATE)
     @PutMapping("/updatePwd")
     public R<Void> updatePwd(@Validated @RequestBody SysUserPasswordBo bo) {

@@ -13,7 +13,6 @@ import com.zero.admin.base.core.domain.R;
 import com.zero.admin.base.core.domain.model.LoginUser;
 import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.StringUtils;
-import com.zero.admin.base.encrypt.annotation.ApiEncrypt;
 import com.zero.admin.base.excel.core.ExcelResult;
 import com.zero.admin.base.excel.utils.ExcelUtil;
 import com.zero.admin.base.log.annotation.Log;
@@ -49,11 +48,14 @@ import java.util.List;
 @RequestMapping("/system/user")
 public class SysUserController extends BaseController {
 
+    private static final String USER_INIT_PASSWORD_KEY = "sys.user.initPassword";
+
     private final ISysUserService userService;
     private final ISysRoleService roleService;
     private final ISysPostService postService;
     private final ISysDeptService deptService;
     private final ISysTenantService tenantService;
+    private final ISysConfigService configService;
 
     /**
      * 获取用户列表
@@ -229,15 +231,21 @@ public class SysUserController extends BaseController {
     /**
      * 重置密码
      */
-    @ApiEncrypt
     @RequiresPermissions("system:user:resetPwd")
     @Log(title = "用户管理", businessType = BusinessType.UPDATE)
     @PutMapping("/resetPwd")
     public R<Void> resetPwd(@RequestBody SysUserBo user) {
+        if (ObjectUtil.isNull(user.getUserId())) {
+            return R.fail("用户ID不能为空");
+        }
         userService.checkUserAllowed(user.getUserId());
         userService.checkUserDataScope(user.getUserId());
-        user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
-        return toAjax(userService.resetUserPwd(user.getUserId(), user.getPassword()));
+        String initPassword = configService.selectConfigByKey(USER_INIT_PASSWORD_KEY);
+        if (StringUtils.isBlank(initPassword)) {
+            return R.fail("未配置用户初始密码，请先在参数设置中配置");
+        }
+        String encryptedPassword = BCrypt.hashpw(initPassword, BCrypt.gensalt());
+        return toAjax(userService.resetUserPwd(user.getUserId(), encryptedPassword));
     }
 
     /**
