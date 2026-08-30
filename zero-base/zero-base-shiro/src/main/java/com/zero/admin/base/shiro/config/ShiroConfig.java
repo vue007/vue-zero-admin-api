@@ -81,6 +81,12 @@ public class ShiroConfig {
         // Actuator 由 zero-admin 中的 Basic Auth 过滤器单独保护。
         chainDefinition.addPathDefinition("/actuator", "anon");
         chainDefinition.addPathDefinition("/actuator/**", "anon");
+
+        // OpenAPI 描述与 Scalar 文档界面
+        chainDefinition.addPathDefinition("/v3/api-docs", "anon");
+        chainDefinition.addPathDefinition("/v3/api-docs/**", "anon");
+        chainDefinition.addPathDefinition("/scalar", "anon");
+        chainDefinition.addPathDefinition("/scalar/**", "anon");
         // 其余路径均需登录
         chainDefinition.addPathDefinition("/**", "restAuthFilter");
         return chainDefinition;

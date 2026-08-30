@@ -21,6 +21,7 @@
 		<java.version>26</java.version>
 		<spring-boot.version>4.1.1</spring-boot.version>
 		<spring-boot-admin.version>4.1.2</spring-boot-admin.version>
+		<springdoc-openapi.version>3.1.0</springdoc-openapi.version>
 		<snailjob.version>2.0.2</snailjob.version>
 		<mybatis.version>3.5.19</mybatis.version>
 		<mybatis-plus.version>3.5.17</mybatis-plus.version>
@@ -97,6 +98,13 @@
 	<!-- 依赖声明 -->
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-bom</artifactId>
+				<version>${springdoc-openapi.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 
 			<!-- SpringBoot的依赖配置-->
 			<dependency>
