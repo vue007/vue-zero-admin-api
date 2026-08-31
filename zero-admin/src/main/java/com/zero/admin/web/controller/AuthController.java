@@ -36,6 +36,7 @@ import com.zero.admin.web.domain.vo.LoginTenantVo;
 import com.zero.admin.web.domain.vo.LoginVo;
 import com.zero.admin.web.domain.vo.TenantListVo;
 import com.zero.admin.web.service.IAuthStrategy;
+import com.zero.admin.web.service.LoginMetrics;
 import com.zero.admin.web.service.SysLoginService;
 import com.zero.admin.web.service.SysRegisterService;
 import org.springframework.validation.annotation.Validated;
@@ -68,6 +69,7 @@ public class AuthController {
     private final ISysSocialService socialUserService;
     private final ISysClientService clientService;
     private final ScheduledExecutorService scheduledExecutorService;
+    private final LoginMetrics loginMetrics;
 
 
     /**
@@ -84,27 +86,30 @@ public class AuthController {
         // 授权类型和客户端id
         String clientId = loginBody.getClientId();
         String grantType = loginBody.getGrantType();
-        SysClientVo client = clientService.queryByClientId(clientId);
-        // 查询不到 client 或 client 内不包含 grantType
-        if (ObjectUtil.isNull(client) || !StringUtils.contains(client.getGrantType(), grantType)) {
-            log.info("客户端id: {} 认证类型：{} 异常!.", clientId, grantType);
-            return R.fail(MessageUtils.message("auth.grant.type.error"));
-        } else if (!SystemConstants.NORMAL.equals(client.getStatus())) {
-            return R.fail(MessageUtils.message("auth.grant.type.blocked"));
-        }
-        // 校验租户
-        loginService.checkTenant(loginBody.getTenantId());
-        // 登录
-        LoginVo loginVo = IAuthStrategy.login(body, client, grantType);
+        try (LoginMetrics.LoginAttempt attempt = loginMetrics.start(grantType)) {
+            SysClientVo client = clientService.queryByClientId(clientId);
+            // 查询不到 client 或 client 内不包含 grantType
+            if (ObjectUtil.isNull(client) || !StringUtils.contains(client.getGrantType(), grantType)) {
+                log.info("客户端id: {} 认证类型：{} 异常!.", clientId, grantType);
+                return R.fail(MessageUtils.message("auth.grant.type.error"));
+            } else if (!SystemConstants.NORMAL.equals(client.getStatus())) {
+                return R.fail(MessageUtils.message("auth.grant.type.blocked"));
+            }
+            // 校验租户
+            loginService.checkTenant(loginBody.getTenantId());
+            // 登录
+            LoginVo loginVo = IAuthStrategy.login(body, client, grantType);
 
-        Long userId = LoginHelper.getUserId();
-        scheduledExecutorService.schedule(() -> {
-            SseMessageDto dto = new SseMessageDto();
-            dto.setMessage("欢迎登录Zero-Admin后台管理系统");
-            dto.setUserIds(List.of(userId));
-            SseMessageUtils.publishMessage(dto);
-        }, 5, TimeUnit.SECONDS);
-        return R.ok(loginVo);
+            Long userId = LoginHelper.getUserId();
+            scheduledExecutorService.schedule(() -> {
+                SseMessageDto dto = new SseMessageDto();
+                dto.setMessage("欢迎登录Zero-Admin后台管理系统");
+                dto.setUserIds(List.of(userId));
+                SseMessageUtils.publishMessage(dto);
+            }, 5, TimeUnit.SECONDS);
+            attempt.success();
+            return R.ok(loginVo);
+        }
     }
 
     /**

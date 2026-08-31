@@ -2,8 +2,8 @@
 <configuration>
     <property name="log.path" value="./logs"/>
     <property name="console.log.pattern"
-              value="%cyan(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{36}%n) - %msg%n"/>
-    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
+              value="%cyan(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %blue([traceId=%X{traceId:-} spanId=%X{spanId:-} requestId=%X{requestId:-}]) %boldMagenta(%logger{36}) - %msg%n"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [traceId=%X{traceId:-} spanId=%X{spanId:-} requestId=%X{requestId:-}] %logger{36} - %msg%n"/>
 
     <!-- 控制台输出 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">

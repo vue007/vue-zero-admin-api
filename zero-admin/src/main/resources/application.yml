@@ -175,15 +175,43 @@ lock4j:
 
 --- # Actuator 监控端点的配置项
 management:
+  # OTLP 指标与链路导出均默认关闭；启用前请先部署 Collector
+  otlp:
+    metrics:
+      export:
+        enabled: ${OTEL_METRICS_ENABLED:false}
+        url: ${OTEL_EXPORTER_OTLP_METRICS_ENDPOINT:http://localhost:4318/v1/metrics}
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: health,info,metrics,prometheus,loggers,logfile
   endpoint:
     health:
+      # 端点整体已由 ActuatorBasicAuthFilter 保护；保留完整详情供 Spring Boot Admin 使用
       show-details: ALWAYS
     logfile:
       external-file: ./logs/sys-console.log
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+        zero.auth.login.duration: true
+      slo:
+        http.server.requests: 100ms,300ms,1s,3s
+  tracing:
+    sampling:
+      probability: ${TRACING_SAMPLING_PROBABILITY:0.1}
+    export:
+      otlp:
+        enabled: ${OTEL_TRACING_ENABLED:false}
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: ${OTEL_EXPORTER_OTLP_TRACES_ENDPOINT:http://localhost:4318/v1/traces}
+          timeout: ${OTEL_EXPORTER_OTLP_TRACES_TIMEOUT:10s}
 
 --- # Spring Boot Admin 客户端与 Actuator 认证
 monitor:

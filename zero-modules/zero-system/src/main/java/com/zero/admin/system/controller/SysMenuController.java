@@ -80,7 +80,7 @@ public class SysMenuController extends BaseController {
     /**
      * 获取菜单下拉树列表
      */
-    @RequiresPermissions("system:menu:query")
+    @RequiresPermissions(value = {"system:menu:query", "system:role:list"}, logical = Logical.OR)
     @GetMapping("/treeselect")
     public R<List<Tree<Long>>> treeselect(SysMenuBo menu) {
         List<SysMenuVo> menus = menuService.selectMenuList(menu, LoginHelper.getUserId());
@@ -92,7 +92,7 @@ public class SysMenuController extends BaseController {
      *
      * @param roleId 角色ID
      */
-    @RequiresPermissions("system:menu:query")
+    @RequiresPermissions("system:role:list")
     @GetMapping(value = "/roleMenuTreeselect/{roleId}")
     public R<MenuTreeSelectVo> roleMenuTreeselect(@PathVariable("roleId") Long roleId) {
         List<SysMenuVo> menus = menuService.selectMenuList(LoginHelper.getUserId());

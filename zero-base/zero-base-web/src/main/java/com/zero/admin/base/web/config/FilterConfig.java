@@ -2,6 +2,7 @@ package com.zero.admin.base.web.config;
 
 import com.zero.admin.base.web.config.properties.XssProperties;
 import com.zero.admin.base.web.filter.RepeatableFilter;
+import com.zero.admin.base.web.filter.RequestIdFilter;
 import com.zero.admin.base.web.filter.XssFilter;
 import jakarta.servlet.DispatcherType;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -28,6 +29,17 @@ public class FilterConfig {
         registration.addUrlPatterns("/*");
         registration.setName("xssFilter");
         registration.setOrder(FilterRegistrationBean.HIGHEST_PRECEDENCE + 1);
+        return registration;
+    }
+
+    @Bean
+    public FilterRegistrationBean<RequestIdFilter> requestIdFilterRegistration() {
+        FilterRegistrationBean<RequestIdFilter> registration = new FilterRegistrationBean<>();
+        registration.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.ASYNC, DispatcherType.ERROR);
+        registration.setFilter(new RequestIdFilter());
+        registration.addUrlPatterns("/*");
+        registration.setName("requestIdFilter");
+        registration.setOrder(FilterRegistrationBean.HIGHEST_PRECEDENCE);
         return registration;
     }
 
