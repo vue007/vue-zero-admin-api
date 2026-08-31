@@ -137,7 +137,9 @@ public class DataPermissionHelper {
             } else if (empty) {
                 ignoreStrategy.setDataPermission(false);
             }
-
+            if (reentrantStack.isEmpty()) {
+                REENTRANT_IGNORE.remove();
+            }
         }
     }
 
