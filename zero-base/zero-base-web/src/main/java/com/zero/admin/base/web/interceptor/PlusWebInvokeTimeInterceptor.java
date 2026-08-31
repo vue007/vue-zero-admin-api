@@ -15,7 +15,11 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.BufferedReader;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * web的调用时间统计拦截器
@@ -26,6 +30,13 @@ import java.util.Map;
 public class PlusWebInvokeTimeInterceptor implements HandlerInterceptor {
 
     private final static ThreadLocal<StopWatch> KEY_CACHE = new ThreadLocal<>();
+    private static final String MASK_VALUE = "******";
+    private static final Set<String> SENSITIVE_PARAM_NAMES = Set.of(
+        "password", "oldpassword", "newpassword", "confirmpassword",
+        "accesskey", "accesskeyid", "secretkey", "secretaccesskey", "secretid",
+        "apikey", "apikeysecret", "clientsecret", "token", "tokenid", "tokenids",
+        "sessiontoken", "accesstoken", "refreshtoken", "authorization"
+    );
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -38,11 +49,11 @@ public class PlusWebInvokeTimeInterceptor implements HandlerInterceptor {
                 BufferedReader reader = request.getReader();
                 jsonParam = IoUtil.read(reader);
             }
-            log.info("[PLUS]开始请求 => URL[{}],参数类型[json],参数:[{}]", url, jsonParam);
+            log.info("[PLUS]开始请求 => URL[{}],参数类型[json],参数:[{}]", url, maskJsonParams(jsonParam));
         } else {
             Map<String, String[]> parameterMap = request.getParameterMap();
             if (MapUtil.isNotEmpty(parameterMap)) {
-                String parameters = JsonUtils.toJsonString(parameterMap);
+                String parameters = JsonUtils.toJsonString(maskRequestParams(parameterMap));
                 log.info("[PLUS]开始请求 => URL[{}],参数类型[param],参数:[{}]", url, parameters);
             } else {
                 log.info("[PLUS]开始请求 => URL[{}],无参数", url);
@@ -83,6 +94,50 @@ public class PlusWebInvokeTimeInterceptor implements HandlerInterceptor {
             return StringUtils.startsWithIgnoreCase(contentType, MediaType.APPLICATION_JSON_VALUE);
         }
         return false;
+    }
+
+    private String maskJsonParams(String jsonParam) {
+        if (StringUtils.isBlank(jsonParam)) {
+            return jsonParam;
+        }
+        try {
+            Object value = JsonUtils.parseObject(jsonParam, Object.class);
+            maskSensitiveValues(value);
+            return JsonUtils.toJsonString(value);
+        } catch (RuntimeException e) {
+            // 请求日志不是业务处理的一部分。解析失败时隐藏请求体，避免异常格式绕过脱敏。
+            return "[请求体解析失败，已隐藏]";
+        }
+    }
+
+    private Map<String, Object> maskRequestParams(Map<String, String[]> parameterMap) {
+        Map<String, Object> result = new LinkedHashMap<>();
+        parameterMap.forEach((name, value) ->
+            result.put(name, isSensitiveParam(name) ? MASK_VALUE : value));
+        return result;
+    }
+
+    @SuppressWarnings("unchecked")
+    private void maskSensitiveValues(Object value) {
+        if (value instanceof Map<?, ?> source) {
+            Map<Object, Object> map = (Map<Object, Object>) source;
+            map.replaceAll((name, item) -> {
+                if (name instanceof String key && isSensitiveParam(key)) {
+                    return MASK_VALUE;
+                }
+                maskSensitiveValues(item);
+                return item;
+            });
+        } else if (value instanceof Collection<?> collection) {
+            collection.forEach(this::maskSensitiveValues);
+        }
+    }
+
+    private boolean isSensitiveParam(String name) {
+        String normalized = name.replace("_", "")
+            .replace("-", "")
+            .toLowerCase(Locale.ROOT);
+        return SENSITIVE_PARAM_NAMES.contains(normalized);
     }
 
 }

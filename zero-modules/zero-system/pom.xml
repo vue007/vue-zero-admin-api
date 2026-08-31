@@ -16,65 +16,53 @@
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-web</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-mybatis</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-log</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-security</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-excel</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-idempotent</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-encrypt</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-tenant</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-sensitive</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-translation</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-oss</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -1,6 +1,5 @@
 package com.zero.admin.web.controller;
 
-import cn.dev33.satoken.annotation.SaIgnore;
 import cn.hutool.captcha.AbstractCaptcha;
 import cn.hutool.captcha.generator.CodeGenerator;
 import cn.hutool.core.util.IdUtil;
@@ -36,7 +35,6 @@ import java.util.LinkedHashMap;
  *
  * @author Akai
  */
-@SaIgnore
 @Slf4j
 @Validated
 @RequiredArgsConstructor

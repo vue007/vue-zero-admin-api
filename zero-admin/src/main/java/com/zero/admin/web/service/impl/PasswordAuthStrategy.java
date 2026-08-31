@@ -1,12 +1,10 @@
 package com.zero.admin.web.service.impl;
 
-import cn.dev33.satoken.secure.BCrypt;
-import cn.dev33.satoken.stp.SaLoginModel;
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.mindrot.jbcrypt.BCrypt;
 import com.zero.admin.base.core.constant.Constants;
 import com.zero.admin.base.core.constant.GlobalConstants;
 import com.zero.admin.base.core.constant.SystemConstants;
@@ -21,7 +19,7 @@ import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.core.utils.ValidatorUtils;
 import com.zero.admin.base.json.utils.JsonUtils;
 import com.zero.admin.base.redis.utils.RedisUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.tenant.helper.TenantHelper;
 import com.zero.admin.base.web.config.properties.CaptchaProperties;
 import com.zero.admin.system.domain.SysUser;
@@ -64,26 +62,21 @@ public class PasswordAuthStrategy implements IAuthStrategy {
         }
         LoginUser loginUser = TenantHelper.dynamic(tenantId, () -> {
             SysUserVo user = loadUserByUsername(username);
-            loginService.checkLogin(LoginType.PASSWORD, tenantId, username, () -> !BCrypt.checkpw(password, user.getPassword()));
+            loginService.checkLogin(LoginType.PASSWORD, tenantId, username,
+                () -> !matchesPassword(password, user.getPassword(), username));
             // 此处可根据登录用户的数据不同 自行创建 loginUser
             return loginService.buildLoginUser(user);
         });
         loginUser.setClientKey(client.getClientKey());
         loginUser.setDeviceType(client.getDeviceType());
-        SaLoginModel model = new SaLoginModel();
-        model.setDevice(client.getDeviceType());
-        // 自定义分配 不同用户体系 不同 token 授权时间 不设置默认走全局 yml 配置
-        // 例如: 后台用户30分钟过期 app用户1天过期
-        model.setTimeout(client.getTimeout());
-        model.setActiveTimeout(client.getActiveTimeout());
-        model.setExtra(LoginHelper.CLIENT_KEY, client.getClientId());
         // 生成token
-        LoginHelper.login(loginUser, model);
+        LoginHelper.login(loginUser, client.getTimeout());
+        String token = LoginHelper.getToken();
+        loginService.recordLoginSuccess(loginUser, token);
 
         LoginVo loginVo = new LoginVo();
-        String tk = StpUtil.getTokenValue();
-        loginVo.setAccessToken(tk);
-        loginVo.setExpireIn(StpUtil.getTokenTimeout());
+        loginVo.setAccessToken(token);
+        loginVo.setExpireIn(LoginHelper.getTokenTimeout());
         loginVo.setClientId(client.getClientId());
         return loginVo;
     }
@@ -119,6 +112,25 @@ public class PasswordAuthStrategy implements IAuthStrategy {
             throw new UserException("user.blocked", username);
         }
         return user;
+    }
+
+    /**
+     * 校验 BCrypt 密码。历史脏数据或被误写入的明文密码按密码错误处理，
+     * 避免 jBCrypt 抛出 IllegalArgumentException 导致登录接口返回 500。
+     */
+    private boolean matchesPassword(String rawPassword, String encodedPassword, String username) {
+        if (StringUtils.isBlank(encodedPassword)
+            || encodedPassword.length() != 60
+            || !encodedPassword.startsWith("$2a$")) {
+            log.warn("登录用户：{} 的密码摘要格式无效，请管理员重置密码.", username);
+            return false;
+        }
+        try {
+            return BCrypt.checkpw(rawPassword, encodedPassword);
+        } catch (IllegalArgumentException exception) {
+            log.warn("登录用户：{} 的密码摘要无法校验，请管理员重置密码.", username);
+            return false;
+        }
     }
 
 }

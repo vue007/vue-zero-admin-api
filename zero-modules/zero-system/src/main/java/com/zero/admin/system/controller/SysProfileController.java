@@ -1,6 +1,6 @@
 package com.zero.admin.system.controller;
 
-import cn.dev33.satoken.secure.BCrypt;
+import org.mindrot.jbcrypt.BCrypt;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.io.FileUtil;
 import com.zero.admin.system.service.ISysOssService;
@@ -8,12 +8,11 @@ import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.domain.R;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.core.utils.file.MimeTypeUtils;
-import com.zero.admin.base.encrypt.annotation.ApiEncrypt;
 import com.zero.admin.base.idempotent.annotation.RepeatSubmit;
 import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.base.log.enums.BusinessType;
 import com.zero.admin.base.mybatis.helper.DataPermissionHelper;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.web.core.BaseController;
 import com.zero.admin.system.domain.bo.SysUserBo;
 import com.zero.admin.system.domain.bo.SysUserPasswordBo;
@@ -86,7 +85,6 @@ public class SysProfileController extends BaseController {
      * @param bo 新旧密码
      */
     @RepeatSubmit
-    @ApiEncrypt
     @Log(title = "个人信息", businessType = BusinessType.UPDATE)
     @PutMapping("/updatePwd")
     public R<Void> updatePwd(@Validated @RequestBody SysUserPasswordBo bo) {
@@ -98,7 +96,7 @@ public class SysProfileController extends BaseController {
         if (BCrypt.checkpw(bo.getNewPassword(), password)) {
             return R.fail("新密码不能与旧密码相同");
         }
-        int rows = DataPermissionHelper.ignore(() -> userService.resetUserPwd(user.getUserId(), BCrypt.hashpw(bo.getNewPassword())));
+        int rows = DataPermissionHelper.ignore(() -> userService.resetUserPwd(user.getUserId(), BCrypt.hashpw(bo.getNewPassword(), BCrypt.gensalt())));
         if (rows > 0) {
             return R.ok();
         }

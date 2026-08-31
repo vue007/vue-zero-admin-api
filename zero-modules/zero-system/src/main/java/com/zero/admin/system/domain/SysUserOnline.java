@@ -16,6 +16,11 @@ public class SysUserOnline {
     private String tokenId;
 
     /**
+     * 租户编号
+     */
+    private String tenantId;
+
+    /**
      * 部门名称
      */
     private String deptName;
@@ -59,5 +64,15 @@ public class SysUserOnline {
      * 登录时间
      */
     private Long loginTime;
+
+    /**
+     * 最近访问时间
+     */
+    private Long lastAccessTime;
+
+    /**
+     * 会话过期时间
+     */
+    private Long expireTime;
 
 }

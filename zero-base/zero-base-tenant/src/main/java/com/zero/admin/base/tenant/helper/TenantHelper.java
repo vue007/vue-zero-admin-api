@@ -1,7 +1,5 @@
 package com.zero.admin.base.tenant.helper;
 
-import cn.dev33.satoken.context.SaHolder;
-import cn.dev33.satoken.context.model.SaStorage;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
@@ -10,12 +8,14 @@ import com.baomidou.mybatisplus.core.plugins.InterceptorIgnoreHelper;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import com.zero.admin.base.core.constant.GlobalConstants;
 import com.zero.admin.base.core.utils.SpringUtils;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.core.utils.reflect.ReflectUtils;
 import com.zero.admin.base.redis.utils.RedisUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 
 import java.util.Stack;
 import java.util.function.Supplier;
@@ -137,7 +137,7 @@ public class TenantHelper {
         }
         String cacheKey = DYNAMIC_TENANT_KEY + ":" + LoginHelper.getUserId();
         RedisUtils.setCacheObject(cacheKey, tenantId);
-        SaHolder.getStorage().set(cacheKey, tenantId);
+        getSession().setAttribute(cacheKey, tenantId);
     }
 
     /**
@@ -157,15 +157,15 @@ public class TenantHelper {
         if (StringUtils.isNotBlank(tenantId)) {
             return tenantId;
         }
-        SaStorage storage = SaHolder.getStorage();
+        Session session = getSession();
         String cacheKey = DYNAMIC_TENANT_KEY + ":" + LoginHelper.getUserId();
-        tenantId = storage.getString(cacheKey);
+        tenantId = Convert.toStr(session.getAttribute(cacheKey));
         // 如果为 -1 说明已经查过redis并且不存在值 则直接返回null
         if (StringUtils.isNotBlank(tenantId)) {
             return tenantId.equals("-1") ? null : tenantId;
         }
         tenantId = RedisUtils.getCacheObject(cacheKey);
-        storage.set(cacheKey, StringUtils.isBlank(tenantId) ? "-1" : tenantId);
+        session.setAttribute(cacheKey, StringUtils.isBlank(tenantId) ? "-1" : tenantId);
         return tenantId;
     }
 
@@ -183,7 +183,7 @@ public class TenantHelper {
         TEMP_DYNAMIC_TENANT.remove();
         String cacheKey = DYNAMIC_TENANT_KEY + ":" + LoginHelper.getUserId();
         RedisUtils.deleteObject(cacheKey);
-        SaHolder.getStorage().delete(cacheKey);
+        getSession().removeAttribute(cacheKey);
     }
 
     /**
@@ -226,6 +226,13 @@ public class TenantHelper {
             tenantId = LoginHelper.getTenantId();
         }
         return tenantId;
+    }
+
+    /**
+     * 获取当前登录用户的 Shiro 会话（仅登录状态可用）。
+     */
+    private static Session getSession() {
+        return SecurityUtils.getSubject().getSession();
     }
 
 }

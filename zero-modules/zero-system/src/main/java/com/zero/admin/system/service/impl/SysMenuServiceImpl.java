@@ -13,7 +13,7 @@ import com.zero.admin.base.core.utils.MapstructUtils;
 import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.core.utils.TreeBuildUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.SysMenu;
 import com.zero.admin.system.domain.SysRole;
 import com.zero.admin.system.domain.SysRoleMenu;
@@ -162,12 +162,15 @@ public class SysMenuServiceImpl implements ISysMenuService {
     @Override
     public List<Long> selectMenuListByPackageId(Long packageId) {
         SysTenantPackage tenantPackage = tenantPackageMapper.selectById(packageId);
+        if (ObjectUtil.isNull(tenantPackage)) {
+            return List.of();
+        }
         List<Long> menuIds = StringUtils.splitTo(tenantPackage.getMenuIds(), Convert::toLong);
         if (CollUtil.isEmpty(menuIds)) {
             return List.of();
         }
         List<Long> parentIds = null;
-        if (tenantPackage.getMenuCheckStrictly()) {
+        if (Boolean.TRUE.equals(tenantPackage.getMenuCheckStrictly())) {
             parentIds = baseMapper.selectObjs(new LambdaQueryWrapper<SysMenu>()
                 .select(SysMenu::getParentId)
                 .in(SysMenu::getMenuId, menuIds), x -> {return Convert.toLong(x);});

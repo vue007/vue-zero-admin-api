@@ -14,43 +14,49 @@
 		<revision>0.0.1</revision>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<skipTests>true</skipTests>
+		<test.groups>dev</test.groups>
 
 		<!-- foundation -->
-		<java.version>21</java.version>
-		<spring-boot.version>3.4.3</spring-boot.version>
-		<spring-boot-admin.version>3.4.5</spring-boot-admin.version>
+		<java.version>26</java.version>
+		<spring-boot.version>4.1.1</spring-boot.version>
+		<spring-boot-admin.version>4.1.2</spring-boot-admin.version>
+		<springdoc-openapi.version>3.1.0</springdoc-openapi.version>
+		<snailjob.version>2.0.2</snailjob.version>
 		<mybatis.version>3.5.19</mybatis.version>
-		<mybatis-plus.version>3.5.10.1</mybatis-plus.version>
-		<dynamic-ds.version>4.3.1</dynamic-ds.version>
-		<postgresql.version>42.7.5</postgresql.version>
-
+		<mybatis-plus.version>3.5.17</mybatis-plus.version>
+		<dynamic-ds.version>4.5.0</dynamic-ds.version>
+		<postgresql.version>42.7.13</postgresql.version>
+		<!-- Test -->
 		<!-- tools -->
-		<hutool.version>5.8.36</hutool.version>
-		<lombok.version>1.18.36</lombok.version>
-		<bouncycastle.version>1.80</bouncycastle.version>
+		<hutool.version>5.8.47</hutool.version>
+		<lombok.version>1.18.46</lombok.version>
+		<bouncycastle.version>1.85.2</bouncycastle.version>
 		<mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
-		<mapstruct-plus.version>1.4.6</mapstruct-plus.version>
-		<redisson.version>3.45.1</redisson.version>
+		<mapstruct-plus.version>1.5.2</mapstruct-plus.version>
+		<redisson.version>4.7.0</redisson.version>
+		<objenesis.version>3.4</objenesis.version>
 		<lock4j.version>2.2.7</lock4j.version>
-		<satoken.version>1.40.0</satoken.version>
+		<shiro.version>3.0.0</shiro.version>
 		<easyexcel.version>4.0.3</easyexcel.version>
 		<p6spy.version>3.9.1</p6spy.version>
-		<fastjson.version>2.0.56</fastjson.version>
+		<fastjson.version>2.0.64</fastjson.version>
+		<commons-io.version>2.22.0</commons-io.version>
 		<!-- OSS 配置 -->
-		<aws.sdk.version>2.31.3</aws.sdk.version>
-		<aws.crt.version>0.36.3</aws.crt.version>
+		<aws.sdk.version>2.54.0</aws.sdk.version>
+		<aws.crt.version>0.48.4</aws.crt.version>
 
 		<!-- helper -->
 		<therapi-javadoc.version>0.15.0</therapi-javadoc.version>
 		<justauth.version>1.16.7</justauth.version>
-		<ip2region.version>2.7.0</ip2region.version>
+		<ip2region.version>3.3.7</ip2region.version>
 
 		<!-- plugin -->
-		<maven-jar-plugin.version>3.4.0</maven-jar-plugin.version>
-		<maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-		<maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-		<maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-		<flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
+		<maven-jar-plugin.version>3.5.1</maven-jar-plugin.version>
+		<maven-war-plugin.version>3.5.1</maven-war-plugin.version>
+		<maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+		<flatten-maven-plugin.version>1.8.0</flatten-maven-plugin.version>
 	</properties>
 
 	<profiles>
@@ -92,6 +98,13 @@
 	<!-- 依赖声明 -->
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-bom</artifactId>
+				<version>${springdoc-openapi.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 
 			<!-- SpringBoot的依赖配置-->
 			<dependency>
@@ -111,11 +124,26 @@
 				<artifactId>spring-boot-admin-starter-client</artifactId>
 				<version>${spring-boot-admin.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.aizuda</groupId>
+				<artifactId>snail-job-server-starter</artifactId>
+				<version>${snailjob.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aizuda</groupId>
+				<artifactId>snail-job-client-starter</artifactId>
+				<version>${snailjob.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aizuda</groupId>
+				<artifactId>snail-job-client-job-core</artifactId>
+				<version>${snailjob.version}</version>
+			</dependency>
 
 			<!-- dynamic-datasource 多数据源-->
 			<dependency>
 				<groupId>com.baomidou</groupId>
-				<artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+				<artifactId>dynamic-datasource-spring-boot4-starter</artifactId>
 				<version>${dynamic-ds.version}</version>
 			</dependency>
 
@@ -141,6 +169,11 @@
 				<artifactId>zero-system</artifactId>
 				<version>${revision}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-job</artifactId>
+				<version>${revision}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.mybatis</groupId>
@@ -149,8 +182,14 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>com.baomidou</groupId>
-				<artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+				<artifactId>mybatis-plus-spring-boot4-starter</artifactId>
 				<version>${mybatis-plus.version}</version>
 			</dependency>
 
@@ -178,6 +217,17 @@
 				<artifactId>redisson-spring-boot-starter</artifactId>
 				<version>${redisson.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.redisson</groupId>
+				<artifactId>redisson-spring-cache</artifactId>
+				<version>${redisson.version}</version>
+			</dependency>
+			<!-- Redisson/Kryo 需要 3.4；覆盖测试依赖 Mockito 带入的旧版 3.3。 -->
+			<dependency>
+				<groupId>org.objenesis</groupId>
+				<artifactId>objenesis</artifactId>
+				<version>${objenesis.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>com.baomidou</groupId>
@@ -188,7 +238,7 @@
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
-				<version>2.18.0</version>
+				<version>${commons-io.version}</version>
 			</dependency>
 
 			<dependency>
@@ -216,28 +266,11 @@
 				<version>${mapstruct-plus.version}</version>
 			</dependency>
 
-			<!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->
+			<!-- Apache Shiro 权限认证 -->
 			<dependency>
-				<groupId>cn.dev33</groupId>
-				<artifactId>sa-token-spring-boot3-starter</artifactId>
-				<version>${satoken.version}</version>
-			</dependency>
-			<!-- Sa-Token 整合 jwt -->
-			<dependency>
-				<groupId>cn.dev33</groupId>
-				<artifactId>sa-token-jwt</artifactId>
-				<version>${satoken.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>cn.hutool</groupId>
-						<artifactId>hutool-all</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>cn.dev33</groupId>
-				<artifactId>sa-token-core</artifactId>
-				<version>${satoken.version}</version>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring-boot-web-starter</artifactId>
+				<version>${shiro.version}</version>
 			</dependency>
 
 			<!-- JustAuth 的依赖配置-->
@@ -298,6 +331,7 @@
 	<modules>
 		<module>zero-admin</module>
 		<module>zero-base</module>
+		<module>zero-extend</module>
 		<module>zero-modules</module>
 	</modules>
 
@@ -308,8 +342,12 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<release>${java.version}</release>
+					<proc>full</proc>
+					<!-- 使用独立 javac 进程，避免 MapStruct 生成源码在 Maven 编译进程中损坏。 -->
+					<fork>true</fork>
+					<!-- 依赖模块变化时重新编译全部源码，避免跨模块继承关系残留旧 class。 -->
+					<useIncrementalCompilation>true</useIncrementalCompilation>
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<annotationProcessorPaths>
 						<path>
@@ -339,6 +377,7 @@
 						</path>
 					</annotationProcessorPaths>
 					<compilerArgs>
+						<arg>-J-Duser.home=${project.build.directory}</arg>
 						<arg>-parameters</arg>
 					</compilerArgs>
 				</configuration>
@@ -349,15 +388,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
-					<skipTests>true</skipTests>
+					<skipTests>${skipTests}</skipTests>
 					<argLine>-Dfile.encoding=UTF-8</argLine>
-					<!-- 根据打包环境执行对应的@Tag测试方法 -->
-					<groups>${profiles.active}</groups>
-					<includes>
-						<include>**/*Test.java</include>
-					</includes>
-					<!-- 排除标签 -->
-					<excludedGroups>exclude</excludedGroups>
 				</configuration>
 			</plugin>
 			<!-- 统一版本号管理 -->
@@ -408,5 +440,3 @@
 		</resources>
 	</build>
 </project>
-
-

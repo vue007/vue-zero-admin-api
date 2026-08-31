@@ -1,6 +1,5 @@
 package com.zero.admin.system.service.impl;
 
-import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -23,7 +22,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -87,13 +85,7 @@ public class SysTenantPackageServiceImpl implements ISysTenantPackageService {
     @Transactional(rollbackFor = Exception.class)
     public Boolean insertByBo(SysTenantPackageBo bo) {
         SysTenantPackage add = MapstructUtils.convert(bo, SysTenantPackage.class);
-        // 保存菜单id
-        List<Long> menuIds = Arrays.asList(bo.getMenuIds());
-        if (CollUtil.isNotEmpty(menuIds)) {
-            add.setMenuIds(StringUtils.join(menuIds, ", "));
-        } else {
-            add.setMenuIds("");
-        }
+        add.setMenuIds(serializeMenuIds(bo.getMenuIds()));
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
             bo.setPackageId(add.getPackageId());
@@ -108,14 +100,14 @@ public class SysTenantPackageServiceImpl implements ISysTenantPackageService {
     @Transactional(rollbackFor = Exception.class)
     public Boolean updateByBo(SysTenantPackageBo bo) {
         SysTenantPackage update = MapstructUtils.convert(bo, SysTenantPackage.class);
-        // 保存菜单id
-        List<Long> menuIds = Arrays.asList(bo.getMenuIds());
-        if (CollUtil.isNotEmpty(menuIds)) {
-            update.setMenuIds(StringUtils.join(menuIds, ", "));
-        } else {
-            update.setMenuIds("");
-        }
+        update.setMenuIds(serializeMenuIds(bo.getMenuIds()));
         return baseMapper.updateById(update) > 0;
+    }
+
+    private String serializeMenuIds(Long[] menuIds) {
+        return menuIds == null || menuIds.length == 0
+            ? ""
+            : StringUtils.join(menuIds, StringUtils.SEPARATOR);
     }
 
     /**

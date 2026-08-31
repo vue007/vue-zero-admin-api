@@ -19,19 +19,15 @@ server:
   port: 8080          # 服务器的HTTP端口，默认为8080
   servlet:
     context-path: /   # 应用的访问路径
-  undertow:           # undertow 配置
-    max-http-post-size: -1    # HTTP post内容的最大大小。当值为-1时，默认值为大小是无限的
-    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
-    buffer-size: 512          # 每块buffer的空间大小,越小的空间被利用越充分
-    direct-buffers: true      # 是否分配的直接内存
+  tomcat:             # Spring Boot 4 使用 Servlet 6.1，内嵌容器切换为 Tomcat
+    max-http-form-post-size: -1 # HTTP 表单 POST 内容不限制大小
     threads:
-      io: 8                   # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
-      worker: 256             # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+      max: 256        # 最大工作线程数
 
 # 日志配置
 logging:
   level:
-    com.zero.admin: @logging.level@
+    com.zero.admin: ${ZERO_ADMIN_LOG_LEVEL:info}
     org.springframework: warn
     org.mybatis.spring.mapper: error
     org.apache.fury: warn
@@ -48,13 +44,13 @@ spring:
   application:
     name: ${zeroAdmin.name}
   threads:
-    virtual: # 开启虚拟线程 仅jdk21可用
+    virtual: # 开启虚拟线程（Java 21+）
       enabled: false
 
   messages: # 资源信息
     basename: i18n/messages # 国际化资源文件路径
   profiles:
-    active: @profiles.active@
+    active: ${SPRING_PROFILES_ACTIVE:dev}
 
   servlet: # 文件上传
     multipart:
@@ -67,17 +63,10 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss # 日期格式化
     serialization:
-      indent_output: false # 格式化输出
-      fail_on_empty_beans: false # 忽略无法转换的对象
+      indent-output: false # 格式化输出
+      fail-on-empty-beans: false # 忽略无法转换的对象
     deserialization:
-      fail_on_unknown_properties: false # 允许对象忽略json中不存在的属性
-
-# Sa-Token配置
-sa-token:
-  token-name: Authorization  # token名称 (同时也是cookie名称)
-  is-concurrent: true # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
-  is-share: false # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
-  jwt-secret-key: asdasdasifhueuiwyurfewbfjsdafjk  # jwt秘钥
+      fail-on-unknown-properties: false # 允许对象忽略json中不存在的属性
 
 # security配置
 security:
@@ -160,13 +149,11 @@ springdoc:
       apiKey:
         type: APIKEY
         in: HEADER
-        name: ${sa-token.token-name}
-  #这里定义了两个分组，可定义多个，也可以不定义
-  group-configs:
-    - group: 1.通用模块
-      packages-to-scan: com.zero.admin.web
-    - group: 2.系统模块
-      packages-to-scan: com.zero.admin.system
+        name: Authorization
+# Scalar 默认展示包含所有 Controller 的聚合 OpenAPI 文档。
+scalar:
+  enabled: true
+  url: /v3/api-docs
 
 # 防止XSS攻击
 xss:
@@ -198,8 +185,39 @@ management:
     logfile:
       external-file: ./logs/sys-console.log
 
+--- # Spring Boot Admin 客户端与 Actuator 认证
+monitor:
+  credentials:
+    username: ${MONITOR_USERNAME:admin}
+    password: ${MONITOR_PASSWORD:admin123}
+  actuator:
+    username: ${MONITOR_USERNAME:${monitor.credentials.username}}
+    password: ${MONITOR_PASSWORD:${monitor.credentials.password}}
+
+spring.boot.admin.client:
+  enabled: ${MONITOR_CLIENT_ENABLED:false}
+  url: ${MONITOR_SERVER_URL:http://localhost:9090/admin}
+  instance:
+    service-host-type: ip
+    metadata:
+      username: ${monitor.actuator.username}
+      userpassword: ${monitor.actuator.password}
+  username: ${MONITOR_USERNAME:${monitor.credentials.username}}
+  password: ${MONITOR_PASSWORD:${monitor.credentials.password}}
+
+--- # SnailJob 任务执行客户端
+snail-job:
+  enabled: ${SNAIL_JOB_ENABLED:false}
+  group: ${SNAIL_JOB_GROUP:zero_admin_group}
+  token: ${SNAIL_JOB_TOKEN:change-me-before-enabling}
+  server:
+    host: ${SNAIL_JOB_SERVER_HOST:127.0.0.1}
+    port: ${SNAIL_JOB_SERVER_PORT:17888}
+  namespace: ${SNAIL_JOB_NAMESPACE:${spring.profiles.active}}
+  port: ${SNAIL_JOB_CLIENT_PORT:28080}
+  host: ${SNAIL_JOB_CLIENT_HOST:}
+
 --- # 默认/推荐使用sse推送
 sse:
   enabled: true
   path: /resource/sse
-

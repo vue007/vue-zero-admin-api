@@ -1,6 +1,7 @@
 package com.zero.admin.system.domain.vo;
 
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
 import com.zero.admin.system.domain.SysOssConfig;
@@ -34,13 +35,15 @@ public class SysOssConfigVo implements Serializable {
     private String configKey;
 
     /**
-     * accessKey
+     * accessKey，只允许请求写入，不返回到浏览器
      */
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String accessKey;
 
     /**
-     * 秘钥
+     * 秘钥，只允许请求写入，不返回到浏览器
      */
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String secretKey;
 
     /**

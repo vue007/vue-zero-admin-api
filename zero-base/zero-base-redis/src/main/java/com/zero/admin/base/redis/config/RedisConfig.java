@@ -3,11 +3,6 @@ package com.zero.admin.base.redis.config;
 import cn.hutool.core.util.ObjectUtil;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.zero.admin.base.core.utils.SpringUtils;
 import com.zero.admin.base.redis.config.properties.RedissonProperties;
 import com.zero.admin.base.redis.handler.KeyPrefixHandler;
@@ -15,13 +10,23 @@ import com.zero.admin.base.redis.handler.RedisExceptionHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.client.codec.StringCodec;
 import org.redisson.codec.CompositeCodec;
-import org.redisson.codec.TypedJsonJacksonCodec;
+import org.redisson.codec.JsonJackson3Codec;
 import org.redisson.spring.starter.RedissonAutoConfigurationCustomizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.task.VirtualThreadTaskExecutor;
+import tools.jackson.databind.DefaultTyping;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer;
+import tools.jackson.databind.ext.javatime.ser.LocalDateTimeSerializer;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
+import tools.jackson.databind.jsontype.PolymorphicTypeValidator;
+import tools.jackson.databind.module.SimpleModule;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -41,26 +46,36 @@ public class RedisConfig {
     private RedissonProperties redissonProperties;
 
     @Bean
+    @Order(Ordered.HIGHEST_PRECEDENCE)
     public RedissonAutoConfigurationCustomizer redissonCustomizer() {
         return config -> {
-            JavaTimeModule javaTimeModule = new JavaTimeModule();
+            SimpleModule javaTimeModule = new SimpleModule("zero-admin-redis-json");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(formatter));
             javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(formatter));
-            ObjectMapper om = new ObjectMapper();
-            om.registerModule(javaTimeModule);
-            om.setTimeZone(TimeZone.getDefault());
-            om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-            // 指定序列化输入的类型，类必须是非final修饰的。序列化时将对象全类名一起保存下来
-            om.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL);
+            // 与 Redisson JsonJackson3Codec 默认行为保持一致：写入 @class 类型信息，
+            // 否则 Jackson 3 反序列化时无法恢复具体类型，会得到 LinkedHashMap 导致 ClassCastException。
+            PolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder()
+                .allowIfBaseType(Object.class)
+                .allowIfSubType(Object.class)
+                .build();
+            ObjectMapper om = JsonMapper.builder()
+                .addModule(javaTimeModule)
+                .activateDefaultTypingAsProperty(ptv, DefaultTyping.NON_FINAL, "@class")
+                .defaultTimeZone(TimeZone.getDefault())
+                .changeDefaultVisibility(visibility ->
+                    visibility.withVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY))
+                .build();
 //            LoggerFactory.useSlf4jLogging(true);
 //            FuryCodec furyCodec = new FuryCodec();
 //            CompositeCodec codec = new CompositeCodec(StringCodec.INSTANCE, furyCodec, furyCodec);
-            TypedJsonJacksonCodec jsonCodec = new TypedJsonJacksonCodec(Object.class, om);
+            JsonJackson3Codec jsonCodec = new JsonJackson3Codec(om);
             // 组合序列化 key 使用 String 内容使用通用 json 格式
             CompositeCodec codec = new CompositeCodec(StringCodec.INSTANCE, jsonCodec, jsonCodec);
             config.setThreads(redissonProperties.getThreads())
                 .setNettyThreads(redissonProperties.getNettyThreads())
+                // Redisson 4 将 key 名称映射提升为全局配置，避免单机/集群配置上的废弃 API。
+                .setNameMapper(new KeyPrefixHandler(redissonProperties.getKeyPrefix()))
                 // 缓存 Lua 脚本 减少网络传输(redisson 大部分的功能都是基于 Lua 脚本实现)
                 .setUseScriptCache(true)
                 .setCodec(codec);
@@ -71,8 +86,6 @@ public class RedisConfig {
             if (ObjectUtil.isNotNull(singleServerConfig)) {
                 // 使用单机模式
                 config.useSingleServer()
-                    //设置redis key前缀
-                    .setNameMapper(new KeyPrefixHandler(redissonProperties.getKeyPrefix()))
                     .setTimeout(singleServerConfig.getTimeout())
                     .setClientName(singleServerConfig.getClientName())
                     .setIdleConnectionTimeout(singleServerConfig.getIdleConnectionTimeout())
@@ -84,8 +97,6 @@ public class RedisConfig {
             RedissonProperties.ClusterServersConfig clusterServersConfig = redissonProperties.getClusterServersConfig();
             if (ObjectUtil.isNotNull(clusterServersConfig)) {
                 config.useClusterServers()
-                    //设置redis key前缀
-                    .setNameMapper(new KeyPrefixHandler(redissonProperties.getKeyPrefix()))
                     .setTimeout(clusterServersConfig.getTimeout())
                     .setClientName(clusterServersConfig.getClientName())
                     .setIdleConnectionTimeout(clusterServersConfig.getIdleConnectionTimeout())

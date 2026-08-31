@@ -1,8 +1,5 @@
 package com.zero.admin.web.controller;
 
-import cn.dev33.satoken.annotation.SaIgnore;
-import cn.dev33.satoken.exception.NotLoginException;
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
@@ -23,7 +20,7 @@ import com.zero.admin.base.core.domain.model.SocialLoginBody;
 import com.zero.admin.base.core.utils.*;
 import com.zero.admin.base.encrypt.annotation.ApiEncrypt;
 import com.zero.admin.base.json.utils.JsonUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.base.social.config.properties.SocialLoginConfigProperties;
 import com.zero.admin.base.social.config.properties.SocialProperties;
 import com.zero.admin.base.social.utils.SocialUtils;
@@ -58,7 +55,6 @@ import java.util.concurrent.TimeUnit;
  * @author Akai
  */
 @Slf4j
-@SaIgnore
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/auth")
@@ -141,8 +137,6 @@ public class AuthController {
      */
     @PostMapping("/social/callback")
     public R<Void> socialCallback(@RequestBody SocialLoginBody loginBody) {
-        // 校验token
-        StpUtil.checkLogin();
         // 获取第三方登录信息
         AuthResponse<AuthUser> response = SocialUtils.loginAuth(
                 loginBody.getSource(), loginBody.getSocialCode(),
@@ -164,8 +158,6 @@ public class AuthController {
      */
     @DeleteMapping(value = "/unlock/{socialId}")
     public R<Void> unlockSocial(@PathVariable Long socialId) {
-        // 校验token
-        StpUtil.checkLogin();
         Boolean rows = socialUserService.deleteWithValidById(socialId);
         return rows ? R.ok() : R.fail("取消授权失败");
     }
@@ -211,13 +203,10 @@ public class AuthController {
 
         List<SysTenantVo> tenantList = tenantService.queryList(new SysTenantBo());
         List<TenantListVo> voList = MapstructUtils.convert(tenantList, TenantListVo.class);
-        try {
-            // 如果只超管返回所有租户
-            if (LoginHelper.isSuperAdmin()) {
-                result.setVoList(voList);
-                return R.ok(result);
-            }
-        } catch (NotLoginException ignored) {
+        // 如果只超管返回所有租户
+        if (LoginHelper.isSuperAdmin()) {
+            result.setVoList(voList);
+            return R.ok(result);
         }
 
         // 获取域名

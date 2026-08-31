@@ -12,6 +12,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-base-core</artifactId>
         </dependency>
@@ -21,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>
-            <artifactId>zero-base-satoken</artifactId>
+            <artifactId>zero-base-shiro</artifactId>
         </dependency>
         <dependency>
             <groupId>com.zero.admin</groupId>

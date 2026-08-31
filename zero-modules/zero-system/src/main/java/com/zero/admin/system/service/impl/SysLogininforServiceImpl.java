@@ -16,7 +16,7 @@ import com.zero.admin.base.core.utils.ip.AddressUtils;
 import com.zero.admin.base.log.event.LogininforEvent;
 import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.SysLogininfor;
 import com.zero.admin.system.domain.bo.SysLogininforBo;
 import com.zero.admin.system.domain.vo.SysClientVo;

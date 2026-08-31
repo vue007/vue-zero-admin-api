@@ -2,7 +2,7 @@ package com.zero.admin.system.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import com.zero.admin.base.core.constant.TenantConstants;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.service.ISysMenuService;
 import com.zero.admin.system.service.ISysPermissionService;
 import com.zero.admin.system.service.ISysRoleService;

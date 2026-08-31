@@ -9,7 +9,7 @@ import com.zero.admin.base.core.domain.model.LoginUser;
 import com.zero.admin.base.core.exception.ServiceException;
 import com.zero.admin.base.core.utils.ObjectUtils;
 import com.zero.admin.base.mybatis.core.domain.BaseEntity;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 
 import java.util.Date;
 

@@ -1,7 +1,5 @@
 package com.zero.admin.system.service.impl;
 
-import cn.dev33.satoken.exception.NotLoginException;
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
@@ -23,7 +21,8 @@ import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.session.ShiroSessionStore;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.SysRole;
 import com.zero.admin.system.domain.SysRoleDept;
 import com.zero.admin.system.domain.SysRoleMenu;
@@ -40,6 +39,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -500,52 +500,36 @@ public class SysRoleServiceImpl implements ISysRoleService, RoleService {
         if (num == 0) {
             return;
         }
-        List<String> keys = StpUtil.searchTokenValue("", 0, -1, false);
-        if (CollUtil.isEmpty(keys)) {
+        List<Serializable> sessionIds = new ArrayList<>(ShiroSessionStore.activeSessionIds());
+        if (CollUtil.isEmpty(sessionIds)) {
             return;
         }
         // 角色关联的在线用户量过大会导致redis阻塞卡顿 谨慎操作
-        keys.parallelStream().forEach(key -> {
-            String token = StringUtils.substringAfterLast(key, ":");
-            // 如果已经过期则跳过
-            if (StpUtil.stpLogic.getTokenActiveTimeoutByToken(token) < -1) {
-                return;
-            }
-            LoginUser loginUser = LoginHelper.getLoginUser(token);
+        sessionIds.parallelStream().forEach(sessionId -> {
+            LoginUser loginUser = LoginHelper.getLoginUser(sessionId.toString());
             if (ObjectUtil.isNull(loginUser) || CollUtil.isEmpty(loginUser.getRoles())) {
                 return;
             }
             if (loginUser.getRoles().stream().anyMatch(r -> r.getRoleId().equals(roleId))) {
-                try {
-                    StpUtil.logoutByTokenValue(token);
-                } catch (NotLoginException ignored) {
-                }
+                ShiroSessionStore.delete(sessionId);
             }
         });
     }
 
     @Override
     public void cleanOnlineUser(List<Long> userIds) {
-        List<String> keys = StpUtil.searchTokenValue("", 0, -1, false);
-        if (CollUtil.isEmpty(keys)) {
+        List<Serializable> sessionIds = new ArrayList<>(ShiroSessionStore.activeSessionIds());
+        if (CollUtil.isEmpty(sessionIds)) {
             return;
         }
         // 角色关联的在线用户量过大会导致redis阻塞卡顿 谨慎操作
-        keys.parallelStream().forEach(key -> {
-            String token = StringUtils.substringAfterLast(key, ":");
-            // 如果已经过期则跳过
-            if (StpUtil.stpLogic.getTokenActiveTimeoutByToken(token) < -1) {
-                return;
-            }
-            LoginUser loginUser = LoginHelper.getLoginUser(token);
+        sessionIds.parallelStream().forEach(sessionId -> {
+            LoginUser loginUser = LoginHelper.getLoginUser(sessionId.toString());
             if (ObjectUtil.isNull(loginUser)) {
                 return;
             }
             if (userIds.contains(loginUser.getUserId())) {
-                try {
-                    StpUtil.logoutByTokenValue(token);
-                } catch (NotLoginException ignored) {
-                }
+                ShiroSessionStore.delete(sessionId);
             }
         });
     }

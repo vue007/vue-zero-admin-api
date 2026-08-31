@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: ${SNAIL_JOB_DB_URL}
+    username: ${SNAIL_JOB_DB_USERNAME}
+    password: ${SNAIL_JOB_DB_PASSWORD}
+    hikari:
+      connection-timeout: 30000
+      validation-timeout: 5000
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      keepalive-time: 30000
+
+snail-job:
+  server-host: ${SNAIL_JOB_SERVER_HOST:}
+  server-port: ${SNAIL_JOB_SERVER_PORT:17888}
+  merge-log-days: ${SNAIL_JOB_MERGE_LOG_DAYS:1}
+  merge-log-num: ${SNAIL_JOB_MERGE_LOG_NUM:500}
+  retry-pull-page-size: 100
+  log-storage: ${SNAIL_JOB_LOG_STORAGE_DAYS:7}
+  bucket-total: 128
+  summary-day: 7
+  load-balance-cycle-time: 10
+  retry-max-pull-parallel: 2
+
+monitor:
+  credentials:
+    username: ${MONITOR_USERNAME:admin}
+    password: ${MONITOR_PASSWORD:admin123}
+
+spring.boot.admin.client:
+  enabled: ${MONITOR_CLIENT_ENABLED:false}
+  url: ${MONITOR_SERVER_URL:http://localhost:9090/admin}
+  instance:
+    service-host-type: ip
+    metadata:
+      username: ${MONITOR_USERNAME:${monitor.credentials.username}}
+      userpassword: ${MONITOR_PASSWORD:${monitor.credentials.password}}
+  username: ${MONITOR_USERNAME:${monitor.credentials.username}}
+  password: ${MONITOR_PASSWORD:${monitor.credentials.password}}

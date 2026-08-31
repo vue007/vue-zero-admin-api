@@ -21,7 +21,7 @@ import com.zero.admin.base.core.service.UserService;
 import com.zero.admin.base.core.utils.*;
 import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.*;
 import com.zero.admin.system.domain.bo.SysUserBo;
 import com.zero.admin.system.domain.vo.SysPostVo;

@@ -17,7 +17,7 @@ import com.zero.admin.base.core.service.DeptService;
 import com.zero.admin.base.core.utils.*;
 import com.zero.admin.base.mybatis.helper.DataBaseHelper;
 import com.zero.admin.base.redis.utils.CacheUtils;
-import com.zero.admin.base.satoken.utils.LoginHelper;
+import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.system.domain.SysDept;
 import com.zero.admin.system.domain.SysRole;
 import com.zero.admin.system.domain.SysUser;

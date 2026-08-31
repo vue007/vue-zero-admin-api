@@ -58,7 +58,7 @@
       </dependency>
       <dependency>
         <groupId>com.zero.admin</groupId>
-        <artifactId>zero-base-satoken</artifactId>
+        <artifactId>zero-base-shiro</artifactId>
         <version>${revision}</version>
       </dependency>
       <dependency>

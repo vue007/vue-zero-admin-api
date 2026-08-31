@@ -1,6 +1,6 @@
 package com.zero.admin.system.controller;
 
-import cn.dev33.satoken.annotation.SaCheckPermission;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import cn.hutool.core.util.ObjectUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +37,7 @@ public class SysPostController extends BaseController {
     /**
      * 获取岗位列表
      */
-    @SaCheckPermission("system:post:list")
+    @RequiresPermissions("system:post:list")
     @GetMapping("/list")
     public TableDataInfo<SysPostVo> list(SysPostBo post, PageQuery pageQuery) {
         return postService.selectPagePostList(post, pageQuery);
@@ -47,7 +47,7 @@ public class SysPostController extends BaseController {
      * 导出岗位列表
      */
     @Log(title = "岗位管理", businessType = BusinessType.EXPORT)
-    @SaCheckPermission("system:post:export")
+    @RequiresPermissions("system:post:export")
     @PostMapping("/export")
     public void export(SysPostBo post, HttpServletResponse response) {
         List<SysPostVo> list = postService.selectPostList(post);
@@ -59,7 +59,7 @@ public class SysPostController extends BaseController {
      *
      * @param postId 岗位ID
      */
-    @SaCheckPermission("system:post:query")
+    @RequiresPermissions("system:post:query")
     @GetMapping(value = "/{postId}")
     public R<SysPostVo> getInfo(@PathVariable Long postId) {
         return R.ok(postService.selectPostById(postId));
@@ -68,7 +68,7 @@ public class SysPostController extends BaseController {
     /**
      * 新增岗位
      */
-    @SaCheckPermission("system:post:add")
+    @RequiresPermissions("system:post:add")
     @Log(title = "岗位管理", businessType = BusinessType.INSERT)
     @PostMapping
     public R<Void> add(@Validated @RequestBody SysPostBo post) {
@@ -83,7 +83,7 @@ public class SysPostController extends BaseController {
     /**
      * 修改岗位
      */
-    @SaCheckPermission("system:post:edit")
+    @RequiresPermissions("system:post:edit")
     @Log(title = "岗位管理", businessType = BusinessType.UPDATE)
     @PutMapping
     public R<Void> edit(@Validated @RequestBody SysPostBo post) {
@@ -103,7 +103,7 @@ public class SysPostController extends BaseController {
      *
      * @param postIds 岗位ID串
      */
-    @SaCheckPermission("system:post:remove")
+    @RequiresPermissions("system:post:remove")
     @Log(title = "岗位管理", businessType = BusinessType.DELETE)
     @DeleteMapping("/{postIds}")
     public R<Void> remove(@PathVariable Long[] postIds) {
@@ -116,7 +116,7 @@ public class SysPostController extends BaseController {
      * @param postIds 岗位ID串
      * @param deptId  部门id
      */
-    @SaCheckPermission("system:post:query")
+    @RequiresPermissions("system:post:query")
     @GetMapping("/optionselect")
     public R<List<SysPostVo>> optionselect(@RequestParam(required = false) Long[] postIds, @RequestParam(required = false) Long deptId) {
         List<SysPostVo> list = new ArrayList<>();
