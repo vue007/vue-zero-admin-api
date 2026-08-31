@@ -1185,6 +1185,233 @@ INSERT INTO test_tree VALUES (11, '000000', 7, 108, 3, '子节点77', 0, 103, no
 INSERT INTO test_tree VALUES (12, '000000', 10, 108, 3, '子节点88', 0, 103, now(), 1, NULL, NULL, 0);
 INSERT INTO test_tree VALUES (13, '000000', 10, 108, 3, '子节点99', 0, 103, now(), 1, NULL, NULL, 0);
 
+-- ----------------------------
+-- 多租户与数据权限验证种子数据
+-- 租户号：848132；租户名称：XXX责任有限公司
+-- 仅初始化业务验证数据，不初始化登录日志、操作日志等运行数据。
+-- ----------------------------
+begin;
+
+insert into sys_tenant_package (
+    package_id, package_name, menu_ids, remark, menu_check_strictly,
+    status, del_flag, create_dept, create_by, create_time, update_by, update_time
+) values (
+    2094423064470519809, '多租户验证套餐',
+    '1,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,103,1017,1018,1019,1020,104,1021,1022,1023,1024,1025,105,1026,1027,1028,1029,1030',
+    '用于验证租户隔离和部门数据权限', true,
+    '0', '0', 103, 1, now(), 1, now()
+) on conflict (package_id) do nothing;
+
+insert into sys_tenant (
+    id, tenant_id, contact_user_name, contact_phone, company_name,
+    license_number, address, intro, domain, remark, package_id, expire_time,
+    account_count, status, del_flag, create_dept, create_by, create_time, update_by, update_time
+) values (
+    2094423964660432897, '848132', '张三', '13800000001', 'XXX责任有限公司',
+    'TEST-XXX-20260831', '广东省深圳市多租户验证园区', '用于验证租户隔离与数据权限',
+    null, '自动化验证数据，可按需清理', 2094423064470519809, '2030-12-31 23:59:59',
+    20, '0', '0', 103, 1, now(), 1, now()
+) on conflict (id) do nothing;
+
+insert into sys_dept (
+    dept_id, tenant_id, parent_id, ancestors, dept_name, dept_category,
+    order_num, leader, phone, email, status, del_flag,
+    create_dept, create_by, create_time, update_by, update_time
+) values
+    (2094423964719153153, '848132', 0, '0', 'XXX责任有限公司', null,
+     0, 2094423964937256962, null, null, '0', '0', 103, 1, now(), 1, now()),
+    (2094423965386047489, '848132', 2094423964719153153, '0,2094423964719153153', '研发中心', null,
+     1, null, '13800000002', 'rd@example.test', '0', '0', 103, 1, now(), 1, now()),
+    (2094423965574791169, '848132', 2094423964719153153, '0,2094423964719153153', '财务部', null,
+     2, null, '13800000003', 'finance@example.test', '0', '0', 103, 1, now(), 1, now())
+on conflict (dept_id) do nothing;
+
+insert into sys_role (
+    role_id, tenant_id, role_name, role_key, role_sort, data_scope,
+    menu_check_strictly, dept_check_strictly, status, del_flag,
+    create_dept, create_by, create_time, update_by, update_time, remark
+) values
+    (2094423964677210114, '848132', '管理员', 'admin', 1, '1',
+     true, true, '0', '0', 103, 1, now(), 1, now(), null),
+    (2094423965839032322, '848132', '本部门数据验证角色', 'dept_verifier', 10, '3',
+     true, true, '0', '0', 103, 1, now(), 1, now(), '仅可查看本部门数据')
+on conflict (role_id) do nothing;
+
+insert into sys_user (
+    user_id, tenant_id, dept_id, user_name, nick_name, user_type,
+    email, phonenumber, sex, avatar, password, status, del_flag,
+    login_ip, login_date, create_dept, create_by, create_time, update_by, update_time, remark
+) values
+    (2094423964937256962, '848132', 2094423964719153153, 'xxx_admin', 'xxx_admin', 'sys_user',
+     '', '', '0', null, '$2a$10$4UNbo61wPsXo0bJ6wisXSeWDIMxyN/mPO8Cy31ubLcDx91RbBXufO', '0', '0',
+     '', null, 103, 1, now(), null, null, '多租户验证管理员'),
+    (2094423966594007041, '848132', 2094423965386047489, 'xxx_rd_user', '研发验证用户', 'sys_user',
+     'xxx_rd_user@example.test', '', '2', null, '$2a$10$MQZLWrGz1tzrPi82Noxv4Oe8SIaUcYVbbV.0JisdKJyi4vRsSh5hy', '0', '0',
+     '', null, 103, 1, now(), null, null, '多租户数据权限验证用户'),
+    (2094423967084740609, '848132', 2094423965574791169, 'xxx_fin_user', '财务验证用户', 'sys_user',
+     'xxx_fin_user@example.test', '', '2', null, '$2a$10$Wp/a.eR8lpI4FFUHRpo1fe7NWkFMDajg4kDwWSGfQ2HUmdVj/VrFy', '0', '0',
+     '', null, 103, 1, now(), null, null, '多租户数据权限验证用户')
+on conflict (user_id) do nothing;
+
+insert into sys_post (
+    post_id, tenant_id, dept_id, post_code, post_category, post_name,
+    post_sort, status, create_dept, create_by, create_time, update_by, update_time, remark
+) values (
+    2094423966082301953, '848132', 2094423965386047489, 'qa_verify', '技术', '测试工程师',
+    1, '0', 103, 1, now(), 1, now(), '多租户验证岗位'
+) on conflict (post_id) do nothing;
+
+-- 租户参数继承默认租户模板，避免初始化数据与默认配置漂移。
+insert into sys_config (
+    config_id, tenant_id, config_name, config_key, config_value, config_type,
+    create_dept, create_by, create_time, update_by, update_time, remark
+)
+select seed.config_id, '848132', source.config_name, source.config_key,
+       source.config_value, source.config_type, source.create_dept, source.create_by,
+       now(), null, now(), source.remark
+from (values
+    (2094423965016948738::int8, 'sys.index.skinName'),
+    (2094423965016948739::int8, 'sys.user.initPassword'),
+    (2094423965016948740::int8, 'sys.index.sideTheme'),
+    (2094423965016948741::int8, 'sys.account.registerUser'),
+    (2094423965021143041::int8, 'sys.oss.previewListResource')
+) as seed(config_id, config_key)
+join sys_config source
+  on source.tenant_id = '000000' and source.config_key = seed.config_key
+on conflict (config_id) do nothing;
+
+-- 租户字典继承默认租户模板；固定主键便于验证和重建环境。
+insert into sys_dict_type (
+    dict_id, tenant_id, dict_name, dict_type, create_dept,
+    create_by, create_time, update_by, update_time, remark
+)
+select seed.dict_id, '848132', source.dict_name, source.dict_type,
+       source.create_dept, source.create_by, now(), null, now(), source.remark
+from (values
+    (2094423964979200002::int8, 'sys_common_status'),
+    (2094423964979200003::int8, 'sys_device_type'),
+    (2094423964979200004::int8, 'sys_grant_type'),
+    (2094423964979200005::int8, 'sys_normal_disable'),
+    (2094423964979200006::int8, 'sys_notice_status'),
+    (2094423964979200007::int8, 'sys_notice_type'),
+    (2094423964979200008::int8, 'sys_oper_type'),
+    (2094423964983394306::int8, 'sys_show_hide'),
+    (2094423964983394307::int8, 'sys_user_sex'),
+    (2094423964983394308::int8, 'sys_yes_no')
+) as seed(dict_id, dict_type)
+join sys_dict_type source
+  on source.tenant_id = '000000' and source.dict_type = seed.dict_type
+on conflict (dict_id) do nothing;
+
+insert into sys_dict_data (
+    dict_code, tenant_id, dict_sort, dict_label, dict_value, dict_type,
+    css_class, list_class, is_default, create_dept, create_by,
+    create_time, update_by, update_time, remark
+)
+select seed.dict_code, '848132', source.dict_sort, source.dict_label,
+       source.dict_value, source.dict_type, source.css_class, source.list_class,
+       source.is_default, source.create_dept, source.create_by,
+       now(), null, now(), source.remark
+from (values
+    (2094423964987588609::int8, 'sys_user_sex', '0'),
+    (2094423964987588610::int8, 'sys_user_sex', '1'),
+    (2094423964987588611::int8, 'sys_user_sex', '2'),
+    (2094423964987588612::int8, 'sys_show_hide', '0'),
+    (2094423964987588613::int8, 'sys_show_hide', '1'),
+    (2094423964987588614::int8, 'sys_normal_disable', '0'),
+    (2094423964991782913::int8, 'sys_normal_disable', '1'),
+    (2094423964991782914::int8, 'sys_yes_no', 'Y'),
+    (2094423964991782915::int8, 'sys_yes_no', 'N'),
+    (2094423964991782916::int8, 'sys_notice_type', '1'),
+    (2094423964991782917::int8, 'sys_notice_type', '2'),
+    (2094423964991782918::int8, 'sys_notice_status', '0'),
+    (2094423964991782919::int8, 'sys_notice_status', '1'),
+    (2094423964991782920::int8, 'sys_oper_type', '0'),
+    (2094423964991782921::int8, 'sys_oper_type', '1'),
+    (2094423964991782922::int8, 'sys_oper_type', '2'),
+    (2094423964995977217::int8, 'sys_oper_type', '3'),
+    (2094423964995977218::int8, 'sys_oper_type', '4'),
+    (2094423964995977219::int8, 'sys_oper_type', '5'),
+    (2094423964995977220::int8, 'sys_oper_type', '6'),
+    (2094423964995977221::int8, 'sys_oper_type', '7'),
+    (2094423964995977222::int8, 'sys_oper_type', '8'),
+    (2094423964995977223::int8, 'sys_oper_type', '9'),
+    (2094423964995977224::int8, 'sys_common_status', '0'),
+    (2094423964995977225::int8, 'sys_common_status', '1'),
+    (2094423964995977226::int8, 'sys_grant_type', 'password'),
+    (2094423964995977227::int8, 'sys_grant_type', 'sms'),
+    (2094423964995977228::int8, 'sys_grant_type', 'email'),
+    (2094423965000171522::int8, 'sys_grant_type', 'xcx'),
+    (2094423965000171523::int8, 'sys_grant_type', 'social'),
+    (2094423965000171524::int8, 'sys_device_type', 'pc'),
+    (2094423965000171525::int8, 'sys_device_type', 'android'),
+    (2094423965000171526::int8, 'sys_device_type', 'ios'),
+    (2094423965000171527::int8, 'sys_device_type', 'xcx')
+) as seed(dict_code, dict_type, dict_value)
+join sys_dict_data source
+  on source.tenant_id = '000000'
+ and source.dict_type = seed.dict_type
+ and source.dict_value = seed.dict_value
+on conflict (dict_code) do nothing;
+
+insert into sys_user_role (user_id, role_id) values
+    (2094423964937256962, 2094423964677210114),
+    (2094423966594007041, 2094423965839032322),
+    (2094423967084740609, 2094423965839032322)
+on conflict (user_id, role_id) do nothing;
+
+insert into sys_role_menu (role_id, menu_id) values
+    (2094423964677210114, 1),
+    (2094423964677210114, 100),
+    (2094423964677210114, 1001),
+    (2094423964677210114, 1002),
+    (2094423964677210114, 1003),
+    (2094423964677210114, 1004),
+    (2094423964677210114, 1005),
+    (2094423964677210114, 1006),
+    (2094423964677210114, 1007),
+    (2094423964677210114, 101),
+    (2094423964677210114, 1008),
+    (2094423964677210114, 1009),
+    (2094423964677210114, 1010),
+    (2094423964677210114, 1011),
+    (2094423964677210114, 1012),
+    (2094423964677210114, 103),
+    (2094423964677210114, 1017),
+    (2094423964677210114, 1018),
+    (2094423964677210114, 1019),
+    (2094423964677210114, 1020),
+    (2094423964677210114, 104),
+    (2094423964677210114, 1021),
+    (2094423964677210114, 1022),
+    (2094423964677210114, 1023),
+    (2094423964677210114, 1024),
+    (2094423964677210114, 1025),
+    (2094423964677210114, 105),
+    (2094423964677210114, 1026),
+    (2094423964677210114, 1027),
+    (2094423964677210114, 1028),
+    (2094423964677210114, 1029),
+    (2094423964677210114, 1030),
+    (2094423965839032322, 1),
+    (2094423965839032322, 100),
+    (2094423965839032322, 1001),
+    (2094423965839032322, 103),
+    (2094423965839032322, 1017),
+    (2094423965839032322, 104),
+    (2094423965839032322, 1021)
+on conflict (role_id, menu_id) do nothing;
+
+insert into sys_role_dept (role_id, dept_id) values
+    (2094423964677210114, 2094423964719153153)
+on conflict (role_id, dept_id) do nothing;
+
+insert into sys_user_post (user_id, post_id) values
+    (2094423966594007041, 2094423966082301953)
+on conflict (user_id, post_id) do nothing;
+
+commit;
+
 -- 字符串自动转时间 避免框架时间查询报错问题
 -- create or replace function cast_varchar_to_timestamp(varchar) returns timestamptz as $$
 -- select to_timestamp($1, 'yyyy-mm-dd hh24:mi:ss');
