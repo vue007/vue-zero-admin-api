@@ -12,6 +12,7 @@
        USERNAME: root # 数据库账户
        PASSWORD: root123 # 数据库账户密码
    ```
+ 
 3. 执行初始化sql config/init.sql
 
 ## 安装redis环境
