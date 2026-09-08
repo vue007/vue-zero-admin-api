@@ -1,10 +1,7 @@
 package com.zero.admin.web.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.http.HttpUtil;
-import cn.hutool.http.Method;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.model.AuthResponse;
@@ -14,7 +11,6 @@ import com.zero.admin.base.core.domain.model.LoginUser;
 import com.zero.admin.base.core.domain.model.SocialLoginBody;
 import com.zero.admin.base.core.exception.ServiceException;
 import com.zero.admin.base.core.exception.user.UserException;
-import com.zero.admin.base.core.utils.StreamUtils;
 import com.zero.admin.base.core.utils.ValidatorUtils;
 import com.zero.admin.base.json.utils.JsonUtils;
 import com.zero.admin.base.shiro.utils.LoginHelper;
@@ -32,7 +28,6 @@ import com.zero.admin.web.service.SysLoginService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * 第三方授权策略
@@ -66,23 +61,15 @@ public class SocialAuthStrategy implements IAuthStrategy {
             throw new ServiceException(response.getMsg());
         }
         AuthUser authUserData = response.getData();
-        if ("GITEE".equals(authUserData.getSource())) {
-        }
-
-        List<SysSocialVo> list = sysSocialService.selectByAuthId(authUserData.getSource() + authUserData.getUuid());
+        String authId = authUserData.getSource() + authUserData.getUuid();
+        // 登录阶段尚未建立 Shiro 会话，显式使用已校验的登录租户建立临时上下文，
+        // 确保授权关系查询从 SQL 层就限定在目标租户内。
+        List<SysSocialVo> list = TenantHelper.dynamic(loginBody.getTenantId(),
+            () -> sysSocialService.selectByAuthId(authId));
         if (CollUtil.isEmpty(list)) {
             throw new ServiceException("你还没有绑定第三方账号，绑定后才可以登录！");
         }
-        SysSocialVo social;
-        if (TenantHelper.isEnable()) {
-            Optional<SysSocialVo> opt = StreamUtils.findAny(list, x -> x.getTenantId().equals(loginBody.getTenantId()));
-            if (opt.isEmpty()) {
-                throw new ServiceException("对不起，你没有权限登录当前租户！");
-            }
-            social = opt.get();
-        } else {
-            social = list.get(0);
-        }
+        SysSocialVo social = list.get(0);
         LoginUser loginUser = TenantHelper.dynamic(social.getTenantId(), () -> {
             SysUserVo user = loadUser(social.getUserId());
             // 此处可根据登录用户的数据不同 自行创建 loginUser 属性不够用继承扩展就行了

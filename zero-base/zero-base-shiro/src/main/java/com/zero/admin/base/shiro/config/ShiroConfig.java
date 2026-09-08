@@ -78,6 +78,7 @@ public class ShiroConfig {
         chainDefinition.addPathDefinition("/auth/register", "anon");
         chainDefinition.addPathDefinition("/auth/tenant/list", "anon");
         chainDefinition.addPathDefinition("/auth/binding/**", "anon");
+        chainDefinition.addPathDefinition("/auth/social/providers", "anon");
         // Actuator 由 zero-admin 中的 Basic Auth 过滤器单独保护。
         chainDefinition.addPathDefinition("/actuator", "anon");
         chainDefinition.addPathDefinition("/actuator/**", "anon");

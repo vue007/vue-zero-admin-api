@@ -48,7 +48,7 @@
 
 		<!-- helper -->
 		<therapi-javadoc.version>0.15.0</therapi-javadoc.version>
-		<justauth.version>1.16.7</justauth.version>
+		<justauth.version>3.0.1</justauth.version>
 		<ip2region.version>3.3.7</ip2region.version>
 
 		<!-- plugin -->
@@ -275,7 +275,7 @@
 
 			<!-- JustAuth 的依赖配置-->
 			<dependency>
-				<groupId>me.zhyd.oauth</groupId>
+				<groupId>io.github.windtool</groupId>
 				<artifactId>JustAuth</artifactId>
 				<version>${justauth.version}</version>
 			</dependency>

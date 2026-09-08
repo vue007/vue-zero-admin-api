@@ -1,6 +1,7 @@
 package com.zero.admin.system.domain.vo;
 
 import io.github.linpeilie.annotations.AutoMapper;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import com.zero.admin.system.domain.SysSocial;
 
@@ -16,6 +17,10 @@ import java.util.Date;
  */
 @Data
 @AutoMapper(target = SysSocial.class)
+@JsonIgnoreProperties({
+    "authId", "accessToken", "expireIn", "refreshToken", "openId", "accessCode", "unionId", "scope",
+    "tokenType", "idToken", "macAlgorithm", "macKey", "code", "oauthToken", "oauthTokenSecret"
+})
 public class SysSocialVo implements Serializable {
 
     @Serial

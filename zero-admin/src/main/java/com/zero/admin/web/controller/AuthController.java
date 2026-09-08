@@ -121,6 +121,9 @@ public class AuthController {
     @GetMapping("/binding/{source}")
     public R<String> authBinding(@PathVariable("source") String source,
                                  @RequestParam String tenantId, @RequestParam String domain) {
+        if (CollUtil.isEmpty(socialProperties.getType())) {
+            return R.fail("未配置第三方登录平台");
+        }
         SocialLoginConfigProperties obj = socialProperties.getType().get(source);
         if (ObjectUtil.isNull(obj)) {
             return R.fail(source + "平台账号暂不支持");
@@ -135,6 +138,24 @@ public class AuthController {
     }
 
     /**
+     * 返回已完成必要配置的第三方登录平台，不暴露客户端密钥等配置内容。
+     */
+    @GetMapping("/social/providers")
+    public R<List<String>> socialProviders() {
+        if (CollUtil.isEmpty(socialProperties.getType())) {
+            return R.ok(List.of());
+        }
+        List<String> providers = socialProperties.getType().entrySet().stream()
+            .filter(entry -> ObjectUtil.isNotNull(entry.getValue()))
+            .filter(entry -> StringUtils.isNotBlank(entry.getValue().getClientId()))
+            .filter(entry -> StringUtils.isNotBlank(entry.getValue().getRedirectUri()))
+            .map(Map.Entry::getKey)
+            .sorted()
+            .toList();
+        return R.ok(providers);
+    }
+
+    /**
      * 前端回调绑定授权(需要token)
      *
      * @param loginBody 请求体
@@ -146,11 +167,11 @@ public class AuthController {
         AuthResponse<AuthUser> response = SocialUtils.loginAuth(
                 loginBody.getSource(), loginBody.getSocialCode(),
                 loginBody.getSocialState(), socialProperties);
-        AuthUser authUserData = response.getData();
         // 判断授权响应是否成功
         if (!response.ok()) {
             return R.fail(response.getMsg());
         }
+        AuthUser authUserData = response.getData();
         loginService.socialRegister(authUserData);
         return R.ok();
     }
@@ -163,6 +184,10 @@ public class AuthController {
      */
     @DeleteMapping(value = "/unlock/{socialId}")
     public R<Void> unlockSocial(@PathVariable Long socialId) {
+        var social = socialUserService.queryById(socialId.toString());
+        if (ObjectUtil.isNull(social) || !ObjectUtil.equal(social.getUserId(), LoginHelper.getUserId())) {
+            return R.fail("只能取消当前用户自己的第三方授权");
+        }
         Boolean rows = socialUserService.deleteWithValidById(socialId);
         return rows ? R.ok() : R.fail("取消授权失败");
     }

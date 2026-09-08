@@ -12,7 +12,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>me.zhyd.oauth</groupId>
+            <groupId>io.github.windtool</groupId>
             <artifactId>JustAuth</artifactId>
         </dependency>
 
