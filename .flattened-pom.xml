@@ -174,6 +174,11 @@
 				<artifactId>zero-job</artifactId>
 				<version>0.0.1</version>
 			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-member</artifactId>
+				<version>0.0.1</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.mybatis</groupId>
@@ -330,6 +335,7 @@
 
 	<modules>
 		<module>zero-admin</module>
+		<module>zero-apps</module>
 		<module>zero-base</module>
 		<module>zero-extend</module>
 		<module>zero-modules</module>

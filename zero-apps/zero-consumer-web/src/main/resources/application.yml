@@ -1,0 +1,115 @@
+zeroConsumer:
+  name: Zero-Consumer
+  version: ${revision}
+
+server:
+  port: ${CONSUMER_SERVER_PORT:8081}
+  servlet:
+    context-path: /
+  tomcat:
+    max-http-form-post-size: -1
+
+spring:
+  application:
+    name: ${zeroConsumer.name}
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  config:
+    import: optional:classpath:secret-consumer-local.yml
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    dynamic:
+      primary: postgres
+      strict: true
+      datasource:
+        postgres:
+          type: ${spring.datasource.type}
+          driverClassName: org.postgresql.Driver
+          url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:zero_admin}
+          username: ${DB_USERNAME:postgres}
+          password: ${DB_PASSWORD}
+      hikari:
+        maxPoolSize: ${DB_POOL_MAX_SIZE:10}
+        minIdle: ${DB_POOL_MIN_IDLE:1}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      database: ${REDIS_DATABASE:0}
+      password: ${REDIS_PASSWORD:}
+      timeout: 10s
+
+redisson:
+  # 与 Zero-Admin 使用不同前缀，从 Redis 层隔离后台会话与会员会话。
+  keyPrefix: ${zeroConsumer.name}
+  threads: 2
+  nettyThreads: 4
+  singleServerConfig:
+    clientName: ${zeroConsumer.name}
+    connectionMinimumIdleSize: 2
+    connectionPoolSize: 16
+    idleConnectionTimeout: 10000
+    timeout: 3000
+
+consumer:
+  auth:
+    # 单个 C 端部署绑定到可信租户，不接受请求参数覆盖。
+    tenant-id: ${CONSUMER_TENANT_ID:000000}
+    allowed-client-keys:
+      - app
+    max-retry-count: ${CONSUMER_PASSWORD_MAX_RETRY:5}
+    lock-minutes: ${CONSUMER_PASSWORD_LOCK_MINUTES:10}
+  wechat:
+    # 微信小程序配置放入 secret-consumer-local.yml 或通过配置中心注入：
+    # mini-programs:
+    #   wx0000000000000000:
+    #     secret: ${WECHAT_MINI_PROGRAM_SECRET}
+    mini-programs: {}
+
+tenant:
+  enable: true
+  excludes:
+    - sys_menu
+    - sys_tenant
+    - sys_tenant_package
+    - sys_role_dept
+    - sys_role_menu
+    - sys_user_post
+    - sys_user_role
+    - sys_client
+    - sys_oss_config
+
+mybatis-plus:
+  enableLogicDelete: true
+  mapperPackage: com.zero.admin.**.mapper
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  typeAliasesPackage: com.zero.admin.**.domain
+  globalConfig:
+    dbConfig:
+      idType: ASSIGN_ID
+
+springdoc:
+  api-docs:
+    enabled: true
+  info:
+    title: '${zeroConsumer.name} API'
+    description: 'C端会员登录、注册和个人资料接口'
+    version: '${zeroConsumer.version}'
+  components:
+    security-schemes:
+      apiKey:
+        type: APIKEY
+        in: HEADER
+        name: Authorization
+
+scalar:
+  enabled: true
+  url: /v3/api-docs
+
+# OAuth/开放平台示例。真实 client-secret 必须放在 secret 文件、环境变量或配置中心。
+# justauth:
+#   type:
+#     wechat_open:
+#       client-id: ${WECHAT_OPEN_CLIENT_ID}
+#       client-secret: ${WECHAT_OPEN_CLIENT_SECRET}
+#       redirect-uri: ${WECHAT_OPEN_REDIRECT_URI}

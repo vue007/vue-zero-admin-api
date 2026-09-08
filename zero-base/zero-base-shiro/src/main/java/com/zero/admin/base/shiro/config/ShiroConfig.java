@@ -79,6 +79,11 @@ public class ShiroConfig {
         chainDefinition.addPathDefinition("/auth/tenant/list", "anon");
         chainDefinition.addPathDefinition("/auth/binding/**", "anon");
         chainDefinition.addPathDefinition("/auth/social/providers", "anon");
+        // C 端登录/注册入口。退出登录仍需有效会员会话。
+        chainDefinition.addPathDefinition("/app/auth/register", "anon");
+        chainDefinition.addPathDefinition("/app/auth/login/**", "anon");
+        chainDefinition.addPathDefinition("/app/auth/social/authorize/**", "anon");
+        chainDefinition.addPathDefinition("/app/auth/social/providers", "anon");
         // Actuator 由 zero-admin 中的 Basic Auth 过滤器单独保护。
         chainDefinition.addPathDefinition("/actuator", "anon");
         chainDefinition.addPathDefinition("/actuator/**", "anon");

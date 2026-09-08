@@ -16,6 +16,7 @@
     <modules>
         <module>zero-system</module>
         <module>zero-job</module>
+        <module>zero-member</module>
     </modules>
 
 </project>
