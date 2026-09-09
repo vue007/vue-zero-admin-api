@@ -429,6 +429,11 @@
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
+				<!-- 本地密钥文件只能从外部文件系统加载，禁止进入构建制品 -->
+				<excludes>
+					<exclude>*-local.yml</exclude>
+					<exclude>**/*-local.yml</exclude>
+				</excludes>
 				<!-- 关闭过滤 -->
 				<filtering>false</filtering>
 			</resource>

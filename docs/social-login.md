@@ -25,7 +25,7 @@ config/migrations/20260908_social_login.sql
 ## 身份平台配置
 
 第三方客户端 ID 和密钥属于部署密钥，不要提交到仓库。开发环境请写入已忽略的
-`zero-admin/src/main/resources/secret-dev-local.yml`，生产环境使用部署平台的密钥配置。例如：
+仓库根目录的 `secret-dev-local.yml`，生产环境使用部署平台的密钥配置。例如：
 
 ```yaml
 justauth:

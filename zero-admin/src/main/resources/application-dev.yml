@@ -1,6 +1,7 @@
 spring:
   config:
-    import: optional:classpath:secret-dev-local.yml
+    # 支持从仓库根目录或 zero-admin 模块目录启动；classpath 仅兼容旧配置且不会进入构建制品。
+    import: optional:file:./secret-dev-local.yml,optional:file:../secret-dev-local.yml,optional:classpath:secret-dev-local.yml
 
 # 本地开发 HTTPS。证书仅保存在仓库根部被 Git 忽略的 .cert-local 目录。
 server:

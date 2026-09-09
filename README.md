@@ -3,7 +3,7 @@
 ## 启动项目
 ### 安装数据库环境
 1. 安装postgresql数据库并添加数据库用户，创建zero_admin database
-2. 在[zero-admin/src/main/resources](zero-admin/src/main/resources) 目录下添加 secret-dev-local.yml
+2. 在仓库根目录添加 `secret-dev-local.yml`（该文件会被 Git 和 Maven 构建忽略）
    ```yml
    SECRET:
      DB:
