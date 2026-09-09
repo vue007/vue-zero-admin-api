@@ -30,20 +30,20 @@ public class MemberController {
 
     private final IMemberService memberService;
 
-    @RequiresPermissions("member:user:list")
+    @RequiresPermissions("system:member:list")
     @GetMapping("/list")
     public TableDataInfo<MemberVo> list(MemberQueryBo bo, PageQuery pageQuery) {
         return memberService.queryPageList(bo, pageQuery);
     }
 
-    @RequiresPermissions("member:user:query")
+    @RequiresPermissions("system:member:query")
     @GetMapping("/{memberId}")
     public R<MemberVo> getInfo(
         @NotNull(message = "会员ID不能为空") @PathVariable Long memberId) {
         return R.ok(memberService.queryById(memberId));
     }
 
-    @RequiresPermissions("member:user:edit")
+    @RequiresPermissions("system:member:edit")
     @Log(title = "会员管理", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public R<Void> changeStatus(@Valid @RequestBody MemberStatusBo bo) {

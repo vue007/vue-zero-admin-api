@@ -82,3 +82,23 @@ comment on column app_member_social.auth_id is '来源与平台用户标识组�
 comment on column app_member_social.source is '第三方平台或微信小程序来源';
 comment on column app_member_social.open_id is '第三方平台用户标识';
 
+-- ----------------------------
+-- 后台会员管理菜单与权限
+-- ----------------------------
+insert into sys_menu values
+    ('124', '会员管理', '1', '12', 'member', 'system/member/index', '', '1', '0', 'C', '0', '0',
+     'system:member:list', 'ze-user', 103, 1, now(), null, null, 'C端会员管理菜单')
+on conflict (menu_id) do nothing;
+
+insert into sys_menu values
+    ('1066', '会员查询', '124', '1', '#', '', '', '1', '0', 'F', '0', '0',
+     'system:member:query', '#', 103, 1, now(), null, null, ''),
+    ('1067', '会员状态修改', '124', '2', '#', '', '', '1', '0', 'F', '0', '0',
+     'system:member:edit', '#', 103, 1, now(), null, null, '')
+on conflict (menu_id) do nothing;
+
+insert into sys_role_menu (role_id, menu_id) values
+    (3, 124),
+    (3, 1066),
+    (3, 1067)
+on conflict (role_id, menu_id) do nothing;

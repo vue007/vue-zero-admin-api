@@ -2,7 +2,9 @@ package com.zero.admin.consumer.config;
 
 import com.zero.admin.base.core.domain.model.LoginUser;
 import com.zero.admin.base.core.enums.UserType;
+import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.shiro.utils.LoginHelper;
+import lombok.RequiredArgsConstructor;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -11,12 +13,19 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 /** 阻止后台 sys_user 会话访问 C 端受保护接口。 */
 @Component
+@RequiredArgsConstructor
 public class ConsumerIdentityInterceptor implements HandlerInterceptor {
+
+    private final ConsumerAuthProperties authProperties;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         LoginUser loginUser = LoginHelper.getLoginUser();
-        if (loginUser == null || !UserType.APP_USER.getUserType().equals(loginUser.getUserType())) {
+        if (loginUser == null
+            || !UserType.APP_USER.getUserType().equals(loginUser.getUserType())
+            || StringUtils.isBlank(loginUser.getTenantId())
+            || authProperties.getAllowedClientKeys().stream()
+                .noneMatch(key -> key.equalsIgnoreCase(loginUser.getClientKey()))) {
             throw new UnauthorizedException("当前会话不是C端会员会话");
         }
         return true;

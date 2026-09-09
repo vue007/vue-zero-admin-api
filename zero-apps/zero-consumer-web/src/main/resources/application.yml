@@ -53,8 +53,7 @@ redisson:
 
 consumer:
   auth:
-    # 单个 C 端部署绑定到可信租户，不接受请求参数覆盖。
-    tenant-id: ${CONSUMER_TENANT_ID:000000}
+    # 第三方应用密钥由平台统一维护；租户由登录/注册入口选择并在登录后固定进会话。
     allowed-client-keys:
       - app
     max-retry-count: ${CONSUMER_PASSWORD_MAX_RETRY:5}

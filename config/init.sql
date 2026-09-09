@@ -521,6 +521,7 @@ insert into sys_menu values('109',  '在线用户',     '2',   '1', 'online',   
 insert into sys_menu values('113',  '缓存管理',     '2',   '2', 'cache',            'monitor/cache/index',          '', '1', '0', 'C', '0', '0', 'monitor:cache:list',          'ze-redis',         103, 1, now(), null, null, '缓存管理菜单');
 insert into sys_menu values('115',  '代码生成',     '3',   '2', 'gen',              'tool/gen/index',               '', '1', '0', 'C', '0', '0', 'tool:gen:list',               'code',          103, 1, now(), null, null, '代码生成菜单');
 insert into sys_menu values('123',  '客户端管理',   '1',   '11', 'client',           'system/client/index',          '', '1', '0', 'C', '0', '0', 'system:client:list',          'international', 103, 1, now(), null, null, '客户端管理菜单');
+insert into sys_menu values('124',  '会员管理',     '1',   '12', 'member',           'system/member/index',          '', '1', '0', 'C', '0', '0', 'system:member:list',          'ze-user',       103, 1, now(), null, null, 'C端会员管理菜单');
 
 -- springboot-admin监控
 insert into sys_menu values('117',  'Admin监控',   '2',   '5',  'admin',            'monitor/admin/index',         '', '1', '0', 'C', '0', '0', 'monitor:admin:list',          'ze-spring-boot-admin', 103, 1, now(), null, null, 'Admin监控菜单');
@@ -618,6 +619,9 @@ insert into sys_menu values('1062', '客户端管理新增', '123', '2',  '#', '
 insert into sys_menu values('1063', '客户端管理修改', '123', '3',  '#', '', '', '1', '0', 'F', '0', '0', 'system:client:edit',         '#', 103, 1, now(), null, null, '');
 insert into sys_menu values('1064', '客户端管理删除', '123', '4',  '#', '', '', '1', '0', 'F', '0', '0', 'system:client:remove',       '#', 103, 1, now(), null, null, '');
 insert into sys_menu values('1065', '客户端管理导出', '123', '5',  '#', '', '', '1', '0', 'F', '0', '0', 'system:client:export',       '#', 103, 1, now(), null, null, '');
+-- 会员管理按钮
+insert into sys_menu values('1066', '会员查询', '124', '1', '#', '', '', '1', '0', 'F', '0', '0', 'system:member:query', '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1067', '会员状态修改', '124', '2', '#', '', '', '1', '0', 'F', '0', '0', 'system:member:edit', '#', 103, 1, now(), null, null, '');
 -- 测试菜单
 -- INSERT INTO sys_menu VALUES('1500', '测试单表',     '5',   '1', 'demo', 'demo/demo/index', '',  '1', '0', 'C', '0', '0', 'demo:demo:list', '#', 103, 1, now(), NULL, NULL, '测试单表菜单');
 -- INSERT INTO sys_menu VALUES('1501', '测试单表查询', '1500', '1', '#', '', '',  '1', '0', 'F', '0', '0', 'demo:demo:query',                  '#', 103, 1, now(), NULL, NULL, '');
@@ -685,6 +689,7 @@ insert into sys_role_menu values ('3', '107');
 insert into sys_role_menu values ('3', '108');
 insert into sys_role_menu values ('3', '118');
 insert into sys_role_menu values ('3', '123');
+insert into sys_role_menu values ('3', '124');
 insert into sys_role_menu values ('3', '500');
 insert into sys_role_menu values ('3', '501');
 insert into sys_role_menu values ('3', '1001');
@@ -738,6 +743,8 @@ insert into sys_role_menu values ('3', '1062');
 insert into sys_role_menu values ('3', '1063');
 insert into sys_role_menu values ('3', '1064');
 insert into sys_role_menu values ('3', '1065');
+insert into sys_role_menu values ('3', '1066');
+insert into sys_role_menu values ('3', '1067');
 insert into sys_role_menu values ('3', '1500');
 insert into sys_role_menu values ('3', '1501');
 insert into sys_role_menu values ('3', '1502');

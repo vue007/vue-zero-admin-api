@@ -12,9 +12,6 @@ import java.util.List;
 @ConfigurationProperties(prefix = "consumer.auth")
 public class ConsumerAuthProperties {
 
-    /** C 端服务绑定的租户，禁止由调用方任意切换。 */
-    private String tenantId = "000000";
-
     /** 允许 C 端使用的 sys_client.client_key。 */
     private List<String> allowedClientKeys = List.of("app");
 

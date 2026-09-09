@@ -7,6 +7,9 @@ import lombok.Data;
 @Data
 public class ConsumerPasswordLoginRequest {
 
+    @NotBlank(message = "租户编号不能为空")
+    private String tenantId;
+
     @NotBlank(message = "客户端ID不能为空")
     private String clientId;
 
