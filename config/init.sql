@@ -27,7 +27,6 @@ create table if not exists sys_tenant
     constraint "pk_sys_tenant" primary key (id)
     );
 
-
 comment on table   sys_tenant                    is '租户表';
 comment on column  sys_tenant.tenant_id          is '租户编号';
 comment on column  sys_tenant.contact_phone      is '联系电话';
@@ -49,14 +48,6 @@ comment on column  sys_tenant.create_time        is '创建时间';
 comment on column  sys_tenant.update_by          is '更新者';
 comment on column  sys_tenant.update_time        is '更新时间';
 
-
--- ----------------------------
--- 初始化-租户表数据
--- ----------------------------
-
-insert into sys_tenant values(1, '000000', '管理组', '15888888888', '华南理工大学继续教育学院', null, null, '华南理工大学集团多分校租户通用后台管理管理系统', null, null, null, null, -1, '0', '0', 103, 1, now(), null, null);
-
-
 -- ----------------------------
 -- 租户套餐表
 -- ----------------------------
@@ -77,7 +68,6 @@ create table if not exists sys_tenant_package
     constraint "pk_sys_tenant_package" primary key (package_id)
     );
 
-
 comment on table   sys_tenant_package                    is '租户套餐表';
 comment on column  sys_tenant_package.package_id         is '租户套餐id';
 comment on column  sys_tenant_package.package_name       is '套餐名称';
@@ -90,7 +80,6 @@ comment on column  sys_tenant_package.create_by          is '创建者';
 comment on column  sys_tenant_package.create_time        is '创建时间';
 comment on column  sys_tenant_package.update_by          is '更新者';
 comment on column  sys_tenant_package.update_time        is '更新时间';
-
 
 -- ----------------------------
 -- 1、部门表
@@ -362,7 +351,6 @@ comment on column sys_menu.remark       is '备注';
 -- ----------------------------
 -- 一级菜单
 insert into sys_menu values('1', '系统管理', '0', '1', 'system',           null, '', '1', '0', 'M', '0', '0', '', 'ze-setting', 103, 1, now(), null, null, '系统管理目录');
-insert into sys_menu values('6', '租户管理', '0', '2', 'tenant',           null, '', '1', '0', 'M', '0', '0', '', 'ze-tenant',  103, 1, now(), null, null, '租户管理目录');
 insert into sys_menu values('2', '系统监控', '0', '3', 'monitor',          null, '', '1', '0', 'M', '0', '0', '', 'ze-monitor', 103, 1, now(), null, null, '系统监控目录');
 -- insert into sys_menu values('3', '系统工具', '0', '4', 'tool',             null, '', '1', '0', 'M', '0', '0', '', 'tool',     103, 1, now(), null, null, '系统工具目录');
 -- insert into sys_menu VALUES('5', '测试菜单', '0', '5', 'demo',             null, '', '1', '0', 'M', '0', '0', null, 'star',       103, 1, now(), null, null, '测试菜单');
@@ -379,8 +367,6 @@ insert into sys_menu values('108',  '日志管理',     '1',   '9', 'log',      
 insert into sys_menu values('109',  '在线用户',     '2',   '1', 'online',           'monitor/online/index',         '', '1', '0', 'C', '0', '0', 'monitor:online:list',         'ze-user-online',   103, 1, now(), null, null, '在线用户菜单');
 insert into sys_menu values('113',  '缓存管理',     '2',   '2', 'cache',            'monitor/cache/index',          '', '1', '0', 'C', '0', '0', 'monitor:cache:list',          'ze-redis',         103, 1, now(), null, null, '缓存管理菜单');
 insert into sys_menu values('115',  '代码生成',     '3',   '2', 'gen',              'tool/gen/index',               '', '1', '0', 'C', '0', '0', 'tool:gen:list',               'code',          103, 1, now(), null, null, '代码生成菜单');
-insert into sys_menu values('121',  '租户管理',     '6',   '1', 'tenant',           'system/tenant/index',          '', '1', '0', 'C', '0', '0', 'system:tenant:list',          'list',          103, 1, now(), null, null, '租户管理菜单');
-insert into sys_menu values('122',  '租户套餐管理', '6',   '2', 'tenantPackage',    'system/tenantPackage/index',   '', '1', '0', 'C', '0', '0', 'system:tenantPackage:list',   'form',          103, 1, now(), null, null, '租户套餐管理菜单');
 insert into sys_menu values('123',  '客户端管理',   '1',   '11', 'client',           'system/client/index',          '', '1', '0', 'C', '0', '0', 'system:client:list',          'international', 103, 1, now(), null, null, '客户端管理菜单');
 
 -- springboot-admin监控
@@ -473,18 +459,6 @@ insert into sys_menu values('1620', '配置列表', '118', '5', '#', '', '', '1'
 insert into sys_menu values('1621', '配置添加', '118', '6', '#', '', '', '1', '0', 'F', '0', '0', 'system:ossConfig:add',    '#', 103, 1, now(), null, null, '');
 insert into sys_menu values('1622', '配置编辑', '118', '6', '#', '', '', '1', '0', 'F', '0', '0', 'system:ossConfig:edit',   '#', 103, 1, now(), null, null, '');
 insert into sys_menu values('1623', '配置删除', '118', '6', '#', '', '', '1', '0', 'F', '0', '0', 'system:ossConfig:remove', '#', 103, 1, now(), null, null, '');
--- 租户管理相关按钮
-insert into sys_menu values('1606', '租户查询', '121', '1', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:query',   '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1607', '租户新增', '121', '2', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:add',     '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1608', '租户修改', '121', '3', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:edit',    '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1609', '租户删除', '121', '4', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:remove',  '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1610', '租户导出', '121', '5', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:export',  '#', 103, 1, now(), null, null, '');
--- 租户套餐管理相关按钮
-insert into sys_menu values('1611', '租户套餐查询', '122', '1', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:query',   '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1612', '租户套餐新增', '122', '2', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:add',     '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1613', '租户套餐修改', '122', '3', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:edit',    '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1614', '租户套餐删除', '122', '4', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:remove',  '#', 103, 1, now(), null, null, '');
-insert into sys_menu values('1615', '租户套餐导出', '122', '5', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:export',  '#', 103, 1, now(), null, null, '');
 -- 客户端管理按钮
 insert into sys_menu values('1061', '客户端管理查询', '123', '1',  '#', '', '', '1', '0', 'F', '0', '0', 'system:client:query',        '#', 103, 1, now(), null, null, '');
 insert into sys_menu values('1062', '客户端管理新增', '123', '2',  '#', '', '', '1', '0', 'F', '0', '0', 'system:client:add',          '#', 103, 1, now(), null, null, '');
@@ -1191,3 +1165,198 @@ INSERT INTO test_tree VALUES (13, '000000', 10, 108, 3, '子节点99', 0, 103, n
 -- $$ language sql strict ;
 --
 -- create cast (varchar as timestamptz) with function cast_varchar_to_timestamp as IMPLICIT;
+
+-- ----------------------------
+-- 多租户初始化数据（仅插入，表结构保持不变；统一放在脚本末尾）
+-- 本段不涉及 sj_ 开头的调度中心表。
+-- ----------------------------
+begin;
+
+-- 租户管理菜单及按钮
+insert into sys_menu values('6', '租户管理', '0', '2', 'tenant',           null, '', '1', '0', 'M', '0', '0', '', 'ze-tenant',  103, 1, now(), null, null, '租户管理目录');
+insert into sys_menu values('121',  '租户管理',     '6',   '1', 'tenant',           'system/tenant/index',          '', '1', '0', 'C', '0', '0', 'system:tenant:list',          'list',          103, 1, now(), null, null, '租户管理菜单');
+insert into sys_menu values('122',  '租户套餐管理', '6',   '2', 'tenantPackage',    'system/tenantPackage/index',   '', '1', '0', 'C', '0', '0', 'system:tenantPackage:list',   'form',          103, 1, now(), null, null, '租户套餐管理菜单');
+insert into sys_menu values('1606', '租户查询', '121', '1', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:query',   '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1607', '租户新增', '121', '2', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:add',     '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1608', '租户修改', '121', '3', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:edit',    '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1609', '租户删除', '121', '4', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:remove',  '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1610', '租户导出', '121', '5', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenant:export',  '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1611', '租户套餐查询', '122', '1', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:query',   '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1612', '租户套餐新增', '122', '2', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:add',     '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1613', '租户套餐修改', '122', '3', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:edit',    '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1614', '租户套餐删除', '122', '4', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:remove',  '#', 103, 1, now(), null, null, '');
+insert into sys_menu values('1615', '租户套餐导出', '122', '5', '#', '', '', '1', '0', 'F', '0', '0', 'system:tenantPackage:export',  '#', 103, 1, now(), null, null, '');
+
+-- 既有默认租户
+insert into sys_tenant values(1, '000000', '管理组', '15888888888', '华南理工大学继续教育学院', null, null, '华南理工大学集团多分校租户通用后台管理管理系统', null, null, null, null, -1, '0', '0', 103, 1, now(), null, null);
+
+-- XXX责任有限公司标准租户套餐：开放企业日常管理功能，不开放租户管理功能
+with recursive package_menu as (
+    select menu_id
+    from sys_menu
+    where menu_id = 1
+    union all
+    select menu.menu_id
+    from sys_menu menu
+    inner join package_menu parent on menu.parent_id = parent.menu_id
+)
+insert into sys_tenant_package (
+    package_id, package_name, menu_ids, remark, menu_check_strictly, status,
+    del_flag, create_dept, create_by, create_time, update_by, update_time
+)
+select 1, '标准企业套餐', string_agg(menu_id::varchar, ',' order by menu_id),
+       'XXX责任有限公司企业标准套餐', true, '0', '0', 103, 1, now(), null, null
+from package_menu
+where menu_id not in (
+    108, 500, 501, 1040, 1041, 1042, 1043, 1044, 1045, 1050,
+    123, 1061, 1062, 1063, 1064, 1065
+);
+
+-- XXX责任有限公司租户主体
+insert into sys_tenant (
+    id, tenant_id, contact_user_name, contact_phone, company_name,
+    license_number, address, intro, domain, remark, package_id, expire_time,
+    account_count, status, del_flag, create_dept, create_by, create_time,
+    update_by, update_time
+)
+values (
+    2, '000001', '管理员', '15888888888', 'XXX责任有限公司',
+    null, null, null, null, null, 1, null,
+    -1, '0', '0', 103, 1, now(), null, null
+);
+
+-- 公司部门：总经办、技术部、市场部、财务部、人事行政部
+insert into sys_dept (
+    dept_id, tenant_id, parent_id, ancestors, dept_name, dept_category,
+    order_num, leader, phone, email, status, del_flag, create_dept, create_by,
+    create_time, update_by, update_time
+)
+values
+    (2001, '000001', 0,    '0',         'XXX责任有限公司', null, 0, 2001, '15888888888', null, '0', '0', 103, 1, now(), null, null),
+    (2002, '000001', 2001, '0,2001',    '总经办',          null, 1, null,  '15888888888', null, '0', '0', 103, 1, now(), null, null),
+    (2003, '000001', 2001, '0,2001',    '技术部',          null, 2, 2002, '15888888888', null, '0', '0', 103, 1, now(), null, null),
+    (2004, '000001', 2001, '0,2001',    '市场部',          null, 3, 2003, '15888888888', null, '0', '0', 103, 1, now(), null, null),
+    (2005, '000001', 2001, '0,2001',    '财务部',          null, 4, 2004, '15888888888', null, '0', '0', 103, 1, now(), null, null),
+    (2006, '000001', 2001, '0,2001',    '人事行政部',      null, 5, 2005, '15888888888', null, '0', '0', 103, 1, now(), null, null);
+
+-- 公司岗位
+insert into sys_post (
+    post_id, tenant_id, dept_id, post_code, post_category, post_name,
+    post_sort, status, create_dept, create_by, create_time, update_by,
+    update_time, remark
+)
+values
+    (2001, '000001', 2001, 'ceo',            null, '总经理',       1, '0', 103, 1, now(), null, null, ''),
+    (2002, '000001', 2003, 'tech_manager',   null, '技术部经理',   2, '0', 103, 1, now(), null, null, ''),
+    (2003, '000001', 2003, 'developer',      null, '开发工程师',   3, '0', 103, 1, now(), null, null, ''),
+    (2004, '000001', 2004, 'sales_manager',  null, '市场部经理',   4, '0', 103, 1, now(), null, null, ''),
+    (2005, '000001', 2005, 'accountant',     null, '财务专员',     5, '0', 103, 1, now(), null, null, ''),
+    (2006, '000001', 2006, 'hr',             null, '人事专员',     6, '0', 103, 1, now(), null, null, '');
+
+-- 公司角色：管理员、技术部经理、市场部经理、普通员工
+insert into sys_role (
+    role_id, tenant_id, role_name, role_key, role_sort, data_scope,
+    menu_check_strictly, dept_check_strictly, status, del_flag, create_dept,
+    create_by, create_time, update_by, update_time, remark
+)
+values
+    (2001, '000001', '管理员',       'admin',         1, '1', true, true, '0', '0', 103, 1, now(), null, null, '租户管理员'),
+    (2002, '000001', '技术部经理',   'tech_manager',  2, '4', true, true, '0', '0', 103, 1, now(), null, null, '技术部及以下数据权限'),
+    (2003, '000001', '市场部经理',   'sales_manager', 3, '4', true, true, '0', '0', 103, 1, now(), null, null, '市场部及以下数据权限'),
+    (2004, '000001', '普通员工',     'employee',     4, '5', true, true, '0', '0', 103, 1, now(), null, null, '仅本人数据权限');
+
+-- 公司账号（所有初始化账号密码均为 666666）
+insert into sys_user (
+    user_id, tenant_id, dept_id, user_name, nick_name, user_type, email,
+    phonenumber, sex, avatar, password, status, del_flag, login_ip, login_date,
+    create_dept, create_by, create_time, update_by, update_time, remark
+)
+values
+    (2001, '000001', 2001, 'admin',         '系统管理员',   'sys_user', 'admin@xxx.com',         '15888888888', '0', null, '$2a$10$b8yUzN0C71sbz.PhNOCgJe.Tu1yWC3RNrTyjSQ8p1W0.aaUXUJ.Ne', '0', '0', '127.0.0.1', now(), 103, 1, now(), null, null, '租户管理员'),
+    (2002, '000001', 2003, 'tech_manager',  '技术部经理',   'sys_user', 'tech@xxx.com',          '15888888889', '0', null, '$2a$10$b8yUzN0C71sbz.PhNOCgJe.Tu1yWC3RNrTyjSQ8p1W0.aaUXUJ.Ne', '0', '0', '127.0.0.1', now(), 103, 1, now(), null, null, ''),
+    (2003, '000001', 2004, 'sales_manager', '市场部经理',   'sys_user', 'sales@xxx.com',         '15888888890', '0', null, '$2a$10$b8yUzN0C71sbz.PhNOCgJe.Tu1yWC3RNrTyjSQ8p1W0.aaUXUJ.Ne', '0', '0', '127.0.0.1', now(), 103, 1, now(), null, null, ''),
+    (2004, '000001', 2005, 'finance',       '财务专员',     'sys_user', 'finance@xxx.com',       '15888888891', '0', null, '$2a$10$b8yUzN0C71sbz.PhNOCgJe.Tu1yWC3RNrTyjSQ8p1W0.aaUXUJ.Ne', '0', '0', '127.0.0.1', now(), 103, 1, now(), null, null, ''),
+    (2005, '000001', 2006, 'hr',            '人事专员',     'sys_user', 'hr@xxx.com',            '15888888892', '0', null, '$2a$10$b8yUzN0C71sbz.PhNOCgJe.Tu1yWC3RNrTyjSQ8p1W0.aaUXUJ.Ne', '0', '0', '127.0.0.1', now(), 103, 1, now(), null, null, ''),
+    (2006, '000001', 2003, 'developer',     '开发工程师',   'sys_user', 'developer@xxx.com',     '15888888893', '0', null, '$2a$10$b8yUzN0C71sbz.PhNOCgJe.Tu1yWC3RNrTyjSQ8p1W0.aaUXUJ.Ne', '0', '0', '127.0.0.1', now(), 103, 1, now(), null, null, '');
+
+-- 账号与角色、岗位关联
+insert into sys_user_role (user_id, role_id) values
+    (2001, 2001),
+    (2002, 2002),
+    (2003, 2003),
+    (2004, 2004),
+    (2005, 2004),
+    (2006, 2004);
+
+insert into sys_user_post (user_id, post_id) values
+    (2001, 2001),
+    (2002, 2002),
+    (2003, 2004),
+    (2004, 2005),
+    (2005, 2006),
+    (2006, 2003);
+
+insert into sys_role_dept (role_id, dept_id) values
+    (2001, 2001),
+    (2002, 2003),
+    (2003, 2004);
+
+-- 管理员拥有套餐内全部企业管理权限
+with recursive package_menu as (
+    select menu_id
+    from sys_menu
+    where menu_id = 1
+    union all
+    select menu.menu_id
+    from sys_menu menu
+    inner join package_menu parent on menu.parent_id = parent.menu_id
+)
+insert into sys_role_menu (role_id, menu_id)
+select 2001, menu_id
+from package_menu
+where menu_id not in (
+    108, 500, 501, 1040, 1041, 1042, 1043, 1044, 1045, 1050,
+    123, 1061, 1062, 1063, 1064, 1065
+);
+
+-- 部门经理仅可查看和维护本部门业务数据
+insert into sys_role_menu (role_id, menu_id)
+select role_id, menu_id
+from (values (2002::int8), (2003::int8)) roles(role_id)
+cross join (values
+    (1::int8), (100::int8), (1001::int8), (1003::int8),
+    (103::int8), (1017::int8), (1019::int8),
+    (104::int8), (1021::int8),
+    (107::int8), (1036::int8)
+) menus(menu_id);
+
+-- 复制默认租户字典和参数配置，保持租户数据隔离
+insert into sys_dict_type (
+    dict_id, tenant_id, dict_name, dict_type, create_dept, create_by,
+    create_time, update_by, update_time, remark
+)
+select 100000 + dict_id, '000001', dict_name, dict_type, 103, 1,
+       now(), null, null, remark
+from sys_dict_type
+where tenant_id = '000000';
+
+insert into sys_dict_data (
+    dict_code, tenant_id, dict_sort, dict_label, dict_value, dict_type,
+    css_class, list_class, is_default, create_dept, create_by, create_time,
+    update_by, update_time, remark
+)
+select 200000 + dict_code, '000001', dict_sort, dict_label, dict_value, dict_type,
+       css_class, list_class, is_default, 103, 1, now(), null, null, remark
+from sys_dict_data
+where tenant_id = '000000';
+
+insert into sys_config (
+    config_id, tenant_id, config_name, config_key, config_value, config_type,
+    create_dept, create_by, create_time, update_by, update_time, remark
+)
+select 300000 + config_id, '000001', config_name, config_key, config_value,
+       config_type, 103, 1, now(), null, null, remark
+from sys_config
+where tenant_id = '000000';
+
+commit;
