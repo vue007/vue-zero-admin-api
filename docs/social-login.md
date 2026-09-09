@@ -29,15 +29,26 @@ config/migrations/20260908_social_login.sql
 
 ```yaml
 justauth:
+  # 无法直连对应平台时，可按 source 配置 HTTP 或 SOCKS 代理。
+  http-config:
+    timeout: 30000
+    proxy:
+      github:
+        type: HTTP
+        hostname: 127.0.0.1
+        port: 7897
   type:
     github:
       client-id: ${SOCIAL_GITHUB_CLIENT_ID}
       client-secret: ${SOCIAL_GITHUB_CLIENT_SECRET}
-      redirect-uri: http://localhost:3001/social/callback?source=github
+      redirect-uri: https://127.0.0.1:3030/social/callback?source=github
       scopes:
         - read:user
         - user:email
 ```
+
+`http-config.proxy` 的键与登录 `source` 一致，端口需填写代理软件实际监听端口；可以只为需要代理的平台配置。
+未配置代理的平台仍直接连接。生产环境若能直连身份平台，应省略对应代理项。
 
 身份平台后台登记的回调地址必须与 `redirect-uri` 完全一致。生产环境请替换为前端 HTTPS 地址，例如
 `https://admin.example.com/social/callback?source=github`。

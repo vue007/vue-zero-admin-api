@@ -1,6 +1,7 @@
 package com.zero.admin.base.social.utils;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.xkcoding.http.config.HttpConfig;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.exception.AuthException;
 import me.zhyd.oauth.model.AuthCallback;
@@ -10,6 +11,10 @@ import me.zhyd.oauth.request.*;
 import com.zero.admin.base.core.utils.SpringUtils;
 import com.zero.admin.base.social.config.properties.SocialLoginConfigProperties;
 import com.zero.admin.base.social.config.properties.SocialProperties;
+
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.util.Map;
 
 /**
  * 认证授权工具类
@@ -38,7 +43,8 @@ public class SocialUtils {
             .clientSecret(obj.getClientSecret())
             .redirectUri(obj.getRedirectUri())
             .serverUrl(obj.getServerUrl())
-            .scopes(obj.getScopes());
+            .scopes(obj.getScopes())
+            .httpConfig(createHttpConfig(source, socialProperties));
         return switch (source.toLowerCase()) {
             case "dingtalk" -> new AuthDingTalkV2Request(builder.build(), STATE_CACHE);
             case "baidu" -> new AuthBaiduRequest(builder.build(), STATE_CACHE);
@@ -67,6 +73,38 @@ public class SocialUtils {
             case "gitea" -> new AuthGiteaRequest(builder.build(), STATE_CACHE);
             default -> throw new AuthException("未获取到有效的Auth配置");
         };
+    }
+
+    private static HttpConfig createHttpConfig(String source, SocialProperties socialProperties) {
+        SocialProperties.HttpConfig config = socialProperties.getHttpConfig();
+        HttpConfig.HttpConfigBuilder builder = HttpConfig.builder();
+        if (config == null) {
+            return builder.build();
+        }
+
+        builder.timeout(config.getTimeout());
+        SocialProperties.ProxyConfig proxyConfig = findProxyConfig(source, config.getProxy());
+        if (proxyConfig == null || proxyConfig.getType() == Proxy.Type.DIRECT
+            || proxyConfig.getHostname() == null || proxyConfig.getHostname().isBlank()
+            || proxyConfig.getPort() == null || proxyConfig.getPort() < 1 || proxyConfig.getPort() > 65535) {
+            return builder.build();
+        }
+
+        builder.proxy(new Proxy(proxyConfig.getType(),
+            new InetSocketAddress(proxyConfig.getHostname(), proxyConfig.getPort())));
+        return builder.build();
+    }
+
+    private static SocialProperties.ProxyConfig findProxyConfig(
+        String source, Map<String, SocialProperties.ProxyConfig> proxyConfigs) {
+        if (proxyConfigs == null || proxyConfigs.isEmpty()) {
+            return null;
+        }
+        return proxyConfigs.entrySet().stream()
+            .filter(entry -> entry.getKey().equalsIgnoreCase(source))
+            .map(Map.Entry::getValue)
+            .findFirst()
+            .orElse(null);
     }
 }
 

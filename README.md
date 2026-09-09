@@ -11,6 +11,23 @@
        PORT: 5432 # 数据库端口
        USERNAME: root # 数据库账户
        PASSWORD: root123 # 数据库账户密码
+   justauth:
+     # 无法直连 GitHub 时按 source 配置代理；本机端口以代理软件实际监听值为准。
+     http-config:
+       timeout: 30000
+       proxy:
+         github:
+           type: HTTP
+           hostname: 127.0.0.1
+           port: 7897
+     type:
+       github:
+         client-id: ${SOCIAL_GITHUB_CLIENT_ID}
+         client-secret: ${SOCIAL_GITHUB_CLIENT_SECRET}
+         redirect-uri: https://127.0.0.1:3030/social/callback?source=github
+         scopes:
+           - read:user
+           - user:email
    ```
  
 3. 执行初始化sql config/init.sql

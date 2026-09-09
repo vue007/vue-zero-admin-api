@@ -51,11 +51,21 @@ redisson:
     subscriptionConnectionPoolSize: 50             # 发布和订阅连接池大小
 
 --- # 三方授权
-#justauth:
-#  # 前端外网访问地址
-#  address: http://localhost:80
+# GitHub OAuth App 的回调地址需与此处完全一致。
+# 真实 Client ID/Secret 必须通过环境变量或部署密钥注入。
+# justauth:
+#  http-config:
+#    timeout: ${SOCIAL_HTTP_TIMEOUT:30000}
+#    proxy:
+#      github:
+#        type: HTTP
+#        hostname: ${SOCIAL_GITHUB_PROXY_HOST}
+#        port: ${SOCIAL_GITHUB_PROXY_PORT}
 #  type:
-#    gitlab:
-#      client-id: 1***1
-#      client-secret: 1***1
-#      redirect-uri: 1***1
+#    github:
+#      client-id: ${SOCIAL_GITHUB_CLIENT_ID}
+#      client-secret: ${SOCIAL_GITHUB_CLIENT_SECRET}
+#      redirect-uri: ${SOCIAL_GITHUB_REDIRECT_URI}
+#      scopes:
+#        - read:user
+#        - user:email
