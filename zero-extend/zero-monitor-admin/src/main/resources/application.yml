@@ -34,7 +34,7 @@ management:
 
 spring.boot.admin.client:
   enabled: true
-  url: ${MONITOR_SELF_URL:http://192.168.1.237:${server.port}${spring.boot.admin.context-path}}
+  url: ${MONITOR_SELF_URL:http://localhost:${server.port}${spring.boot.admin.context-path}}
   instance:
     service-host-type: ip
     metadata:

@@ -1,0 +1,16 @@
+# 可选的本地 HTTPS profile。默认 dev profile 使用 HTTP，由前端开发服务器提供 HTTPS 并代理 API。
+# 启用前使用 mkcert 在仓库根目录生成 .cert-local/localhost.pem 和 localhost-key.pem。
+spring:
+  ssl:
+    bundle:
+      pem:
+        local-server:
+          reload-on-update: true
+          keystore:
+            certificate: ${LOCAL_HTTPS_CERTIFICATE:file:./.cert-local/localhost.pem}
+            private-key: ${LOCAL_HTTPS_PRIVATE_KEY:file:./.cert-local/localhost-key.pem}
+
+server:
+  ssl:
+    enabled: true
+    bundle: local-server

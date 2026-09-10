@@ -1,16 +1,13 @@
 spring:
   config:
-    # 支持从仓库根目录或 zero-admin 模块目录启动；classpath 仅兼容旧配置且不会进入构建制品。
-    import: optional:file:./secret-dev-local.yml,optional:file:../secret-dev-local.yml,optional:classpath:secret-dev-local.yml
+    # 支持从仓库根目录或 zero-admin 模块目录启动，并兼容原 src/main/resources 下的本地配置。
+    # 所有位置都按外部文件加载；Maven 会继续排除 *-local.yml，密钥不会进入构建制品。
+    import:
+      - optional:file:./secret-dev-local.yml
+      - optional:file:../secret-dev-local.yml
+      - optional:file:./zero-admin/src/main/resources/secret-dev-local.yml
+      - optional:file:./src/main/resources/secret-dev-local.yml
 
-# 本地开发 HTTPS。证书仅保存在仓库根部被 Git 忽略的 .cert-local 目录。
-server:
-  ssl:
-    enabled: ${LOCAL_HTTPS_ENABLED:true}
-    key-store: file:./.cert-local/localhost.p12
-    key-store-password: ${LOCAL_HTTPS_KEYSTORE_PASSWORD:changeit}
-    key-store-type: PKCS12
-    key-alias: localhost
 --- # 数据源配置
 spring:
   datasource:
@@ -84,5 +81,5 @@ redisson:
 
 --- # 开发环境 Spring Boot Admin 客户端
 spring.boot.admin.client:
-  enabled: ${MONITOR_CLIENT_ENABLED:true}
-  url: ${MONITOR_SERVER_URL:http://192.168.1.237:9090/admin}
+  enabled: ${MONITOR_CLIENT_ENABLED:false}
+  url: ${MONITOR_SERVER_URL:http://localhost:9090/admin}

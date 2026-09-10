@@ -36,8 +36,8 @@ monitor:
     password: ${MONITOR_PASSWORD:admin123}
 
 spring.boot.admin.client:
-  enabled: ${MONITOR_CLIENT_ENABLED:true}
-  url: ${MONITOR_SERVER_URL:http://192.168.1.237:9090/admin}
+  enabled: ${MONITOR_CLIENT_ENABLED:false}
+  url: ${MONITOR_SERVER_URL:http://localhost:9090/admin}
   instance:
     service-host-type: ip
     metadata:
