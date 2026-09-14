@@ -16,7 +16,7 @@ Microsoft、MaxKey 和 TopIAM 等。
 新库执行 `config/init.sql`。已有库只执行：
 
 ```text
-config/migrations/20260908_social_login.sql
+config/migrations/social_login.sql
 ```
 
 迁移会为早期手工创建但缺少租户列的 `sys_social` 补上 `tenant_id`，并增加“租户 + 第三方账号”和

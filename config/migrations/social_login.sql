@@ -1,6 +1,8 @@
 -- 社会化登录表迁移。
 -- 可用于已有 PostgreSQL 数据库；新库请直接执行 config/init.sql。
 
+begin;
+
 create table if not exists sys_social
 (
     id                 int8          not null,
@@ -53,3 +55,5 @@ comment on column sys_social.tenant_id is '租户编号';
 comment on column sys_social.user_id   is '用户ID';
 comment on column sys_social.auth_id   is '平台+平台唯一id';
 comment on column sys_social.source    is '用户来源';
+
+commit;

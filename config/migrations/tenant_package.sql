@@ -40,7 +40,7 @@ insert into sys_menu (
     create_dept, create_by, create_time, update_by, update_time, remark
 ) values (
     6, '租户管理', 0, 2, 'tenant', null, '',
-    '1', '0', 'M', '0', '0', '', 'chart',
+    '1', '0', 'M', '0', '0', '', 'ze-tenant',
     103, 1, now(), null, null, '租户管理目录'
 )
 on conflict (menu_id) do update set
@@ -60,11 +60,13 @@ insert into sys_menu (
     menu_id, menu_name, parent_id, order_num, path, component, query_param,
     is_frame, is_cache, menu_type, visible, status, perms, icon,
     create_dept, create_by, create_time, update_by, update_time, remark
-) values (
-    122, '租户套餐管理', 6, 2, 'tenantPackage', 'tenant/tenantPackage/index', '',
-    '1', '0', 'C', '0', '0', 'system:tenantPackage:list', 'form',
-    103, 1, now(), null, null, '租户套餐管理菜单'
-)
+) values
+    (121, '租户管理', 6, 1, 'tenant', 'tenant/tenant', '',
+     '1', '0', 'C', '0', '0', 'system:tenant:list', 'list',
+     103, 1, now(), null, null, '租户管理菜单'),
+    (122, '租户套餐管理', 6, 2, 'tenantPackage', 'tenant/tenantPackage/index', '',
+     '1', '0', 'C', '0', '0', 'system:tenantPackage:list', 'form',
+     103, 1, now(), null, null, '租户套餐管理菜单')
 on conflict (menu_id) do update set
     menu_name = excluded.menu_name,
     parent_id = excluded.parent_id,
@@ -85,6 +87,16 @@ insert into sys_menu (
     is_frame, is_cache, menu_type, visible, status, perms, icon,
     create_dept, create_by, create_time, update_by, update_time, remark
 ) values
+    (1606, '租户查询', 121, 1, '#', '', '', '1', '0', 'F', '0', '0',
+     'system:tenant:query', '#', 103, 1, now(), null, null, ''),
+    (1607, '租户新增', 121, 2, '#', '', '', '1', '0', 'F', '0', '0',
+     'system:tenant:add', '#', 103, 1, now(), null, null, ''),
+    (1608, '租户修改', 121, 3, '#', '', '', '1', '0', 'F', '0', '0',
+     'system:tenant:edit', '#', 103, 1, now(), null, null, ''),
+    (1609, '租户删除', 121, 4, '#', '', '', '1', '0', 'F', '0', '0',
+     'system:tenant:remove', '#', 103, 1, now(), null, null, ''),
+    (1610, '租户导出', 121, 5, '#', '', '', '1', '0', 'F', '0', '0',
+     'system:tenant:export', '#', 103, 1, now(), null, null, ''),
     (1611, '租户套餐查询', 122, 1, '#', '', '', '1', '0', 'F', '0', '0',
      'system:tenantPackage:query', '#', 103, 1, now(), null, null, ''),
     (1612, '租户套餐新增', 122, 2, '#', '', '', '1', '0', 'F', '0', '0',

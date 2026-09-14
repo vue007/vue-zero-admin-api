@@ -11,13 +11,13 @@
 已有业务数据库先执行菜单迁移：
 
 ```sql
-\i config/migrations/20260826_external_consoles.sql
+\i config/migrations/external_consoles.sql
 ```
 
 首次启用 SnailJob 时，再执行一次完整的调度表初始化脚本：
 
 ```sql
-\i config/snail-job-postgres.sql
+\i config/init/extensions/snail-job.sql
 ```
 
 该脚本不是幂等迁移，不要重复执行。它会创建 `sj_*` 表，并创建

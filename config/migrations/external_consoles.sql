@@ -9,10 +9,10 @@ insert into sys_menu (
     create_dept, create_by, create_time, update_by, update_time, remark
 ) values
     (117, 'Admin监控', 2, 5, 'admin', 'monitor/admin/index', '',
-     '1', '0', 'C', '0', '0', 'monitor:admin:list', 'dashboard',
+     '1', '0', 'C', '0', '0', 'monitor:admin:list', 'ze-spring-boot-admin',
      103, 1, now(), null, null, 'Admin监控菜单'),
     (120, '任务调度中心', 2, 6, 'snailjob', 'monitor/snailjob/index', '',
-     '1', '0', 'C', '0', '0', 'monitor:snailjob:list', 'job',
+     '1', '0', 'C', '0', '0', 'monitor:snailjob:list', 'ze-snail-job',
      103, 1, now(), null, null, 'SnailJob控制台菜单')
 on conflict (menu_id) do update set
     menu_name = excluded.menu_name,

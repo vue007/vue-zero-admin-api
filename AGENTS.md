@@ -25,6 +25,7 @@
 
 - `zero-admin/`：可运行 Web 应用，入口为 `com.zero.admin.AdminApplication`；包含认证、注册、验证码和应用配置，产物为 `zero-admin-web.jar`。
 - `zero-modules/zero-system/`：系统业务模块，按 Controller -> Service -> Mapper 分层，包含 Entity、BO、VO 与 Mapper XML。
+- `zero-modules/zero-member/`：C 端会员及第三方身份领域；`zero-modules/zero-partner/`：租户自己的合作客户（商户）领域。两者都属于 App 业务，但数据模型相互独立。
 - `zero-base/zero-base-core/`：通用模型、常量、异常和工具；其他 `zero-base-*` 模块提供单一横切能力。
 - 新业务优先放入独立 `zero-modules/<module>`，通用且与业务无关的能力才进入 `zero-base`。不要让 `zero-base` 反向依赖业务模块。
 
@@ -40,7 +41,7 @@
 
 ## 授权、租户与数据权限
 
-- Controller 功能权限使用 Shiro `@RequiresPermissions("system:<resource>:<action>")`，租户/菜单等超管能力叠加 `@RequiresRoles`。权限串必须与 `sys_menu.perms` 和前端授权入口保持一致。
+- Controller 功能权限使用 Shiro `@RequiresPermissions("<domain>:<resource>:<action>")`；系统能力使用 `system:*`，App 业务使用 `app:*`，租户/菜单等超管能力叠加 `@RequiresRoles`。权限串必须与 `sys_menu.perms` 和前端授权入口保持一致。
 - 多租户默认开启。带租户数据的实体继承 `TenantEntity`，由租户插件自动加 `tenant_id` 条件；跨租户操作只能通过既有 `TenantHelper`/动态租户机制完成。
 - `application.yml` 的租户排除表是全局共享或纯关系表，包括 `sys_menu`、`sys_tenant`、`sys_tenant_package`、角色/用户关系表、`sys_client`、`sys_oss_config`。修改此列表属于安全敏感变更，必须检查所有读写路径。
 - 数据范围通过 Mapper 方法上的 `@DataPermission`/`@DataColumn` 注入。新增用户、部门、岗位、角色相关查询时，参考现有 Mapper 标注；需要绕过时只在明确的系统内部操作中使用 `DataPermissionHelper.ignore`，并把范围缩到最小。
@@ -48,7 +49,8 @@
 
 ## 数据库约定与 `init.sql`
 
-- `config/init.sql` 面向新建 PostgreSQL 数据库，创建租户、套餐、部门、用户、岗位、角色、菜单、关系表、字典、参数、操作/登录日志、公告、客户端及测试表，并写入默认租户 `000000`、管理员、角色、菜单和 PC/App 客户端种子。
+- `config/init.sql` 是 psql 新库初始化入口，按依赖顺序加载 `config/init/core.sql`、`config/init/apps/member.sql`、`config/init/apps/partner.sql` 和 `config/init/tenants/example-tenant.sql`。核心脚本只负责 `sys_*` 表与主租户 `000000`；App 表和示例租户数据不得再混回核心脚本。
+- `config/init/apps/demo.sql` 是没有对应运行模块的可选历史演示数据，默认入口不执行；SnailJob 的独立扩展 schema 位于 `config/init/extensions/snail-job.sql`，也不由默认入口执行。
 - 初始化脚本不是可重复迁移：大量种子是普通 `INSERT`，`sys_client` 甚至没有 `IF NOT EXISTS`。只对空库执行；已有环境必须使用有版本、可回滚或幂等的迁移脚本，不能直接重跑整个文件。
 - 脚本没有创建数据库本身；README 预期 `zero_admin`，而当前 Docker Compose 默认创建 `postgres`。实际库名由本地 secret 配置决定，初始化前先确认目标库，绝不能凭默认值执行。
 - 表未声明数据库外键，完整性由 Service 校验和关系表维护。删除用户、部门、角色、菜单、租户时必须沿用现有前置检查和关联清理，不能只删除主表记录。
@@ -56,7 +58,7 @@
 - 租户业务表通常含 `tenant_id`；可审计实体含 `create_dept/create_by/create_time/update_by/update_time`；支持逻辑删除的表含 `del_flag` 且实体用 `@TableLogic`。保持 `0` 正常/存在、`1` 停用/删除的既有语义。
 - 部门树使用 `parent_id + ancestors`，菜单树使用 `parent_id`。修改树节点必须维护祖先链、禁止循环，并检查子节点和关联对象。
 - `sys_dict_type` 对 `(tenant_id, dict_type)` 有唯一索引；新增字典类型时按租户保证唯一。
-- 代码含 `SysOss`、`SysOssConfig`、`SysSocial` 等实体，但当前 `init.sql` 未覆盖其全部表。启用相关模块前先核对数据库 schema，不要假定只执行该脚本即可支持所有后端能力。
+- 核心初始化必须覆盖全部 `sys_*` 持久化实体；业务模块的 `app_*` 表由对应 App 初始化脚本维护。新增或调整实体时，同时更新对应初始化脚本和已有库迁移。
 
 ## 业务代码实现约定
 

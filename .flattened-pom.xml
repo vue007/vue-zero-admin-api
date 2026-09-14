@@ -179,6 +179,16 @@
 				<artifactId>zero-member</artifactId>
 				<version>0.0.1</version>
 			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-partner</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-tenant-app</artifactId>
+				<version>0.0.1</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.mybatis</groupId>

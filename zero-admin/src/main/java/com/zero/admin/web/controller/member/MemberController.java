@@ -21,29 +21,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/** 管理后台会员管理接口。 */
+/** 管理后台 App 会员管理接口。 */
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/system/member")
+@RequestMapping("/app/member")
 public class MemberController {
 
     private final IMemberService memberService;
 
-    @RequiresPermissions("system:member:list")
+    @RequiresPermissions("app:member:list")
     @GetMapping("/list")
     public TableDataInfo<MemberVo> list(MemberQueryBo bo, PageQuery pageQuery) {
         return memberService.queryPageList(bo, pageQuery);
     }
 
-    @RequiresPermissions("system:member:query")
+    @RequiresPermissions("app:member:query")
     @GetMapping("/{memberId}")
     public R<MemberVo> getInfo(
         @NotNull(message = "会员ID不能为空") @PathVariable Long memberId) {
         return R.ok(memberService.queryById(memberId));
     }
 
-    @RequiresPermissions("system:member:edit")
+    @RequiresPermissions("app:member:edit")
     @Log(title = "会员管理", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public R<Void> changeStatus(@Valid @RequestBody MemberStatusBo bo) {

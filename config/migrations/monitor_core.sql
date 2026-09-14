@@ -1,13 +1,15 @@
 -- 系统监控核心模块：在线用户、缓存管理
 -- 可重复执行；只补充/更新菜单，不向普通角色自动授予全局监控权限。
 
+begin;
+
 insert into sys_menu (
     menu_id, menu_name, parent_id, order_num, path, component, query_param,
     is_frame, is_cache, menu_type, visible, status, perms, icon,
     create_dept, create_by, create_time, update_by, update_time, remark
 ) values (
-    2, '系统监控', 0, 3, 'monitor', null, '',
-    '1', '0', 'M', '0', '0', '', 'monitor',
+    2, '系统监控', 0, 4, 'monitor', null, '',
+    '1', '0', 'M', '0', '0', '', 'ze-monitor',
     103, 1, now(), null, null, '系统监控目录'
 )
 on conflict (menu_id) do update set
@@ -29,10 +31,10 @@ insert into sys_menu (
     create_dept, create_by, create_time, update_by, update_time, remark
 ) values
     (109, '在线用户', 2, 1, 'online', 'monitor/online/index', '',
-     '1', '0', 'C', '0', '0', 'monitor:online:list', 'online',
+     '1', '0', 'C', '0', '0', 'monitor:online:list', 'ze-user-online',
      103, 1, now(), null, null, '在线用户菜单'),
     (113, '缓存管理', 2, 2, 'cache', 'monitor/cache/index', '',
-     '1', '0', 'C', '0', '0', 'monitor:cache:list', 'redis',
+     '1', '0', 'C', '0', '0', 'monitor:cache:list', 'ze-redis',
      103, 1, now(), null, null, '缓存管理菜单')
 on conflict (menu_id) do update set
     menu_name = excluded.menu_name,
@@ -71,3 +73,5 @@ on conflict (menu_id) do update set
     status = excluded.status,
     update_by = 1,
     update_time = now();
+
+commit;

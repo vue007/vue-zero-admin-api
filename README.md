@@ -30,7 +30,13 @@
            - user:email
    ```
  
-3. 执行初始化sql config/init.sql
+3. 按 [数据库初始化说明](config/init/README.md) 执行新库初始化：
+   ```bash
+   psql -v ON_ERROR_STOP=1 -d zero_admin -f config/init.sql
+   ```
+
+   `config/init.sql` 默认初始化核心平台、C 端会员、租户合作客户和本地示例租户。
+   生产环境只执行所需模块，且不要导入示例租户数据。
 
 第三方登录的数据库迁移、身份平台配置和回调流程见 [docs/social-login.md](docs/social-login.md)。
 

@@ -56,6 +56,16 @@
         </dependency>
 
         <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-partner</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-tenant-app</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
