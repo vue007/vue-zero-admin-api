@@ -10,7 +10,6 @@ create table if not exists app_application
     app_name            varchar(100)  not null,
     app_id              varchar(64)   not null,
     secret_hash         varchar(100)  not null,
-    app_type            varchar(32)   not null,
     scope_codes         varchar(4096) default ''::varchar not null,
     status              char          default '0'::bpchar not null,
     last_access_time    timestamp,
@@ -25,6 +24,9 @@ create table if not exists app_application
     constraint pk_app_application primary key (id)
 );
 
+-- 终端渠道由 sys_client.device_type 识别，应用凭证不再重复绑定应用类型。
+alter table app_application drop column if exists app_type;
+
 create unique index if not exists uk_app_application_app_id
     on app_application (app_id);
 create index if not exists idx_app_application_tenant_status
@@ -38,7 +40,6 @@ comment on column app_application.tenant_id is '可信所属租户编号';
 comment on column app_application.app_name is '应用名称';
 comment on column app_application.app_id is '全局唯一公开应用标识';
 comment on column app_application.secret_hash is 'App Secret 的 BCrypt 摘要';
-comment on column app_application.app_type is '应用类型标识';
 comment on column app_application.scope_codes is '逗号分隔的授权范围';
 comment on column app_application.status is '状态（0正常 1停用）';
 comment on column app_application.last_access_time is '最后一次凭证校验成功时间';

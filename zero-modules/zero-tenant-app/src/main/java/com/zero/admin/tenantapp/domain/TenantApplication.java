@@ -34,8 +34,6 @@ public class TenantApplication extends TenantEntity {
     @JsonIgnore
     private String secretHash;
 
-    private String appType;
-
     /** 逗号分隔的 scope 标识。 */
     private String scopeCodes;
 

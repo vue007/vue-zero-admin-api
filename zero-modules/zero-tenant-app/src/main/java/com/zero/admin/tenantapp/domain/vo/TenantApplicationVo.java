@@ -23,7 +23,6 @@ public class TenantApplicationVo implements Serializable {
     private String tenantName;
     private String appName;
     private String appId;
-    private String appType;
     @JsonIgnore
     private String scopeCodes;
     private List<String> scopes;

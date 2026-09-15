@@ -13,6 +13,7 @@ import com.zero.admin.base.web.core.BaseController;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 import com.zero.admin.tenantapp.service.ITenantApplicationService;
 import jakarta.validation.constraints.NotEmpty;
@@ -49,6 +50,12 @@ public class SysTenantAppController extends BaseController {
     public TableDataInfo<TenantApplicationVo> list(
         TenantApplicationBo bo, PageQuery pageQuery) {
         return applicationService.queryAllTenantPage(bo, pageQuery);
+    }
+
+    @RequiresPermissions("system:tenantApp:list")
+    @GetMapping("/scope-options")
+    public R<List<TenantApplicationScopeVo>> scopeOptions() {
+        return R.ok(applicationService.queryScopeOptions());
     }
 
     @RequiresPermissions("system:tenantApp:query")

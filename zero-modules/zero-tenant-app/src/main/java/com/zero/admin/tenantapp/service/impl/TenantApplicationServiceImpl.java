@@ -15,6 +15,7 @@ import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 import com.zero.admin.tenantapp.domain.vo.TenantNameVo;
 import com.zero.admin.tenantapp.mapper.TenantApplicationMapper;
@@ -29,9 +30,9 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /** 租户 App 接入服务实现。 */
@@ -63,6 +64,11 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
     @Override
     public TenantApplicationVo queryAllTenantById(Long id) {
         return TenantHelper.ignore(() -> toVo(requireApplication(id)));
+    }
+
+    @Override
+    public List<TenantApplicationScopeVo> queryScopeOptions() {
+        return applicationMapper.selectAppScopeOptions();
     }
 
     @Override
@@ -164,8 +170,6 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
                 TenantApplication::getAppName, bo.getAppName())
             .eq(StringUtils.isNotBlank(bo.getAppId()),
                 TenantApplication::getAppId, bo.getAppId())
-            .eq(StringUtils.isNotBlank(bo.getAppType()),
-                TenantApplication::getAppType, bo.getAppType())
             .eq(StringUtils.isNotBlank(bo.getStatus()),
                 TenantApplication::getStatus, bo.getStatus())
             .orderByDesc(TenantApplication::getCreateTime)
@@ -297,9 +301,18 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
 
     private void normalize(TenantApplicationBo bo) {
         bo.setAppName(bo.getAppName().strip());
-        bo.setAppType(bo.getAppType().strip().toLowerCase(Locale.ROOT));
         bo.setRemark(StringUtils.isBlank(bo.getRemark()) ? null : bo.getRemark().strip());
         bo.setScopes(normalizeScopes(bo.getScopes()));
+        assertScopesAvailable(bo.getScopes());
+    }
+
+    private void assertScopesAvailable(List<String> scopes) {
+        Set<String> allowedScopes = applicationMapper.selectAppScopeOptions().stream()
+            .map(TenantApplicationScopeVo::getValue)
+            .collect(Collectors.toSet());
+        if (scopes == null || scopes.isEmpty() || !allowedScopes.containsAll(scopes)) {
+            throw new ServiceException("授权范围包含不存在或已停用的 App 管理模块");
+        }
     }
 
     private List<String> normalizeScopes(List<String> scopes) {
@@ -358,7 +371,6 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
             application.getId(),
             application.getTenantId(),
             application.getAppId(),
-            application.getAppType(),
             deserializeScopes(application.getScopeCodes())
         );
     }

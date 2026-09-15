@@ -6,6 +6,7 @@ import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.tenantapp.domain.TenantApplication;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 import com.zero.admin.web.controller.app.ApplicationController;
 import com.zero.admin.web.controller.tenant.SysTenantAppController;
@@ -51,6 +52,14 @@ class TenantApplicationContractUnitTest {
             "app:application:status"
         );
         assertPermission(
+            SysTenantAppController.class.getMethod("scopeOptions"),
+            "system:tenantApp:list"
+        );
+        assertPermission(
+            ApplicationController.class.getMethod("scopeOptions"),
+            "app:application:list"
+        );
+        assertPermission(
             SysTenantAppController.class.getMethod("resetSecret", Long.class),
             "system:tenantApp:resetSecret"
         );
@@ -90,6 +99,18 @@ class TenantApplicationContractUnitTest {
             TenantApplicationVo.class.getDeclaredField("scopeCodes")
                 .getAnnotation(JsonIgnore.class)
         );
+    }
+
+    @Test
+    void clientChannelTypeIsNotDuplicatedInApplicationCredential() {
+        assertThrows(NoSuchFieldException.class,
+            () -> TenantApplication.class.getDeclaredField("appType"));
+        assertThrows(NoSuchFieldException.class,
+            () -> TenantApplicationBo.class.getDeclaredField("appType"));
+        assertThrows(NoSuchFieldException.class,
+            () -> TenantApplicationVo.class.getDeclaredField("appType"));
+        assertThrows(NoSuchFieldException.class,
+            () -> TenantApplicationAuthVo.class.getDeclaredField("appType"));
     }
 
     private static void assertPermission(Method method, String expected) {

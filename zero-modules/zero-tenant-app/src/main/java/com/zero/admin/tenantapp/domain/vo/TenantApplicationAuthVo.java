@@ -18,6 +18,5 @@ public class TenantApplicationAuthVo implements Serializable {
     private Long id;
     private String tenantId;
     private String appId;
-    private String appType;
     private List<String> scopes;
 }

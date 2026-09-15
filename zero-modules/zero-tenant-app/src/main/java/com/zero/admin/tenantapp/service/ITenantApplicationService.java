@@ -6,9 +6,11 @@ import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 
 import java.util.Collection;
+import java.util.List;
 
 /** 租户 App 接入服务。 */
 public interface ITenantApplicationService {
@@ -20,6 +22,9 @@ public interface ITenantApplicationService {
     TenantApplicationVo queryCurrentTenantById(Long id);
 
     TenantApplicationVo queryAllTenantById(Long id);
+
+    /** 返回 App 管理下可选的业务模块授权范围。 */
+    List<TenantApplicationScopeVo> queryScopeOptions();
 
     TenantApplicationCredentialVo createForCurrentTenant(TenantApplicationBo bo);
 

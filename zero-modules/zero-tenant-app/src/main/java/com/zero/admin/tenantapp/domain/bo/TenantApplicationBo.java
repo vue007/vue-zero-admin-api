@@ -41,16 +41,8 @@ public class TenantApplicationBo extends BaseEntity {
         groups = {AddGroup.class, EditGroup.class})
     private String appId;
 
-    @NotBlank(message = "应用类型不能为空", groups = {AddGroup.class, EditGroup.class})
-    @Pattern(
-        regexp = "[A-Za-z][A-Za-z0-9_-]{0,31}",
-        message = "应用类型必须以字母开头，且只能包含字母、数字、下划线或短横线",
-        groups = {AddGroup.class, EditGroup.class}
-    )
-    private String appType;
-
     @NotNull(message = "授权范围不能为空", groups = {AddGroup.class, EditGroup.class})
-    @Size(max = 32, message = "授权范围不能超过{max}项",
+    @Size(min = 1, max = 32, message = "授权范围必须选择1至{max}项",
         groups = {AddGroup.class, EditGroup.class})
     private List<
         @NotBlank(message = "授权范围不能为空", groups = {AddGroup.class, EditGroup.class})
