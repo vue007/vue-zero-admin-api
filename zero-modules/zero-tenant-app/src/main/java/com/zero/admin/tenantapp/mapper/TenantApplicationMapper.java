@@ -29,6 +29,21 @@ public interface TenantApplicationMapper extends BaseMapperPlus<TenantApplicatio
         """)
     List<TenantApplicationScopeVo> selectAppScopeOptions();
 
+    @Select("""
+        select tenant_id as tenantId, company_name as tenantName
+        from sys_tenant
+        where del_flag = '0'
+          and (#{keyword} = ''
+               or tenant_id ilike concat('%', #{keyword}, '%')
+               or company_name ilike concat('%', #{keyword}, '%'))
+        order by case when tenant_id = #{keyword} then 0
+                      when tenant_id ilike concat(#{keyword}, '%') then 1
+                      else 2 end,
+                 tenant_id
+        limit 20
+        """)
+    List<TenantNameVo> searchTenantOptions(@Param("keyword") String keyword);
+
     @Select("select exists(select 1 from sys_tenant where tenant_id = #{tenantId} and del_flag = '0')")
     boolean tenantExists(@Param("tenantId") String tenantId);
 

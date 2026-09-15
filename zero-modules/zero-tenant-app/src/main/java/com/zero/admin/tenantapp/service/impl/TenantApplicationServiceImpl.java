@@ -72,6 +72,12 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
     }
 
     @Override
+    public List<TenantNameVo> searchTenantOptions(String keyword) {
+        String normalized = StringUtils.isBlank(keyword) ? "" : keyword.strip();
+        return TenantHelper.ignore(() -> applicationMapper.searchTenantOptions(normalized));
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public TenantApplicationCredentialVo createForCurrentTenant(TenantApplicationBo bo) {
         return create(bo, requireCurrentTenantId());

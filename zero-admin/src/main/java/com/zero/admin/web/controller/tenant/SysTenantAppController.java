@@ -15,9 +15,11 @@ import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
+import com.zero.admin.tenantapp.domain.vo.TenantNameVo;
 import com.zero.admin.tenantapp.service.ITenantApplicationService;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.RequiredArgsConstructor;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -30,6 +32,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -56,6 +59,14 @@ public class SysTenantAppController extends BaseController {
     @GetMapping("/scope-options")
     public R<List<TenantApplicationScopeVo>> scopeOptions() {
         return R.ok(applicationService.queryScopeOptions());
+    }
+
+    @RequiresPermissions("system:tenantApp:add")
+    @GetMapping("/tenant-options")
+    public R<List<TenantNameVo>> tenantOptions(
+        @Size(max = 100, message = "搜索关键词不能超过100个字符")
+        @RequestParam(defaultValue = "") String keyword) {
+        return R.ok(applicationService.searchTenantOptions(keyword));
     }
 
     @RequiresPermissions("system:tenantApp:query")

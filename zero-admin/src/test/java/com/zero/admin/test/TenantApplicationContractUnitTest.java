@@ -56,6 +56,10 @@ class TenantApplicationContractUnitTest {
             "system:tenantApp:list"
         );
         assertPermission(
+            SysTenantAppController.class.getMethod("tenantOptions", String.class),
+            "system:tenantApp:add"
+        );
+        assertPermission(
             ApplicationController.class.getMethod("scopeOptions"),
             "app:application:list"
         );

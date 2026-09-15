@@ -8,6 +8,7 @@ import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
+import com.zero.admin.tenantapp.domain.vo.TenantNameVo;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,6 +26,9 @@ public interface ITenantApplicationService {
 
     /** 返回 App 管理下可选的业务模块授权范围。 */
     List<TenantApplicationScopeVo> queryScopeOptions();
+
+    /** 仅供平台超级管理员选择应用所属租户。 */
+    List<TenantNameVo> searchTenantOptions(String keyword);
 
     TenantApplicationCredentialVo createForCurrentTenant(TenantApplicationBo bo);
 
