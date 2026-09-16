@@ -25,9 +25,9 @@ spring:
         postgres:
           type: ${spring.datasource.type}
           driverClassName: org.postgresql.Driver
-          url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:zero_admin}
-          username: ${DB_USERNAME:postgres}
-          password: ${DB_PASSWORD}
+          url: jdbc:postgresql://${DB_HOST:${SECRET.DB.HOST:localhost}}:${DB_PORT:${SECRET.DB.PORT:5432}}/${DB_NAME:zero_admin}
+          username: ${DB_USERNAME:${SECRET.DB.USERNAME}}
+          password: ${DB_PASSWORD:${SECRET.DB.PASSWORD}}
       hikari:
         maxPoolSize: ${DB_POOL_MAX_SIZE:10}
         minIdle: ${DB_POOL_MIN_IDLE:1}
@@ -48,20 +48,23 @@ redisson:
     clientName: ${zeroConsumer.name}
     connectionMinimumIdleSize: 2
     connectionPoolSize: 16
+    subscriptionConnectionPoolSize: 4
     idleConnectionTimeout: 10000
     timeout: 3000
 
 consumer:
   auth:
-    # 第三方应用密钥由平台统一维护；租户由登录/注册入口选择并在登录后固定进会话。
+    # sys_client 仅作为服务端会话策略，不允许终端自行选择。
+    client-id: ${CONSUMER_CLIENT_ID:428a8310cd442757ae699df5d894f051}
     allowed-client-keys:
       - app
     max-retry-count: ${CONSUMER_PASSWORD_MAX_RETRY:5}
     lock-minutes: ${CONSUMER_PASSWORD_LOCK_MINUTES:10}
   wechat:
-    # 微信小程序配置放入 secret-consumer-local.yml 或通过配置中心注入：
+    # key 为平台 App ID；微信 AppID 与密钥放入 secret-consumer-local.yml 或配置中心：
     # mini-programs:
-    #   wx0000000000000000:
+    #   app_aabbccddeeff00112233445566778899:
+    #     wechat-app-id: wx0000000000000000
     #     secret: ${WECHAT_MINI_PROGRAM_SECRET}
     mini-programs: {}
 
@@ -104,6 +107,25 @@ springdoc:
 scalar:
   enabled: true
   url: /v3/api-docs
+
+management:
+  # 本地未部署 OpenTelemetry Collector 时不要反复连接 localhost:4318。
+  # 部署 Collector 后可通过环境变量显式开启指标与链路导出。
+  otlp:
+    metrics:
+      export:
+        enabled: ${OTEL_METRICS_ENABLED:false}
+        url: ${OTEL_EXPORTER_OTLP_METRICS_ENDPOINT:http://localhost:4318/v1/metrics}
+  tracing:
+    export:
+      otlp:
+        enabled: ${OTEL_TRACING_ENABLED:false}
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: ${OTEL_EXPORTER_OTLP_TRACES_ENDPOINT:http://localhost:4318/v1/traces}
+          timeout: ${OTEL_EXPORTER_OTLP_TRACES_TIMEOUT:10s}
 
 # OAuth/开放平台示例。真实 client-secret 必须放在 secret 文件、环境变量或配置中心。
 # justauth:

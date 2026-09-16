@@ -10,7 +10,6 @@ import com.zero.admin.system.domain.bo.SysSocialBo;
 import com.zero.admin.system.domain.vo.SysSocialVo;
 import com.zero.admin.system.mapper.SysSocialMapper;
 import com.zero.admin.system.service.ISysSocialService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +23,7 @@ import java.util.List;
 @Service
 public class SysSocialServiceImpl implements ISysSocialService {
 
-    @Autowired(required = false) private final SysSocialMapper baseMapper;
+    private final SysSocialMapper baseMapper;
 
 
     /**

@@ -15,7 +15,6 @@ import com.zero.admin.partner.domain.vo.PartnerVo;
 import com.zero.admin.partner.mapper.PartnerMapper;
 import com.zero.admin.partner.service.IPartnerService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -26,7 +25,6 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class PartnerServiceImpl implements IPartnerService {
 
-    @Autowired(required = false)
     private final PartnerMapper partnerMapper;
 
     @Override

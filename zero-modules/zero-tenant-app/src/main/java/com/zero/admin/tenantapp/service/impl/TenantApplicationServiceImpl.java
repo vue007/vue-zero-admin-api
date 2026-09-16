@@ -22,7 +22,6 @@ import com.zero.admin.tenantapp.mapper.TenantApplicationMapper;
 import com.zero.admin.tenantapp.service.ITenantApplicationService;
 import com.zero.admin.tenantapp.service.TenantApplicationSecretManager;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,7 +39,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TenantApplicationServiceImpl implements ITenantApplicationService {
 
-    @Autowired(required = false)
     private final TenantApplicationMapper applicationMapper;
     private final TenantApplicationSecretManager secretManager;
 

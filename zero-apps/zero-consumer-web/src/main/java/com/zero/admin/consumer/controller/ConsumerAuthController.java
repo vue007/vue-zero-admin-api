@@ -54,9 +54,8 @@ public class ConsumerAuthController {
     @GetMapping("/social/authorize/{source}")
     public R<String> socialAuthorizeUrl(
         @PathVariable @NotBlank String source,
-        @RequestParam @NotBlank String clientId,
-        @RequestParam @NotBlank String tenantId) {
-        return R.ok(authService.socialAuthorizeUrl(clientId, source, tenantId));
+        @RequestParam @NotBlank String appId) {
+        return R.ok(authService.socialAuthorizeUrl(appId, source));
     }
 
     @GetMapping("/social/providers")

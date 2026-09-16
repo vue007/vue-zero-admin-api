@@ -24,7 +24,6 @@ import com.zero.admin.system.domain.bo.SysOssConfigBo;
 import com.zero.admin.system.domain.vo.SysOssConfigVo;
 import com.zero.admin.system.mapper.SysOssConfigMapper;
 import com.zero.admin.system.service.ISysOssConfigService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,7 +40,7 @@ import java.util.List;
 @Service
 public class SysOssConfigServiceImpl implements ISysOssConfigService {
 
-    @Autowired(required = false) private final SysOssConfigMapper baseMapper;
+    private final SysOssConfigMapper baseMapper;
 
     /**
      * 项目启动时，初始化参数到缓存，加载配置类

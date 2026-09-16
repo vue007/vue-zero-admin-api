@@ -23,7 +23,6 @@ import com.zero.admin.system.domain.bo.SysConfigBo;
 import com.zero.admin.system.domain.vo.SysConfigVo;
 import com.zero.admin.system.mapper.SysConfigMapper;
 import com.zero.admin.system.service.ISysConfigService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -41,7 +40,7 @@ import java.util.Map;
 @Service
 public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
 
-    @Autowired(required = false) private final SysConfigMapper baseMapper;
+    private final SysConfigMapper baseMapper;
 
     @Override
     public TableDataInfo<SysConfigVo> selectPageConfigList(SysConfigBo config, PageQuery pageQuery) {

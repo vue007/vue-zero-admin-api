@@ -13,11 +13,14 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "consumer.wechat")
 public class ConsumerWechatProperties {
 
-    /** key 为微信 appId。 */
+    /** key 为平台 app_application.app_id，避免应用跨租户选择微信配置。 */
     private Map<String, MiniProgram> miniPrograms = new HashMap<>();
 
     @Data
     public static class MiniProgram {
+        /** 微信公众平台的小程序 AppID。 */
+        private String wechatAppId;
+
         private String secret;
     }
 }

@@ -5,6 +5,8 @@ import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.base.log.enums.BusinessType;
 import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
+import com.zero.admin.base.shiro.utils.LoginHelper;
+import com.zero.admin.base.tenant.helper.TenantHelper;
 import com.zero.admin.member.domain.bo.MemberQueryBo;
 import com.zero.admin.member.domain.bo.MemberStatusBo;
 import com.zero.admin.member.domain.vo.MemberVo;
@@ -21,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.function.Supplier;
+
 /** 管理后台 App 会员管理接口。 */
 @Validated
 @RestController
@@ -33,21 +37,31 @@ public class MemberController {
     @RequiresPermissions("app:member:list")
     @GetMapping("/list")
     public TableDataInfo<MemberVo> list(MemberQueryBo bo, PageQuery pageQuery) {
-        return memberService.queryPageList(bo, pageQuery);
+        return withAuthorizedTenantScope(() -> memberService.queryPageList(bo, pageQuery));
     }
 
     @RequiresPermissions("app:member:query")
     @GetMapping("/{memberId}")
     public R<MemberVo> getInfo(
         @NotNull(message = "会员ID不能为空") @PathVariable Long memberId) {
-        return R.ok(memberService.queryById(memberId));
+        return R.ok(withAuthorizedTenantScope(() -> memberService.queryById(memberId)));
     }
 
     @RequiresPermissions("app:member:edit")
     @Log(title = "会员管理", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public R<Void> changeStatus(@Valid @RequestBody MemberStatusBo bo) {
-        return memberService.updateStatus(bo.getMemberId(), bo.getStatus())
+        return withAuthorizedTenantScope(() -> memberService.updateStatus(bo.getMemberId(), bo.getStatus()))
             ? R.ok() : R.fail("修改会员状态失败");
+    }
+
+    /**
+     * 未切换到具体租户的超级管理员可管理全部租户会员；其余用户继续使用当前租户隔离。
+     */
+    private <T> T withAuthorizedTenantScope(Supplier<T> action) {
+        if (LoginHelper.isSuperAdmin() && TenantHelper.getDynamic() == null) {
+            return TenantHelper.ignore(action);
+        }
+        return action.get();
     }
 }

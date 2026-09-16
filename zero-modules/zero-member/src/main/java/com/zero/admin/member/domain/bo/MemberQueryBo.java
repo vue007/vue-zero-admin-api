@@ -9,6 +9,9 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class MemberQueryBo extends BaseEntity {
 
+    /** 平台管理员跨租户查询时使用；普通租户仍受租户拦截器约束。 */
+    private String tenantId;
+
     private Long memberId;
 
     private String username;

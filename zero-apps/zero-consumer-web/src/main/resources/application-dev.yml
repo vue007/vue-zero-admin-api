@@ -1,0 +1,11 @@
+spring:
+  config:
+    # 开发环境复用管理端已有的本地数据库配置；独立部署时仍可用 DB_* 环境变量覆盖。
+    # 同时兼容从仓库根目录、zero-apps 或当前模块目录启动。
+    import:
+      - optional:file:./zero-admin/src/main/resources/secret-dev-local.yml
+      - optional:file:../zero-admin/src/main/resources/secret-dev-local.yml
+      - optional:file:../../zero-admin/src/main/resources/secret-dev-local.yml
+      - optional:file:./zero-apps/zero-consumer-web/src/main/resources/secret-consumer-local.yml
+      - optional:file:./zero-consumer-web/src/main/resources/secret-consumer-local.yml
+      - optional:file:./src/main/resources/secret-consumer-local.yml

@@ -12,6 +12,9 @@ import java.util.List;
 @ConfigurationProperties(prefix = "consumer.auth")
 public class ConsumerAuthProperties {
 
+    /** 服务端固定使用的 sys_client.client_id，不接受终端覆盖。 */
+    private String clientId;
+
     /** 允许 C 端使用的 sys_client.client_key。 */
     private List<String> allowedClientKeys = List.of("app");
 

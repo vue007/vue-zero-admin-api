@@ -22,7 +22,6 @@ import com.zero.admin.member.mapper.MemberSocialMapper;
 import com.zero.admin.member.service.IMemberService;
 import com.zero.admin.member.service.MemberPasswordEncoder;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,10 +33,8 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class MemberServiceImpl implements IMemberService {
 
-    @Autowired(required = false)
     private final MemberMapper memberMapper;
 
-    @Autowired(required = false)
     private final MemberSocialMapper socialMapper;
 
     private final MemberPasswordEncoder passwordEncoder;
@@ -50,10 +47,7 @@ public class MemberServiceImpl implements IMemberService {
             assertUsernameAvailable(username);
             assertContactAvailable(bo.getMobile(), bo.getEmail());
 
-            Member member = MapstructUtils.convert(bo, Member.class);
-            if (member == null) {
-                throw new ServiceException("会员注册信息转换失败");
-            }
+            Member member = new Member();
             member.setTenantId(tenantId);
             member.setUsername(username);
             member.setNickname(StringUtils.blankToDefault(normalizeOptional(bo.getNickname()), username));
@@ -148,7 +142,8 @@ public class MemberServiceImpl implements IMemberService {
     @Override
     public TableDataInfo<MemberVo> queryPageList(MemberQueryBo bo, PageQuery pageQuery) {
         LambdaQueryWrapper<Member> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(bo.getMemberId() != null, Member::getMemberId, bo.getMemberId())
+        wrapper.eq(StringUtils.isNotBlank(bo.getTenantId()), Member::getTenantId, bo.getTenantId())
+            .eq(bo.getMemberId() != null, Member::getMemberId, bo.getMemberId())
             .like(StringUtils.isNotBlank(bo.getUsername()), Member::getUsername, bo.getUsername())
             .like(StringUtils.isNotBlank(bo.getNickname()), Member::getNickname, bo.getNickname())
             .like(StringUtils.isNotBlank(bo.getMobile()), Member::getMobile, bo.getMobile())

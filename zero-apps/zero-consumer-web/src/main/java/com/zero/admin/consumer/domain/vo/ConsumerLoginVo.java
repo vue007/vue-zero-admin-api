@@ -15,8 +15,8 @@ public class ConsumerLoginVo {
     @JsonProperty("expire_in")
     Long expireIn;
 
-    @JsonProperty("client_id")
-    String clientId;
+    @JsonProperty("app_id")
+    String appId;
 
     ConsumerMemberProfileVo member;
 }

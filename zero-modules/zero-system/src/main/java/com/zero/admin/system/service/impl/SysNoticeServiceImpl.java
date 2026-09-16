@@ -17,7 +17,6 @@ import com.zero.admin.system.domain.vo.SysUserVo;
 import com.zero.admin.system.mapper.SysNoticeMapper;
 import com.zero.admin.system.mapper.SysUserMapper;
 import com.zero.admin.system.service.ISysNoticeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -32,8 +31,8 @@ import java.util.List;
 @Service
 public class SysNoticeServiceImpl implements ISysNoticeService {
 
-    @Autowired(required = false) private final SysNoticeMapper baseMapper;
-    @Autowired(required = false) private final SysUserMapper userMapper;
+    private final SysNoticeMapper baseMapper;
+    private final SysUserMapper userMapper;
 
     @Override
     public TableDataInfo<SysNoticeVo> selectPageNoticeList(SysNoticeBo notice, PageQuery pageQuery) {

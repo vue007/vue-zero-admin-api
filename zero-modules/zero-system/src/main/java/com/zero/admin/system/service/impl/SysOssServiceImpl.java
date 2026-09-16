@@ -30,7 +30,6 @@ import com.zero.admin.system.domain.vo.SysOssVo;
 import com.zero.admin.system.mapper.SysOssMapper;
 import com.zero.admin.system.service.ISysOssConfigService;
 import com.zero.admin.system.service.ISysOssService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -53,7 +52,7 @@ import java.util.Map;
 @Service
 public class SysOssServiceImpl implements ISysOssService, OssService {
 
-    @Autowired(required = false) private final SysOssMapper baseMapper;
+    private final SysOssMapper baseMapper;
     private final ISysOssConfigService ossConfigService;
 
     /**

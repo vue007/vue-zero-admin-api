@@ -29,9 +29,9 @@ import com.zero.admin.member.domain.model.MemberSocialIdentity;
 import com.zero.admin.member.domain.vo.MemberVo;
 import com.zero.admin.member.service.IMemberService;
 import com.zero.admin.system.domain.SysClient;
-import com.zero.admin.system.domain.SysTenant;
 import com.zero.admin.system.mapper.SysClientMapper;
-import com.zero.admin.system.mapper.SysTenantMapper;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
+import com.zero.admin.tenantapp.service.ITenantApplicationService;
 import lombok.RequiredArgsConstructor;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.model.AuthCallback;
@@ -43,12 +43,12 @@ import me.zhyd.oauth.request.AuthWechatMiniProgramRequest;
 import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.time.Duration;
-import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 /** C 端认证协议编排，不复用后台 sys_user 登录策略。 */
 @Service
@@ -57,36 +57,35 @@ public class ConsumerAuthService {
 
     private static final String PASSWORD_GRANT = "password";
     private static final String SOCIAL_GRANT = "social";
+    private static final String MEMBER_SCOPE = "app:member";
 
     private final ConsumerAuthProperties authProperties;
     private final ConsumerWechatProperties wechatProperties;
     private final SocialProperties socialProperties;
     private final IMemberService memberService;
     private final SysClientMapper clientMapper;
-    private final SysTenantMapper tenantMapper;
+    private final ITenantApplicationService applicationService;
 
     public ConsumerLoginVo register(ConsumerRegisterRequest request) {
-        String tenantId = normalizeTenantId(request.getTenantId());
-        SysClient client = validateBoundary(request.getClientId(), PASSWORD_GRANT, tenantId);
-        MemberVo member = memberService.register(tenantId, request);
-        return issueSession(member, client, PASSWORD_GRANT);
+        AuthBoundary boundary = validateBoundary(request.getAppId(), PASSWORD_GRANT);
+        MemberVo member = memberService.register(boundary.tenantId(), request);
+        return issueSession(member, boundary, PASSWORD_GRANT);
     }
 
     public ConsumerLoginVo passwordLogin(ConsumerPasswordLoginRequest request) {
-        String tenantId = normalizeTenantId(request.getTenantId());
-        SysClient client = validateBoundary(request.getClientId(), PASSWORD_GRANT, tenantId);
-        MemberVo member = authenticatePasswordWithRetryLimit(request, tenantId);
-        return issueSession(member, client, PASSWORD_GRANT);
+        AuthBoundary boundary = validateBoundary(request.getAppId(), PASSWORD_GRANT);
+        MemberVo member = authenticatePasswordWithRetryLimit(request, boundary.tenantId());
+        return issueSession(member, boundary, PASSWORD_GRANT);
     }
 
     public ConsumerLoginVo socialLogin(ConsumerSocialLoginRequest request) {
         String source = request.getSource().strip().toLowerCase(Locale.ROOT);
         ConsumerSocialState socialState = parseSocialState(request.getState());
-        if (!request.getClientId().equals(socialState.clientId())
+        if (!request.getAppId().strip().equals(socialState.appId())
             || !source.equals(socialState.source())) {
             throw new ServiceException("第三方登录上下文无效");
         }
-        SysClient client = validateBoundary(request.getClientId(), SOCIAL_GRANT, socialState.tenantId());
+        AuthBoundary boundary = validateBoundary(socialState.appId(), SOCIAL_GRANT);
         AuthResponse<AuthUser> response = SocialUtils.loginAuth(
             source, request.getCode(), request.getState(), socialProperties);
         if (!response.ok() || response.getData() == null) {
@@ -102,21 +101,22 @@ public class ConsumerAuthService {
             .nickname(authUser.getNickname())
             .avatar(authUser.getAvatar())
             .build();
-        MemberVo member = memberService.loginOrRegisterSocial(socialState.tenantId(), identity);
-        return issueSession(member, client, source);
+        MemberVo member = memberService.loginOrRegisterSocial(boundary.tenantId(), identity);
+        return issueSession(member, boundary, source);
     }
 
     public ConsumerLoginVo wechatMiniProgramLogin(ConsumerWechatLoginRequest request) {
-        String tenantId = normalizeTenantId(request.getTenantId());
-        SysClient client = validateBoundary(request.getClientId(), SOCIAL_GRANT, tenantId);
+        AuthBoundary boundary = validateBoundary(request.getAppId(), SOCIAL_GRANT);
         ConsumerWechatProperties.MiniProgram miniProgram =
-            wechatProperties.getMiniPrograms().get(request.getAppId());
-        if (miniProgram == null || StringUtils.isBlank(miniProgram.getSecret())) {
+            wechatProperties.getMiniPrograms().get(boundary.appId());
+        if (miniProgram == null
+            || StringUtils.isBlank(miniProgram.getWechatAppId())
+            || StringUtils.isBlank(miniProgram.getSecret())) {
             throw new ServiceException("微信小程序未配置或未启用");
         }
 
         AuthRequest authRequest = new AuthWechatMiniProgramRequest(AuthConfig.builder()
-            .clientId(request.getAppId())
+            .clientId(miniProgram.getWechatAppId())
             .clientSecret(miniProgram.getSecret())
             .ignoreCheckRedirectUri(true)
             .ignoreCheckState(true)
@@ -131,24 +131,23 @@ public class ConsumerAuthService {
         AuthToken token = authUser.getToken();
         String openId = StringUtils.blankToDefault(token.getOpenId(), authUser.getUuid());
         MemberSocialIdentity identity = MemberSocialIdentity.builder()
-            .source("wechat_mini_program@" + request.getAppId())
+            .source("wechat_mini_program@" + miniProgram.getWechatAppId())
             .openId(openId)
             .unionId(token.getUnionId())
             .username(authUser.getUsername())
             .nickname(authUser.getNickname())
             .avatar(authUser.getAvatar())
             .build();
-        MemberVo member = memberService.loginOrRegisterSocial(tenantId, identity);
-        return issueSession(member, client, "wechat_mini_program");
+        MemberVo member = memberService.loginOrRegisterSocial(boundary.tenantId(), identity);
+        return issueSession(member, boundary, "wechat_mini_program");
     }
 
-    public String socialAuthorizeUrl(String clientId, String source, String tenantId) {
-        String normalizedTenantId = normalizeTenantId(tenantId);
+    public String socialAuthorizeUrl(String appId, String source) {
         String normalizedSource = source.strip().toLowerCase(Locale.ROOT);
-        validateBoundary(clientId, SOCIAL_GRANT, normalizedTenantId);
+        AuthBoundary boundary = validateBoundary(appId, SOCIAL_GRANT);
         ensureSocialProviderConfigured(normalizedSource);
         ConsumerSocialState state = new ConsumerSocialState(
-            normalizedTenantId, clientId, normalizedSource, AuthStateUtils.createState());
+            boundary.appId(), normalizedSource, AuthStateUtils.createState());
         String encodedState = Base64.encode(JsonUtils.toJsonString(state), StandardCharsets.UTF_8);
         return SocialUtils.getAuthRequest(normalizedSource, socialProperties).authorize(encodedState);
     }
@@ -168,9 +167,17 @@ public class ConsumerAuthService {
         LoginHelper.logout();
     }
 
-    private ConsumerLoginVo issueSession(MemberVo member, SysClient client, String loginSource) {
+    private ConsumerLoginVo issueSession(
+        MemberVo member,
+        AuthBoundary boundary,
+        String loginSource
+    ) {
+        if (!Objects.equals(member.getTenantId(), boundary.tenantId())) {
+            throw new ServiceException("会员租户上下文异常");
+        }
         memberService.recordLogin(member.getTenantId(), member.getMemberId(), ServletUtils.getClientIP());
 
+        SysClient client = boundary.client();
         MemberLoginUser loginUser = new MemberLoginUser();
         loginUser.setTenantId(member.getTenantId());
         loginUser.setUserId(member.getMemberId());
@@ -179,13 +186,16 @@ public class ConsumerAuthService {
         loginUser.setUserType(UserType.APP_USER.getUserType());
         loginUser.setClientKey(client.getClientKey());
         loginUser.setDeviceType(client.getDeviceType());
+        loginUser.setApplicationId(boundary.application().getId());
+        loginUser.setAppId(boundary.appId());
+        loginUser.setAppScopes(List.copyOf(boundary.application().getScopes()));
         loginUser.setLoginSource(loginSource);
         LoginHelper.login(loginUser, ObjectUtil.defaultIfNull(client.getTimeout(), 0L));
 
         return ConsumerLoginVo.builder()
             .accessToken(LoginHelper.getToken())
             .expireIn(LoginHelper.getTokenTimeout())
-            .clientId(client.getClientId())
+            .appId(boundary.appId())
             .member(ConsumerMemberProfileVo.from(member))
             .build();
     }
@@ -216,40 +226,32 @@ public class ConsumerAuthService {
         }
     }
 
-    private SysClient validateBoundary(String clientId, String grantType, String tenantId) {
-        validateTenant(tenantId);
+    private AuthBoundary validateBoundary(String appId, String grantType) {
+        TenantApplicationAuthVo application = applicationService.resolveEnabledByAppId(appId);
+        if (application.getScopes() == null
+            || application.getScopes().stream().noneMatch(MEMBER_SCOPE::equalsIgnoreCase)) {
+            throw new ServiceException("应用未获会员服务授权");
+        }
+
+        String clientId = authProperties.getClientId();
+        if (StringUtils.isBlank(clientId)) {
+            throw new ServiceException("C端认证客户端未配置");
+        }
         SysClient client = clientMapper.selectOne(new LambdaQueryWrapper<SysClient>()
-            .eq(SysClient::getClientId, clientId));
+            .eq(SysClient::getClientId, clientId.strip()));
         if (client == null || !supportsGrant(client.getGrantType(), grantType)) {
-            throw new ServiceException("客户端或授权类型无效");
+            throw new ServiceException("C端认证客户端配置无效");
         }
         if (!SystemConstants.NORMAL.equals(client.getStatus())) {
-            throw new ServiceException("客户端已停用");
+            throw new ServiceException("C端认证客户端已停用");
         }
-        boolean allowed = authProperties.getAllowedClientKeys().stream()
+        boolean allowed = authProperties.getAllowedClientKeys() != null
+            && authProperties.getAllowedClientKeys().stream()
             .anyMatch(key -> key.equalsIgnoreCase(client.getClientKey()));
         if (!allowed) {
-            throw new ServiceException("该客户端不能访问C端会员服务");
+            throw new ServiceException("C端认证客户端配置无效");
         }
-        return client;
-    }
-
-    private void validateTenant(String tenantId) {
-        SysTenant tenant = tenantMapper.selectOne(new LambdaQueryWrapper<SysTenant>()
-            .eq(SysTenant::getTenantId, tenantId));
-        if (tenant == null || !SystemConstants.NORMAL.equals(tenant.getStatus())) {
-            throw new ServiceException("C端应用所属租户不存在或已停用");
-        }
-        if (tenant.getExpireTime() != null && tenant.getExpireTime().before(new Date())) {
-            throw new ServiceException("C端应用所属租户已过期");
-        }
-    }
-
-    private String normalizeTenantId(String tenantId) {
-        if (StringUtils.isBlank(tenantId)) {
-            throw new ServiceException("租户编号不能为空");
-        }
-        return tenantId.strip();
+        return new AuthBoundary(application, client);
     }
 
     private ConsumerSocialState parseSocialState(String encodedState) {
@@ -257,15 +259,13 @@ public class ConsumerAuthService {
             ConsumerSocialState state = JsonUtils.parseObject(
                 Base64.decodeStr(encodedState, StandardCharsets.UTF_8), ConsumerSocialState.class);
             if (state == null
-                || StringUtils.isBlank(state.tenantId())
-                || StringUtils.isBlank(state.clientId())
+                || StringUtils.isBlank(state.appId())
                 || StringUtils.isBlank(state.source())
                 || StringUtils.isBlank(state.nonce())) {
                 throw new ServiceException("第三方登录上下文无效");
             }
             return new ConsumerSocialState(
-                normalizeTenantId(state.tenantId()),
-                state.clientId(),
+                state.appId().strip(),
                 state.source().toLowerCase(Locale.ROOT),
                 state.nonce());
         } catch (ServiceException exception) {
@@ -296,5 +296,16 @@ public class ConsumerAuthService {
             && StringUtils.isNotBlank(properties.getClientId())
             && StringUtils.isNotBlank(properties.getClientSecret())
             && StringUtils.isNotBlank(properties.getRedirectUri());
+    }
+
+    private record AuthBoundary(TenantApplicationAuthVo application, SysClient client) {
+
+        private String tenantId() {
+            return application.getTenantId();
+        }
+
+        private String appId() {
+            return application.getAppId();
+        }
     }
 }

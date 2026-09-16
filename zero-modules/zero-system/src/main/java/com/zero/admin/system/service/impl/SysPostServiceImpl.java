@@ -23,7 +23,6 @@ import com.zero.admin.system.mapper.SysDeptMapper;
 import com.zero.admin.system.mapper.SysPostMapper;
 import com.zero.admin.system.mapper.SysUserPostMapper;
 import com.zero.admin.system.service.ISysPostService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -38,9 +37,9 @@ import java.util.List;
 @Service
 public class SysPostServiceImpl implements ISysPostService, PostService {
 
-    @Autowired(required = false) private final SysPostMapper baseMapper;
-    @Autowired(required = false) private final SysDeptMapper deptMapper;
-    @Autowired(required = false) private final SysUserPostMapper userPostMapper;
+    private final SysPostMapper baseMapper;
+    private final SysDeptMapper deptMapper;
+    private final SysUserPostMapper userPostMapper;
 
     @Override
     public TableDataInfo<SysPostVo> selectPagePostList(SysPostBo post, PageQuery pageQuery) {

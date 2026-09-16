@@ -34,7 +34,6 @@ import com.zero.admin.system.mapper.SysRoleMapper;
 import com.zero.admin.system.mapper.SysRoleMenuMapper;
 import com.zero.admin.system.mapper.SysUserRoleMapper;
 import com.zero.admin.system.service.ISysRoleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,10 +50,10 @@ import java.util.*;
 @Service
 public class SysRoleServiceImpl implements ISysRoleService, RoleService {
 
-    @Autowired(required = false) private final SysRoleMapper baseMapper;
-    @Autowired(required = false) private final SysRoleMenuMapper roleMenuMapper;
-    @Autowired(required = false) private final SysUserRoleMapper userRoleMapper;
-    @Autowired(required = false) private final SysRoleDeptMapper roleDeptMapper;
+    private final SysRoleMapper baseMapper;
+    private final SysRoleMenuMapper roleMenuMapper;
+    private final SysUserRoleMapper userRoleMapper;
+    private final SysRoleDeptMapper roleDeptMapper;
 
     @Override
     public TableDataInfo<SysRoleVo> selectPageRoleList(SysRoleBo role, PageQuery pageQuery) {

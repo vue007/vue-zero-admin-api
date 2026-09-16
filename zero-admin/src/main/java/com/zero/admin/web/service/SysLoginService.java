@@ -34,7 +34,6 @@ import com.zero.admin.system.domain.bo.SysSocialBo;
 import com.zero.admin.system.domain.vo.*;
 import com.zero.admin.system.mapper.SysUserMapper;
 import com.zero.admin.system.service.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -65,7 +64,7 @@ public class SysLoginService {
     private final ISysRoleService roleService;
     private final ISysDeptService deptService;
     private final ISysPostService postService;
-    @Autowired(required = false) private final SysUserMapper userMapper;
+    private final SysUserMapper userMapper;
 
 
     /**

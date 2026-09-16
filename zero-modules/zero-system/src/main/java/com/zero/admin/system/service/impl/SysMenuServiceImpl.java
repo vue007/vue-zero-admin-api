@@ -27,7 +27,6 @@ import com.zero.admin.system.mapper.SysRoleMapper;
 import com.zero.admin.system.mapper.SysRoleMenuMapper;
 import com.zero.admin.system.mapper.SysTenantPackageMapper;
 import com.zero.admin.system.service.ISysMenuService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -41,10 +40,10 @@ import java.util.*;
 @Service
 public class SysMenuServiceImpl implements ISysMenuService {
 
-    @Autowired(required = false) private final SysMenuMapper baseMapper;
-    @Autowired(required = false) private final SysRoleMapper roleMapper;
-    @Autowired(required = false) private final SysRoleMenuMapper roleMenuMapper;
-    @Autowired(required = false) private final SysTenantPackageMapper tenantPackageMapper;
+    private final SysMenuMapper baseMapper;
+    private final SysRoleMapper roleMapper;
+    private final SysRoleMenuMapper roleMenuMapper;
+    private final SysTenantPackageMapper tenantPackageMapper;
 
     /**
      * 根据用户查询系统菜单列表

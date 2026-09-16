@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /** C 端会员服务启动入口。 */
 @SpringBootApplication(scanBasePackages = {
     "com.zero.admin.consumer",
-    "com.zero.admin.member"
+    "com.zero.admin.member",
+    "com.zero.admin.tenantapp"
 })
 public class ConsumerApplication {
 
