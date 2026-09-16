@@ -11,14 +11,20 @@ import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
 import com.zero.admin.base.tenant.helper.TenantHelper;
 import com.zero.admin.tenantapp.domain.TenantApplication;
+import com.zero.admin.tenantapp.domain.TenantApplicationClient;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
+import com.zero.admin.tenantapp.domain.bo.TenantApplicationClientBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientOptionVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 import com.zero.admin.tenantapp.domain.vo.TenantNameVo;
 import com.zero.admin.tenantapp.mapper.TenantApplicationMapper;
+import com.zero.admin.tenantapp.mapper.TenantApplicationClientMapper;
 import com.zero.admin.tenantapp.service.ITenantApplicationService;
 import com.zero.admin.tenantapp.service.TenantApplicationSecretManager;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +35,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -39,7 +46,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TenantApplicationServiceImpl implements ITenantApplicationService {
 
+    private static final String ADMIN_CLIENT_KEY = "pc";
+
     private final TenantApplicationMapper applicationMapper;
+    private final TenantApplicationClientMapper applicationClientMapper;
     private final TenantApplicationSecretManager secretManager;
 
     @Override
@@ -67,6 +77,14 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
     @Override
     public List<TenantApplicationScopeVo> queryScopeOptions() {
         return applicationMapper.selectAppScopeOptions();
+    }
+
+    @Override
+    public List<TenantApplicationClientOptionVo> queryClientOptions() {
+        List<TenantApplicationClientOptionVo> options =
+            applicationClientMapper.selectClientOptions();
+        options.forEach(this::hydrateGrantTypes);
+        return options;
     }
 
     @Override
@@ -140,6 +158,37 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
     }
 
     @Override
+    public TenantApplicationClientAuthVo resolveEnabledClient(String appId, String channel) {
+        return TenantHelper.ignore(() -> {
+            TenantApplication application = requireEnabledApplication(appId);
+            String normalizedChannel = normalizeChannel(channel);
+            TenantApplicationClientVo terminal =
+                applicationClientMapper.selectByApplicationAndChannel(
+                    application.getId(), application.getTenantId(), normalizedChannel);
+            if (terminal == null
+                || !SystemConstants.NORMAL.equals(terminal.getStatus())
+                || !SystemConstants.NORMAL.equals(terminal.getClientStatus())
+                || ADMIN_CLIENT_KEY.equalsIgnoreCase(terminal.getClientKey())) {
+                throw new ServiceException("应用终端不可用");
+            }
+            return new TenantApplicationClientAuthVo(
+                application.getId(),
+                application.getTenantId(),
+                application.getAppId(),
+                deserializeScopes(application.getScopeCodes()),
+                terminal.getAuthClientId(),
+                terminal.getClientId(),
+                terminal.getClientKey(),
+                terminal.getDeviceType(),
+                terminal.getGrantType(),
+                terminal.getTimeout(),
+                terminal.getActiveTimeout(),
+                terminal.getChannel()
+            );
+        });
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public TenantApplicationAuthVo authenticate(String appId, String appSecret) {
         return TenantHelper.ignore(() -> {
@@ -203,6 +252,7 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
         if (applicationMapper.insert(application) != 1) {
             throw new ServiceException("创建应用失败");
         }
+        syncTerminals(application, bo.getTerminals());
         return credential(application, rawSecret);
     }
 
@@ -226,7 +276,11 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
 
         // 租户和 App ID 都是凭证身份的一部分，编辑操作不可转移或改写。
         update.setId(existing.getId());
-        return applicationMapper.updateById(update) == 1;
+        if (applicationMapper.updateById(update) != 1) {
+            return false;
+        }
+        syncTerminals(existing, bo.getTerminals());
+        return true;
     }
 
     private boolean changeStatus(TenantApplicationStatusBo bo) {
@@ -256,9 +310,19 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
         if (ids == null || ids.isEmpty()) {
             throw new ServiceException("应用ID不能为空");
         }
+        Set<Long> uniqueIds = new LinkedHashSet<>(ids);
+        if (uniqueIds.contains(null)) {
+            throw new ServiceException("应用ID不能为空");
+        }
         // 先逐个读取，确保租户侧批量删除中不存在越权或失效 ID。
-        ids.forEach(this::requireApplication);
-        return applicationMapper.deleteByIds(ids) > 0;
+        uniqueIds.forEach(this::requireApplication);
+        applicationClientMapper.delete(
+            Wrappers.<TenantApplicationClient>lambdaQuery()
+                .in(TenantApplicationClient::getApplicationId, uniqueIds));
+        if (applicationMapper.deleteByIds(uniqueIds) != uniqueIds.size()) {
+            throw new ServiceException("删除应用失败");
+        }
+        return true;
     }
 
     private TenantApplication requireApplication(Long id) {
@@ -308,6 +372,78 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
         bo.setRemark(StringUtils.isBlank(bo.getRemark()) ? null : bo.getRemark().strip());
         bo.setScopes(normalizeScopes(bo.getScopes()));
         assertScopesAvailable(bo.getScopes());
+        bo.setTerminals(normalizeTerminals(bo.getTerminals()));
+        assertAuthClientsAvailable(bo.getTerminals());
+    }
+
+    private List<TenantApplicationClientBo> normalizeTerminals(
+        List<TenantApplicationClientBo> terminals) {
+        if (terminals == null || terminals.isEmpty()) {
+            throw new ServiceException("至少需要配置一个终端");
+        }
+        if (terminals.size() > 16) {
+            throw new ServiceException("终端数量不能超过16个");
+        }
+        Set<String> channels = new LinkedHashSet<>();
+        terminals.forEach(terminal -> {
+            if (terminal == null || terminal.getAuthClientId() == null) {
+                throw new ServiceException("认证客户端不能为空");
+            }
+            terminal.setChannel(normalizeChannel(terminal.getChannel()));
+            terminal.setStatus(StringUtils.blankToDefault(
+                terminal.getStatus(), SystemConstants.NORMAL));
+            if (!SystemConstants.NORMAL.equals(terminal.getStatus())
+                && !SystemConstants.DISABLE.equals(terminal.getStatus())) {
+                throw new ServiceException("终端状态只能为0或1");
+            }
+            if (!channels.add(terminal.getChannel())) {
+                throw new ServiceException("同一应用的终端渠道不能重复");
+            }
+        });
+        return List.copyOf(terminals);
+    }
+
+    private String normalizeChannel(String channel) {
+        if (StringUtils.isBlank(channel)) {
+            throw new ServiceException("终端渠道不能为空");
+        }
+        String normalized = channel.strip().toLowerCase(Locale.ROOT);
+        if (!normalized.matches("[a-z][a-z0-9_-]{0,31}")) {
+            throw new ServiceException("终端渠道格式不正确");
+        }
+        return normalized;
+    }
+
+    private void assertAuthClientsAvailable(List<TenantApplicationClientBo> terminals) {
+        Set<Long> requestedIds = terminals.stream()
+            .map(TenantApplicationClientBo::getAuthClientId)
+            .collect(Collectors.toSet());
+        Set<Long> existingIds = applicationClientMapper
+            .selectBindableClientsByIds(requestedIds).stream()
+            .map(TenantApplicationClientOptionVo::getAuthClientId)
+            .collect(Collectors.toSet());
+        if (!existingIds.containsAll(requestedIds)) {
+            throw new ServiceException("认证客户端不存在或不可用于 App 终端");
+        }
+    }
+
+    private void syncTerminals(
+        TenantApplication application, List<TenantApplicationClientBo> terminals) {
+        applicationClientMapper.delete(
+            Wrappers.<TenantApplicationClient>lambdaQuery()
+                .eq(TenantApplicationClient::getApplicationId, application.getId()));
+        for (TenantApplicationClientBo terminal : terminals) {
+            TenantApplicationClient binding = new TenantApplicationClient();
+            binding.setTenantId(application.getTenantId());
+            binding.setApplicationId(application.getId());
+            binding.setAuthClientId(terminal.getAuthClientId());
+            binding.setChannel(terminal.getChannel());
+            binding.setStatus(terminal.getStatus());
+            binding.setDelFlag(SystemConstants.NORMAL);
+            if (applicationClientMapper.insert(binding) != 1) {
+                throw new ServiceException("保存应用终端失败");
+            }
+        }
     }
 
     private void assertScopesAvailable(List<String> scopes) {
@@ -357,6 +493,20 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
         }
         records.forEach(vo -> vo.setScopes(deserializeScopes(vo.getScopeCodes())));
 
+        List<Long> applicationIds = records.stream()
+            .map(TenantApplicationVo::getId)
+            .filter(Objects::nonNull)
+            .toList();
+        Map<Long, List<TenantApplicationClientVo>> terminalsByApplication =
+            applicationIds.isEmpty()
+                ? Map.of()
+                : applicationClientMapper.selectByApplicationIds(applicationIds).stream()
+                    .peek(this::hydrateGrantTypes)
+                    .collect(Collectors.groupingBy(
+                        TenantApplicationClientVo::getApplicationId));
+        records.forEach(vo -> vo.setTerminals(
+            terminalsByApplication.getOrDefault(vo.getId(), List.of())));
+
         List<String> tenantIds = records.stream()
             .map(TenantApplicationVo::getTenantId)
             .filter(StringUtils::isNotBlank)
@@ -368,6 +518,24 @@ public class TenantApplicationServiceImpl implements ITenantApplicationService {
         Map<String, String> tenantNames = applicationMapper.selectTenantNames(tenantIds).stream()
             .collect(Collectors.toMap(TenantNameVo::getTenantId, TenantNameVo::getTenantName));
         records.forEach(vo -> vo.setTenantName(tenantNames.get(vo.getTenantId())));
+    }
+
+    private void hydrateGrantTypes(TenantApplicationClientVo terminal) {
+        terminal.setGrantTypeList(deserializeGrantTypes(terminal.getGrantType()));
+    }
+
+    private void hydrateGrantTypes(TenantApplicationClientOptionVo option) {
+        option.setGrantTypeList(deserializeGrantTypes(option.getGrantType()));
+    }
+
+    private List<String> deserializeGrantTypes(String grantType) {
+        if (StringUtils.isBlank(grantType)) {
+            return List.of();
+        }
+        return List.of(grantType.split(",")).stream()
+            .map(String::strip)
+            .filter(StringUtils::isNotBlank)
+            .toList();
     }
 
     private TenantApplicationAuthVo toAuthVo(TenantApplication application) {

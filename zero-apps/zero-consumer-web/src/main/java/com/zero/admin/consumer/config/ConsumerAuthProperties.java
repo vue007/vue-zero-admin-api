@@ -4,19 +4,11 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 /** C 端认证边界配置。 */
 @Data
 @Component
 @ConfigurationProperties(prefix = "consumer.auth")
 public class ConsumerAuthProperties {
-
-    /** 服务端固定使用的 sys_client.client_id，不接受终端覆盖。 */
-    private String clientId;
-
-    /** 允许 C 端使用的 sys_client.client_key。 */
-    private List<String> allowedClientKeys = List.of("app");
 
     /** 密码连续失败次数上限。 */
     private int maxRetryCount = 5;

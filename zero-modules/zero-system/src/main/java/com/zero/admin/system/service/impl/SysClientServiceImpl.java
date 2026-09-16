@@ -8,10 +8,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.zero.admin.base.core.constant.CacheNames;
+import com.zero.admin.base.core.exception.ServiceException;
 import com.zero.admin.base.core.utils.MapstructUtils;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.mybatis.core.page.PageQuery;
 import com.zero.admin.base.mybatis.core.page.TableDataInfo;
+import com.zero.admin.base.tenant.helper.TenantHelper;
 import com.zero.admin.system.domain.SysClient;
 import com.zero.admin.system.domain.bo.SysClientBo;
 import com.zero.admin.system.domain.vo.SysClientVo;
@@ -20,6 +22,7 @@ import com.zero.admin.system.service.ISysClientService;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -141,9 +144,11 @@ public class SysClientServiceImpl implements ISysClientService {
      */
     @CacheEvict(cacheNames = CacheNames.SYS_CLIENT, allEntries = true)
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid) {
-        if (isValid) {
-            //TODO 做一些业务上的校验,判断是否需要校验
+        baseMapper.lockByIds(ids);
+        if (isValid && TenantHelper.ignore(() -> baseMapper.hasApplicationBindings(ids))) {
+            throw new ServiceException("认证客户端已被 App 终端使用，请先解除绑定");
         }
         return baseMapper.deleteByIds(ids) > 0;
     }

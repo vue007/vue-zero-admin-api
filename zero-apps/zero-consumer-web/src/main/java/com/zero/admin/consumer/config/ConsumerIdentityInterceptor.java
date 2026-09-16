@@ -5,7 +5,7 @@ import com.zero.admin.base.core.enums.UserType;
 import com.zero.admin.base.core.utils.StringUtils;
 import com.zero.admin.base.shiro.utils.LoginHelper;
 import com.zero.admin.member.domain.model.MemberLoginUser;
-import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientAuthVo;
 import com.zero.admin.tenantapp.service.ITenantApplicationService;
 import lombok.RequiredArgsConstructor;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,7 +23,6 @@ public class ConsumerIdentityInterceptor implements HandlerInterceptor {
 
     private static final String MEMBER_SCOPE = "app:member";
 
-    private final ConsumerAuthProperties authProperties;
     private final ITenantApplicationService applicationService;
 
     @Override
@@ -35,23 +34,26 @@ public class ConsumerIdentityInterceptor implements HandlerInterceptor {
         if (!UserType.APP_USER.getUserType().equals(loginUser.getUserType())
             || StringUtils.isBlank(loginUser.getTenantId())
             || memberLoginUser.getApplicationId() == null
+            || memberLoginUser.getAuthClientId() == null
             || StringUtils.isBlank(memberLoginUser.getAppId())
-            || authProperties.getAllowedClientKeys() == null
-            || authProperties.getAllowedClientKeys().stream()
-                .noneMatch(key -> key.equalsIgnoreCase(loginUser.getClientKey()))) {
+            || StringUtils.isBlank(memberLoginUser.getChannel())
+            || StringUtils.isBlank(loginUser.getClientKey())) {
             throw invalidSession();
         }
 
-        TenantApplicationAuthVo application;
+        TenantApplicationClientAuthVo applicationClient;
         try {
-            application = applicationService.resolveEnabledByAppId(memberLoginUser.getAppId());
+            applicationClient = applicationService.resolveEnabledClient(
+                memberLoginUser.getAppId(), memberLoginUser.getChannel());
         } catch (RuntimeException exception) {
             throw invalidSession();
         }
-        if (!Objects.equals(application.getId(), memberLoginUser.getApplicationId())
-            || !Objects.equals(application.getTenantId(), memberLoginUser.getTenantId())
-            || application.getScopes() == null
-            || application.getScopes().stream()
+        if (!Objects.equals(applicationClient.getApplicationId(), memberLoginUser.getApplicationId())
+            || !Objects.equals(applicationClient.getAuthClientId(), memberLoginUser.getAuthClientId())
+            || !Objects.equals(applicationClient.getTenantId(), memberLoginUser.getTenantId())
+            || !applicationClient.getClientKey().equalsIgnoreCase(loginUser.getClientKey())
+            || applicationClient.getScopes() == null
+            || applicationClient.getScopes().stream()
                 .noneMatch(MEMBER_SCOPE::equalsIgnoreCase)) {
             throw invalidSession();
         }

@@ -5,6 +5,8 @@ import com.zero.admin.base.mybatis.core.page.TableDataInfo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientOptionVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
@@ -26,6 +28,9 @@ public interface ITenantApplicationService {
 
     /** 返回 App 管理下可选的业务模块授权范围。 */
     List<TenantApplicationScopeVo> queryScopeOptions();
+
+    /** 返回 App 可以绑定的认证客户端策略，不暴露客户端密钥。 */
+    List<TenantApplicationClientOptionVo> queryClientOptions();
 
     /** 仅供平台超级管理员选择应用所属租户。 */
     List<TenantNameVo> searchTenantOptions(String keyword);
@@ -52,6 +57,9 @@ public interface ITenantApplicationService {
 
     /** 公开 App ID 换取可信租户上下文，适用于不应内置长期 secret 的终端。 */
     TenantApplicationAuthVo resolveEnabledByAppId(String appId);
+
+    /** 公开 App ID 与渠道码换取可信应用、租户及认证客户端上下文。 */
+    TenantApplicationClientAuthVo resolveEnabledClient(String appId, String channel);
 
     /** 校验可信服务端持有的 App Secret，并返回可信租户上下文。 */
     TenantApplicationAuthVo authenticate(String appId, String appSecret);

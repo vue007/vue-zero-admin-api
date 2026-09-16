@@ -4,9 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zero.admin.base.core.constant.TenantConstants;
 import com.zero.admin.base.log.annotation.Log;
 import com.zero.admin.tenantapp.domain.TenantApplication;
+import com.zero.admin.tenantapp.domain.TenantApplicationClient;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
+import com.zero.admin.tenantapp.domain.bo.TenantApplicationClientBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientAuthVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientOptionVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 import com.zero.admin.web.controller.app.ApplicationController;
 import com.zero.admin.web.controller.tenant.SysTenantAppController;
@@ -20,6 +25,7 @@ import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -61,6 +67,14 @@ class TenantApplicationContractUnitTest {
         );
         assertPermission(
             ApplicationController.class.getMethod("scopeOptions"),
+            "app:application:list"
+        );
+        assertPermission(
+            SysTenantAppController.class.getMethod("clientOptions"),
+            "system:tenantApp:list"
+        );
+        assertPermission(
+            ApplicationController.class.getMethod("clientOptions"),
             "app:application:list"
         );
         assertPermission(
@@ -115,6 +129,24 @@ class TenantApplicationContractUnitTest {
             () -> TenantApplicationVo.class.getDeclaredField("appType"));
         assertThrows(NoSuchFieldException.class,
             () -> TenantApplicationAuthVo.class.getDeclaredField("appType"));
+    }
+
+    @Test
+    void applicationSupportsMultipleExplicitTerminalBindings() throws Exception {
+        assertEquals(
+            java.util.List.class,
+            TenantApplicationBo.class.getDeclaredField("terminals").getType()
+        );
+        assertEquals(
+            java.util.List.class,
+            TenantApplicationVo.class.getDeclaredField("terminals").getType()
+        );
+        assertNotNull(TenantApplicationClient.class.getDeclaredField("applicationId"));
+        assertNotNull(TenantApplicationClientBo.class.getDeclaredField("authClientId"));
+        assertNotNull(TenantApplicationClientVo.class.getDeclaredField("clientStatus"));
+        assertNotNull(TenantApplicationClientOptionVo.class.getDeclaredField("grantTypeList"));
+        assertNotNull(TenantApplicationClientAuthVo.class.getDeclaredField("clientId"));
+        assertNotNull(TenantApplicationClientAuthVo.class.getDeclaredField("channel"));
     }
 
     private static void assertPermission(Method method, String expected) {

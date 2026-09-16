@@ -11,7 +11,9 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class MemberLoginUser extends LoginUser {
     private Long applicationId;
+    private Long authClientId;
     private String appId;
+    private String channel;
     /** 登录时的 scope 快照；实时授权仍由 C 端入口重新校验。 */
     private List<String> appScopes;
     private String loginSource;

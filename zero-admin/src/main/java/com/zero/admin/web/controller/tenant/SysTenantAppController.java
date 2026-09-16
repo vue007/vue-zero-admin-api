@@ -13,6 +13,7 @@ import com.zero.admin.base.web.core.BaseController;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationBo;
 import com.zero.admin.tenantapp.domain.bo.TenantApplicationStatusBo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationCredentialVo;
+import com.zero.admin.tenantapp.domain.vo.TenantApplicationClientOptionVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationScopeVo;
 import com.zero.admin.tenantapp.domain.vo.TenantApplicationVo;
 import com.zero.admin.tenantapp.domain.vo.TenantNameVo;
@@ -59,6 +60,12 @@ public class SysTenantAppController extends BaseController {
     @GetMapping("/scope-options")
     public R<List<TenantApplicationScopeVo>> scopeOptions() {
         return R.ok(applicationService.queryScopeOptions());
+    }
+
+    @RequiresPermissions("system:tenantApp:list")
+    @GetMapping("/client-options")
+    public R<List<TenantApplicationClientOptionVo>> clientOptions() {
+        return R.ok(applicationService.queryClientOptions());
     }
 
     @RequiresPermissions("system:tenantApp:add")

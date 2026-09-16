@@ -18,5 +18,7 @@ public class ConsumerLoginVo {
     @JsonProperty("app_id")
     String appId;
 
+    String channel;
+
     ConsumerMemberProfileVo member;
 }

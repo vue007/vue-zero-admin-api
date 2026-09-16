@@ -26,6 +26,7 @@ public class TenantApplicationVo implements Serializable {
     @JsonIgnore
     private String scopeCodes;
     private List<String> scopes;
+    private List<TenantApplicationClientVo> terminals;
     private String status;
     private String remark;
     private Date lastAccessTime;

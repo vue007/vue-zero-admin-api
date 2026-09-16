@@ -24,7 +24,7 @@ create table if not exists app_application
     constraint pk_app_application primary key (id)
 );
 
--- 终端渠道由 sys_client.device_type 识别，应用凭证不再重复绑定应用类型。
+-- 应用本身不重复保存终端类型，终端渠道通过 app_application_client 显式绑定。
 alter table app_application drop column if exists app_type;
 
 create unique index if not exists uk_app_application_app_id
@@ -45,6 +45,60 @@ comment on column app_application.status is '状态（0正常 1停用）';
 comment on column app_application.last_access_time is '最后一次凭证校验成功时间';
 comment on column app_application.secret_rotated_time is '密钥最近轮换时间';
 comment on column app_application.del_flag is '删除标志（0存在 1删除）';
+
+create table if not exists app_application_client
+(
+    id                  int8         not null,
+    tenant_id           varchar(20)  default '000000'::varchar not null,
+    application_id      int8         not null,
+    auth_client_id      int8         not null,
+    channel             varchar(32)  not null,
+    status              char         default '0'::bpchar not null,
+    del_flag            char         default '0'::bpchar not null,
+    create_dept         int8,
+    create_by           int8,
+    create_time         timestamp,
+    update_by           int8,
+    update_time         timestamp,
+    constraint pk_app_application_client primary key (id)
+);
+
+create unique index if not exists uk_app_application_client_channel
+    on app_application_client (application_id, channel) where del_flag = '0';
+create index if not exists idx_app_application_client_tenant_app
+    on app_application_client (tenant_id, application_id) where del_flag = '0';
+create index if not exists idx_app_application_client_auth
+    on app_application_client (auth_client_id) where del_flag = '0';
+
+comment on table app_application_client is 'App 与认证客户端的终端渠道绑定表';
+comment on column app_application_client.id is '绑定主键';
+comment on column app_application_client.tenant_id is '可信所属租户编号';
+comment on column app_application_client.application_id is 'app_application.id';
+comment on column app_application_client.auth_client_id is 'sys_client.id';
+comment on column app_application_client.channel is 'App 对外公开的终端渠道码';
+comment on column app_application_client.status is '绑定状态（0正常 1停用）';
+comment on column app_application_client.del_flag is '删除标志（0存在 1删除）';
+
+-- 仅兼容尚无任何终端绑定的旧应用：默认绑定消费者认证客户端；负数主键与 ASSIGN_ID 空间隔离。
+insert into app_application_client (
+    id, tenant_id, application_id, auth_client_id, channel, status, del_flag,
+    create_dept, create_by, create_time, update_by, update_time
+)
+select -application.id, application.tenant_id, application.id, auth_client.id, 'app', '0', '0',
+       application.create_dept, application.create_by, now(), application.update_by, now()
+from app_application application
+inner join sys_client auth_client
+  on auth_client.id = 2
+ and auth_client.client_key = 'app'
+ and auth_client.del_flag = '0'
+where application.del_flag = '0'
+  and not exists (
+      select 1
+      from app_application_client binding
+      where binding.application_id = application.id
+        and binding.del_flag = '0'
+  )
+on conflict (id) do nothing;
 
 -- 平台管理员入口：不进入租户套餐。
 insert into sys_menu values

@@ -54,10 +54,7 @@ redisson:
 
 consumer:
   auth:
-    # sys_client 仅作为服务端会话策略，不允许终端自行选择。
-    client-id: ${CONSUMER_CLIENT_ID:428a8310cd442757ae699df5d894f051}
-    allowed-client-keys:
-      - app
+    # sys_client 由 appId + channel 的服务端绑定关系解析，终端不能提交内部 clientId。
     max-retry-count: ${CONSUMER_PASSWORD_MAX_RETRY:5}
     lock-minutes: ${CONSUMER_PASSWORD_LOCK_MINUTES:10}
   wechat:

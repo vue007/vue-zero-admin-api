@@ -54,6 +54,11 @@ public class TenantApplicationBo extends BaseEntity {
             groups = {AddGroup.class, EditGroup.class}
         ) String> scopes;
 
+    @NotNull(message = "至少需要配置一个终端", groups = {AddGroup.class, EditGroup.class})
+    @Size(min = 1, max = 16, message = "终端数量必须为1至{max}个",
+        groups = {AddGroup.class, EditGroup.class})
+    private List<@jakarta.validation.Valid TenantApplicationClientBo> terminals;
+
     @Pattern(regexp = "[01]", message = "应用状态只能为0或1",
         groups = {AddGroup.class, EditGroup.class})
     private String status;
