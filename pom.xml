@@ -186,6 +186,11 @@
 			</dependency>
 			<dependency>
 				<groupId>com.zero.admin</groupId>
+				<artifactId>zero-community</artifactId>
+				<version>${revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zero.admin</groupId>
 				<artifactId>zero-tenant-app</artifactId>
 				<version>${revision}</version>
 			</dependency>

@@ -23,6 +23,10 @@
             <groupId>com.zero.admin</groupId>
             <artifactId>zero-tenant-app</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.zero.admin</groupId>
+            <artifactId>zero-community</artifactId>
+        </dependency>
         <!-- 仅复用 sys_client 的服务端授权配置；启动类不会扫描 system Controller/Service。 -->
         <dependency>
             <groupId>com.zero.admin</groupId>

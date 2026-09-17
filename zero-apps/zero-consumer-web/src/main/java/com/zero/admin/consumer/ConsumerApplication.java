@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(scanBasePackages = {
     "com.zero.admin.consumer",
     "com.zero.admin.member",
+    "com.zero.admin.community",
     "com.zero.admin.tenantapp"
 })
 public class ConsumerApplication {

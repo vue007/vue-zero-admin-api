@@ -18,6 +18,7 @@
         <module>zero-job</module>
         <module>zero-member</module>
         <module>zero-partner</module>
+        <module>zero-community</module>
         <module>zero-tenant-app</module>
     </modules>
 

@@ -8,3 +8,4 @@
 \ir init/apps/partner.sql
 \ir init/tenants/example-tenant.sql
 \ir init/apps/application.sql
+\ir init/apps/community.sql
